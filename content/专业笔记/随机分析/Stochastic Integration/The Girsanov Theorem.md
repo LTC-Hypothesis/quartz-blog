@@ -1,51 +1,43 @@
 # The Main Theorem and Proof
-```ad-def
-title:Exponent martingale
-Let probability space $(\Omega,\mathcal{F},\mathbb{P})$ and d-dimensional Brownian motion $B_t=(B^{(1)}_t,\cdots,B^{(d)}_t)$ with $\mathbb{P}[B_0=0]=1$. $\mathcal{F}_t$ satisfies the usual condition. Let $X_t=(X^{(1)}_t,\cdots,X^{(d)}_t)$ be a adapted, measurable process satisfies
-$$
-\mathbb{P}\left[\int_{0}^{t}(X^{(i)}_s)^2{d}s<\infty\right]=1
-$$
-Recall [[The Change-of-Variable Formula#^01ab9e|the example]], we set 
-$$
-Z_t(X)\triangleq\exp\left(\sum_{i=1}^{d}\int_{0}^{t}X^{(i)}_s{d}B^{(i)}_s-\frac{1}{2}\int_{0}^{t}\|X_s\|^2{d}s\right)
-$$
-By the Ito rule, we have 
-$$
-Z_t(X)=1+\sum_{i=1}^{d}\int_{0}^{t}Z_s(X)X^{(i)}_s{d}B_s^{(i)}
-$$
-```
+> [!def] Exponent martingale
+> Let probability space $(\Omega,\mathcal{F},\mathbb{P})$ and d-dimensional Brownian motion $B_t=(B^{(1)}_t,\cdots,B^{(d)}_t)$ with $\mathbb{P}[B_0=0]=1$. $\mathcal{F}_t$ satisfies the usual condition. Let $X_t=(X^{(1)}_t,\cdots,X^{(d)}_t)$ be a adapted, measurable process satisfies
+> $$
+> \mathbb{P}\left[\int_{0}^{t}(X^{(i)}_s)^2{d}s<\infty\right]=1
+> $$
+> Recall [[The Change-of-Variable Formula#^01ab9e|the example]], we set 
+> $$
+> Z_t(X)\triangleq\exp\left(\sum_{i=1}^{d}\int_{0}^{t}X^{(i)}_s{d}B^{(i)}_s-\frac{1}{2}\int_{0}^{t}\|X_s\|^2{d}s\right)
+> $$
+> By the Ito rule, we have 
+> $$
+> Z_t(X)=1+\sum_{i=1}^{d}\int_{0}^{t}Z_s(X)X^{(i)}_s{d}B_s^{(i)}
+> $$
 
-```ad-def
-title:change of probability measure
-$Z_t(X)$ will be a martingale with $\mathbb{E}(Z_t(X))=1$. We define a probability measure $\tilde{\mathbb{P}}$ for $0\le T<\infty$ on $\mathcal{F}_T$ as 
-$$
-\tilde{\mathbb{P}}_T(A)\triangleq\mathbb{E}[\mathbb{1}_AZ_T(X)],A\in\mathcal{F}_T
-$$
-The property of martingale admits $\tilde{\mathbb{P}}$ satisfies the consistency condition, for $A\in\mathcal{F}_t$
-$$
-\tilde{\mathbb{P}}_T(A)=\mathbb{E}[\mathbb{1}_AZ_T(X)]=\mathbb{E}\left[\mathbb{E}(\mathbb{1}_AZ_T(X))|\mathcal{F}_t\right]=\mathbb{E}[\mathbb{1}_AZ_t(X)]=\tilde{\mathbb{P}}_t(A)
-$$
-```
+> [!def] change of probability measure
+> $Z_t(X)$ will be a martingale with $\mathbb{E}(Z_t(X))=1$. We define a probability measure $\tilde{\mathbb{P}}$ for $0\le T<\infty$ on $\mathcal{F}_T$ as 
+> $$
+> \tilde{\mathbb{P}}_T(A)\triangleq\mathbb{E}[\mathbb{1}_AZ_T(X)],A\in\mathcal{F}_T
+> $$
+> The property of martingale admits $\tilde{\mathbb{P}}$ satisfies the consistency condition, for $A\in\mathcal{F}_t$
+> $$
+> \tilde{\mathbb{P}}_T(A)=\mathbb{E}[\mathbb{1}_AZ_T(X)]=\mathbb{E}\left[\mathbb{E}(\mathbb{1}_AZ_T(X))|\mathcal{F}_t\right]=\mathbb{E}[\mathbb{1}_AZ_t(X)]=\tilde{\mathbb{P}}_t(A)
+> $$
 
-```ad-thm
-title:Girsanov
-Assume that $Z_t(X)$ is a martingale. We define $\tilde{B}_t=(\tilde{B}^{(1)}_t,\cdots,\tilde{B}^{(d)}_t)$ by 
-$$
-\tilde{B}^{(i)}_t=B^{(i)}_t-\int_{0}^{t}X^{(i)}_s{d}s,1\le i\le d
-$$
-For $0\le T<\infty$, $\{\tilde{B}_t,\mathcal{F}_t,0\le t\le T\}$ is d-dimensions Brownian motion on $(\Omega,\mathcal{F}_T,\tilde{\mathbb{P}}_T)$. 
-```
+> [!thm] Girsanov
+> Assume that $Z_t(X)$ is a martingale. We define $\tilde{B}_t=(\tilde{B}^{(1)}_t,\cdots,\tilde{B}^{(d)}_t)$ by 
+> $$
+> \tilde{B}^{(i)}_t=B^{(i)}_t-\int_{0}^{t}X^{(i)}_s{d}s,1\le i\le d
+> $$
+> For $0\le T<\infty$, $\{\tilde{B}_t,\mathcal{F}_t,0\le t\le T\}$ is d-dimensions Brownian motion on $(\Omega,\mathcal{F}_T,\tilde{\mathbb{P}}_T)$. 
 
 ^db25d3
 
 Before we proceed the proof, we denote the expectation $\tilde{\mathbb{E}}_T$ w.r.t. $\tilde{\mathbb{P}}_T$. 
-```ad-lemma
-title:Bayes's rule
-Fix $0\le T<\infty$ and assume $Z(X)$ is a martingale. If $0\le s\le t\le T$, $Y$ is an $\mathcal{F}_t$-measurable r.v. with $\tilde{\mathbb{E}}_T|Y|<\infty$, then it holds 
-$$
-\tilde{\mathbb{E}}_T[Y|\mathcal{F}_s]=\frac{1}{Z_s(X)}\mathbb{E}[YZ_t(X)|\mathcal{F}_s]
-$$
-```
+> [!lemma] Bayes's rule
+> Fix $0\le T<\infty$ and assume $Z(X)$ is a martingale. If $0\le s\le t\le T$, $Y$ is an $\mathcal{F}_t$-measurable r.v. with $\tilde{\mathbb{E}}_T|Y|<\infty$, then it holds 
+> $$
+> \tilde{\mathbb{E}}_T[Y|\mathcal{F}_s]=\frac{1}{Z_s(X)}\mathbb{E}[YZ_t(X)|\mathcal{F}_s]
+> $$
 
 ^4b101d
 
@@ -59,26 +51,24 @@ $$
 \end{align}
 $$
 **QED**
-```ad-def
-title:Local martingale on $[0,T]$
-We denote by 
-$$
-\mathcal{M}^{c,loc}[0,T]=\{M_t\in\mathcal{M}^{c,loc}:0\le t\le T\}\mbox{ on }(\Omega,\mathcal{F}_T,\mathbb{P})
-$$
-with $\mathbb{P}[M_0=0]=1$. And we define the $\tilde{M}^{c,loc}[0,T]$ similarly with probability measure $\tilde{P}_T$. 
-```
+> [!def] Local martingale on $[0,T]$
+> We denote by 
+> $$
+> \mathcal{M}^{c,loc}[0,T]=\{M_t\in\mathcal{M}^{c,loc}:0\le t\le T\}\mbox{ on }(\Omega,\mathcal{F}_T,\mathbb{P})
+> $$
+> with $\mathbb{P}[M_0=0]=1$. And we define the $\tilde{M}^{c,loc}[0,T]$ similarly with probability measure $\tilde{P}_T$. 
 
-```ad-proposition
-Fix $0\le T<\infty$ and assume $Z(X)$ is a martingale. If $M\in\mathcal{M}^{c,loc}[0,T]$, then the process 
-$$
-\tilde{M}_t=M_t-\sum_{i=1}^{d}\int_{0}^{t}X^{(i)}_s{d}\langle M,B^{(i)}\rangle_s\in\tilde{\mathcal{M}}^{c,loc}_T
-$$
-If $N\in\mathcal{M}^{c,loc}[0,T]$ and 
-$$
-\tilde{N}_t=N_t-\sum_{i=1}^{d}\int_{0}^{t}X^{(i)}_s{d}\langle N,B^{(i)}\rangle_s
-$$
-then $\langle\tilde{M},\tilde{N}\rangle_t=\langle M,N\rangle_t$ where the cross-variations are computed under the appropriate measures.
-```
+> [!proposition]
+> Fix $0\le T<\infty$ and assume $Z(X)$ is a martingale. If $M\in\mathcal{M}^{c,loc}[0,T]$, then the process 
+> $$
+> \tilde{M}_t=M_t-\sum_{i=1}^{d}\int_{0}^{t}X^{(i)}_s{d}\langle M,B^{(i)}\rangle_s\in\tilde{\mathcal{M}}^{c,loc}_T
+> $$
+> If $N\in\mathcal{M}^{c,loc}[0,T]$ and 
+> $$
+> \tilde{N}_t=N_t-\sum_{i=1}^{d}\int_{0}^{t}X^{(i)}_s{d}\langle N,B^{(i)}\rangle_s
+> $$
+> then $\langle\tilde{M},\tilde{N}\rangle_t=\langle M,N\rangle_t$ where the cross-variations are computed under the appropriate measures.
+
 **Proof**
 We assume that all is bounded such as $M,N$, quadratic variable and $Z(X)$ e.t.c. The general case can be localized. We W.T.S. $\tilde{\mathbb{E}}_T[\tilde{M}_t|\mathcal{F}_s]=\tilde{M}_s$. By [[#^4b101d|Bayes's rule]], 
 $$
@@ -116,21 +106,19 @@ $$
 \langle\tilde{M},\tilde{N}\rangle_t=\langle M,N\rangle_t\Longrightarrow\langle \tilde{B}^{(i)},\tilde{B}^{(j)}\rangle_t=\langle B^{(i)},B^{(j)}\rangle_t=\delta_{ij}t
 $$
 By [[The Change-of-Variable Formula#^b655c5|martingale charateristic of Brownian motion]], $\tilde{B}_t$ is a Brownian motion. 
-```ad-warning
-For another point, $M_t$ is a continuous semimartingale. 
-$$
-M_t=\tilde{M}_t+\int_0^tX^{(i)}_s{d}\langle M,B^{(i)}\rangle_s
-$$
-```
+> [!warning]
+> For another point, $M_t$ is a continuous semimartingale. 
+> $$
+> M_t=\tilde{M}_t+\int_0^tX^{(i)}_s{d}\langle M,B^{(i)}\rangle_s
+> $$
 
-```ad-proposition
-title:Converse
-Under the assumption of Girsanov theorem, every $\tilde{M}_t\in\tilde{\mathcal{M}}^{c,loc}[0,T]$ has the representation 
-$$
-\tilde{M}_t=M_t-\sum_{i=1}^{d}\int_{0}^{t}X^{(i)}_s{d}\langle M,B^{(i)}\rangle_s
-$$
-for some $M_t\in\mathcal{M}^{c,loc}[0,T]$.
-```
+> [!proposition] Converse
+> Under the assumption of Girsanov theorem, every $\tilde{M}_t\in\tilde{\mathcal{M}}^{c,loc}[0,T]$ has the representation 
+> $$
+> \tilde{M}_t=M_t-\sum_{i=1}^{d}\int_{0}^{t}X^{(i)}_s{d}\langle M,B^{(i)}\rangle_s
+> $$
+> for some $M_t\in\mathcal{M}^{c,loc}[0,T]$.
+
 **Proof**
 By [[#^4b101d|Bates's rule]], we have 
 $$
@@ -148,34 +136,31 @@ Note that LHS is in $\tilde{\mathcal{M}}^{c,loc}[0,T]$ and RHS is of bounded var
 **QED**
 # The Novikov Condition
 In order to use the Girsanov theorem effectively, we should find condition to infer $Z(X)$ is a martingale. 
-```ad-def
-title:The stopped process 
-Since $Z_t(X)$ is a local martingale, we define the stopping time
-$$
-T_n=\inf\left\{t\ge0:\max_{1\le i\le d}\int_{0}^{t}(Z_s(X)X^{(i)}_s)^2{d}s=n\right\}
-$$
-and process $Z^{(n)}(X)\triangleq Z_{t\wedge T_n}(X)$ are martingale. 
-```
+> [!def] The stopped process 
+> Since $Z_t(X)$ is a local martingale, we define the stopping time
+> $$
+> T_n=\inf\left\{t\ge0:\max_{1\le i\le d}\int_{0}^{t}(Z_s(X)X^{(i)}_s)^2{d}s=n\right\}
+> $$
+> and process $Z^{(n)}(X)\triangleq Z_{t\wedge T_n}(X)$ are martingale. 
 
-```ad-warning
-Since $Z^{(n)}$ is a martingale, then 
-$$
-\mathbb{E}[Z_{t\wedge T_n}|\mathcal{F}_s]=Z_{s\wedge T_n}
-$$
-By Fatou's lemma, 
-$$
-\mathbb{E}[Z_t|\mathcal{F}_s]\le \varliminf_{n\to\infty}\mathbb{E}[Z_{t\wedge T_n}|\mathcal{F}_s]=Z_s
-$$
-Hence, $Z_t$ is a supermartingale. $Z_t$ [[Continuous-Time Martingales#^77be8e|becomes a martingale]] if $\mathbb{E}[Z_t]=1$. 
-```
+> [!warning]
+> Since $Z^{(n)}$ is a martingale, then 
+> $$
+> \mathbb{E}[Z_{t\wedge T_n}|\mathcal{F}_s]=Z_{s\wedge T_n}
+> $$
+> By Fatou's lemma, 
+> $$
+> \mathbb{E}[Z_t|\mathcal{F}_s]\le \varliminf_{n\to\infty}\mathbb{E}[Z_{t\wedge T_n}|\mathcal{F}_s]=Z_s
+> $$
+> Hence, $Z_t$ is a supermartingale. $Z_t$ [[Continuous-Time Martingales#^77be8e|becomes a martingale]] if $\mathbb{E}[Z_t]=1$. 
 
-```ad-proposition
-Let $M_t\in\mathcal{M}^{c,loc}$ and define
-$$
-Z_t=\exp\left(M_t-\frac{1}{2}\langle M\rangle_t\right)
-$$
-If $\mathbb{E}[\exp\left(\frac{1}{2}\langle M\rangle_t\right)]<\infty$, then $\mathbb{E}Z_t=1$
-```
+> [!proposition]
+> Let $M_t\in\mathcal{M}^{c,loc}$ and define
+> $$
+> Z_t=\exp\left(M_t-\frac{1}{2}\langle M\rangle_t\right)
+> $$
+> If $\mathbb{E}[\exp\left(\frac{1}{2}\langle M\rangle_t\right)]<\infty$, then $\mathbb{E}Z_t=1$
+
 **Proof**
 Let $T(s)=\inf\{t\ge0:\langle M\rangle_t>s\}$, by [[Representations of Continuous Martingales in Terms of Brownian Motion#^19597e|Time-change of martingale]], $B_s$ is a Brownian motion with filtration $\mathcal{G}_s$. For $b<0$, we define the stopping time 
 $$
@@ -199,32 +184,29 @@ $$
 $$
 For the first item, since $\mathbb{E}\left[\mathbb{1}_{\{S_b\le \langle M\rangle_t\}}\exp\left(b+\frac{1}{2}S_b\right)\right]\le e^{b}\mathbb{E}\left[\exp\left(\frac{1}{2}\langle M\rangle_t\right)\right]$, as $b\downarrow-\infty$, the first item $\to0$. For the second item, as $b\downarrow-\infty$, $\mathbb{E}\left[\mathbb{1}_{\{\langle M\rangle_t<S_b\}}\exp\left(M_t-\frac{1}{2}\langle M\rangle_t\right)\right]\to\mathbb{E}Z_t$. Then let $b\downarrow-\infty$, $\mathbb{E}Z_t=1$. 
 **QED**
-```ad-proposition
-title:Novikov condition
-Let $B_t=(B^{(1)},\cdots,B^{(d)})$ be a d-dimensional Brownian motion, and $X_=(X^{(1)},\cdots,X^{(d)}_t)$ be a measurable, adapted process satisfying
-$$
-\mathbb{P}\left[\int_{0}^{t}(X^{(i)}_s)^2{d}s<\infty\right]=1
-$$
-If 
-$$
-\mathbb{E}\left[\exp\left(\frac{1}{2}\int_{0}^{T}\|X_s\|^2\right){d}s\right]<\infty
-$$
-Then $\mathbb{E}Z_t=1$ and thus $Z_t$ is a martingale. 
-```
+> [!proposition] Novikov condition
+> Let $B_t=(B^{(1)},\cdots,B^{(d)})$ be a d-dimensional Brownian motion, and $X_=(X^{(1)},\cdots,X^{(d)}_t)$ be a measurable, adapted process satisfying
+> $$
+> \mathbb{P}\left[\int_{0}^{t}(X^{(i)}_s)^2{d}s<\infty\right]=1
+> $$
+> If 
+> $$
+> \mathbb{E}\left[\exp\left(\frac{1}{2}\int_{0}^{T}\|X_s\|^2\right){d}s\right]<\infty
+> $$
+> Then $\mathbb{E}Z_t=1$ and thus $Z_t$ is a martingale. 
 
 ^01516a
 
-```ad-proposition
-We can replace the condition 
-$$
-\mathbb{E}\left[\exp\left(\frac{1}{2}\int_{0}^{T}\|X_s\|^2\right){d}s\right]<\infty
-$$
-with $\exists\{t_n\}\uparrow\infty$ s.t. 
-$$
-\mathbb{E}\left[\exp\left(\frac{1}{2}\int_{t_{n-1}}^{t_n}\|X_s\|^2{d}s\right)\right]<\infty,\forall n\ge1
-$$
-the conclusion still holds. 
-```
+> [!proposition]
+> We can replace the condition 
+> $$
+> \mathbb{E}\left[\exp\left(\frac{1}{2}\int_{0}^{T}\|X_s\|^2\right){d}s\right]<\infty
+> $$
+> with $\exists\{t_n\}\uparrow\infty$ s.t. 
+> $$
+> \mathbb{E}\left[\exp\left(\frac{1}{2}\int_{t_{n-1}}^{t_n}\|X_s\|^2{d}s\right)\right]<\infty,\forall n\ge1
+> $$
+> the conclusion still holds. 
 
 ^51fd92
 
@@ -239,30 +221,27 @@ $$
 $$
 Since $\mathbb{E}[Z_{t}(X)]$ is nonincreasing in $t$ and $t_n\uparrow\infty$, let $n\to\infty$, we obtain the conclusion. 
 **QED**
-```ad-def
-Let 
-$$
-C[0,\infty)^d=\{x:[0,\infty)\to\mathbb{R}|x\mbox{ is continuous}\}
-$$
-For $0\le t<\infty$, $\mathcal{G}_t=\sigma(x(s),0\le s\le t)$ and $\mathcal{G}\triangleq\mathcal{G}_\infty$. 
-$\mu:[0,\infty)\times C[0,\infty)^d\to\mathbb{R}$ is called progressively measurable functional on $C[0,\infty)^d$ if for fixed $t\in[0,\infty)$, $\mu\mid_{[0,t]\times C[0,\infty)^d}$ is $\mathcal{B}([0,t])\otimes\mathcal{G}_t/\mathcal{B}(\mathbb{R})$-measurable. 
-```
+> [!def]
+> Let 
+> $$
+> C[0,\infty)^d=\{x:[0,\infty)\to\mathbb{R}|x\mbox{ is continuous}\}
+> $$
+> For $0\le t<\infty$, $\mathcal{G}_t=\sigma(x(s),0\le s\le t)$ and $\mathcal{G}\triangleq\mathcal{G}_\infty$. 
+> $\mu:[0,\infty)\times C[0,\infty)^d\to\mathbb{R}$ is called progressively measurable functional on $C[0,\infty)^d$ if for fixed $t\in[0,\infty)$, $\mu\mid_{[0,t]\times C[0,\infty)^d}$ is $\mathcal{B}([0,t])\otimes\mathcal{G}_t/\mathcal{B}(\mathbb{R})$-measurable. 
 
-```ad-def
-Let $\mu=(\mu^{(1)},\cdots,\mu^{(d)})$ be a progressively measurable functionals vector on $C[0,\infty)^d$ and $W=(W^{(1)},\cdots,W^{(d)})$ is a d-dimensional Brownian motion on $(\Omega,\mathcal{F},\mathbb{P})$, we define the progressively measurable process 
-$$
-X_t^{(i)}(\omega)=\mu(t,W_t(\omega)),1\le i\le d
-$$
-w.r.t. $\{\mathcal{F}_t\}$. 
-```
+> [!def]
+> Let $\mu=(\mu^{(1)},\cdots,\mu^{(d)})$ be a progressively measurable functionals vector on $C[0,\infty)^d$ and $W=(W^{(1)},\cdots,W^{(d)})$ is a d-dimensional Brownian motion on $(\Omega,\mathcal{F},\mathbb{P})$, we define the progressively measurable process 
+> $$
+> X_t^{(i)}(\omega)=\mu(t,W_t(\omega)),1\le i\le d
+> $$
+> w.r.t. $\{\mathcal{F}_t\}$. 
 
-```ad-proposition
-Let $\mu=(\mu^{(1)},\cdots,\mu^{(d)})$ be a progressively measurable functionals vector on $C[0,\infty)^d$ satisfy, for $0\le T<\infty$ and some $K_T>0$ depending on $T$. There holds 
-$$
-\|\mu(t,x)\|\le K_T(1+x^*(t)),0\le t\le T\tag{$*1$}
-$$
-where $x^*(t)=\max_{0\le s\le t}\|x(s)\|$. Then with $X_t(\omega)$ defined by, $Z(X)$ is a martingale. 
-```
+> [!proposition]
+> Let $\mu=(\mu^{(1)},\cdots,\mu^{(d)})$ be a progressively measurable functionals vector on $C[0,\infty)^d$ satisfy, for $0\le T<\infty$ and some $K_T>0$ depending on $T$. There holds 
+> $$
+> \|\mu(t,x)\|\le K_T(1+x^*(t)),0\le t\le T\tag{$*1$}
+> $$
+> where $x^*(t)=\max_{0\le s\le t}\|x(s)\|$. Then with $X_t(\omega)$ defined by, $Z(X)$ is a martingale. 
 
 ^884ad1
 
@@ -279,42 +258,37 @@ We take $t_n-t_{n-1}\le\frac{1}{TK^2_T}$ for $n\ge1$. Then we obtain the [[#^51f
 **QED**
 # Application: Brownian Motion with Drift
 As the application of the Girsanov theorem, we explore an interesting example: the distribution of [[Computations Based on Passage Times#^405d7c|passage time]] for Brownian motion with drift. 
-```ad-def
-title:Brownian motion with drift
-The process $\tilde{W}_t=W_t-\mu t$ where $\mu\ne 0$ is a real number is a Brownian motion under the probability measure $\mathbb{P}^{(\mu)}$ 
-$$
-\mathbb{P}^{(\mu)}(A)=\mathbb{E}(\mathbb{1}_AZ_t),A\in\mathcal{F}^W_t
-$$
-where $Z_t=\exp\left(\mu W_t-\frac{1}{2}\mu^2t\right)$. The process $W_t\triangleq\mu t+\tilde{W}_t$ is a Brownian motion with drift $\mu$ under the measure $\mathbb{P}^{(\mu)}$. 
-```
+> [!def] Brownian motion with drift
+> The process $\tilde{W}_t=W_t-\mu t$ where $\mu\ne 0$ is a real number is a Brownian motion under the probability measure $\mathbb{P}^{(\mu)}$ 
+> $$
+> \mathbb{P}^{(\mu)}(A)=\mathbb{E}(\mathbb{1}_AZ_t),A\in\mathcal{F}^W_t
+> $$
+> where $Z_t=\exp\left(\mu W_t-\frac{1}{2}\mu^2t\right)$. The process $W_t\triangleq\mu t+\tilde{W}_t$ is a Brownian motion with drift $\mu$ under the measure $\mathbb{P}^{(\mu)}$. 
 
-```ad-note
-title:Distributions of the passage time under $\mathbb{P}^{(\mu)}$
-Recall [[Stopping Times#^4a9887|cap of two filtration is the min of stopping time]], $\{T_b\le t\}\in\mathcal{F}_{T_b}\cap\mathcal{F}_t=\mathcal{F}_{T_b\wedge t}$. On $\{T_b\le t\}$, $Z_{t\wedge T_b}=Z_{T_b}$. By [[Continuous-Time Martingales#^1b13f7|optional sampling theorem]], 
-$$
-\begin{align}
-\mathbb{P}^{(\mu)}(T_b\le t)&=\mathbb{E}\left[\mathbb{1}_{\{T_b\le t\}}Z_t\right]=\mathbb{E}\left[\mathbb{1}_{\{T_b\le t\}}\mathbb{E}(Z_t|\mathcal{F}^W_{t\wedge T_b})\right]\\
-&=\mathbb{E}[Z_{t\wedge T_b}\mathbb{1}_{\{T_b\le t\}}]=\mathbb{E}[Z_{T_b}\mathbb{1}_{\{T_b\le t\}}]\\
-&=\mathbb{E}\left[\mathbb{1}_{\{T_b\le t\}}\exp\left(\mu b-\frac{1}{2}\mu^2T_b\right)\right]\\
-&=\int_{0}^{t}\exp\left(\mu b-\frac{1}{2}\mu^2s\right)\mathbb{P}[T_b\in ds]\\
-&=\int_{0}^{t}\frac{|b|}{\sqrt{2\pi s^3}}\exp\left(\mu b-\frac{1}{2}\mu^2s\right)\exp\left(-\frac{b^2}{2s}\right)ds
-\end{align}
-$$
-Then we obtain $\mathbb{P}^{(\mu)}(T_b\in dt)=\frac{|b|}{\sqrt{2\pi t^3}}\exp\left(-\frac{(b-\mu t)^2}{2t}\right)$. We compute
-$$
-\begin{align}
-\mathbb{P}^{(\mu)}(T_b<\infty)&=\int_{0}^{\infty}\exp\left(\mu b-\frac{1}{2}\mu^2t\right)\mathbb{P}[T_b\in dt]\\
-&=e^{\mu b}\int_{0}^{\infty}e^{-\frac{1}{2}\mu^2t}\mathbb{P}[T_b\in dt]=e^{\mu b}\mathbb{E}e^{-\frac{1}{2}\mu^2T_b}\tag{MGF}\\
-&=e^{\mu b-|\mu b|}
-\end{align}
-$$
-$\mathbb{P}(T_b<\infty)=1\Longleftrightarrow\mu$ and $b$ have the same sign. 
-```
+> [!note] Distributions of the passage time under $\mathbb{P}^{(\mu)}$
+> Recall [[Stopping Times#^4a9887|cap of two filtration is the min of stopping time]], $\{T_b\le t\}\in\mathcal{F}_{T_b}\cap\mathcal{F}_t=\mathcal{F}_{T_b\wedge t}$. On $\{T_b\le t\}$, $Z_{t\wedge T_b}=Z_{T_b}$. By [[Continuous-Time Martingales#^1b13f7|optional sampling theorem]], 
+> $$
+> \begin{align}
+> \mathbb{P}^{(\mu)}(T_b\le t)&=\mathbb{E}\left[\mathbb{1}_{\{T_b\le t\}}Z_t\right]=\mathbb{E}\left[\mathbb{1}_{\{T_b\le t\}}\mathbb{E}(Z_t|\mathcal{F}^W_{t\wedge T_b})\right]\\
+> &=\mathbb{E}[Z_{t\wedge T_b}\mathbb{1}_{\{T_b\le t\}}]=\mathbb{E}[Z_{T_b}\mathbb{1}_{\{T_b\le t\}}]\\
+> &=\mathbb{E}\left[\mathbb{1}_{\{T_b\le t\}}\exp\left(\mu b-\frac{1}{2}\mu^2T_b\right)\right]\\
+> &=\int_{0}^{t}\exp\left(\mu b-\frac{1}{2}\mu^2s\right)\mathbb{P}[T_b\in ds]\\
+> &=\int_{0}^{t}\frac{|b|}{\sqrt{2\pi s^3}}\exp\left(\mu b-\frac{1}{2}\mu^2s\right)\exp\left(-\frac{b^2}{2s}\right)ds
+> \end{align}
+> $$
+> Then we obtain $\mathbb{P}^{(\mu)}(T_b\in dt)=\frac{|b|}{\sqrt{2\pi t^3}}\exp\left(-\frac{(b-\mu t)^2}{2t}\right)$. We compute
+> $$
+> \begin{align}
+> \mathbb{P}^{(\mu)}(T_b<\infty)&=\int_{0}^{\infty}\exp\left(\mu b-\frac{1}{2}\mu^2t\right)\mathbb{P}[T_b\in dt]\\
+> &=e^{\mu b}\int_{0}^{\infty}e^{-\frac{1}{2}\mu^2t}\mathbb{P}[T_b\in dt]=e^{\mu b}\mathbb{E}e^{-\frac{1}{2}\mu^2T_b}\tag{MGF}\\
+> &=e^{\mu b-|\mu b|}
+> \end{align}
+> $$
+> $\mathbb{P}(T_b<\infty)=1\Longleftrightarrow\mu$ and $b$ have the same sign. 
 
-```ad-proposition
-title:Wald identity
-Let $T$ be a stopping time of the filtration $\{\mathscr{F}_t^W\}$ with $\mathbb{P}[T < \infty] = 1$. A necessary and sufficient condition for the validity of the Wald identity $$ \mathbb{E}\left[\exp\left(\mu W_T - \frac{1}{2}\mu^2 T\right)\right] = 1, $$ where $\mu$ is a given real number, is that $$ \mathbb{P}^{(\mu)}[T < \infty] = 1. $$ In particular, if $b \in \mathbb{R}$ and $\mu b < 0$, then this condition holds for the stopping time $$ S_b \triangleq \inf\{t \ge 0; W_t - \mu t = b\}. $$
-```
+> [!proposition] Wald identity
+> Let $T$ be a stopping time of the filtration $\{\mathscr{F}_t^W\}$ with $\mathbb{P}[T < \infty] = 1$. A necessary and sufficient condition for the validity of the Wald identity $$ \mathbb{E}\left[\exp\left(\mu W_T - \frac{1}{2}\mu^2 T\right)\right] = 1, $$ where $\mu$ is a given real number, is that $$ \mathbb{P}^{(\mu)}[T < \infty] = 1. $$ In particular, if $b \in \mathbb{R}$ and $\mu b < 0$, then this condition holds for the stopping time $$ S_b \triangleq \inf\{t \ge 0; W_t - \mu t = b\}. $$
+
 **Proof**
 We have 
 $$
@@ -325,10 +299,9 @@ $$
 \mathbb{E}[\mathbb{1}_{\{T<\infty\}}Z_T]=\mathbb{E}[Z_T]=\mathbb{E}\left[\exp\left(\mu W_T-\frac{1}{2}\mu^2T\right)\right]
 $$
 **QED**
-```ad-proposition
-title:Convolution
-Denote by $$ h(t; b, \mu) \triangleq \frac{|b|}{\sqrt{2\pi t^3}} \exp\left[-\frac{(b - \mu t)^2}{2t}\right]; \quad t > 0,\ b \neq 0,\ \mu \in \mathbb{R}, $$ the (possibly defective) density on the right-hand side of (5.12). Use Theorem 2.6.16 to show that $$ h(\ \cdot\ ; b_1 + b_2, \mu) = h(\ \cdot\ ; b_1, \mu) * h(\ \cdot\ ; b_2, \mu); \quad b_1 b_2 > 0,\ \mu \in \mathbb{R}, $$ where $*$ denotes convolution.
-```
+> [!proposition] Convolution
+> Denote by $$ h(t; b, \mu) \triangleq \frac{|b|}{\sqrt{2\pi t^3}} \exp\left[-\frac{(b - \mu t)^2}{2t}\right]; \quad t > 0,\ b \neq 0,\ \mu \in \mathbb{R}, $$ the (possibly defective) density on the right-hand side of (5.12). Use Theorem 2.6.16 to show that $$ h(\ \cdot\ ; b_1 + b_2, \mu) = h(\ \cdot\ ; b_1, \mu) * h(\ \cdot\ ; b_2, \mu); \quad b_1 b_2 > 0,\ \mu \in \mathbb{R}, $$ where $*$ denotes convolution.
+
 **Proof**
 We write $h(t;b,\mu)=e^{\mu b-\frac{1}{2}\mu^2t}f_{T_b}(t)$ where $f_{T_b}$ is the density of $T_b$. For case of $\mu=0$, $h(t;b,0)=f_{T_b}(t)$, **we claim: $h(\cdot;b_1,0)*h(\cdot;b_2,0)=f_{T_{b_1}}*f_{T_{b_2}}(t)=f_{T_{b_1+b_2}}(t)$.** If the claim holds, then we have 
 $$
@@ -348,9 +321,9 @@ f_{T_{b_1}+T_{b_2}}(t)=f_{T_{b_1}}*f_{t_{b_2}}(t)
 $$
 Hence, it proves the proposition. 
 **QED**
-```ad-proposition
-With $\mu > 0$ and $W_* \triangleq \inf_{t>0} W_t$, under $\mathbb{P}^{(\mu)}$ the random variable $-W_*$ is exponentially distributed with parameter $2\mu$, i.e., $$ \mathbb{P}^{(\mu)}[-W_* \in db] = 2\mu e^{-2\mu b} db, \quad b > 0. $$
-```
+> [!proposition]
+> With $\mu > 0$ and $W_* \triangleq \inf_{t>0} W_t$, under $\mathbb{P}^{(\mu)}$ the random variable $-W_*$ is exponentially distributed with parameter $2\mu$, i.e., $$ \mathbb{P}^{(\mu)}[-W_* \in db] = 2\mu e^{-2\mu b} db, \quad b > 0. $$
+
 **Proof**
 Note that $W_t=\mu t+\tilde{W}_t\xrightarrow{a.s.}0$ as $t\to\infty$, then $\{-W_*\ge b\}=\{W_*\le -b\}=\{T_{-b}<\infty\}$. Then we have 
 $$
@@ -358,10 +331,9 @@ $$
 $$
 Hence, $\mathbb{P}^{(\mu)}[-W_*\in b]=2\mu e^{-2\mu b}{d}b$. 
 **QED**
-```ad-proposition
-title:MGF under $\mathbb{P}^{(\mu)}$
-Show that $$ \mathbb{E}^{(\mu)} e^{-\alpha T_b} = \exp\left(\mu b - |b|\sqrt{\mu^2 + 2\alpha}\right), \quad \alpha > 0. $$
-```
+> [!proposition] MGF under $\mathbb{P}^{(\mu)}$
+> Show that $$ \mathbb{E}^{(\mu)} e^{-\alpha T_b} = \exp\left(\mu b - |b|\sqrt{\mu^2 + 2\alpha}\right), \quad \alpha > 0. $$
+
 **Proof**
 We have 
 $$
@@ -372,14 +344,14 @@ $$
 \end{align}
 $$
 **QED**
-```ad-proposition
-Consider, for $\nu > 0$ and $c > 1$, the stopping time of $\{\mathscr{F}_t^W\}$: 
-$$ R_c = \inf\left\{t \ge 0: \exp\left(\nu W_t - \frac{1}{2}\nu^2 t\right) = c\right\}. 
-$$ 
-Show that 
-$$ \mathbb{P}[R_c < \infty] = \frac{1}{c}, \quad \mathbb{E}^{(\nu)} R_c = \frac{2\log c}{\nu^2}.
-$$
-```
+> [!proposition]
+> Consider, for $\nu > 0$ and $c > 1$, the stopping time of $\{\mathscr{F}_t^W\}$: 
+> $$ R_c = \inf\left\{t \ge 0: \exp\left(\nu W_t - \frac{1}{2}\nu^2 t\right) = c\right\}. 
+> $$ 
+> Show that 
+> $$ \mathbb{P}[R_c < \infty] = \frac{1}{c}, \quad \mathbb{E}^{(\nu)} R_c = \frac{2\log c}{\nu^2}.
+> $$
+
 **Proof**
 Consider the exponential martingale $Z_t=\exp\left(\nu W_t - \frac{1}{2}\nu^2 t\right)$, by [[Continuous-Time Martingales#^1b13f7|optional sampling thoerem]], we have 
 $$
@@ -420,24 +392,20 @@ $$
 
 ---
 # Exercises
-```ad-question
-Assume the hypotheses of Theorem 5.1 and suppose $Y = \{Y_t, \mathscr{F}_t; 0 \le t < \infty\}$ is a measurable adapted process satisfying $\mathbb{P}\left[\int_0^T Y_t^2 dt < \infty\right] = 1$; $0 \le T < \infty$. Under $\mathbb{P}$ we may define the Itô integral $\int_0^t Y_s dW_s^{(i)}$, whereas under $\widetilde{\mathbb{P}}_T$ we may define the Itô integral $\int_0^t Y_s d\widetilde{W}_s^{(i)}$, $0 \le t \le T$. Show that for $1 \le i \le d$, we have 
-$$\int_0^t Y_s d\widetilde{W}_s^{(i)} = \int_0^t Y_s dW_s^{(i)} - \int_0^t Y_s X_s^{(i)} ds; \quad 0 \le t \le T, \quad \text{a.s. } \mathbb{P} \text{ and } \widetilde{\mathbb{P}}_T$$
-```
+> [!question]
+> Assume the hypotheses of Theorem 5.1 and suppose $Y = \{Y_t, \mathscr{F}_t; 0 \le t < \infty\}$ is a measurable adapted process satisfying $\mathbb{P}\left[\int_0^T Y_t^2 dt < \infty\right] = 1$; $0 \le T < \infty$. Under $\mathbb{P}$ we may define the Itô integral $\int_0^t Y_s dW_s^{(i)}$, whereas under $\widetilde{\mathbb{P}}_T$ we may define the Itô integral $\int_0^t Y_s d\widetilde{W}_s^{(i)}$, $0 \le t \le T$. Show that for $1 \le i \le d$, we have 
+> $$\int_0^t Y_s d\widetilde{W}_s^{(i)} = \int_0^t Y_s dW_s^{(i)} - \int_0^t Y_s X_s^{(i)} ds; \quad 0 \le t \le T, \quad \text{a.s. } \mathbb{P} \text{ and } \widetilde{\mathbb{P}}_T$$
 
 ^6b9f7f
 
-```ad-question
-With $W = \{W_t, \mathscr{F}_t; 0 \le t \le 1\}$ a Brownian motion, we define $$ T = \inf\{0 \le t \le 1; t + W_t^2 = 1\}, $$ $$ X_t = \begin{cases} -\dfrac{2}{(1-t)^2} W_t \mathbf{1}_{\{t \le T\}}; & 0 \le t < 1, \\[6pt] 0; & t = 1. \end{cases} $$
-1. Prove that $\mathbb{P}[T < 1] = 1$, and therefore $\int_0^1 X_t^2 dt < \infty$ a.s. 
-2. Apply Itô’s rule to the process $\{(W_t/(1-t))^2; 0 \le t < 1\}$ to conclude that $$ \int_0^1 X_t dW_t - \frac{1}{2} \int_0^1 X_t^2 dt = -1 - 2 \int_0^T \left[ \frac{1}{(1-t)^4} - \frac{1}{(1-t)^3} \right] W_t^2 dt \le -1. $$
-3. The exponential supermartingale $\{Z_t(X), \mathscr{F}_t; 0 \le t \le 1\}$ is not a martingale; however, for each $n \ge 1$ and $\sigma_n = 1 - (1/\sqrt{n})$, $\{Z_{t \wedge \sigma_n}(X), \mathscr{F}_t; 0 \le t \le 1\}$ is a martingale.
-```
+> [!question]
+> With $W = \{W_t, \mathscr{F}_t; 0 \le t \le 1\}$ a Brownian motion, we define $$ T = \inf\{0 \le t \le 1; t + W_t^2 = 1\}, $$ $$ X_t = \begin{cases} -\dfrac{2}{(1-t)^2} W_t \mathbf{1}_{\{t \le T\}}; & 0 \le t < 1, \\[6pt] 0; & t = 1. \end{cases} $$
+> 1. Prove that $\mathbb{P}[T < 1] = 1$, and therefore $\int_0^1 X_t^2 dt < \infty$ a.s. 
+> 2. Apply Itô’s rule to the process $\{(W_t/(1-t))^2; 0 \le t < 1\}$ to conclude that $$ \int_0^1 X_t dW_t - \frac{1}{2} \int_0^1 X_t^2 dt = -1 - 2 \int_0^T \left[ \frac{1}{(1-t)^4} - \frac{1}{(1-t)^3} \right] W_t^2 dt \le -1. $$
+> 3. The exponential supermartingale $\{Z_t(X), \mathscr{F}_t; 0 \le t \le 1\}$ is not a martingale; however, for each $n \ge 1$ and $\sigma_n = 1 - (1/\sqrt{n})$, $\{Z_{t \wedge \sigma_n}(X), \mathscr{F}_t; 0 \le t \le 1\}$ is a martingale.
 
-```ad-question
-Let $W = \{W_t, \mathscr{F}_t; 0 \le t < \infty\}$ be a Brownian motion on $(\Omega, \mathscr{F}, \mathbb{P})$ with $\mathbb{P}[W_0 = 0] = 1$, and assume that $\{\mathscr{F}_t\}$ is the augmentation under $\mathbb{P}$ of the Brownian filtration $\{\mathscr{F}_t^W\}$. Suppose that, for each $0 \le T < \infty$, there is a probability measure $\widetilde{\mathbb{P}}_T$ on $\mathscr{F}_T$ which is mutually absolutely continuous with respect to $\mathbb{P}$, and that the family of probability measures $\{\widetilde{\mathbb{P}}_T; 0 \le T < \infty\}$ satisfies the consistency condition (5.5). Show that there exists a measurable, adapted process $X = \{X_t, \mathscr{F}_t; 0 \le t < \infty\}$ satisfying (5.1), such that $Z(X)$ defined by (5.2) is a martingale and (5.4) holds for $0 \le T < \infty$. (Hint: Apply Problem 4.16 to the Radon-Nikodým derivative process $d\widetilde{\mathbb{P}}_t/d\mathbb{P}$.)
-```
+> [!question]
+> Let $W = \{W_t, \mathscr{F}_t; 0 \le t < \infty\}$ be a Brownian motion on $(\Omega, \mathscr{F}, \mathbb{P})$ with $\mathbb{P}[W_0 = 0] = 1$, and assume that $\{\mathscr{F}_t\}$ is the augmentation under $\mathbb{P}$ of the Brownian filtration $\{\mathscr{F}_t^W\}$. Suppose that, for each $0 \le T < \infty$, there is a probability measure $\widetilde{\mathbb{P}}_T$ on $\mathscr{F}_T$ which is mutually absolutely continuous with respect to $\mathbb{P}$, and that the family of probability measures $\{\widetilde{\mathbb{P}}_T; 0 \le T < \infty\}$ satisfies the consistency condition (5.5). Show that there exists a measurable, adapted process $X = \{X_t, \mathscr{F}_t; 0 \le t < \infty\}$ satisfying (5.1), such that $Z(X)$ defined by (5.2) is a martingale and (5.4) holds for $0 \le T < \infty$. (Hint: Apply Problem 4.16 to the Radon-Nikodým derivative process $d\widetilde{\mathbb{P}}_t/d\mathbb{P}$.)
 
-```ad-question
-Suppose that $\{L_t, \mathscr{F}_t; 0 \le t < \infty\} \in \mathscr{M}^{c,\text{loc}}$ is such that $Z_t \triangleq \exp\left[L_t - \frac{1}{2}\langle L\rangle_t\right]$ is a martingale under $\mathbb{P}$, and define the new probability measure $\widetilde{\mathbb{P}}_T(A) \triangleq \mathbb{E}(\mathbf{1}_A Z_T); A \in \mathscr{F}_T$. Establish the following generalization of Proposition 5.4 and of the Girsanov theorem: if $M \in \mathscr{M}^{c,\text{loc}}$, then $$ \widetilde{M}_t \triangleq M_t - \langle L, M\rangle_t = M_t - \int_0^t \frac{1}{Z_s} d\langle Z, M\rangle_s, \quad \mathscr{F}_t; \ 0 \le t \le T $$ is in $\widetilde{\mathscr{M}}^{c,\text{loc}}$. (Hint: Imitate the proof of Proposition 5.4.)
-```
+> [!question]
+> Suppose that $\{L_t, \mathscr{F}_t; 0 \le t < \infty\} \in \mathscr{M}^{c,\text{loc}}$ is such that $Z_t \triangleq \exp\left[L_t - \frac{1}{2}\langle L\rangle_t\right]$ is a martingale under $\mathbb{P}$, and define the new probability measure $\widetilde{\mathbb{P}}_T(A) \triangleq \mathbb{E}(\mathbf{1}_A Z_T); A \in \mathscr{F}_T$. Establish the following generalization of Proposition 5.4 and of the Girsanov theorem: if $M \in \mathscr{M}^{c,\text{loc}}$, then $$ \widetilde{M}_t \triangleq M_t - \langle L, M\rangle_t = M_t - \int_0^t \frac{1}{Z_s} d\langle Z, M\rangle_s, \quad \mathscr{F}_t; \ 0 \le t \le T $$ is in $\widetilde{\mathscr{M}}^{c,\text{loc}}$. (Hint: Imitate the proof of Proposition 5.4.)

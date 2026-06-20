@@ -1,28 +1,23 @@
 # Elementary Properties
-```ad-def
-title:Guassian vector 
-An $\mathbb{R}^d$ valued stochastic process $X_t$ is called Guassian, if for $k\ge 1$ and real number $0\le t_1<t_2<\cdots<t_k<\infty$, vector $(X_{t_1},\cdots,X_{t_k})\sim N_k$. 
-```
 
-```ad-def
-title:Stationary
-The vector $(X_{t_1+t},\cdots,X_{t_k+t})$ is independent of $t$, we call it is stationary. 
-```
+> [!def] Guassian vector 
+> An $\mathbb{R}^d$ valued stochastic process $X_t$ is called Guassian, if for $k\ge 1$ and real number $0\le t_1<t_2<\cdots<t_k<\infty$, vector $(X_{t_1},\cdots,X_{t_k})\sim N_k$. 
 
-```ad-def
-title:Covariance matrix
-Denote expectation vector $m(t)=\mathbb{E}(X_t)$ adn its covariance matrix 
-$$
-\gamma(s,t)=\mathbb{E}\left[(X_t-m(t))(X_s-m(s))^\top\right],s,t\ge0
-$$
-```
+> [!def] Stationary
+> The vector $(X_{t_1+t},\cdots,X_{t_k+t})$ is independent of $t$, we call it is stationary. 
 
-```ad-proposition
-One-dimensional Brownian motion is a zero-mean Guassian vector and its covariance function is 
-$$
-\gamma(s,t)=s\wedge t,s,t\ge0
-$$
-```
+> [!def] Covariance matrix
+> Denote expectation vector $m(t)=\mathbb{E}(X_t)$ adn its covariance matrix 
+> $$
+> \gamma(s,t)=\mathbb{E}\left[(X_t-m(t))(X_s-m(s))^\top\right],s,t\ge0
+> $$
+
+> [!proposition]
+> One-dimensional Brownian motion is a zero-mean Guassian vector and its covariance function is 
+> $$
+> \gamma(s,t)=s\wedge t,s,t\ge0
+> $$
+
 **Proof**
 If $s<t$, We have 
 $$
@@ -30,13 +25,12 @@ $$
 $$
 If $s\ge t$, we have $\mathbb{E}[B_sB_t]=t$. Above all, $\mathbb{E}[B_tB_s]=s\wedge t$ for any $s,t\ge0$. 
 **QED**
-```ad-proposition
-title:SLLN of Brownian motion 
-Suppose $W_t$ is one-dimensional Brownian motion. Then 
-$$
-\lim_{t\to\infty}\frac{W_t}{t}=0,a.s
-$$
-```
+
+>[!proposition] SLLN of Brownian motion 
+>Suppose $W_t$ is one-dimensional Brownian motion. Then 
+>$$
+> \lim_{t\to\infty}\frac{W_t}{t}=0,a.s
+
 **Proof**
 The idea is from [[Continuous-Time Martingales#^b55ecf|SLLN of Poisson process]]. Consider $\mathbb{P}\left(\sup_{2^n\le t\le 2^{n+1}}|\frac{W_t}{t}|\ge\varepsilon\right)$, since $\varepsilon\le \sup_{2^n\le t\le 2^{n+1}}|\frac{W_t}{t}|\le \frac{1}{2^n}\sup_{2^n\le t\le 2^{n+1}}|W_t|$ and $\sup_{2^n\le t\le 2^{n+1}}|W_t|\le \sup_{0\le t\le 2^{n+1}}|W_t|$, we have 
 $$
@@ -64,30 +58,31 @@ $$
 $$
 By Borel-Contelli lemma, $\frac{W_t}{t}\xrightarrow{a.s.}0$.
 **QED**
-```ad-proposition
-When $W = \{W_t, \mathcal{F}_t; 0 \leq t < \infty\}$ is a standard Brownian motion, so are the processes obtained from the following "equivalence transformations":
 
-1. **Scaling**: $X = \{X_t, \mathcal{F}_{ct}; 0 \leq t < \infty\}$ defined for $c > 0$ by
-$$
-X_t = \frac{1}{\sqrt{c}} W_{ct}, \quad 0 \leq t < \infty.
-$$
+> [!proposition]
+> When $W = \{W_t, \mathcal{F}_t; 0 \leq t < \infty\}$ is a standard Brownian motion, so are the processes obtained from the following "equivalence transformations":
+> 
+> 1. **Scaling**: $X = \{X_t, \mathcal{F}_{ct}; 0 \leq t < \infty\}$ defined for $c > 0$ by
+> $$
+> X_t = \frac{1}{\sqrt{c}} W_{ct}, \quad 0 \leq t < \infty.
+> $$
+> 
+> 2. **Time-inversion**: $Y = \{Y_t, \mathcal{F}_t^Y; 0 \leq t < \infty\}$ defined by
+> $$
+> Y_t = 
+> \begin{cases} 
+> t W_{1/t}, & 0 < t < \infty, \\
+> 0, & t = 0.
+> \end{cases}
+> $$
+> 
+> 3. **Time-reversal**: $Z = \{Z_t, \mathcal{F}_t^Z; 0 \leq t < \infty\}$ defined for $T > 0$ by
+> $$
+> Z_t = W_T - W_{T-t}, \quad 0 \leq t \leq T.
+> $$
+> 
+> 4. **Symmetry**: $-W = \{ -W_t, \mathcal{F}_t; 0 \leq t < \infty\}$.
 
-2. **Time-inversion**: $Y = \{Y_t, \mathcal{F}_t^Y; 0 \leq t < \infty\}$ defined by
-$$
-Y_t = 
-\begin{cases} 
-t W_{1/t}, & 0 < t < \infty, \\
-0, & t = 0.
-\end{cases}
-$$
-
-3. **Time-reversal**: $Z = \{Z_t, \mathcal{F}_t^Z; 0 \leq t < \infty\}$ defined for $T > 0$ by
-$$
-Z_t = W_T - W_{T-t}, \quad 0 \leq t \leq T.
-$$
-
-4. **Symmetry**: $-W = \{ -W_t, \mathcal{F}_t; 0 \leq t < \infty\}$.
-```
 **Proof**
 It only needs to check zero-mean and covariance.
 1. We have $$\mathbb{E}(X_t)=\frac{1}{\sqrt{c}}\mathbb{E}(W_{ct})=0$$ and $$\gamma(s,t)=\mathbb{E}[X_sX_t]=\frac{1}{c}\mathbb{E}[W_{ct}W_{cs}]=\frac{1}{c}\cdot cs\wedge t=s\wedge t$$
@@ -96,36 +91,35 @@ It only needs to check zero-mean and covariance.
 4. We have $\mathbb{E}(-W_t)=0$ and $$\mathbb{E}[W_tW_s]=t\wedge s$$
 
 **QED**
-```ad-proposition
-The probability that Brownian motion returns to the origin infinitely often is one.
-```
+
+> [!proposition]
+> The probability that Brownian motion returns to the origin infinitely often is one.
 
 ^b70ddc
 
 **Proof**
 By [[Brownian Filtrations#^e7729a|Brownian motion changes sign infinitely on small interval]], then for any small $\varepsilon>0$, the set $\{\omega:,t\in[0,\varepsilon],W_t(\omega)=0,i.o.\}$ has probability 1. Consider the time-inversion $Y_t$ is also Brownian motion, $Y_t$ changes sign infinitely on $[\frac{1}{\varepsilon},\infty)$ and thus the set $\{\omega:t\in[\frac{1}{\varepsilon},\infty),Y_t(\omega)=0\}$ has probability 1. Hence, the Brownian motion returns to origin infinitely on $[0,\infty)$ has probability 1.
 **QED**
-# The Zero Set and the Quadratic Variation
-```ad-def
-title:Zero set 
-We define 
-$$
-\mathscr{Z}\triangleq\{(t,\omega)\in[0,\infty)\times\Omega:W_t(\omega)=0\}
-$$
-Fix $\omega\in\Omega$, we define 
-$$
-\mathscr{Z}_\omega=\{0\le t<\infty:W_t(\omega)=0\}
-$$
-```
 
-```ad-thm
-For $\mathbb{P}-a.s.\omega\in \Omega$, the zero set $\mathscr{Z}_\omega$
-1. has Lebesgue measure zero, 
-2. is closed and unbounded, 
-3. has an accumulation point at $t = 0$, 
-4. has no isolated point in $(0, \infty)$, 
-5. is dense in $(0,\infty)$.
-```
+# The Zero Set and the Quadratic Variation
+
+> [!def] Zero set 
+> We define 
+> $$
+> \mathscr{Z}\triangleq\{(t,\omega)\in[0,\infty)\times\Omega:W_t(\omega)=0\}
+> $$
+> Fix $\omega\in\Omega$, we define 
+> $$
+> \mathscr{Z}_\omega=\{0\le t<\infty:W_t(\omega)=0\}
+> $$
+
+> [!thm]
+> For $\mathbb{P}-a.s.\omega\in \Omega$, the zero set $\mathscr{Z}_\omega$
+> 1. has Lebesgue measure zero, 
+> 2. is closed and unbounded, 
+> 3. has an accumulation point at $t = 0$, 
+> 4. has no isolated point in $(0, \infty)$, 
+> 5. is dense in $(0,\infty)$.
 
 ^47fc7b
 
@@ -137,28 +131,27 @@ For $\mathbb{P}-a.s.\omega\in \Omega$, the zero set $\mathscr{Z}_\omega$
 5. It is obviously by 4.
 
 **QED**
-```ad-warning
-If fix $b\in\mathbb{R}$, the level set $\mathscr{Z}_\omega(b)$ has the same properties from above theorem. 
-```
 
-```ad-proposition
-title:Quadratic variation of Brownian motion
-Let $\{\Pi_n\}_{n=1}^\infty$ be a sequence of partitions of the interval $[0, t]$ with  
-$$
-\lim_{n \to \infty} \|\Pi_n\| = 0.
-$$
-Then the quadratic variations  
+> [!warning]
+> If fix $b\in\mathbb{R}$, the level set $\mathscr{Z}_\omega(b)$ has the same properties from above theorem. 
 
-$$
-V_t^{(2)}(\Pi_n) \triangleq \sum_{k=1}^{m_n} |W_{t^{(n)}_k} - W_{t^{(n)}_{k-1}}|^2
-$$
+> [!proposition] Quadratic variation of Brownian motion
+> Let $\{\Pi_n\}_{n=1}^\infty$ be a sequence of partitions of the interval $[0, t]$ with  
+> $$
+> \lim_{n \to \infty} \|\Pi_n\| = 0.
+> $$
+> Then the quadratic variations  
+> 
+> $$
+> V_t^{(2)}(\Pi_n) \triangleq \sum_{k=1}^{m_n} |W_{t^{(n)}_k} - W_{t^{(n)}_{k-1}}|^2
+> $$
+> 
+> of the Brownian motion $W$ over these partitions converge to $t$ in $L^2$, as $n \to \infty$ i.e. 
+> $$
+> V^{(2)}_t\xrightarrow{L^2}t,\mbox{ as }n\to\infty
+> $$
+> If, furthermore, the partitions become so fine that $\sum_{n=1}^\infty \|\Pi_n\| < \infty$ holds, the preceding convergence takes place also with probability one.
 
-of the Brownian motion $W$ over these partitions converge to $t$ in $L^2$, as $n \to \infty$ i.e. 
-$$
-V^{(2)}_t\xrightarrow{L^2}t,\mbox{ as }n\to\infty
-$$
-If, furthermore, the partitions become so fine that $\sum_{n=1}^\infty \|\Pi_n\| < \infty$ holds, the preceding convergence takes place also with probability one.
-```
 **Proof**
 We consider
 $$
@@ -169,11 +162,12 @@ $$
 \end{align}
 $$
 **QED**
+
 # Local Maxima and Points of Increase
-```ad-thm
-title:How oscillatory the Brownian path is
-For almost every $\omega\in\Omega$, the sample path $W_.(\omega)$ is monotone in no interval.
-```
+
+> [!thm] How oscillatory the Brownian path is
+> For almost every $\omega\in\Omega$, the sample path $W_.(\omega)$ is monotone in no interval.
+
 **Proof**
 For $s,t\in\mathbb{Q}$, set 
 $$
@@ -195,64 +189,57 @@ $$
 $$
 Then $\mathbb{P}(A)=\lim_{n\to\infty}\mathbb{P}\left(\bigcap_{i=0}^{n-1}\left\{\omega\in\Omega:W_{\frac{i+1}{n}}-W_{\frac{i}{n}}\ge0\right\}\right)=0$. 
 **QED**
-```ad-def
-title:Local maximum 
-For $f:[0,\infty)\to\mathbb{R}$ be given function. A point $t$ of local maximum, if there exists a number $\delta > 0$ with $f(s) < f(t)$ valid for every $s \in[t - \delta, t+\delta]$; and a point of strict local maximum, if there exists a number $\delta > 0$ with $f(s) < f(t)$ valid for every $s\in[t-\delta,t+\delta]\setminus\{t\}$.
-```
 
-```ad-thm
-For almost every $\omega\in\Omega$, the set of points of local maximum for the Brownian path $W_\cdot(\omega)$ is countable and dense in $[0, \infty)$, and all local maxima are strict.
-```
+> [!def] Local maximum 
+> For $f:[0,\infty)\to\mathbb{R}$ be given function. A point $t$ of local maximum, if there exists a number $\delta > 0$ with $f(s) < f(t)$ valid for every $s \in[t - \delta, t+\delta]$; and a point of strict local maximum, if there exists a number $\delta > 0$ with $f(s) < f(t)$ valid for every $s\in[t-\delta,t+\delta]\setminus\{t\}$.
 
-```ad-def
-title:A point of increase
-A point of increase of size $\delta$, if for given $\delta > 0$ we have $f(s) \le f(t) \le f(u)$ for every $s \in [t - \delta, t)$ and $u \in (t, t + \delta]$; a point of strict increase of size $\delta$ if the preceding inequalities are strict;
-A point of increase, if it is a point of increase of size $\delta$ for some $\delta > 0$; A point of strict increase, if it is a point of strict increase of size $\delta$ for some $\delta > 0$;
-```
+> [!thm]
+> For almost every $\omega\in\Omega$, the set of points of local maximum for the Brownian path $W_\cdot(\omega)$ is countable and dense in $[0, \infty)$, and all local maxima are strict.
 
-```ad-thm
-title:Dvoretzky, Erdos,  Kakutani 
-Almost every Brownian sample path has no point of increase (or decrease).
-```
+> [!def] A point of increase
+> A point of increase of size $\delta$, if for given $\delta > 0$ we have $f(s) \le f(t) \le f(u)$ for every $s \in [t - \delta, t)$ and $u \in (t, t + \delta]$; a point of strict increase of size $\delta$ if the preceding inequalities are strict;
+> A point of increase, if it is a point of increase of size $\delta$ for some $\delta > 0$; A point of strict increase, if it is a point of strict increase of size $\delta$ for some $\delta > 0$;
+
+> [!thm] Dvoretzky, Erdos,  Kakutani 
+> Almost every Brownian sample path has no point of increase (or decrease).
+
 # Nowhere Differentiability
-```ad-def
-title:Dini derivates
-For a continuous function $f:[0,\infty)\to\mathbb{R}$, we denote by 
-$$
-D^\pm f(t)=\varlimsup_{h\to0^\pm}\frac{f(t+h)-f(t)}{h},D_\pm f(t)=\varliminf_{h\to0^\pm}\frac{f(t+h)-f(t)}{h}
-$$
-$f$ is differentiable at $t$ from the right(left), if it holds $$D^+f(t)=D_+f(t)<\infty(D^-f(t)=D_-f(t)<\infty)$$
-$f$ is differentiable at $t$, if it holds $D^+f(t)=D_+f(t)=D^-f(t)=D_-f(t)<\infty$
-```
 
-```ad-thm
-title:Paley, Wiener, Zygmund
-For almost every $\omega\in\Omega$, the Brownian sample path $W_\cdot(w)$ is nowhere differentiable. More precisely, the set
-$$
-\{\omega\in\Omega:\forall t\in[0,\infty),\mbox{ either }D^+W_t(\omega)=+\infty\mbox{ or }D_+W_t(\omega)=-\infty \}
-$$
-contains an event $F \in\mathcal{F}$ with $\mathbb{P}(F) = 1$.
-```
+> [!def] Dini derivates
+> For a continuous function $f:[0,\infty)\to\mathbb{R}$, we denote by 
+> $$
+> D^\pm f(t)=\varlimsup_{h\to0^\pm}\frac{f(t+h)-f(t)}{h},D_\pm f(t)=\varliminf_{h\to0^\pm}\frac{f(t+h)-f(t)}{h}
+> $$
+> $f$ is differentiable at $t$ from the right(left), if it holds $$D^+f(t)=D_+f(t)<\infty(D^-f(t)=D_-f(t)<\infty)$$
+> $f$ is differentiable at $t$, if it holds $D^+f(t)=D_+f(t)=D^-f(t)=D_-f(t)<\infty$
+
+> [!thm] Paley, Wiener, Zygmund
+> For almost every $\omega\in\Omega$, the Brownian sample path $W_\cdot(w)$ is nowhere differentiable. More precisely, the set
+> $$
+> \{\omega\in\Omega:\forall t\in[0,\infty),\mbox{ either }D^+W_t(\omega)=+\infty\mbox{ or }D_+W_t(\omega)=-\infty \}
+> $$
+> contains an event $F \in\mathcal{F}$ with $\mathbb{P}(F) = 1$.
+
 # Law of the Iterated Logarithm
-```ad-thm
-title:Law of the iterated logarithm
-For almost every $\omega \in \Omega$, we have
-(i) 
-$$
-\limsup_{t \to 0} \frac{W_t(\omega)}{\sqrt{2t \log \log(1/t)}} = 1,
-$$
-(ii) 
-$$
-\liminf_{t \to 0} \frac{W_t(\omega)}{\sqrt{2t \log \log(1/t)}} = -1,
-$$
-(iii) 
-$$
-\limsup_{t \to \infty} \frac{W_t(\omega)}{\sqrt{2t \log \log t}} = 1,
-$$
-(iv) 
-$$
-\liminf_{t \to \infty} \frac{W_t(\omega)}{\sqrt{2t \log \log t}} = -1.
-$$
-```
+
+> [!thm] Law of the iterated logarithm
+> For almost every $\omega \in \Omega$, we have
+> (i) 
+> $$
+> \limsup_{t \to 0} \frac{W_t(\omega)}{\sqrt{2t \log \log(1/t)}} = 1,
+> $$
+> (ii) 
+> $$
+> \liminf_{t \to 0} \frac{W_t(\omega)}{\sqrt{2t \log \log(1/t)}} = -1,
+> $$
+> (iii) 
+> $$
+> \limsup_{t \to \infty} \frac{W_t(\omega)}{\sqrt{2t \log \log t}} = 1,
+> $$
+> (iv) 
+> $$
+> \liminf_{t \to \infty} \frac{W_t(\omega)}{\sqrt{2t \log \log t}} = -1.
+> $$
 
 ^795b12
+
