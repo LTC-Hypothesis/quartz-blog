@@ -59,7 +59,7 @@
 > $$
 > \begin{align}
 > f(\textbf{X}_t)=&f(\textbf{X}_0)+\int_{0}^{t}\frac{\partial f(s,\textbf{X}_s)}{\partial s}{d}s+\int_{0}^{t}\nabla_xf(s,\textbf{X}_s)\cdot{d}\textbf{M}_s\\
-> &+\int_{0}^{t}\nabla_xf(s,\textbf{X}_s)\cdot{d}\symbf{A}_s+\frac{1}{2}\int_{0}^{t}\nabla^2_xf(s,\symbf{X}_s):{d}\langle \symbf{M},\symbf{M}\rangle_s
+> &+\int_{0}^{t}\nabla_xf(s,\textbf{X}_s)\cdot{d}\textbf{A}_s+\frac{1}{2}\int_{0}^{t}\nabla^2_xf(s,\textbf{X}_s):{d}\langle \symbf{M},\symbf{M}\rangle_s
 > \end{align}
 > $$
 > where $A:B$ is Frobenius inner product for matrix i.e. $A:B=\sum_{i=1}^{d}\sum_{j=1}^{d}A_{ij}B_{ij}$ and $\langle M,M\rangle_t$ is a cross variation matrix i.e. 
