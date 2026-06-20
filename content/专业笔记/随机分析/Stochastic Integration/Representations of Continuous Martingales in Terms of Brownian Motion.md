@@ -3,7 +3,6 @@ We have known the Brownian motion is the fundamental continuous martingale. In t
 > [!def] Extension of a probability space
 >
 > Let $X_t$ be an adapted process on a probability space $(\Omega,\mathcal{F},\mathbb{P})$. We construct a Brownian motion independent of $X_t$. In general, the probability space $(\Omega,\mathcal{F},\mathbb{P})$ may not be rich enough to support such an independent Brownian motion. Hence, we extend the probability space.
->
 > Let $(\hat{\Omega},\hat{\mathcal{F}},\hat{\mathbb{P}})$ be another probability space
 > supporting a $d$-dimensional Brownian motion $\hat{B}_t$ adapted to $\hat{\mathcal{F}}_t$.
 >
