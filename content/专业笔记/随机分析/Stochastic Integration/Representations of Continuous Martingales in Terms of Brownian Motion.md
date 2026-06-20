@@ -5,7 +5,8 @@ We have known the Brownian motion is the fundamental continuous martingale. In t
 > 
 > Let $(\hat{\Omega},\hat{\mathcal{F}},\hat{\mathbb{P}})$ be another probability space, on which we construct d-dimensional Brownian motion $\hat{B}_t=\{B_t,\hat{\mathcal{F}}_t\}$ and 
 > $$
-> \tilde{\Omega}=\Omega\times\hat{\Omega},\mathcal{G}=\mathcal{F}\otimes\hat{\mathcal{F}},\tilde{\mathbb{P}}=\mathbb{P}\times\hat{\mathbb{P}},\tilde{\mathcal{G}}_t=\mathcal{F}_t\otimes\hat{\mathcal{F}}_t$$
+> \tilde{\Omega}=\Omega\times\hat{\Omega},\mathcal{G}=\mathcal{F}\otimes\hat{\mathcal{F}},\tilde{\mathbb{P}}=\mathbb{P}\times\hat{\mathbb{P}},\tilde{\mathcal{G}}_t=\mathcal{F}_t\otimes\hat{\mathcal{F}}_t
+> $$
 > But $\tilde{\mathcal{G}}_t$ may not satisfy usual condition. We set 
 > $$
 > \tilde{\mathcal{F}}_t=\bigcap_{s>t}\sigma(\tilde{\mathcal{G}}_s\cup\mathcal{N})
