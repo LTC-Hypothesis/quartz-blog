@@ -48,7 +48,7 @@
 > $$
 
 > [!thm] The high dimensional Itô rule
-> Let $f:[0,\infty)\times \mathbb{R}^d\to\mathbb{R}$ and $f\in C^1[0,\infty)\cap C^2(\mathbb{R}^d)$. Suppose $\textbf{M}_t=(M_t^{(1)},\cdots,M_t^{(d)})$ and $\textbf{A}_t=(A_t^{(1)},\cdots,A_t^{(d)})$, $\textbf{X}_t$ is a continuous semimartingale vector and satisfies the decomposition $\textbf{X}_t=\symbf{X}_0+\symbf{M}_t+\symbf{A}_t$. Then it holds 
+> Let $f:[0,\infty)\times \mathbb{R}^d\to\mathbb{R}$ and $f\in C^1[0,\infty)\cap C^2(\mathbb{R}^d)$. Suppose $\textbf{M}_t=(M_t^{(1)},\cdots,M_t^{(d)})$ and $\textbf{A}_t=(A_t^{(1)},\cdots,A_t^{(d)})$, $\textbf{X}_t$ is a continuous semimartingale vector and satisfies the decomposition $\textbf{X}_t=\textbf{X}_0+\symbf{M}_t+\symbf{A}_t$. Then it holds 
 > $$
 > \begin{align}
 > f(\symbf{X}_t)=&f(\symbf{X}_0)+\int_{0}^{t}\frac{\partial f(s,\symbf{X}_s)}{\partial s}{d}s+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(s,\symbf{X}_s)}{\partial x_i}{d}M_s^{(i)}\\
