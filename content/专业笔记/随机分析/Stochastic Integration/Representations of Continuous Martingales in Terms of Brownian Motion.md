@@ -1,9 +1,8 @@
 We have known the Brownian motion is the fundamental continuous martingale. In this section, our theme is that how to construct another continuous local martingale by Brownian motion, in other words, continuous local martingale can be represented by Brownian motion. The techniques conclude **representation by stochastic integral** and **representation by time change**. 
 # Continuous Local Martingales as Stochastic Integrals w.r.t. Brownian Motion
->> [!def] Extension of a probability space
+> [!def] Extension of a probability space
 >
-> Let $X_t$ be an adapted process on a probability space $(\Omega,\mathcal{F},\mathbb{P})$.
-> We construct a Brownian motion independent of $X_t$.
+> Let $X_t$ be an adapted process on a probability space $(\Omega,\mathcal{F},\mathbb{P})$. We construct a Brownian motion independent of $X_t$.
 > In general, the probability space $(\Omega,\mathcal{F},\mathbb{P})$ may not be rich enough
 > to support such an independent Brownian motion.
 > Hence, we extend the probability space.
