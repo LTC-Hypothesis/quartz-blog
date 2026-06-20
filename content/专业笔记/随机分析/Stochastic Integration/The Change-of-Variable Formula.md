@@ -182,12 +182,12 @@ One advantage of F-S integral is that its chain rule cater our expression of cla
 **Proof**
 Since $f(x)\in C^3(\mathbb{R}^d)$, we can use the Itô rule. Then we have 
 $$
-f(\textbf{X}_t)=f(\textbf{X}_0)+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(\textbf{X}_s)}{\partial x_i}{d}X^{(i)}_s+\frac{1}{2}\sum_{i=1}^{d}\sum_{j=1}^{d}\int_{0}^{t}\frac{\partial^2f(\symbf{X}_s) }{\partial x_i\partial x_j}{d}\langle M^{(i)},M^{(j)}\rangle_t
+f(\textbf{X}_t)=f(\textbf{X}_0)+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(\textbf{X}_s)}{\partial x_i}{d}X^{(i)}_s+\frac{1}{2}\sum_{i=1}^{d}\sum_{j=1}^{d}\int_{0}^{t}\frac{\partial^2f(\textbf{X}_s) }{\partial x_i\partial x_j}{d}\langle M^{(i)},M^{(j)}\rangle_t
 $$
 and for F-S integral
 $$
 \begin{align}
-\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(\symbf{X}_s)}{\partial x_i}\circ{d}X_s^{(i)}=\sum_{i=1}^{d}\left[\int_{0}^{t}\frac{\partial f(\symbf{X}_s)}{\partial x_i}{d}X_s^{(i)}+\frac{1}{2}\langle \frac{\partial f(\symbf{X}_s)}{\partial x_i},M\rangle_t\right]
+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(\textbf{X}_s)}{\partial x_i}\circ{d}X_s^{(i)}=\sum_{i=1}^{d}\left[\int_{0}^{t}\frac{\partial f(\symbf{X}_s)}{\partial x_i}{d}X_s^{(i)}+\frac{1}{2}\langle \frac{\partial f(\symbf{X}_s)}{\partial x_i},M\rangle_t\right]
 \end{align}
 $$
 Since $f\in C^3(\mathbb{R}^d)$, $\frac{\partial f}{\partial x_i}\in C^2(\mathbb{R}^d)$ and thus we can use the Itô rule for $\frac{\partial f(\symbf{X}_t)}{\partial x_i}$ again
