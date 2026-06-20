@@ -58,7 +58,7 @@
 > For convenience, we write it as form of vector calculus,
 > $$
 > \begin{align}
-> f(\textbf{X}_t)=&f(\textbf{X}_0)+\int_{0}^{t}\frac{\partial f(s,\symbf{X}_s)}{\partial s}{d}s+\int_{0}^{t}\nabla_xf(s,\symbf{X}_s)\cdot{d}\symbf{M}_s\\
+> f(\textbf{X}_t)=&f(\textbf{X}_0)+\int_{0}^{t}\frac{\partial f(s,\textbf{X}_s)}{\partial s}{d}s+\int_{0}^{t}\nabla_xf(s,\textbf{X}_s)\cdot{d}\symbf{M}_s\\
 > &+\int_{0}^{t}\nabla_xf(s,\symbf{X}_s)\cdot{d}\symbf{A}_s+\frac{1}{2}\int_{0}^{t}\nabla^2_xf(s,\symbf{X}_s):{d}\langle \symbf{M},\symbf{M}\rangle_s
 > \end{align}
 > $$
