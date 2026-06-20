@@ -140,7 +140,7 @@ $$
 ^0403d8
 
 **Proof**
-By [[#^57e183|the high dimensional Itô rule]], let $f(x,y)=xy$ and $\textbf{Z}_t=(X_t,Y_t),\symbf{G}_t=(M_t,N_t),\symbf{V}_t=(A_t,C_t)$, then we have 
+By [[#^57e183|the high dimensional Itô rule]], let $f(x,y)=xy$ and $\textbf{Z}_t=(X_t,Y_t),\textbf{G}_t=(M_t,N_t),\textbf{V}_t=(A_t,C_t)$, then we have 
 $$
 \begin{align}
 d(X_tY_t)=df(X_t,Y_t)&=f_x{d}M_t+f_y{d}N_t+f_x{d}A_t+f_y{d}C_t+\langle M,N\rangle_t\\
