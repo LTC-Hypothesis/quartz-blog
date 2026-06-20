@@ -7,10 +7,10 @@
 > where $M_t\in\mathcal{M}^{c,loc}$ and $A_t$ is bounded variation. 
 > $A_t=A^+_t-A^-_t$ where $A^+_t$ is the positive variation and $A^-_t$ is the negative variation i.e.
 > $$
-> A^+_t=\sup_{\Pi_n}\sum_{(+)}A_{t_j}-A_{j-1},\mbox{ the summation is for }A_{t_j}\ge A_{t_{j-1}}
+> A^+_t=\sup_{\Pi_n}\sum_{(+)}A_{t_j}-A_{j-1},\text{ the summation is for }A_{t_j}\ge A_{t_{j-1}}
 > $$ 
 > $$
-> A^{-}_t=\sup_{\Pi_n}\sum_{(-)}A_{t_j}-A_{j-1},\mbox{ the summation is for }A_{t_j}\le A_{t_{j-1}}
+> A^{-}_t=\sup_{\Pi_n}\sum_{(-)}A_{t_j}-A_{j-1},\text{ the summation is for }A_{t_j}\le A_{t_{j-1}}
 > $$
 > Besides, the total variation is $\check{A}_t=A^+_t+A^-_t$.
 
@@ -48,7 +48,7 @@
 > $$
 
 > [!thm] The high dimensional Itô rule
-> Let $f:[0,\infty)\times \mathbb{R}^d\to\mathbb{R}$ and $f\in C^1[0,\infty)\cap C^2(\mathbb{R}^d)$. Suppose $\symbf{M}_t=(M_t^{(1)},\cdots,M_t^{(d)})$ and $\symbf{A}_t=(A_t^{(1)},\cdots,A_t^{(d)})$, $\symbf{X}_t$ is a continuous semimartingale vector and satisfies the decomposition $\symbf{X}_t=\symbf{X}_0+\symbf{M}_t+\symbf{A}_t$. Then it holds 
+> Let $f:[0,\infty)\times \mathbb{R}^d\to\mathbb{R}$ and $f\in C^1[0,\infty)\cap C^2(\mathbb{R}^d)$. Suppose $\textbf{M}_t=(M_t^{(1)},\cdots,M_t^{(d)})$ and $\symbf{A}_t=(A_t^{(1)},\cdots,A_t^{(d)})$, $\symbf{X}_t$ is a continuous semimartingale vector and satisfies the decomposition $\symbf{X}_t=\symbf{X}_0+\symbf{M}_t+\symbf{A}_t$. Then it holds 
 > $$
 > \begin{align}
 > f(\symbf{X}_t)=&f(\symbf{X}_0)+\int_{0}^{t}\frac{\partial f(s,\symbf{X}_s)}{\partial s}{d}s+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(s,\symbf{X}_s)}{\partial x_i}{d}M_s^{(i)}\\
