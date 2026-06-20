@@ -174,7 +174,7 @@ One advantage of F-S integral is that its chain rule cater our expression of cla
 > [!proposition] The chain rule of F-S integral
 > Let $\textbf{X}_t=(X_t^{(1)},\cdots,X_t^{(d)})$ be a vector of continuous semimartingale with the decomposition $X^{(i)}=X^{(i)}_0+M_t^{(i)}+A^{(i)}_t$. Let $f:\mathbb{R}^d\to\mathbb{R},f\in C^3(\mathbb{R}^d)$, then 
 > $$
-> f(\textbf{X}_t)=f(\symbf{X}_0)+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(\symbf{X}_s)}{\partial x_i}\circ{d}X^{(i)}_s
+> f(\textbf{X}_t)=f(\textbf{X}_0)+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(\textbf{X}_s)}{\partial x_i}\circ{d}X^{(i)}_s
 > $$
 
 ^4c7cfc
