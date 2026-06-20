@@ -1,27 +1,57 @@
 We have known the Brownian motion is the fundamental continuous martingale. In this section, our theme is that how to construct another continuous local martingale by Brownian motion, in other words, continuous local martingale can be represented by Brownian motion. The techniques conclude **representation by stochastic integral** and **representation by time change**. 
 # Continuous Local Martingales as Stochastic Integrals w.r.t. Brownian Motion
-> [!def] Extension of a probability space 
-> Let $X_t$ be an adapted process on probability space $(\Omega,\mathcal{F},\mathbb{P})$. We need make a Brownian motion which is independent of $X_t$. It is not rich enough to construct Brownian motion in space $(\Omega,\mathcal{F},\mathbb{P})$. Hence, we must extend the probability space to construct this. 
-> 
-> Let $(\hat{\Omega},\hat{\mathcal{F}},\hat{\mathbb{P}})$ be another probability space, on which we construct d-dimensional Brownian motion $\hat{B}_t=\{B_t,\hat{\mathcal{F}}_t\}$ and 
-> 
+>> [!def] Extension of a probability space
+>
+> Let $X_t$ be an adapted process on a probability space $(\Omega,\mathcal{F},\mathbb{P})$.
+> We construct a Brownian motion independent of $X_t$.
+> In general, the probability space $(\Omega,\mathcal{F},\mathbb{P})$ may not be rich enough
+> to support such an independent Brownian motion.
+> Hence, we extend the probability space.
+>
+> Let $(\hat{\Omega},\hat{\mathcal{F}},\hat{\mathbb{P}})$ be another probability space
+> supporting a $d$-dimensional Brownian motion $\hat{B}_t$ adapted to $\hat{\mathcal{F}}_t$.
+>
+> We define the product space:
+>
 > $$
->\tilde{\Omega}=\Omega\times\hat{\Omega},\mathcal{G}=\mathcal{F}\otimes\hat{\mathcal{F}},\tilde{\mathbb{P}}=\mathbb{P}\times\hat{\mathbb{P}},\tilde{\mathcal{G}}_t=\mathcal{F}_t\otimes\hat{\mathcal{F}}_t
+> \tilde{\Omega} = \Omega \times \hat{\Omega}, \quad
+> \mathcal{G} = \mathcal{F} \otimes \hat{\mathcal{F}}, \quad
+> \tilde{\mathbb{P}} = \mathbb{P} \otimes \hat{\mathbb{P}}, \quad
+> \tilde{\mathcal{G}}_t = \mathcal{F}_t \otimes \hat{\mathcal{F}}_t
 > $$
-> 
-> But $\tilde{\mathcal{G}}_t$ may not satisfy usual condition. We set 
-> 
+>
+> However, $\tilde{\mathcal{G}}_t$ may not satisfy the usual conditions.
+> We therefore define the right-continuous filtration:
+>
 > $$
-> \tilde{\mathcal{F}}_t=\bigcap_{s>t}\sigma(\tilde{\mathcal{G}}_s\cup\mathcal{N})
+> \tilde{\mathcal{F}}_t
+> = \bigcap_{s>t} \sigma(\tilde{\mathcal{G}}_s \cup \mathcal{N})
 > $$
-> 
-> where $\mathcal{N}=\{\tilde{\mathbb{P}}-\text{null set in }\tilde{\mathcal{G}}\}$. We also complete $\mathcal{G}$ by $\tilde{\mathcal{F}}=\sigma(\tilde{\mathcal{G}}\cup\mathcal{N})$. 
-> 
-> We extend $X,B$ to $\tilde{\mathcal{F}}_t$-adapted on $(\tilde{\Omega},\tilde{\mathcal{F}},\tilde{\mathbb{P}})$ by defining for $(\omega,\hat{\omega})\in\tilde{\Omega}$
+>
+> where
+>
 > $$
-> \tilde{X}_t(\omega,\hat{\omega})=X_t(\omega),\tilde{B}_t(\omega,\hat{\omega})=B_t(\hat{\omega})
+> \mathcal{N}
+> = \{ A \subset \tilde{\Omega} : \tilde{\mathbb{P}}(A)=0 \}
 > $$
-> Then $\tilde{B}_t$ is the Brownian motion we desired. 
+>
+> and complete the sigma-algebra by setting:
+>
+> $$
+> \tilde{\mathcal{F}}
+> = \sigma(\tilde{\mathcal{G}} \cup \mathcal{N})
+> $$
+>
+> We extend $X$ and $B$ to the product space by:
+>
+> $$
+> \tilde{X}_t(\omega,\hat{\omega}) = X_t(\omega),
+> \quad
+> \tilde{B}_t(\omega,\hat{\omega}) = \hat{B}_t(\hat{\omega})
+> $$
+>
+> Then $\tilde{B}_t$ is a Brownian motion on $(\tilde{\Omega},\tilde{\mathcal{F}},\tilde{\mathbb{P}})$
+> independent of $\tilde{X}_t$.
 
 > [!thm]
 > Let $M_t=(M^{(1)}_t,\cdots,M^{(d)}_t)$ is defined on $(\Omega,\mathcal{F},\mathbb{P})$ and $M^{(i)}_t\in\mathcal{M}^{c,loc},i=1,\cdots,d$. For $1\le i,j\le d$, $\langle M^{(i)},M^{(j)}\rangle_t$ are absolutely continuous. Then $\exists$ extension $(\tilde{\Omega},\tilde{\mathcal{F}},\tilde{\mathbb{P}})$ s.t. d-dimensional Brownian motion $B_t=(B^{(1)},\cdots,B^{(d)}_t),\tilde{\mathcal{F}}_t$ and matrix process $\{X^{i,k}_t\}_{1\le i,k\le d}$ are measurable, adapted with 
