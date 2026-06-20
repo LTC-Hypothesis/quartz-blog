@@ -10,9 +10,11 @@ We have known the Brownian motion is the fundamental continuous martingale. In t
 > $$
 > 
 > But $\tilde{\mathcal{G}}_t$ may not satisfy usual condition. We set 
+> 
 > $$
 > \tilde{\mathcal{F}}_t=\bigcap_{s>t}\sigma(\tilde{\mathcal{G}}_s\cup\mathcal{N})
 > $$
+> 
 > where $\mathcal{N}=\{\tilde{\mathbb{P}}-\text{null set in }\tilde{\mathcal{G}}\}$. We also complete $\mathcal{G}$ by $\tilde{\mathcal{F}}=\sigma(\tilde{\mathcal{G}}\cup\mathcal{N})$. 
 > 
 > We extend $X,B$ to $\tilde{\mathcal{F}}_t$-adapted on $(\tilde{\Omega},\tilde{\mathcal{F}},\tilde{\mathbb{P}})$ by defining for $(\omega,\hat{\omega})\in\tilde{\Omega}$
