@@ -51,8 +51,8 @@
 > Let $f:[0,\infty)\times \mathbb{R}^d\to\mathbb{R}$ and $f\in C^1[0,\infty)\cap C^2(\mathbb{R}^d)$. Suppose $\textbf{M}_t=(M_t^{(1)},\cdots,M_t^{(d)})$ and $\textbf{A}_t=(A_t^{(1)},\cdots,A_t^{(d)})$, $\textbf{X}_t$ is a continuous semimartingale vector and satisfies the decomposition $\textbf{X}_t=\textbf{X}_0+\textbf{M}_t+\textbf{A}_t$. Then it holds 
 > $$
 > \begin{align}
-> f(\textbf{X}_t)=&f(\textbf{X}_0)+\int_{0}^{t}\frac{\partial f(s,\textbf{X}_s)}{\partial s}{d}s+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(s,\symbf{X}_s)}{\partial x_i}{d}M_s^{(i)}\\
-> &+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(s,\symbf{X}_s)}{\partial x_i}{d}A_s^{(i)}+\frac{1}{2}\sum_{i=1}^{d}\sum_{j=1}^{d}\int_{0}^{t}\frac{\partial^2 f}{\partial x_ix_j}{d}\langle M^{(i)},M^{(j)}\rangle_s
+> f(\textbf{X}_t)=&f(\textbf{X}_0)+\int_{0}^{t}\frac{\partial f(s,\textbf{X}_s)}{\partial s}{d}s+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(s,\textbf{X}_s)}{\partial x_i}{d}M_s^{(i)}\\
+> &+\sum_{i=1}^{d}\int_{0}^{t}\frac{\partial f(s,\textbf{X}_s)}{\partial x_i}{d}A_s^{(i)}+\frac{1}{2}\sum_{i=1}^{d}\sum_{j=1}^{d}\int_{0}^{t}\frac{\partial^2 f}{\partial x_ix_j}{d}\langle M^{(i)},M^{(j)}\rangle_s
 > \end{align}
 > $$
 > For convenience, we write it as form of vector calculus,
