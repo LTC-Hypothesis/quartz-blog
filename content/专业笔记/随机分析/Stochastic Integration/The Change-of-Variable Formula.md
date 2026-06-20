@@ -64,7 +64,7 @@
 > $$
 > where $A:B$ is Frobenius inner product for matrix i.e. $A:B=\sum_{i=1}^{d}\sum_{j=1}^{d}A_{ij}B_{ij}$ and $\langle M,M\rangle_t$ is a cross variation matrix i.e. 
 > $$
-> \langle \symbf{M},\symbf{M}\rangle_t=\begin{bmatrix}
+> \langle \textbf{M},\textbf{M}\rangle_t=\begin{bmatrix}
 > \langle M^{(1)}\rangle_t &\langle M^{(1)},M^{(2)}\rangle_t &\cdots &\langle M^{(1)},M^{(d)}\rangle_t\\
 > \langle M^{(2)},M^{(1)}\rangle_t &\langle M^{(2)}\rangle_t &\cdots &\langle M^{(2)},M^{(d)}\rangle_t\\
 > \vdots &\vdots & &\vdots\\
