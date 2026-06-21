@@ -16,6 +16,8 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "zh-CN",
+    // @ts-ignore
+    head:[`<meta name="google-site-verification" content="4LkbxApWl4BDq9evfwUoBuWS0osEJXv7EUgZE9QkLAI" />`],
     baseUrl: "https://quartz-blog-anv.pages.dev/",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
@@ -84,8 +86,8 @@ const config: QuartzConfig = {
         enableSiteMap: true,
         enableRSS: true,
       }),
-      Plugin.Assets(),
       Plugin.Static(),
+      Plugin.Assets(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
       // Comment out CustomOgImages to speed up build time
