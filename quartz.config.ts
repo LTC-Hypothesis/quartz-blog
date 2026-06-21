@@ -56,6 +56,8 @@ const config: QuartzConfig = {
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
+      Plugin.ObsidianFlavoredMarkdown({enableInHtmlEmbed: true}),
+      Plugin.GitHubFlavoredMarkdown(),
       Plugin.CreatedModifiedDate({
         priority: ["frontmatter", "git", "filesystem"],
       }),
@@ -66,7 +68,6 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
-      Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
