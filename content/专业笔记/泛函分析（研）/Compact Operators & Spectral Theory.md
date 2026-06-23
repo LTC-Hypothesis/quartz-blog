@@ -227,7 +227,7 @@ By contradiction, suppose $\text{dim }E=\infty$. Then we can obtain a sequence o
  We need the lemma.
  
 >[!lemma] 
- >Let $T\in\kappa(E)$ and let $\left\{\lambda_n\right\}\subseteq\mathbb{R}$ be a distinct sequence with $\lambda_n\to\lambda$ as $n\to\infty$ and $\{\lambda_n\}\subseteq\sigma(T)\setminus\{0\}$. Then $\lambda=0$.
+>Let $T\in\kappa(E)$ and let $\left\{\lambda_n\right\}\subseteq\mathbb{R}$ be a distinct sequence with $\lambda_n\to\lambda$ as $n\to\infty$ and $\{\lambda_n\}\subseteq\sigma(T)\setminus\{0\}$. Then $\lambda=0$.
 
  
 **QED**
