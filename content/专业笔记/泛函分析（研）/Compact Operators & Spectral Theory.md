@@ -186,7 +186,7 @@ By contradiction, suppose $\text{dim }E=\infty$. Then we can obtain a sequence o
 >\text{Ker}(T-\lambda I)=\{0\},\text{Im}(T-\lambda I)=E
 >$$
 
- >[!proposition]
+ >[!proposition] 
 >Suppose $T$ is a bounded operator, then $\sigma(T)$ is compact and $\sigma(T)\subset[-\|T\|,\|T\|]$.
  
  **Proof**
@@ -226,7 +226,7 @@ By contradiction, suppose $\text{dim }E=\infty$. Then we can obtain a sequence o
 **Proof of 3.**
  We need the lemma.
  
- >[!lemma]
+ >[!lemma] 
  >Let $T\in\kappa(E)$ and let $\left\{\lambda_n\right\}\subseteq\mathbb{R}$ be a distinct sequence with $\lambda_n\to\lambda$ as $n\to\infty$ and $\{\lambda_n\}\subseteq\sigma(T)\setminus\{0\}$. Then $\lambda=0$.
  
  
