@@ -187,7 +187,7 @@ By contradiction, suppose $\text{dim }E=\infty$. Then we can obtain a sequence o
 >$$
 
  >[!proposition]
- >Suppose $T$ is a bounded operator, then $\sigma(T)$ is compact and $\sigma(T)\subset[-\|T\|,\|T\|]$.
+>Suppose $T$ is a bounded operator, then $\sigma(T)$ is compact and $\sigma(T)\subset[-\|T\|,\|T\|]$.
  
  **Proof**
  We choose $|\lambda|>\|T\|$. It suffices to show that $T-\lambda I$ is bijective for such $\lambda$ and thus $\lambda\in\rho(T)$. For $\lambda\in\sigma(T)$, then $\lambda\notin\rho(T)\Longrightarrow|\lambda|\le \|T\|$ i.e. $\sigma(T)\subset[-\|T\|,\|T\|]$. 
