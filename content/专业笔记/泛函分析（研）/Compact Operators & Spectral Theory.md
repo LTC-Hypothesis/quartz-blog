@@ -142,6 +142,8 @@ By contradiction, suppose $\text{dim }E=\infty$. Then we can obtain a sequence o
 > 3. $\text{Ker}(I-T)=\{0\}\Longleftrightarrow\text{Im}(I-T)=E$
 > 4. $\text{dim Ker}(I-T)=\text{dim Ker}(I-T^*)$
 
+^b31a3a
+
 **Proof**
 1. Let $E_1=\text{Ker}(I-T)$, for $u\in E_1$ then it satisfies $Tu=u$ i.e. $\|u\|=\|Tu\|=1$. Then $B_{E_1}\subset T(B_E)\Longrightarrow\overline{B_{E_1}}\subset \overline{T(B_E)}$. By [[#^a2e244|Riesz's thm]], $\text{dim }E_1<\infty$
 2. $\text{Im}(I-T)$ is $$\text{Im}(I-T)=\left\{v:v=u-Tu,u\in E\right\}$$Suppose $v_n=u_n-Tu_n\to v$ in $E$, we W.T.S. $v\in \text{Im}(I-T)$. Let $$d_n=\text{dist}(u_n,\text{Ker}(I-T))$$Since $\text{dim Ker}(I-T)<\infty$, there exists $t_n\subset\text{Ker}(I-T)$ s.t. $d_n=\|u_n-t_n\|$. We have $v_n=(u_n-t_n)-T(u_n-t_n)$. **We claim $\|u_n-t_n\|$ is bounded**. Suppose not, then there exists a subsequence s.t. $\|u_{n_k}-t_{n_k}\|\to\infty$. Let $w_n=\frac{u_n-t_n}{\|u_n-t_n\|}$, then $w_{n_k}-Tw_{n_k}\to0$ as $k\to\infty$. Since $T$ is compact operator, after passing the further subsequence, we assume that $Tw_{n_k}\to z$, then $w_{n_k}=w_{n_k}-Tw_{n_k}+Tw_{n_k}\to z$. Hence, $z\in\text{Ker}(I-T)$ so that $\text{dist}(w_{n_k},\text{Ker}(I-T))\to0$ as $k\to\infty$. Then $$\text{dist}(w_{n_k},\text{Ker}(I-T))=\frac{\text{dist}(u_n,\text{Ker}(I-T))}{\|u_n-t_n\|}=1\Longrightarrow\Longleftarrow$$ Hence, $\|u_n-t_n\|$ is bounded. Since $T$ is compact operator, after passing subsequence, $T(u_{n_k}-t_{n_k})\to l$, then $$u_{n_k}-t_{n_k}=u_{n_k}-t_{n_k}-T(u_{n_k}-t_{n_k})+T(u_{n_k}-t_{n_k})\to v+l$$Note that $T(u_{n_k}-t_{n_k})\to T(v+l)=l\Longrightarrow v+l-T(v+l)=v$. Hence, $v\in \text{Im}(I-T)$.
@@ -169,7 +171,7 @@ By contradiction, suppose $\text{dim }E=\infty$. Then we can obtain a sequence o
 > [!def] Resolvent set 
 > $T\in\mathcal{L}(E)$, 
 > $$
-> \rho(T)=\left\{\lambda\in\mathbb{R}\mid T-\lambda I:E\to E\text{ is bijective}\right\}
+> \rho(T)=\left\{\lambda\in\mathbb{R}\mid T-\lambda I:E\to E\text{ is bijective and }(T-\lambda I)^{-1}\in\mathcal{L}(E)\right\}
 > $$
 
 > [!def] Spectrum, eigenvalue(e-value) and eigenspace(e-space) 
@@ -178,4 +180,57 @@ By contradiction, suppose $\text{dim }E=\infty$. Then we can obtain a sequence o
 > - **Eigenspace**: $\text{Ker}(T-\lambda I)$ is the eigenspace corresponding to $\lambda$
 > - $EV(T)\triangleq\left\{\text{the all eigenvalues}\right\}$
 
+>[!warning] 
+>$EV(T)\subset\sigma(T)$, the inclusion can be strict i.e. $\exists\lambda\in\mathbb{R}$ s.t. 
+>$$
+>\text{Ker}(T-\lambda I)=\{0\},\text{Im}(T-\lambda I)=E
+>$$
+
+ >[!proposition]
+ >Suppose $T$ is a bounded operator, then $\sigma(T)$ is compact and $\sigma(T)\subset[-\|T\|,\|T\|]$.
+ 
+ **Proof**
+ We choose $|\lambda|>\|T\|$. It suffices to show that $T-\lambda I$ is bijective for such $\lambda$ and thus $\lambda\in\rho(T)$. For $\lambda\in\sigma(T)$, then $\lambda\notin\rho(T)\Longrightarrow|\lambda|\le \|T\|$ i.e. $\sigma(T)\subset[-\|T\|,\|T\|]$. 
+ Given $f\in E$, consider the equation $Tu-\lambda u=f$, we should find unique solution $u\in E$. We write the equation as $u=\lambda^{-1}(Tu-f)$ and by Banach's fixed point theorem, $\left\|\frac{T}{\lambda}\right\|<1$, there exist the unique solution $u$ and thus $T-\lambda I$ is surjective.
+ Suppose $u_1,u_2\in E$ s.t. $Tu_1-\lambda u_1=Tu_2-\lambda u_2\Longrightarrow T(u_1-u_2)=\lambda(u_1-u_2)$ and then 
+ $$
+ \|\lambda (u_1-u_2)\|=|\lambda|\left\|u_1-u_2\right\|\le\left\|T\right\|\|u_1-u_2\|
+ $$
+ Since $|\lambda|>\|T\|$, then $\|u_1-u_2\|=0$ i.e. $u_1=u_2$ and thus $T-\lambda I$ is injective. Hence, $T-\lambda I$ is bijective and $\lambda\in\rho(T)$ with $|\lambda|>\|T\|$.
+ Now we prove $\sigma(T)$ is compact. Since $\sigma(T)\subset[-\|T\|,\|T\|]$ is bounded, it suffices to show $\sigma(T)$ is closed $\Longleftrightarrow \rho(T)$ is open. Given $\lambda_0\in\rho(T)$, for $\lambda$ is closed to $\lambda_0$, consider 
+ $$
+ Tu-\lambda u=f\Longrightarrow Tu-\lambda_0u=f+(\lambda-\lambda_0)u
+ $$ 
+ We can write the equation as $u=(T-\lambda_0I)^{-1}(f+(\lambda-\lambda_0)u)$. It suffices to set $|\lambda-\lambda_0|\left\|(T-\lambda_0I)^{-1}\right\|<1$, we can obtain the unique solution $u$ of the equation by Banach's fixed point theorem. Hence, for given $\lambda_0$, there exist $r\triangleq\frac{1}{\|(T-\lambda_0I)^{-1}\|}$ s.t. 
+ $$
+ |\lambda-\lambda_0|<r\text{ .i.e. }B_r(\lambda_0)\subseteq\rho(T)
+ $$
+ Hence, $\rho(T)$ is open.
+ **QED**
+
+>[!thm]
+>Let $T\in\kappa(E)$ with $\text{dim}(E)=\infty$, then we have: 
+>1. $0\in\sigma(T)$
+>2. $\sigma(T)\setminus\left\{0\right\}=EV(T)\setminus\{0\}$
+>3. One of the following cases holds:
+>     - $\sigma(T)=\{0\}$
+>     - $\sigma(T)\setminus\{0\}$ is finite set
+>     - $\sigma(T)\setminus\{0\}$ is a sequence converging to $0$
+
+**Proof of 1. and 2.**
+
+1. Suppose $0\notin\sigma(T)$ and thus $0\in \rho(T)$. Then $T$ is bijective and thus $I=T\circ T^{-1}$ is compact, so $B_E$ is compact. It implies $\text{dim}(E)<\infty\Longrightarrow\Longleftarrow$. 
+2. It suffices to show that $\sigma(T)\setminus\{0\}\subseteq EV(T)\setminus\{0\}$. Suppose $0\ne \lambda\in\sigma(T)$ but $\lambda\notin EV(T)$ i.e. $\text{Ker}(T-\lambda I)=\{0\}$, by [[#^b31a3a|Fredholm alternative]], $\text{Im}(T-\lambda I)=E$, then $T-\lambda I$ is bijective and thus $\lambda\in\rho(T)\Longrightarrow\Longleftarrow$. 
+
+**QED**
+**Proof of 3.**
+ We need the lemma.
+ 
+ >[!lemma]
+ >Let $T\in\kappa(E)$ and let $\left\{\lambda_n\right\}\subseteq\mathbb{R}$ be a distinct sequence with $\lambda_n\to\lambda$ as $n\to\infty$ and $\{\lambda_n\}\subseteq\sigma(T)\setminus\{0\}$. Then $\lambda=0$.
+ 
+ 
+ 
+ 
+**QED**
 # Spectral Decomposition of Self-Adjoint Compact Operators
