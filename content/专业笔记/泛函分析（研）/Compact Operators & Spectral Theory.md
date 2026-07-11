@@ -70,6 +70,8 @@ By Ascoli–Arzelà Thm,
 > $$
 > Then $\overline{\mathscr{H}}$ is compact in $C(K)$.
 
+^e16b78
+
 Then $\overline{\mathscr{H}}$ is compact in $C(K)$ and thus there exists $\varphi_{n_k}$ s.t. $\varphi_{n_k}\rightrightarrows\varphi\in C(K)$ i.e. 
 $$
 \sup_{y\in B_E}|\langle v_{n_k},Ty\rangle-\varphi(T(y))|\xrightarrow{k\to\infty}0
@@ -188,6 +190,9 @@ By contradiction, suppose $\text{dim }E=\infty$. Then we can obtain a sequence o
 
 >[!proposition] 
 >Suppose $T$ is a bounded operator, then $\sigma(T)$ is compact and $\sigma(T)\subset[-\|T\|,\|T\|]$.
+
+^00e8b6
+
  
  **Proof**
  We choose $|\lambda|>\|T\|$. It suffices to show that $T-\lambda I$ is bijective for such $\lambda$ and thus $\lambda\in\rho(T)$. For $\lambda\in\sigma(T)$, then $\lambda\notin\rho(T)\Longrightarrow|\lambda|\le \|T\|$ i.e. $\sigma(T)\subset[-\|T\|,\|T\|]$. 
@@ -217,6 +222,8 @@ By contradiction, suppose $\text{dim }E=\infty$. Then we can obtain a sequence o
 >     - $\sigma(T)\setminus\{0\}$ is finite set
 >     - $\sigma(T)\setminus\{0\}$ is a sequence converging to $0$
 
+^cabae0
+
 **Proof of 1. and 2.**
 
 1. Suppose $0\notin\sigma(T)$ and thus $0\in \rho(T)$. Then $T$ is bijective and thus $I=T\circ T^{-1}$ is compact, so $B_E$ is compact. It implies $\text{dim}(E)<\infty\Longrightarrow\Longleftarrow$. 
@@ -229,6 +236,98 @@ By contradiction, suppose $\text{dim }E=\infty$. Then we can obtain a sequence o
 >[!lemma] 
 >Let $T\in\kappa(E)$ and let $\left\{\lambda_n\right\}\subseteq\mathbb{R}$ be a distinct sequence with $\lambda_n\to\lambda$ as $n\to\infty$ and $\{\lambda_n\}\subseteq\sigma(T)\setminus\{0\}$. Then $\lambda=0$.
 
- 
+^344510
+
+ We know that $\lambda_n\in EV(T)\setminus\{0\}$ and let $e_n$ be the e-function s.t. $(T-\lambda_nI)e_n=0$. Set $E_n=\text{span}\left\{e_1,\cdots,e_n\right\}$. **We claim $E_n\subset E_{n+1},E_n\ne E_{n+1}$.** It suffices to show that $e_1,\cdots,e_n$ are linearly independent. We prove by induction. Suppose for $e_1,\cdots,e_n,e_{n+1}$ are linearly dependent, then $e_{n+1}=\sum_{i=1}^{n}\alpha_ie_i$. We have 
+ $$
+ Te_{n+1}=\sum_{i=1}^{n}\alpha_i\lambda_ie_i=\lambda_{n+1}e_{n+1}=\sum_{i=1}^{n}\alpha_i\lambda_{n+1}e_{n+1}
+ $$
+ Then we have $\alpha_i(\lambda_i-\lambda_{n+1})=0\Longrightarrow\alpha_i=0,i=1,\cdots,n$ and thus $e_{n+1}=0\Longrightarrow\Longleftarrow$. 
+ Now by Riesz's lemma, we can construct a sequence $\{u_n\}$ with $u_n\in E_n,\|u_n\|=1$ s.t. 
+ $$
+ \text{dist}(u_n,E_{n-1})\ge\frac{1}{2}
+ $$
+and for $2\le m<n$, $E_n$ satisfies $E_{m-1}\subset E_m\subset E_{n-1}\subset E_n$. Note that $(T-\lambda_nI)e_n\in E_{n-1}$ and consider
+$$
+\begin{aligned}
+\left\|\frac{Tu_n}{\lambda_n}-\frac{Tu_m}{\lambda_m}\right\|&=\left\|\textcolor{blue}{\frac{(T-\lambda_nI)u_n}{\lambda_n}-\frac{(T-\lambda_mI)u_m}{\lambda_m}}+u_n-\textcolor{blue}{u_m}\right\|\\
+&\ge\text{dist}(u_n,E_{n-1})\ge\frac{1}{2}
+\end{aligned}
+$$
+If $\lambda_n\to\lambda,\lambda\ne0$ and $Tu_n$ has convergent subsequence, then $\frac{Ty_n}{\lambda_n}$ must converge. It is a contradiction. Hence, $\lambda=0$.
+
+Now we return the proof of theorem. For $n\in\mathbb{N}_+$, we consider the set 
+$$
+\Sigma_n\triangleq\sigma(T)\cap\left\{\lambda\in\mathbb{R}:|\lambda|\ge\frac{1}{n}\right\}
+$$
+We claim that $\Sigma_n$ is either empty or finite. If $\Sigma_n$ is infinite, then there exists a subsequence denoted by $\lambda_k$ with $\lambda_k\to\lambda$ and $|\lambda|\ge\frac{1}{n}$, which is contradict of [[#^344510|lemma]]. 
 **QED**
+
 # Spectral Decomposition of Self-Adjoint Compact Operators
+
+We consider the Hilbert space $H$ and $T\in\mathcal{L}(H)$.
+>[!def] Self-adjoint operator
+>A bounded operator $T\in\mathcal{L}(H)$ is self-adjoint if $T^*=T$ i.e. 
+>$$
+>(Tu,v)=(u,Tv),\forall u,v\in H
+>$$
+
+>[!proposition]
+>Let $T\in\mathcal{L}(H)$ be a self-adjoint operator. Let 
+>$$
+>m=\inf_{u\in H,\|u\|=1}(Tu,u),M=\sup_{u\in H,\|u\|=1}(Tu,u)
+>$$
+>Then $\sigma(T)\subset[m,M],m\in\sigma(T),M\in\sigma(T)$. Moreover, $\|T\|=\max\{|m|,|M|\}$. 
+
+**Proof**
+By the same idea of [[#^00e8b6|the proposition]], we W.T.S. $\lambda\in\rho(T)$ for $\lambda>M$. We noly prove the case of $M$ and the proof of $m$ case is similar. Consider the bilinear $a(u,v)=(\lambda u-Tu,v)$, we have 
+$$
+|a(u,v)|\le |\lambda|+\|T\|,|a(u,u)|\ge(\lambda-M)|u|^2
+$$
+By Lax-Milgram theorem, $\lambda I-T$ is bijective and thus $\lambda\in\rho(T)$. 
+Now we prove $M\in\sigma(T)$. Consider the bilinear $a(u,v)=(Mu-Tu,v)$, which satisfies $a(u,u)\ge0$, then by Cauchy-Schwarz inequality,
+$$
+|a(u,v)|\le a(u,u)^{\frac{1}{2}}a(v,v)^{\frac{1}{2}}\text{ i.e. }|(Mu-Tu,v)|\le C|(Mu-Tu,u)|^{\frac{1}{2}}
+$$
+By the definition of $M$, there exists $u_n$ with $|u_n|=1$ s.t. $(Tu_n,u_n)\to M$ and thus we have $(Mu_n-Tu_n,u_n)\to0$. Therefore, $|Mu_n-Tu_n|\to0$ and $M\in\sigma(T)$.
+Finally, we prove $\|T\|=\max\{|m|,|M|\}$. By [[Orthogonality#^758567|Parallelogram Law]], for $u,v\in H$, we have 
+$$
+\begin{aligned}
+4(Tu,v)&=(T(u+v),u+v)-(T(u-v),u-v)\\
+&\le M|u+v|^2-m|u-v|^2\\
+&\le \max\{|m|,|M|\}(|u+v|^2+|u-v|^2)\\
+&\le 2\max\{|m|,|M|\}(|u|^2+|v|^2)
+\end{aligned}
+$$
+We choose $\alpha=\frac{|u|}{|v|}$ to replace $v$ by $\alpha v$ and obtain
+$$
+|(Tu,v)|\le \max\{|m|,|M|\}|u||v|
+$$
+It implies that $\|T\|\le \max\{|m|,|M|\}$. On the other hand, $|(Tu,u)|\le \|T\||u|^2$ and we have $m\le \|T\|,M\le \|T\|$. 
+**QED**
+
+>[!proposition]
+>Let $T\in\mathcal{L}(H)$ be a self-adjoint operator s.t. $\sigma(T)=\{0\}$. Then $T=0$.
+
+^d8035f
+
+>[!thm] Spectrum decomposition of compact self-adjoint operator
+>Let $H$ be a **separable Hilbert space** and let $T$ be a **compact self-adjoint operator**. Then there exists a Hilbert basis composed of eigenvectors of $T$.
+
+**Proof**
+[[#^cabae0|The theorem]] implies that there exists $\{\lambda_n\}_{n=1}^{\infty}$ be the sequence of nonzero e-value of $T$. Let the e-space, 
+$$
+\lambda_0=0,E_0=\text{Ker}(T),E_n=\text{Ker}(T-\lambda_n I)
+$$
+Note that $0\le\text{dim}(E_0)\le \infty,0<\text{dim}(E_n)<\infty$. 
+**Claim: $H$ is the Hilbert sum of $\{E_n\}_{n=1}^{\infty}$.**
+**(1)The space $\{E_n\}_{n=1}^{\infty}$ are mutually orthogonal.**
+We choose $u,\in E_n,v\in E_m,n\ne m$ and $Tu=\lambda_nu,Tv=\lambda_mv,\lambda_n\ne\lambda_m$, then 
+$$
+(Tu,v)=\lambda_n(u,v)=(u,Tv)=\lambda_m(u,v)\Longrightarrow(\lambda_n-\lambda_m)(u,v)=0
+$$
+We obtain $(u,v)=0$ and thus $E_n\bot E_m$ for $n\ne m$.
+**(2)Let $F=\text{span}\{E_n\}_{n\ge0}$, $F$ is dense in $H$.**
+Note that $T(F)\subset F$. **We claim $T(F^\bot)\subset F^\bot$.** For $u\in F^\bot$, $(Tu,v)=(u,Tv)=0$, then $Tu\in F^\bot$. We denote that $T_0=T\mid_{F^\bot}$. We claim $\sigma(T_0)=\{0\}$. Suppose not , then there exists $0\ne\lambda\in\sigma(T_0)=EV(T_0)$ and $0\ne u\in F^\bot$ s.t. $T_0u=\lambda u$. Therefore, $\lambda=\lambda_n$ for some $n$ and thus $u\in E_n\subset F,u\in F^\bot\cap F$, then $u=0\Longrightarrow\Longleftarrow$. By [[#^d8035f|the proposition]], $T_0=0$ i.e. $T$ vanishes on $F^\bot$ and thus $F^\bot\subset\text{Ker}(T)\subset F\Longrightarrow F^\bot=\{0\}$. Hence, $F$ is dense in $H$.
+We choose the Hilbert basis on each $\{E_n\}_{n\ge0}$. The union of these bases is clearly a Hilbert basis for $H$, composed of eigenvectors of $T$.
+**QED**
