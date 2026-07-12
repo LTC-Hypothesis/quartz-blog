@@ -22,23 +22,19 @@ $$J(y(\cdot), u(\cdot)) = \int_0^T f^0(y(t), u(t)) dt + h(y(T)).$$
 > 对于上述系统，假设 (L1)—(L2) 成立，则存在最优对 $(\tilde{y}(\cdot), \tilde{u}(\cdot)) \in \mathscr{P}_{ad}[0, T]$ 使得
 > $$J(\tilde{y}(\cdot), \tilde{u}(\cdot)) = \inf_{(y(\cdot), u(\cdot)) \in \mathscr{P}_{ad}[0, T]} J(y(\cdot), u(\cdot)).$$
 
-> [!proof] 证明
-> 由假设可见 $\mathscr{U}[0, T] = \mathscr{U}_{ad}[0, T]$，且存在 $(y_k(\cdot), u_k(\cdot)) \in \mathscr{U}[0, T]$ 使得
-> $$\lim_{k \to \infty} J(y_k(\cdot), u_k(\cdot)) = \bar{J} = \inf_{(y(\cdot), u(\cdot)) \in \mathcal{F}_{ad}[0, T]} J(y(\cdot), u(\cdot)) > -\infty.$$
->
-> 由 (L1) 可知 $U$ 是紧的，从而存在常数 $C > 0$ 使得
-> $$\int_0^T |u_k(t)|^2 dt \leq C, \quad \forall k \geq 1.$$
->
-> 因此，由第二章定理 4.11，不妨假设在 $L^2(0, T; \mathbb{R}^m)$ 中，
-> $$u_k(\cdot) \xrightarrow{w} \bar{u}(\cdot).$$
->
-> 而由 Mazur 定理，我们有 $u_k(\cdot)$ 的一列凸组合，使得在 $L^2(0, T; \mathbb{R}^m)$ 中
-> $$\tilde{u}_k(\cdot) = \sum_{i \geq 1} \alpha_{ik} u_{i+k}(\cdot) \to \bar{u}(\cdot),$$
-> 其中
+**Proof**
+ 由假设可见 $\mathscr{U}[0, T] = \mathscr{U}_{ad}[0, T]$，且存在 $(y_k(\cdot), u_k(\cdot)) \in \mathscr{U}[0, T]$ 使得
+ $$\lim_{k \to \infty} J(y_k(\cdot), u_k(\cdot)) = \bar{J} = \inf_{(y(\cdot), u(\cdot)) \in \mathcal{F}_{ad}[0, T]} J(y(\cdot), u(\cdot)) > -\infty.$$
+
+ 由 (L1) 可知 $U$ 是紧的，从而存在常数 $C > 0$ 使得
+ $$\int_0^T |u_k(t)|^2 dt \leq C, \quad \forall k \geq 1.$$
+ 因此，由第二章定理 4.11，不妨假设在 $L^2(0, T; \mathbb{R}^m)$ 中，
+ $$u_k(\cdot) \xrightarrow{w} \bar{u}(\cdot).$$
+而由 Mazur 定理，我们有 $u_k(\cdot)$ 的一列凸组合，使得在 $L^2(0, T; \mathbb{R}^m)$ 中> $$\tilde{u}_k(\cdot) = \sum_{i \geq 1} \alpha_{ik} u_{i+k}(\cdot) \to \bar{u}(\cdot),$$
+其中
 > $$\alpha_{ik} \geq 0, \quad \sum_{i \geq 1} \alpha_{ik} = 1.$$
->
 > 由于 $U \subseteq \mathbb{R}^m$ 凸紧，因此 $\bar{u}(\cdot) \in \mathcal{U}_{ad}[0, T]$。另一方面，由于系统是线性的，如果记
-> $$\tilde{y}_k(\cdot) = y(\cdot; y_0, \tilde{u}_k(\cdot)),$$
+>$$\tilde{y}_k(\cdot) = y(\cdot; y_0, \tilde{u}_k(\cdot)),$$
 > $$y_k(\cdot) = y(\cdot; y_0, u_k(\cdot)),$$
 > 则
 > $$\tilde{y}_k(\cdot) = \sum_{i \geq 1} \alpha_{ik} y_{i+k}(\cdot),$$
