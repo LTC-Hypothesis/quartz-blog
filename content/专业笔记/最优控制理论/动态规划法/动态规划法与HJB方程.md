@@ -153,6 +153,10 @@ $$
 >[!note] 动态规划思想
 >
 
+**Proof**
+
+**QED**
+
 >[!proposition] Hamilton-Jacobi-Bellman (HJB) 方程
 >[[#^fb3166|假设(D1)-(D2)]]成立, 且值函数$V\in C^1([0,T]\times\mathbb{R}^n)$，则值函数满足一阶PDE终值问题
 >$$
