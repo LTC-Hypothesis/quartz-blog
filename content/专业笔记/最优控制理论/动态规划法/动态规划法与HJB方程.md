@@ -151,7 +151,18 @@ $$
 >$$
 
 >[!note] 动态规划思想
+>
 
 >[!proposition] Hamilton-Jacobi-Bellman (HJB) 方程
->
+>[[#^fb3166|假设(D1)-(D2)]]成立, 且值函数$V\in C^1([0,T]\times\mathbb{R}^n)$，则值函数满足一阶PDE终值问题
+>$$
+>\begin{cases}
+>-V_t+\sup_{u\in U}H(t,x,u,-V_x)=0,&(t,x)\in[0,T)\times\mathbb{R}^n\\
+>V(T,x)=h(x),&x\in\mathbb{R}^n
+>\end{cases}\tag{HJB}
+>$$
+>其中$H$为Hamilton函数
+>$$
+>H(t,x,u,p)=\left\langle p,f(t,x,u)\right\rangle-f^0(t,x,u)
+>$$
 
