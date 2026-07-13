@@ -67,6 +67,8 @@ y(t)=x
 >|y(s;t,x,u)-y(s;\bar{t},\bar{x},u)|\le K\left(|x-\bar{x}|+(1+|x|\vee|\bar{x}|)|t-\bar{t}|\right)
 >$$
 
+^6ab1ca
+
 **Proof**
 由唯一解可以得到
 $$
@@ -124,7 +126,22 @@ $$
 >$$
 
 **Proof**
-
+由[[#^6ab1ca|命题]]得到，
+$$
+\begin{aligned}
+|J(u(\cdot);t,x)|&\le L\int_{0}^{T}|y(t)|{d}t+LT+L|y(T)|+L\\
+&\le LTK(1+|x|)+LK(1+|x|)+L(T+1)\\
+&\le L(T+1)(K(1+|x|)+1)\le K(1+|x|)
+\end{aligned}
+$$
+同理可得
+$$
+|J(u(\cdot);t,x)-J(u(\cdot);t,\bar{x})|\le K|x-\bar{x}|
+$$
+$$
+|J(u(\cdot);t,x)-J(u(\cdot);\bar{t},x)|\le K(1+|x|\vee|\bar{x}|)|t-\bar{t}|
+$$
+对以上不等式在左边取下确界即可得到(6)(7)。
 **QED**
 
 >[!thm] Bellman最优性原理
