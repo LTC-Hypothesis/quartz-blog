@@ -145,4 +145,13 @@ $$
 **QED**
 
 >[!thm] Bellman最优性原理
+>[[#^fb3166|假设(D1)-(D2)]]成立, 则对任意的$(t,x)\in [0,T)\times\mathbb{R}^n$成立
+>$$
+>V(t,x)=\inf_{u(\cdot)\in\mathscr{U}[t,\hat{t}]}\left\{\int_{t}^{\hat{t}}f^0(s,y(s;t,x,u(\cdot)),u(s)){d}s+V(\hat{t},y(\hat{t};t,x,u(\cdot)))\right\}\tag{8}
+>$$
+
+>[!note] 动态规划思想
+
+>[!proposition] Hamilton-Jacobi-Bellman (HJB) 方程
+>
 
