@@ -13,5 +13,41 @@
 >$$
 >则值函数为
 >$$
->V(t,x)=\inf_{u\in \mathscr{U}[t,T]}\left|x+\int_{t}^{T}u(s){d}s\right|
+>V(t,x)=\inf_{u\in \mathscr{U}[t,T]}\left|x+\int_{t}^{T}u(s){d}s\right|=\begin{cases}
+>(x-T+t)^+,x>0\\
+>(x+T-t)^-,x\le0
+>\end{cases}
 >$$
+
+尽管系统和泛函指标涉及到的函数都是光滑的，值函数也不一定光滑。
+>[!example] 
+>考虑系统
+>$$
+>\begin{cases}
+>\dot{y}(s)=u(s)y(s)\\
+>y(t)=x
+>\end{cases}
+>$$
+>控制集为$U=[-1,1]$，指标泛函为
+>$$
+>J(u(\cdot);t,x)=y(T;t,x)
+>$$
+>则值函数为
+>$$
+>V(t,x)=\inf_{u\in\mathscr{U}[t,T]}xe^{\int_{t}^{T}u(s){d}s}=\begin{cases}
+>xe^{T-t},x\le 0\\
+>xe^{t-T},x>0
+>\end{cases}
+>$$
+>从而相应的HJB方程为
+>$$
+>\begin{cases}
+>-v_t+|xv_x|=0\\
+>v(T,x)=x
+>\end{cases}\tag{1}
+>$$
+
+下面我们说明HJB方程(1)没有$C^1([0,T]\times\mathbb{R}^n)$的经典解。
+
+>[!def] 粘性解
+>
