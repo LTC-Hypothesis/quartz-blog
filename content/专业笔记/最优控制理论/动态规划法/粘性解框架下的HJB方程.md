@@ -101,3 +101,28 @@ $$
 >$$
 >若$v$既是粘性下解又是粘性上解，则称$v$为粘性解。
 
+>[!proposition]
+>[[动态规划法与HJB方程#^fb3166|假设(D1)-(D2)]]成立，则值函数$V(t,x)$为（HJB）方程的粘性解。
+
+**Proof**
+
+**QED**
+
+为比较粘性解与经典解，我们考虑另一类方程。
+>[!def] 
+>考虑方程
+>$$
+>\begin{cases}
+>-v_t+\mathscr{H}(t,x,-v_x)=0\\
+>v(T,x)=h(x)
+>\end{cases}\tag{6}
+>$$
+>其中$\mathscr{H}:[0,T]\times\mathbb{R}^n\times\mathbb{R}^n\to\mathbb{R},h:\mathbb{R}^n\to\mathbb{R}$。
+
+实际上当$\mathscr{H}(t,x,-v_x)=\sup_{u\in U}H(t,x,u,-v_x)$时，可以看到HJB方程为方程(6)的特例，因此我们可以类似地定义方程(6)的粘性解。
+>[!proposition]
+>设$v\in C([0,T]\times\mathbb{R}^n)$，$v$是方程(6)的经典解 $\Longleftrightarrow$ $v\in C^1([0,T]\times\mathbb{R}^n)$且$v$是方程(6)的粘性解。
+
+**Proof**
+
+**QED**
