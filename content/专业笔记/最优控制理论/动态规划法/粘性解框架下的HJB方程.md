@@ -83,5 +83,21 @@ $$
 **QED**
 
 >[!def] 粘性解
-
+>函数$v(t,x)\in C([0,T]\times\mathbb{R}^n)$称为**粘性下解**，若满足
+>$$
+>v(T,x)\le h(x),\forall x\in\mathbb{R}^n\tag{2}
+>$$
+>且对任意的$\varphi(t,x)\in C^1([0,T]\times\mathbb{R}^n)$，只要$v-\varphi$在某点$(t,x)\in[0,T)\times\mathbb{R}^n$达到极大值，就可以成立
+>$$
+>-\varphi_t(t,x)+\sup_{u\in U}H(t,x,u,-\varphi_x(t,x))\le 0\tag{3}
+>$$
+>函数$v(t,x)\in C([0,T]\times\mathbb{R}^n)$称为**粘性上解**，若满足
+>$$
+>v(T,x)\ge h(x),\forall x\in\mathbb{R}^n\tag{4}
+>$$
+>且对任意的$\varphi(t,x)\in C^1([0,T]\times\mathbb{R}^n)$，只要$v-\varphi$在某点$(t,x)\in[0,T)\times\mathbb{R}^n$达到极小值，就可以成立
+>$$
+>-\varphi_t(t,x)+\sup_{u\in U}H(t,x,u,-\varphi_x(t,x))\ge 0\tag{5}
+>$$
+>若$v$既是粘性下解又是粘性上解，则称$v$为粘性解。
 
