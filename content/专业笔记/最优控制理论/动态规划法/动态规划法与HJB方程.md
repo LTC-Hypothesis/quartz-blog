@@ -176,8 +176,12 @@ V(t,x)\le J(u(\cdot);t,x)=\int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s+J(u(\cdot)|_{[\
 $$
 对右边取下确界$u(\cdot)\in\mathscr{U}[\hat{t},T]$，则可以得到$V(t,x)\le \overline{V}(t,x)$。另一方面对$u(\cdot)\in\mathscr{U}[t,T]$
 $$
-
+\begin{aligned}
+J(u(\cdot);t,x)&=\int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s+J(u(\cdot);\hat{t},y(\hat{t};u(\cdot)|_{[t,\hat{t}]}))\\
+&\ge\int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s+V(\hat{t},y(\hat{t}))\ge \overline{V}(t,x)
+\end{aligned}
 $$
+对左边取下确界$u(\cdot)\in\mathscr{U}[t,T]$，可以得到$V(t,x)\ge \overline{V}(t,x)$。
 **QED**
 
 >[!warning] 
@@ -199,3 +203,6 @@ $$
 >H(t,x,u,p)=\left\langle p,f(t,x,u)\right\rangle-f^0(t,x,u)
 >$$
 
+**Proof**
+
+**QED**
