@@ -48,6 +48,13 @@
 >$$
 
 下面我们说明HJB方程(1)没有$C^1([0,T]\times\mathbb{R}^n)$的经典解。
+**Proof**
+若存在经典解$v(t,x)\in C^1([0,T]\times\mathbb{R}^n)$满足方程(1)，则对终端条件有$v_x(T,x)=1>0$，又根据$v$的连续性，对固定的$x$，存在$\delta_x>0$使得$v_x(t,x)>0$，$T-\delta_x<t\le T$，令函数$\varphi(x)=T-\delta_x$, 于是得到
+$$
+v_x(t,x)>0,\forall(t,x)\in\mathscr{N}\triangleq\left\{(t,x):\varphi(x)<t\le T\right\}
+$$
+
+**QED**
 
 >[!def] 粘性解
 >
