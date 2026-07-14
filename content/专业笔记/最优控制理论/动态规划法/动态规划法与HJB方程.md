@@ -222,10 +222,13 @@ $$
 另一方面对$\varepsilon>0$和$0\le t<\hat{t}\le T$，存在$u(\cdot)=u_{\varepsilon,\hat{t}}(\cdot)$使得
 $$
 \begin{aligned}
-&V(t,x)+\varepsilon(\hat{t}-t)\le \int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s+V(\hat{t},y(\hat{t}))\\
-\Longrightarrow&-\frac{V(\hat{t},y(\hat{t}))-V(t,x)}{\hat{t}-t}-\frac{1}{\hat{t}-t}\int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s\le-\varepsilon
+&V(t,x)+\varepsilon(\hat{t}-t)\ge \int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s+V(\hat{t},y(\hat{t}))\\
+\Longrightarrow&-\frac{V(\hat{t},y(\hat{t}))-V(t,x)}{\hat{t}-t}-\frac{1}{\hat{t}-t}\int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s\ge-\varepsilon\\
+\Longrightarrow&\frac{1}{\hat{t}-t}\int_{t}^{\hat{t}}-V_t(s,y(s))+H(s,y,u,-V_x(s,y(s))){d}s\ge-\varepsilon\\
+\Longrightarrow&-V_t(t,x)+\sup_{u\in U}H(t,x,u,-V_x(t,x))\ge-\varepsilon
 \end{aligned}
 $$
+因此$-V_t(t,x)+\sup_{u\in U}H(t,x,u,-V_x(t,x))\ge0$。
 **QED**
 
 （HJB）方程的作用就是帮助我们找到最优对，下面讲解如何通过（HJB）方程的解寻找最优对。
@@ -233,6 +236,18 @@ $$
 >[!note] Step1 求解（HJB）方程得到值函数$V(t,x)$
 
 >[!note] Step2 确定最优控制$\bar{u}$
+>最优控制由$H(t,x,\bar{u},-V_x)=\sup_{u\in U}H(t,x,u,-V_x)$确定。
 
 >[!note] Step3  取$(t,x)=(0,y_0)$求解最优状态轨线，从而得到最优对
+>需要求解方程
+>$$
+>\begin{cases}
+>\dot{y}=f(s,y(s),\bar{u}(s,\bar{y}(s)))\\
+>y(0)=y_0
+>\end{cases}
+>$$
+>记$\bar{y}(\cdot)=\bar{y}(\cdot;0,y_0)$和$\bar{u}(s)=\bar{u}(s,\bar{y}(s;0,y_0))$，这就是要寻找的最优对。实际上可以验证
+>$$
+>\frac{d}{ds}V(s,\bar{y}(s))=-f^0(s,\bar{y}(s),\bar{u}(s))\Longrightarrow
+>$$
 
