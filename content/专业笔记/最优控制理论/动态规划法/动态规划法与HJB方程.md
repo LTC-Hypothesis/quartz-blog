@@ -156,7 +156,7 @@ $$
 >形式上，我们可以这么描述，考虑在$[0,\hat{t}]$上取固定值的控制$u(\cdot)$
 >$$
 >\begin{aligned}
->J(u(\cdot);t,x)=&\int_{0}^{T}f^0(t,y(t),u(t)){d}t+g(y(T))\\
+>J(u(\cdot))=&\int_{0}^{T}f^0(t,y(t),u(t)){d}t+g(y(T))\\
 >=&\textcolor{red}{\int_{0}^{\hat{t}}f^0\left(t, y(t; 0, y_0, u\bigg|_{[0, \hat{t}]} ),u \bigg|_{[0, \hat{t}]} (t)\right)dt}\\
 >&\textcolor{blue}{+\int_{\hat{t}}^{T} f^0\left(t, y(t; \hat{t}, y(\hat{t})), u \mid_{[\hat{t}, T]} (\cdot)\right)dt+g\left(y(T;\hat{t},y(\hat{t}),u\bigg|_{[\hat{t},T]})\right)}
 >\end{aligned}
@@ -164,11 +164,27 @@ $$
 >注意到红色部分$u(\cdot)$的取值和$[\hat{t},T]$上取值无关，蓝色部分又与$[0,\hat{t}]$上无关，因此我们只需要考虑在$[\hat{t},T]$上$u(\cdot)$的取值，使得指标泛函最小，而这个问题恰好就是问题(D$_{\hat{t}y(\hat{t})}$)
 
 **Proof**
+我们记
+$$
+\overline{V}(t,x)=\inf_{u(\cdot)\in\mathscr{U}[t,\hat{t}]}\left\{\int_{t}^{\hat{t}}f^0(s,y(s;t,x,u(\cdot)),u(s)){d}s+V(\hat{t},y(\hat{t};t,x,u(\cdot)))\right\}
+$$
+则对于$\forall u(\cdot)\in\mathscr{U}[t,\hat{t}]$, 
+$$
+\begin{aligned}
+V(t,x)\le J(u(\cdot);t,x)=\int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s+J(u(\cdot)|_{[\hat{t},T]};\hat{t},y(\hat{t}))
+\end{aligned}
+$$
+对右边取下确界$u(\cdot)\in\mathscr{U}[\hat{t},T]$，则可以得到$V(t,x)\le \overline{V}(t,x)$。另一方面对$u(\cdot)\in\mathscr{U}[t,T]$
+$$
 
+$$
 **QED**
 
 >[!warning] 
->实际上动态规划法也给出了最优控制的一个必要条件。
+>实际上动态规划法也给出了最优控制的一个必要条件。当$u(\cdot)$在$[0,\hat{t}]$的取值固定，那么$J(u(\cdot))$的下确界必须为
+>$$
+>\int_{0}^{\hat{t}}f^0\left(t,y(t;0,y_0,u|_{[0,\hat{t}]})\right)+V(\hat{t},y(\hat{t}))
+>$$
 
 >[!proposition] Hamilton-Jacobi-Bellman (HJB) 方程
 >[[#^fb3166|假设(D1)-(D2)]]成立, 且值函数$V\in C^1([0,T]\times\mathbb{R}^n)$，则值函数满足一阶PDE终值问题
