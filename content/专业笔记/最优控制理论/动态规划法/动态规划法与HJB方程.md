@@ -203,6 +203,8 @@ $$
 >H(t,x,u,p)=\left\langle p,f(t,x,u)\right\rangle-f^0(t,x,u)
 >$$
 
+^be10f5
+
 **Proof**
 我们固定$u(s)\equiv u$，根据(8)式，可以得到
 $$
