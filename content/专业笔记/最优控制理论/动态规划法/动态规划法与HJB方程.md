@@ -145,7 +145,7 @@ $$
 **QED**
 
 >[!thm] Bellman最优性原理
->[[#^fb3166|假设(D1)-(D2)]]成立, 则对任意的$(t,x)\in [0,T)\times\mathbb{R}^n$成立
+>[[#^fb3166|假设(D1)-(D2)]]成立, 则对任意的$(t,x)\in [0,T)\times\mathbb{R}^n$和$0\le t\le \hat{t}\le T$成立
 >$$
 >V(t,x)=\inf_{u(\cdot)\in\mathscr{U}[t,\hat{t}]}\left\{\int_{t}^{\hat{t}}f^0(s,y(s;t,x,u(\cdot)),u(s)){d}s+V(\hat{t},y(\hat{t};t,x,u(\cdot)))\right\}\tag{8}
 >$$
@@ -157,13 +157,18 @@ $$
 >$$
 >\begin{aligned}
 >J(u(\cdot);t,x)=&\int_{0}^{T}f^0(t,y(t),u(t)){d}t+g(y(T))\\
->=&\int_{0}^{\hat{t}}
+>=&\textcolor{red}{\int_{0}^{\hat{t}}f^0\left(t, y(t; 0, y_0, u\bigg|_{[0, \hat{t}]} ),u \bigg|_{[0, \hat{t}]} (t)\right)dt}\\
+>&\textcolor{blue}{+\int_{\hat{t}}^{T} f^0\left(t, y(t; \hat{t}, y(\hat{t})), u \mid_{[\hat{t}, T]} (\cdot)\right)dt+g\left(y(T;\hat{t},y(\hat{t}),u\bigg|_{[\hat{t},T]})\right)}
 >\end{aligned}
 >$$
+>注意到红色部分$u(\cdot)$的取值和$[\hat{t},T]$上取值无关，蓝色部分又与$[0,\hat{t}]$上无关，因此我们只需要考虑在$[\hat{t},T]$上$u(\cdot)$的取值，使得指标泛函最小，而这个问题恰好就是问题(D$_{\hat{t}y(\hat{t})}$)
 
 **Proof**
 
 **QED**
+
+>[!warning] 
+>实际上动态规划法也给出了最优控制的一个必要条件。
 
 >[!proposition] Hamilton-Jacobi-Bellman (HJB) 方程
 >[[#^fb3166|假设(D1)-(D2)]]成立, 且值函数$V\in C^1([0,T]\times\mathbb{R}^n)$，则值函数满足一阶PDE终值问题
