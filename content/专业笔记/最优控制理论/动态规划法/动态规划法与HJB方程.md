@@ -251,7 +251,6 @@ $$
 >\frac{d}{ds}V(s,\bar{y}(s))=-f^0(s,\bar{y}(s),\bar{u}(s))\Longrightarrow V(t,x)=h(\bar{y}(T))+\int_{t}^{T}f^0(s,\bar{y},\bar{u}){d}s=J(\bar{u}(\cdot))
 >$$
 
-
 > [!proposition] 命题 2.4
 > [[#^fb3166|假设(D1)-(D2)]]成立，且值函数 $V \in C^1([0, T] \times \mathbb{R}^n)$。设 $(\bar{y}(\cdot), \bar{u}(\cdot))$ 是问题 (D) 的一组最优对，则：
 > $$H(t, \bar{y}(t), \bar{u}(t), -V_x(t, \bar{x}(t))) = \max_{u \in U} H(t, \bar{y}(t), u, -V_x(t, \bar{x}(t))), \quad \text{a.e. } t \in [0, T].$$
