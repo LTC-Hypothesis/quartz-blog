@@ -53,7 +53,33 @@
 $$
 v_x(t,x)>0,\forall(t,x)\in\mathscr{N}\triangleq\left\{(t,x):\varphi(x)<t\le T\right\}
 $$
-
+实际上可以取
+$$
+\mathscr{N}^+\triangleq\mathscr{N}\cap\left\{(t,x):x\ge0,t\in[0,T]\right\}
+$$
+于是得到
+$$
+\begin{cases}
+v_t=xv_x,(t,x)\in\mathscr{N}^+\\
+v(T,x)=x
+\end{cases}
+$$
+考虑变换
+$$
+\begin{cases}
+s=t\\
+z=xe^t
+\end{cases},\Phi(s,z)\triangleq v(s,ze^{-s})
+$$
+对于$\Phi(s,z)$我们有
+$$
+\Phi_s=v_t-xv_x=0
+$$
+因此我们可以将其写为$\Phi(s,z)=\Phi(z)$，从而$v(t,x)=\Phi(xe^t)$，根据终端条件
+$$
+xe^{-T}=v(T,xe^{-T})=\Phi(x)\Longrightarrow v(t,x)=xe^{t-T},\forall(t,x)\in\mathscr{N}^+
+$$
+类似可以得到$v(t,x)=xe^{T-t},(t,x)\in\mathscr{N}\setminus\mathscr{N}^+$。因此$v(t,x)=V(t,x),(t,x)\in\mathscr{N}$，但是$V(t,x)$不是$C^1$函数因此和$v\in C^1$矛盾。
 **QED**
 
 >[!def] 粘性解
