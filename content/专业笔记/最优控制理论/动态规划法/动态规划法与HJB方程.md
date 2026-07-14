@@ -204,5 +204,35 @@ $$
 >$$
 
 **Proof**
-
+我们固定$u(s)\equiv u$，根据(8)式，可以得到
+$$
+\begin{aligned}
+&V(t,x)\le \int_{t}^{\hat{t}}f^0(s,y(s),u){d}s+V(\hat{t},y(\hat{t}))\\
+\Longrightarrow&-\frac{V(\hat{t},y(\hat{t}))-V(t,x)}{\hat{t}-t}-\frac{1}{\hat{t}-t}\int_{t}^{\hat{t}}f^0(s,y(s),u){d}s\le 0
+\end{aligned}
+$$
+此时令$\hat{t}\to t$可以得到
+$$
+-V_t(t,x)+\left\langle V_x,f(t,y(t),u)\right\rangle-f^0(t,y(t),u)\le 0
+$$
+即可得到
+$$
+-V_t+\sup_{u\in U}H(t,x,u,-V_x)\le 0
+$$
+另一方面对$\varepsilon>0$和$0\le t<\hat{t}\le T$，存在$u(\cdot)=u_{\varepsilon,\hat{t}}(\cdot)$使得
+$$
+\begin{aligned}
+&V(t,x)+\varepsilon(\hat{t}-t)\le \int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s+V(\hat{t},y(\hat{t}))\\
+\Longrightarrow&-\frac{V(\hat{t},y(\hat{t}))-V(t,x)}{\hat{t}-t}-\frac{1}{\hat{t}-t}\int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s\le-\varepsilon
+\end{aligned}
+$$
 **QED**
+
+（HJB）方程的作用就是帮助我们找到最优对，下面讲解如何通过（HJB）方程的解寻找最优对。
+
+>[!note] Step1 求解（HJB）方程得到值函数$V(t,x)$
+
+>[!note] Step2 确定最优控制$\bar{u}$
+
+>[!note] Step3  取$(t,x)=(0,y_0)$求解最优状态轨线，从而得到最优对
+
