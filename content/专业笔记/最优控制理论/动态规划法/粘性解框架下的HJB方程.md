@@ -124,5 +124,18 @@ $$
 >设$v\in C([0,T]\times\mathbb{R}^n)$，$v$是方程(6)的经典解 $\Longleftrightarrow$ $v\in C^1([0,T]\times\mathbb{R}^n)$且$v$是方程(6)的粘性解。
 
 **Proof**
-
+$\Longrightarrow$: 设$v$为经典解，则$v\in C^1$。对任意的$\varphi\in C^1$，$v-\varphi$在点$(t,x)$处取得极大值，则成立
+$$
+v_t(t,x)=\varphi_t(t,x),v_x(t,x)=\varphi_x(t,x)
+$$
+于是有
+$$
+-\varphi_t(t,x)+\mathscr{H}(t,x,-\varphi_x(t,x))=-v_t(t,x)+\mathscr{H}(t,x,-v_x(t,x))=0
+$$
+因此$v$为粘性下解，同理可证$v$为粘性上解。因此$v$为粘性解。
+$\Longleftarrow$: 由$v$为粘性解只需要取$\varphi=v$，则$v-\varphi=0$在$[0,T]\times\mathbb{R}^n$上处处取到极大值和极小值，因此成立
+$$
+-\varphi_t(t,x)+\mathscr{H}(t,x,-\varphi_x(t,x))=-v_t(t,x)+\mathscr{H}(t,x,-v_x(t,x))=0
+$$
+因此$v$为经典解。
 **QED**
