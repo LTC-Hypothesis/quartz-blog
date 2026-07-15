@@ -105,7 +105,29 @@ $$
 >[[动态规划法与HJB方程#^fb3166|假设(D1)-(D2)]]成立，则值函数$V(t,x)$为（HJB）方程的粘性解。
 
 **Proof**
-
+现证明值函数为粘性下解。对任意的$\varphi\in C^1$，$V-\varphi$在某点$(t,x)$处取到极大值。由值函数定义，固定$u(\cdot)=u\in U$，相应的状态轨线为$y(\cdot)=y(\cdot;t,x,u)$，则对充分接近$t$的$\hat{t}>t$，使得
+$$
+\begin{aligned}
+0\le &\frac{V(t,x)-\varphi(t,x)-V(\hat{t},y(\hat{t}))+\varphi(\hat{t},y(\hat{t}))}{\hat{t}-t}\\
+\le&\frac{1}{\hat{t}-t}\left(\int_{t}^{\hat{t}}f^0(s,y(s),u){d}s-\varphi(t,x)+\varphi(\hat{t},y(\hat{t}))\right)\\
+\to&f^0(t,y(t),u)+\varphi_t(t,x)+\left\langle \varphi_x(t,x),f(t,y(t),u)\right\rangle\text{ as }\hat{t}\to t
+\end{aligned}
+$$
+即
+$$
+-\varphi_t(t,x)+\sup_{u\in U}H(t,x,u,-\varphi_x(t,x))\le 0
+$$
+另一方面，对任意的$\varepsilon>0$，存在$u(\cdot)=u_{\varepsilon,\hat{t}}(\cdot)$使得
+$$
+\begin{aligned}
+&V(t,x)+\varepsilon(\hat{t}-t)\ge \int_{t}^{\hat{t}}f^0(s,y(s),u(s)){d}s+V(\hat{t},y(\hat{t}))\\
+\Longrightarrow&\frac{V(t,x)-V(\hat{t},y(\hat{t}))-\varphi(t,x)+\varphi(\hat{t},y(\hat{t}))}{\hat{t}-t}-\frac{1}{\hat{t}-t}\int_{t}^{\hat{t}}f^0(s,y(s),u(s))\\
+&\ge-\varepsilon-\varphi(t,x)+\varphi(\hat{t},y(\hat{t}))\\
+\Longrightarrow&\frac{1}{\hat{t}-t}\int_{t}^{\hat{t}}-f^0(s,y(s),u(s)){d}s-\varphi_t(s,y(s))-\langle\varphi_x,f(s,y(s),u(s))\rangle{d}s\ge-\varepsilon\\
+\Longrightarrow&-\varphi_t(t,x)+\sup_{u\in U}H(t,x,u,-\varphi_x(t,x))\ge-\varepsilon\text{ as }\hat{t}\to t
+\end{aligned}
+$$
+you
 **QED**
 
 为比较粘性解与经典解，我们考虑一类方程。
