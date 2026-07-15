@@ -127,7 +127,7 @@ $$
 \Longrightarrow&-\varphi_t(t,x)+\sup_{u\in U}H(t,x,u,-\varphi_x(t,x))\ge-\varepsilon\text{ as }\hat{t}\to t
 \end{aligned}
 $$
-you
+由$\varepsilon$的任意性，得到$-\varphi_t(t,x)+\sup_{u\in U}H(t,x,u,-\varphi_x(t,x))\ge0$。从而$V(t,x)$为HJB方程的粘性解。
 **QED**
 
 为比较粘性解与经典解，我们考虑一类方程。
