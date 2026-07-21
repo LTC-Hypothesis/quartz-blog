@@ -23,9 +23,9 @@ $$
 >寻找一系列的最优控制问题，具有不同的初始状态和初始时间，使得原问题(D)成为一个特例。考虑$(t,x)\in[0,T)\times\mathbb{R}^n$，引入控制系统
 >$$
 >\begin{cases}
-\dot{y}(s)=f(s,y(s),u(s)), a.e. \ s\in[t,T]\\
-y(t)=x
-\end{cases}\tag{3}
+>\dot{y}(s)=f(s,y(s),u(s)), a.e. \ s\in[t,T]\\
+>y(t)=x
+>\end{cases}\tag{3}
 >$$
 >此时控制集为
 >$$
@@ -50,9 +50,9 @@ y(t)=x
 >- (D2) $f:[0,T]\times\mathbb{R}^n\times U\to\mathbb{R}^n,f^0:[0,T]\times\mathbb{R}^n\times U\to\mathbb{R}$都是可测的，且存在常数$L>0$和连续模$\omega:[0,+\infty)\to[0,+\infty)$使得对$\varphi=f,f^0$成立
 >  $$
 >  \begin{cases}
-|\varphi(t,y,u)-\varphi(t,\hat{y},u)|\le L|y-\hat{y}|\\
-|\varphi(t,0,u)|\le L
-\end{cases},\forall t\in[0,T],y,\hat{y}\in\mathbb{R}^n,u\in U
+>|\varphi(t,y,u)-\varphi(t,\hat{y},u)|\le L|y-\hat{y}|\\
+>|\varphi(t,0,u)|\le L
+>\end{cases},\forall t\in[0,T],y,\hat{y}\in\mathbb{R}^n,u\in U
 >  $$
 
 ^fb3166
