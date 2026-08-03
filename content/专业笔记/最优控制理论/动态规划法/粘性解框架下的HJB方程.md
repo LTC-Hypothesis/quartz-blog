@@ -131,7 +131,7 @@ $$
 **QED**
 
 为比较粘性解与经典解，我们考虑一类方程。
->[!def] 
+>[!def] Hamilton-Jacobi方程（HJ方程）
 >考虑方程
 >$$
 >\begin{cases}
