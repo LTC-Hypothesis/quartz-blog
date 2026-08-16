@@ -1,3 +1,4 @@
+
 Fix probability space $(\Omega,\mathcal{F},\mathbb{P})$ and a filtration $\{\mathcal{F}_t\}$ with [[Stopping Times#^47dba3|usual condition]].
 
 > [!def] Square-integrable martingale
