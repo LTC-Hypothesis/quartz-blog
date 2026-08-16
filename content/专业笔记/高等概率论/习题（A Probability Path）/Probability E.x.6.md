@@ -500,4 +500,4 @@
 > Suppose $E(X^2) = 1$ and $E(|X|) \geq a > 0$. Prove for $0 \leq \lambda \leq 1$ that $$ P[|X| \geq \lambda a] \geq (1 - \lambda)^2 a^2. $$
 
 > [!done]
-> By $\mathbb{E}|X|\ge a$, $\mathbb{P}[|X|\ge\lambda a]\ge\mathbb{P}[|X|\ge\lambda
+> By $\mathbb{E}|X|\ge a$, $\mathbb{P}[|X|\ge\lambda a]\ge\mathbb{P}[|X|\ge\lambda$
