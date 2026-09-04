@@ -45,7 +45,20 @@
 >$$
 >\begin{aligned}
 >\mathbb{E}[G_{t+1}|S_t=s]&=\sum_{s'\in\mathcal{S}}\mathbb{E}[G_{t+1}|S_t=s,S_{t+1}=s']p(s'|s)\\
->&=\sum_{s'\in\mathcal{S}}\mathbb{E}[G_{t+1}|S_{t+1}=s']p(s'|s)\\
->&=、sum
+>&=\sum_{s'\in\mathcal{S}}\mathbb{E}[G_{t+1}|S_{t+1}=s']p(s'|s)\qquad\text{(马氏性)}\\
+>&=\sum_{s'\in\mathcal{S}}v_\pi(s')p(s'|s)\\
+>&=\sum_{s'\in\mathcal{S}}v_\pi(s')\sum_{a\in\mathcal{A}}p(s'|s,a)\pi(a|s)
 >\end{aligned}
 >$$
+>合并两项可以得到
+>$$
+>\begin{aligned}
+>v_\pi(s)&=\sum_{a\in\mathcal{A}}\pi(a|s)\sum_{r\in\mathcal{R}}p(r|s,a)\cdot r+\gamma\sum_{s'\in\mathcal{S}}v_\pi(s')\sum_{a\in\mathcal{A}}p(s'|s,a)\pi(a|s)\\
+>&=\sum_{a\in\mathcal{A}}\pi(a|s)\left[\sum_{r\in\mathcal{R}}p(r|s,a)r+\gamma\sum_{s'\in\mathcal{S}}p(s'|s,a)v_\pi(s')\right]
+>\end{aligned}
+>$$
+
+>[!warning] 对Bellman公式的说明
+>- $v_\pi(s)$和$v_\pi(s')$是未知量需要求解，实际上对于每个状态$s\in\mathcal{S}$都成立Bellman公式，那么联立所有式子就可以求解（后面矩阵向量形式会更简洁直观）。
+>- $\pi(a|s)$是给定策略，是已知的，Bellman方程一定对应一个给定的策略。
+>- 
