@@ -55,7 +55,7 @@
 >\begin{aligned}
 >v_\pi(s)&=\sum_{a\in\mathcal{A}}\pi(a|s)\sum_{r\in\mathcal{R}}p(r|s,a)\cdot r+\gamma\sum_{s'\in\mathcal{S}}v_\pi(s')\sum_{a\in\mathcal{A}}p(s'|s,a)\pi(a|s)\\
 >&=\sum_{a\in\mathcal{A}}\pi(a|s)\left[\sum_{r\in\mathcal{R}}p(r|s,a)r+\gamma\sum_{s'\in\mathcal{S}}p(s'|s,a)v_\pi(s')\right]
->\end{aligned}
+>\end{aligned}\tag{1}
 >$$
 
 >[!warning] 对Bellman公式的说明
@@ -68,3 +68,29 @@
 >2. $$v_\pi(s)=\mathbb{E}[R_{t+1}+\gamma v_\pi(S_{t+1})|S_{t}=s],s\in\mathcal{S}$$
 >3. $$v_\pi(s)=\sum_{a\in\mathcal{A}}\pi(a|s)\sum_{s'\in\mathcal{S}}p(s'|s,a)[r(s')+\gamma v_\pi(s')]$$
 
+在(1)式中我们记
+$$
+r_\pi(s)=\sum_{a\in\mathcal{A}}\pi(a|s)\sum_{r\in\mathcal{R}}p(r|s,a)r
+$$
+$$
+p_\pi(s'|s)=\sum_{a\in\mathcal{A}}\pi(a|s)p(s'|s,a)
+$$
+从而状态值可以写成
+>[!note] 矩阵向量形式
+>可以得到
+>$$
+>v_\pi(s)=r_\pi(s)+\gamma\sum_{s'\in\mathcal{S}}p_\pi(s'|s)v_\pi(s')
+>$$
+>对所有状态重新编号，假设$|\mathcal{S}|=n$，定义$v_\pi=(v_\pi(s_1),\cdots,v_\pi(s_n))^\top$，$r_\pi=(r_\pi(s_1),\cdots,r_\pi(s_n))$和状态转移矩阵$P_\pi=(p_\pi(s_j|s_i))_{n\times n}\in\mathbb{R}^{n\times n}$。最终得到矩阵向量形式
+>$$
+>v_\pi=r_\pi+\gamma P_\pi v_\pi
+>$$
+
+>[!note] 求解状态值（解析解）
+>实际上我们可以直接得到
+>$$
+>v_\pi=(I-\gamma P_\pi)^{-1}r_\pi
+>$$
+>唯一需要注意的地方是矩阵$I-\gamma P_\pi$的ke'ni'xing
+
+>[!note] 求解状态值（数值法）
