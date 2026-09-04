@@ -61,4 +61,10 @@
 >[!warning] 对Bellman公式的说明
 >- $v_\pi(s)$和$v_\pi(s')$是未知量需要求解，实际上对于每个状态$s\in\mathcal{S}$都成立Bellman公式，那么联立所有式子就可以求解（后面矩阵向量形式会更简洁直观）。
 >- $\pi(a|s)$是给定策略，是已知的，Bellman方程一定对应一个给定的策略。
->- 
+>- $p(r|s,a),p(s'|s,a)$代表系统模型，我们一般先研究有模型的情况即这些量是已知的，在推广到无模型的情况。
+
+>[!note] Bellman方程的等价形式
+>1. $$v_\pi(s)=\sum_{a\in\mathcal{A}}\pi(a|s)\sum_{s'\in\mathcal{S}}\sum_{r\in\mathcal{R}}p(s',r|s,a)[r+\gamma v_\pi(s')]$$
+>2. $$v_\pi(s)=\mathbb{E}[R_{t+1}+\gamma v_\pi(S_{t+1})|S_{t}=s],s\in\mathcal{S}$$
+>3. $$v_\pi(s)=\sum_{a\in\mathcal{A}}\pi(a|s)\sum_{s'\in\mathcal{S}}p(s'|s,a)[r(s')+\gamma v_\pi(s')]$$
+
