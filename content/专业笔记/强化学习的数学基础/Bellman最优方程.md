@@ -20,4 +20,23 @@
 - 算法：如何求解Bellman最优方程？
 - 最优性：Bellman最优方程的解和最优策略之间有什么关系？
 
->[!note] B
+>[!note] Bellman最优方程的求解
+>注意到$\sum_{a\in\mathcal{A}}\pi(a|s)=1$，实际上我们有
+>$$
+>\sum_{a\in\mathcal{A}}\pi(a|s)q_\pi(s,a)\le \sum_{a\in\mathcal{A}}\pi(a|s)\max_{\pi(s)\in\Pi(s)}q_\pi(s,a)=\max_{\pi(s)\in\Pi(s)}q_\pi(s,a)
+>$$
+>因此最大值的取等条件为
+>$$
+>\pi(a|s)=\begin{cases}
+>1,&a=a^*\\
+>0,&a\ne a^*
+>\end{cases}
+>$$
+>其中$a^*=\arg\max_{a\in\mathcal{A}}q_\pi(s,a)$。因此对于状态$s$的最优策略$\pi^*$应该是选择具有最大$q(s,a)$的动作。此时，最优状态值为$v_{\pi^*}(s)=\max_{a\in\mathcal{A}}q(s,a)$。
+
+>[!note] 矩阵向量形式
+>和Bellman方程一样，我们有
+>$$
+>v=\max_{\pi\in\Pi}(r_\pi+\gamma P_\pi v)
+>$$
+>实际上方程右侧可看作$v$的函数$f(v)=\max_{\pi\in\Pi}(r_\pi+\gamma P_\pi v)$。
