@@ -139,7 +139,7 @@ $$
 >另外从Bellman公式(1)来看，和上式比较可以得到
 >$$
 >\begin{aligned}
->q_\pi(s,a)&=\sum_{r\in\mathcal{R}}p(r|s,a)r+\gamma\sum_{s'\in\mathcal{S}}p(s'|s,a)v_\pi(s')\\
+>q_\pi(s,a)&=\sum_{r\in\mathcal{R}}p(r|s,a)r+\gamma\sum_{s'\in\mathcal{S}}p(s'|s,a)\sum_{a\in\mathcal{A}}q_\pi(s,a)\pi(a|s)\\
 >&=\mathbb{E}[R_{t+1}+\gamma v_\pi(S_{t+1})|S_{t}=s,A_{t}=a]
 >\end{aligned}
 >$$
@@ -148,4 +148,19 @@ $$
 >一个动作不会被策略选择，但是仍然会具有动作值。一些动作没有被选择到，不是因为这些动作不够好，相反这些很可能是好的动作，强化学习本质是在学习最优的策略，因此必须探索所有的动作才能找到每个状态下的最优动作。
 
 >[!note] 基于动作值的Bellman方程
->
+>注意到
+>$$
+>q_\pi(s,a)=\sum_{r\in\mathcal{R}}p(r|s,a)r+\gamma\sum_{s'\in\mathcal{S}}p(s'|s,a)\sum_{a'\in\mathcal{A}}q_\pi(s',a')\pi(a'|s')
+>$$
+>记$\tilde{r}=\sum_{r\in\mathcal{R}}p(r|s,a)r$，矩阵
+>$$
+>\Pi=\begin{bmatrix}
+>\pi(a_1|s')&&\\
+>&\ddots&\\
+>&&\pi(a_{|\mathcal{A}|}|s')
+>\end{bmatrix}
+>$$
+>是一个块对角矩阵，每一个块是$1\times|\mathcal{A}|$的向量。写成矩阵向量形式为
+>$$
+>q_\pi=\tilde{r}+\gamma P_\pi\Pi q_\pi
+>$$
