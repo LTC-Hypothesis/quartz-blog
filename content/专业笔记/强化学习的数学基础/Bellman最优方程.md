@@ -71,5 +71,15 @@ $$
 $$
 z_i=\max\left\{|\gamma p^\top_i(v_1-v_2)|,|\gamma q^\top_i(v_1-v_2)|\right\}
 $$
-其中$p_i$
+其中$p_i^\top,q^\top_i$表示矩阵$P_{\pi^*_1},P_{\pi^*_2}$的第$i$行。根据状态转移矩阵的性质，我们知道
+$$
+|z_i|\le \gamma|v_1-v_2|
+$$
+综上所述，$\|f(v_1)-f(v_2)\|_\infty\le \gamma\|v_1-v_2\|_\infty$
 **QED**
+我们希望利用**压缩映射原理**来证明Bellman最优方程解的存在性。
+>[!note] Bellman最优方程解的存在唯一性
+>根据$f(v)$的压缩性，考虑迭代方程
+>$$
+>v_{k+1}=f(v_k)=\max_\pi\left\{r_\pi+\gamma P_\pi v_k\right\}
+>$$
