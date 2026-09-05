@@ -128,6 +128,22 @@ $$
 >$$
 >含义为智能体在一个状态$s$采取动作$a$之后获得的回报的期望值。
 
->[!warning] 
->
+>[!warning] 动作值和状态值的关系
+>注意到
+>$$
+>\begin{aligned}
+>v_\pi(s)&=\mathbb{E}[G_t|S_t=s]=\sum_{a\in\mathcal{A}}\mathbb{E}[G_t|S_t=s,A_t=a]\pi(a|s)\\
+>&=\sum_{a\in\mathcal{A}}q_\pi(s,a)\pi(a|s)=\mathbb{E}_{A_t\sim\pi(s)}[q(s,A_t)]
+>\end{aligned}
+>$$
+>另外从Bellman公式(1)来看，和上式比较可以得到
+>$$
+>\begin{aligned}
+>q_\pi(s,a)&=\sum_{r\in\mathcal{R}}p(r|s,a)r+\gamma\sum_{s'\in\mathcal{S}}p(s'|s,a)v_\pi(s')\\
+>&=\mathbb{E}[R_{t+1}+\gamma v_\pi(S_{t+1})|S_{t}=s,A_{t}=a]
+>\end{aligned}
+>$$
+
+>[!warning] 易错点
+>一个动作不会被策略选择，但是仍然会具有动作值。一些动作没有被选择到，不是因为这些动作不够好，相反这些很可能是好的动作，强化学习本质是在学习最优的策略，因此必须探索所有的动作才能找到每个状态下的最优动作。
 
