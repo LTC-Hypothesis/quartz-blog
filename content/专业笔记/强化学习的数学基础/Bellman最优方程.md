@@ -12,7 +12,7 @@
 >&=\max_{\pi(s)\in\Pi(s)}\sum_{a\in\mathcal{A}}\pi(a|s)q_\pi(s,a)
 >\end{aligned}
 >$$
->其中$v_\pi(s),v_\pi(s')$是未知量需要求解。
+>其中$v_\pi(s),v_\pi(s')$是未知量需要求解，$\Pi(s)$为状态$s$可选择的所有策略构成的集合。
 
 此时我们要研究的问题转化为
 - 存在性：Bellman最优方程是否有解？
@@ -40,3 +40,10 @@
 >v=\max_{\pi\in\Pi}(r_\pi+\gamma P_\pi v)
 >$$
 >实际上方程右侧可看作$v$的函数$f(v)=\max_{\pi\in\Pi}(r_\pi+\gamma P_\pi v)$。
+
+>[!thm] $f(v)$的压缩性
+>我们说明函数$f(v)$在范数$\|\cdot\|_{\infty}$下是一个压缩映射即$\|f(v_1)-f(v_2)\|_\infty\le \gamma\|v_1-v_2\|_\infty$，对任意的$v_1,v_2\in\mathbb{R}^{|\mathcal{S}|}$，范数$\|\cdot\|_\infty$指的是向量中所有元素中的最大绝对值。
+
+**Proof**
+
+**QED**
