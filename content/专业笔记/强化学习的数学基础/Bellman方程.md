@@ -106,6 +106,28 @@ $$
 >我们会得到一列状态值$\{v_0,v_1,\cdots,v_n,\cdots\}$，可以证明$v_n\to v_{\pi}=(I-\gamma P_{\pi})^{-1}r_\pi,n\to\infty$
 
 **Proof**
-
+我们注意到$v_\pi=r_\pi+\gamma P_\pi v_\pi$，则
+$$
+\begin{aligned}
+v_{k+1}-v_\pi=r_\pi+\gamma P_\pi v_k-v_\pi=\gamma P_\pi(v_k-v_\pi)
+\end{aligned}
+$$
+我们记$\delta_{k}\triangleq v_k-v_\pi$，那么可以得到
+$$
+\delta_{k+1}=\gamma P_\pi\delta_k=\gamma^2P_\pi^2\delta_{k-1}=\cdots=\gamma^{k+1}P_\pi^{k+1}\delta_0
+$$
+由于$\gamma\in(0,1)$则$\gamma^{k+1}\to\infty\text{ as }k\to\infty$。$0\le P_\pi\le 1$表示矩阵$P_\pi$每个元素都小于等于1，从而
+$$
+\delta_{k+1}=\gamma^{k+1}P_\pi^{k+1}\delta_0\to0\text{ as }k\to\infty\text{ .i.e. }v_k\to v_\pi
+$$
 **QED**
+>[!def] 动作值
+>对于一个状态-动作对$(s,a)$，其动作值定义为
+>$$
+>q_\pi(s,a)=\mathbb{E}[G_t|S_t=s,A_t=a]
+>$$
+>含义为智能体在一个状态$s$采取动作$a$之后获得的回报的期望值。
+
+>[!warning] 
+>
 
