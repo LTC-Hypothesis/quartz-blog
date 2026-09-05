@@ -45,5 +45,31 @@
 >我们说明函数$f(v)$在范数$\|\cdot\|_{\infty}$下是一个压缩映射即$\|f(v_1)-f(v_2)\|_\infty\le \gamma\|v_1-v_2\|_\infty$，对任意的$v_1,v_2\in\mathbb{R}^{|\mathcal{S}|}$，范数$\|\cdot\|_\infty$指的是向量中所有元素中的最大绝对值。
 
 **Proof**
-
+对于$v_1,v_2$，假设$\pi^*_1=\arg\max(r_\pi+\gamma P_\pi v_1),\pi^*_2=\arg\max(r_\pi+\gamma P_\pi v_2)$，因此
+$$
+\begin{cases}
+f(v_1)=r_{\pi^*_1}+\gamma P_{\pi^*_1}v_{1}\ge r_{\pi^*_2}+\gamma P_{\pi^*_2}v_{1}\\
+f(v_2)=r_{\pi^*_2}+\gamma P_{\pi^*_2}v_{2}\ge r_{\pi^*_1}+\gamma P_{\pi^*_1}v_{2}
+\end{cases}\Longrightarrow\begin{cases}
+f(v_1)-f(v_2)\le \gamma P_{\pi^*_1}(v_1-v_2)\\
+f(v_2)-f(v_1)\le\gamma P_{\pi^*_2}(v_2-v_1)
+\end{cases}
+$$
+因此得到
+$$
+-\gamma P_{\pi^*_2}(v_1-v_2)\le f(v_1)-f(v_2)\le \gamma P_{\pi^*_1}(v_1-v_2)
+$$
+这里我们取
+$$
+z\triangleq\max\left\{|\gamma P_{\pi^*_1}(v_1-v_2)|,|\gamma P_{\pi^*_2}(v_1-v_2)|\right\}
+$$
+从而有
+$$
+\|f(v_1)-f(v_2)\|_\infty\le\|z\|_\infty
+$$
+对于向量$z$的第$i$个元素$z_i$我们定义为
+$$
+z_i=\max\left\{|\gamma p^\top_i(v_1-v_2)|,|\gamma q^\top_i(v_1-v_2)|\right\}
+$$
+其中$p_i$
 **QED**
