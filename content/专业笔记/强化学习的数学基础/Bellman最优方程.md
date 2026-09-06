@@ -108,7 +108,15 @@ $$
 
 考虑
 $$
-v_{\pi^*}=r_{\pi^*}+\gamma P_{\pi^*}v_{\pi^*}\ge
+v_{\pi^*}=r_{\pi^*}+\gamma P_{\pi^*}v_{\pi^*}\ge r_\pi+\gamma P_{\pi}v_{\pi^*}
+$$
+那么
+$$
+v_{\pi^*}-v_\pi\ge \gamma P_{\pi}(v_{\pi^*}-v_{\pi})
+$$
+反复使用上述不等式
+$$
+v_{\pi^*}-v_\pi\ge\gamma^2 P_{\pi}^2(v_{\pi^*}-v_\pi)\ge\cdots\ge \gamma^n P_{\pi}^n(v_{\pi^*}-v_\pi),\forall n\ge1
 $$
 
 **QED**
