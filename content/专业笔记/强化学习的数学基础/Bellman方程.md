@@ -106,6 +106,7 @@ $$
 >我们会得到一列状态值$\{v_0,v_1,\cdots,v_n,\cdots\}$，可以证明$v_n\to v_{\pi}=(I-\gamma P_{\pi})^{-1}r_\pi,n\to\infty$
 
 **Proof**
+
 我们注意到$v_\pi=r_\pi+\gamma P_\pi v_\pi$，则
 $$
 \begin{aligned}
@@ -120,6 +121,7 @@ $$
 $$
 \delta_{k+1}=\gamma^{k+1}P_\pi^{k+1}\delta_0\to0\text{ as }k\to\infty\text{ .i.e. }v_k\to v_\pi
 $$
+
 **QED**
 >[!def] 动作值
 >对于一个状态-动作对$(s,a)$，其动作值定义为
