@@ -118,5 +118,8 @@ $$
 $$
 v_{\pi^*}-v_\pi\ge\gamma^2 P_{\pi}^2(v_{\pi^*}-v_\pi)\ge\cdots\ge \gamma^n P_{\pi}^n(v_{\pi^*}-v_\pi),\forall n\ge1
 $$
-
+于是有
+$$
+v_{\pi^*}-v_\pi\ge\lim_{n\to\infty}\gamma^n P_\pi^n(v_{\pi^*}-v_\pi)=0
+$$
 **QED**
