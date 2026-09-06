@@ -86,3 +86,4 @@ $$
 >$$
 >v_{k+1}=f(v_k)=\max_\pi\left\{r_\pi+\gamma P_\pi v_k\right\}
 >$$
+>实际上根据压缩映射原理，存在一个不动点$v^*$使得$v_k\to v^*\text{ as }k\to\infty$。
