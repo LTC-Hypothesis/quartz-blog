@@ -122,4 +122,7 @@ $$
 $$
 v_{\pi^*}-v_\pi\ge\lim_{n\to\infty}\gamma^n P_\pi^n(v_{\pi^*}-v_\pi)=0
 $$
+
 **QED**
+>[!note] 最优策略的刻画
+>
