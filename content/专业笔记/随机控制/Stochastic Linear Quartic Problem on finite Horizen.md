@@ -1,1 +1,0 @@
-# Why Linear-Quartic Problem
