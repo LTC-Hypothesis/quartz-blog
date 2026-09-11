@@ -1,5 +1,5 @@
 >[!question] 1.2.1
- Suppose $X$ and $Y$ are random variables on $(\Omega, \mathcal{F}, \mathbb{P})$ and let $A \in \mathcal{F}$. Show that if we let $Z(\omega) = X(\omega)$ for $\omega \in A$ and $Z(\omega) = Y(\omega)$ for $\omega \in A^c$, then $Z$ is a random variable.
+ >Suppose $X$ and $Y$ are random variables on $(\Omega, \mathcal{F}, \mathbb{P})$ and let $A \in \mathcal{F}$. Show that if we let $Z(\omega) = X(\omega)$ for $\omega \in A$ and $Z(\omega) = Y(\omega)$ for $\omega \in A^c$, then $Z$ is a random variable.
 
 >[!done] 
 >For any Borel set $B\in\mathcal{B}$, we have 
