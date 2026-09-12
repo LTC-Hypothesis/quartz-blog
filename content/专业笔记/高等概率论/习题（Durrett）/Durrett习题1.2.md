@@ -37,17 +37,36 @@
 >Show that if $F(x) = \mathbb{P}(X \leq x)$ is continuous then $Y = F(X)$ has a uniform distribution on $(0,1)$, that is, if $y \in [0,1]$, $\mathbb{P}(Y \leq y) = y$.
 
 >[!done] 
->
+>We don't know whether $F(x)$ is strictly increasing and thus for fixed $y\in\mathbb{R}$ we set 
+>$$
+>u=\sup\left\{x:F(x)\le y\right\}
+>$$
+>If $y\le 0$, $u:=-\infty$; If $y\ge1$, $u:=+\infty$. We only consider $y\in(0,1)$. Since $u+\frac{1}{n}\notin\left\{x:F(x)\le y\right\}$ for $n\in\mathbb{N}$, then by continuity
+>$$
+>F(u)=\lim_{n\to\infty}F(u+\frac{1}{n})\ge y
+>$$
+>Hence, $F(u)=y$. 
+>$$
+>\mathbb{P}(Y\le y)=\mathbb{P}(F(X)\le y)=\mathbb{P}(X\le u)=F(u)=y
+>$$
 
 >[!question] 1.2.5.
 > Suppose $X$ has continuous density $f$, $\mathbb{P}(\alpha \leq X \leq \beta) = 1$ and $g$ is a function that is strictly increasing and differentiable on $(\alpha, \beta)$. Then $g(X)$ has density $f(g^{-1}(y))/g'(g^{-1}(y))$ for $y \in (g(\alpha), g(\beta))$ and $0$ otherwise. When $g(x) = ax + b$ with $a > 0$, $g^{-1}(y) = (y - b)/a$ so the answer is $(1/a)f((y - b)/a)$.
 
+>[!done] 
+>Since $g$ is strictly increas
+
 >[!question] 1.2.6. 
 >Suppose $X$ has a normal distribution. Use the previous exercise to compute the density of $\exp(X)$. (The answer is called the **lognormal distribution**.)
+
+>[!done] 
 
 >[!question] 1.2.7. (i) 
 >Suppose $X$ has density function $f$. Compute the distribution function of $X^2$ and then differentiate to find its density function. 
 
+>[!done] 
 
 >[!question] 1.2.7.(ii) 
 >Work out the answer when $X$ has a standard normal distribution to find the density of the **chi-square distribution**.
+
+>[!done] 
