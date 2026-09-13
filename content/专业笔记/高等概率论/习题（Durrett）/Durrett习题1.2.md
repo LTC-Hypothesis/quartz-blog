@@ -54,19 +54,41 @@
 > Suppose $X$ has continuous density $f$, $\mathbb{P}(\alpha \leq X \leq \beta) = 1$ and $g$ is a function that is strictly increasing and differentiable on $(\alpha, \beta)$. Then $g(X)$ has density $f(g^{-1}(y))/g'(g^{-1}(y))$ for $y \in (g(\alpha), g(\beta))$ and $0$ otherwise. When $g(x) = ax + b$ with $a > 0$, $g^{-1}(y) = (y - b)/a$ so the answer is $(1/a)f((y - b)/a)$.
 
 >[!done] 
->Since $g$ is strictly increas
+>Since $g$ is strictly increasing, $g^{-1}$ is exist. 
+>$$
+>\begin{aligned}
+>\mathbb{P}(g(X)\le x)=\mathbb{P}(X\le g^{-1}(x))=\int_{-\infty}^{g^{-1}(x)}f(y){d}y
+>\end{aligned}
+>$$
+>Since $\mathbb{P}(\alpha\le X\le\beta)=1$, if $g^{-1}(x)<\alpha$ or $g^{-1}(x)>\beta$, $\mathbb{P}(g(X)\le x)=0$ or $\mathbb{P}(g(X)\le x)=1$. We only consider $\alpha\le g^{-1}(x)\le \beta$, 
+>$$
+>\mathbb{P}(g(X)\le x)=\int_{\alpha}^{g^{-1}(x)}f(y){d}y\Longrightarrow f_{g(X)}(x)=\frac{f(g^{-1}(x))}{g^\prime(g^{-1}(x))},x\in(g(\alpha),g(\beta))
+>$$
 
 >[!question] 1.2.6. 
 >Suppose $X$ has a normal distribution. Use the previous exercise to compute the density of $\exp(X)$. (The answer is called the **lognormal distribution**.)
 
 >[!done] 
+>We compute directly
+>$$
+>f_{e^{X}}(x)=\frac{f(\ln{x})}{x}=\frac{1}{\sqrt{2\pi}x}e^{-\frac{\ln^2{x}}{2}}
+>$$
 
 >[!question] 1.2.7. (i) 
 >Suppose $X$ has density function $f$. Compute the distribution function of $X^2$ and then differentiate to find its density function. 
 
 >[!done] 
+>We compute $\mathbb{P}(X^2\le y)$. If $y\le 0$, $\mathbb{P}(X^2\le y)=0$. We only consider the case $y>0$.  Then 
+>$$
+>\begin{aligned}
+>\mathbb{P}(X^2\le y)&=\mathbb{P}(-\sqrt{y}\le X\le \sqrt{y})\\
+>&=\int_{-\sqrt{y}}^{\sqrt{y}}f(x){d}x
+>\end{aligned}
+>$$
+>By de
 
 >[!question] 1.2.7.(ii) 
 >Work out the answer when $X$ has a standard normal distribution to find the density of the **chi-square distribution**.
 
 >[!done] 
+>It is the definition in mathmatical statistic.
