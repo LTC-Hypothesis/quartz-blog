@@ -6,7 +6,14 @@
 >$$
 >\mathcal{A}\subseteq\mathcal{S}\Longrightarrow\{X\in A\}\subseteq\{X\in B\}\Longrightarrow X^{-1}(\mathcal{A})\subseteq\sigma(X)
 >$$
->Since $\mathcal{G}$ is the smallest $\sigma-$algebra containing $X^{-1}(\mathcal{A})$, $\mathcal{G}\subseteq\sigma(X)$. For another direction, 
+>Since $\mathcal{G}$ is the smallest $\sigma-$algebra containing $X^{-1}(\mathcal{A})$, $\mathcal{G}\subseteq\sigma(X)$. For another direction, we set 
+>$$
+>\mathcal{D}=\left\{B:\{X\in B\}\in\mathcal{G}\right\}
+>$$
+>It is easy to check $\mathcal{D}$ is a $\sigma-$algebra. Then 
+>$$
+>\mathcal{A}\subseteq\mathcal{D}\Longrightarrow\mathcal{S}=\sigma(\mathcal{A})\subseteq \mathcal{D}\Longrightarrow \sigma(X)\subseteq\mathcal{G}
+>$$
 
 >[!question] 1.3.2. 
 >Prove Theorem 1.3.6 when $n = 2$ by checking $\{X_1 + X_2 < x\} \in \mathcal{F}$.
@@ -18,7 +25,19 @@
 >Show that if $f$ is continuous and $X_n \to X$ almost surely then $f(X_n) \to f(X)$ almost surely.
 
 >[!done] 
->
+>Since $X_n\xrightarrow{a.s.}X$, we have 
+>$$
+>\mathbb{P}\left\{\omega:\lim_{n\to\infty}X_n(\omega)=X(\omega)\right\}=1
+>$$
+>For fixed $\omega$, by continuity of $f$, if $f$ is continuous on $X(\omega)$ i.e. $\forall\varepsilon>0$, $\exists\delta>0$ s.t. 
+>$$
+>|y-X(\omega)|<\delta\Longrightarrow|f(y)-f(X(\omega))|<\varepsilon
+>$$
+>For above $\delta>0$, $\exists N\in\mathbb{N}$ s.t. $n\ge N$, $|X_n(\omega)-X(\omega)|<\delta$, then we have $|f(X_n(\omega))-f(X(\omega))|<\varepsilon$. It implies
+>$$
+>\left\{\omega:\lim_{n\to\infty}X_n(\omega)=X(\omega)\right\}\subseteq\left\{\omega:\lim_{n\to\infty}f(X_n(\omega))=f(X(\omega))\right\}
+>$$
+>Then $f(X_n)\xrightarrow{a.s.}f(X)$.
 
 >[!question] 1.3.4. (i) 
 >Show that a continuous function from $\mathbf{R}^d \to \mathbf{R}$ is a measurable map from $(\mathbf{R}^d, \mathcal{R}^d)$ to $(\mathbf{R}, \mathcal{R})$. 
