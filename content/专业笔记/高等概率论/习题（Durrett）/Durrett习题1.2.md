@@ -85,7 +85,17 @@
 >&=\int_{-\sqrt{y}}^{\sqrt{y}}f(x){d}x
 >\end{aligned}
 >$$
->By de
+>By differentiatint the integral, 
+>$$
+>f_{X^2}(y)=\frac{f(\sqrt{y})+f(-\sqrt{y})}{2\sqrt{y}}
+>$$
+>Above all, 
+>$$
+>f_{X^2}(y)=\begin{cases}
+>\frac{f(\sqrt{y})+f(-\sqrt{y})}{2\sqrt{y}},&y>0\\
+>0,&y\le 0
+>\end{cases}
+>$$
 
 >[!question] 1.2.7.(ii) 
 >Work out the answer when $X$ has a standard normal distribution to find the density of the **chi-square distribution**.
