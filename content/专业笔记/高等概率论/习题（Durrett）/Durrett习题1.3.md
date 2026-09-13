@@ -2,7 +2,11 @@
 >Show that if $\mathcal{A}$ generates $\mathcal{S}$, then $X^{-1}(\mathcal{A}) = \{\{X \in A\} : A \in \mathcal{A}\}$ generates $\sigma(X) = \{\{X \in B\} : B \in \mathcal{S}\}$.
 
 >[!done] 
->
+>We denote $\sigma(X^{-1}(\mathcal{A}))$ by $\mathcal{G}$. We W.T.S. $\mathcal{G}=\sigma(X)$. It is easy to check $\sigma(X)$ is also a $\sigma$-algebra. We prove $\mathcal{G}\subseteq \sigma(X)$ firstly. Note that 
+>$$
+>\mathcal{A}\subseteq\mathcal{S}\Longrightarrow\{X\in A\}\subseteq\{X\in B\}\Longrightarrow X^{-1}(\mathcal{A})\subseteq\sigma(X)
+>$$
+>Since $\mathcal{G}$ is the smallest $\sigma-$algebra containing $X^{-1}(\mathcal{A})$, $\mathcal{G}\subseteq\sigma(X)$. For another direction, 
 
 >[!question] 1.3.2. 
 >Prove Theorem 1.3.6 when $n = 2$ by checking $\{X_1 + X_2 < x\} \in \mathcal{F}$.
