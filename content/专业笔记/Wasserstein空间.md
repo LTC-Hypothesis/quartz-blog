@@ -40,7 +40,12 @@ Hence, $W_p(\mu,\nu)=0\Longleftrightarrow \mu=\nu$. Finally, we W.T.S. the trian
 >[!lemma] Gluing lemma
 >Let $(\mathcal{X}_i, \mu_i), i = 1, 2, 3,$ be Polish probability spaces. If $(X_1, X_2)$ is a coupling of $(\mu_1, \mu_2)$ and $(Y_2, Y_3)$ is a coupling of $(\mu_2, \mu_3)$, then one can construct a triple of random variables $(Z_1, Z_2, Z_3)$ such that $(Z_1, Z_2)$ has the same law as $(X_1, X_2)$ and $(Z_2, Z_3)$ has the same law as $(Y_2, Y_3)$.
 
-Suppose the measure $\mu,\nu,\theta$. $()$
+Suppose the measure $\mu,\nu,\theta$. $(X_1,X_2)$ is a coupling of $(\mu,\nu)$ and $(Y_2,Y_3)$ is a coupling of $(\nu,\theta)$. By Gluing lemma, there exists $(Z_1,Z_2,Z_3)$ s.t. $(Z_1,Z_2)$ has the sam law as $(X_1,X_2)$ and $(Z_2,Z_3)$ has the same law as $(Y_2,Y_3)$. Then we have 
+$$
+\begin{aligned}
+W_p(\mu,\theta)
+\end{aligned}
+$$
 
 **QED**
 
