@@ -110,7 +110,7 @@ follows from the fact that $f^0 - f_0$ is.
 >$$
 >\mathcal{H}=\left\{f\circ X:f\text{ is Borel measurable function}\right\}
 >$$
->We W.T.S. $\mat$
+>We W.T.S. $\mathcal{H}$ contains the all $\sigma(X)-$measurable simple function.
 
 >[!question] 1.3.9. 
 >To get a constructive proof of the last result, note that $\{\omega : m2^{-n} \le Y < (m+1)2^{-n}\} = \{X \in B_{m,n}\}$ for some $B_{m,n} \in \mathcal{R}$ and set $f_n(x) = m2^{-n}$ for $x \in B_{m,n}$ and show that as $n \to \infty$ $f_n(x) \to f(x)$ and $Y = f(X)$.
