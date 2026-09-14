@@ -43,10 +43,29 @@
 >Show that a continuous function from $\mathbf{R}^d \to \mathbf{R}$ is a measurable map from $(\mathbf{R}^d, \mathcal{R}^d)$ to $(\mathbf{R}, \mathcal{R})$. 
 
 >[!done] 
->
+>Suppose $f:(\mathbb{R}^d,\mathcal{R}^d)\to (\mathbb{R},\mathcal{R})$ is continuous. For $U\in \mathcal{R}$, $U$ is open set, consider 
+>$$
+>f^{-1}(U)=\left\{x:f(x)\in U\right\}\in \mathcal{R}^d
+>$$
+>by continuity. Hence, $f$ is a measurable map.
 
 >[!question] 1.3.4.(ii) 
 >Show that $\mathcal{R}^d$ is the smallest $\sigma$-field that makes all the continuous functions measurable.
+
+>[!done] 
+>Suppose $\mathcal{A}$ is a $\sigma-$algebra on $\mathbb{R}^d$ and each continuous function $f:\mathbb{R}^d\to\mathbb{R}$ is $\mathcal{A}/\mathcal{R}$ measurable. We W.T.S. $\mathcal{R}^d\subseteq\mathcal{A}$. For nonempty closed set $F\subseteq\mathbb{R}^d$, we define 
+>$$
+>d_F(x)=\inf_{y\in F}\|y-x\|
+>$$
+>By triangle inequality, 
+>$$
+>|d_F(x)-d_F(z)|\le \|x-z\|
+>$$
+>$d_F(x)$ is a continuous function. Since $F$ is closed, 
+>$$
+>F=\left\{x:d_F(x)=0\right\}=d_F^{-1}(0)\in\mathcal{A}
+>$$
+>
 
 >[!question] 1.3.5. 
 >A function $f$ is said to be *lower semicontinuous* or l.s.c. if
@@ -55,9 +74,15 @@
 >$$
 >and *upper semicontinuous* (u.s.c.) if $-f$ is l.s.c. Show that $f$ is l.s.c. if and only if $\{x : f(x) \le a\}$ is closed for each $a \in \mathbf{R}$ and conclude that semicontinuous functions are measurable.
 
+>[!done] 
+>
+
 >[!question] 1.3.6. 
 >Let $f : \mathbf{R}^d \to \mathbf{R}$ be an arbitrary function and let $f^\delta(x) = \sup\{f(y) : |y - x| < \delta\}$ and $f_\delta(x) = \inf\{f(y) : |y - x| < \delta\}$ where $|z| = (z_1^2 + \dots + z_d^2)^{1/2}$. Show that $f^\delta$ is l.s.c. and $f_\delta$ is u.s.c. Let $f^0 = \lim_{\delta \downarrow 0} f^\delta$, $f_0 = \lim_{\delta \downarrow 0} f_\delta$, and conclude that the set of points at which $f$ is discontinuous $= \{f^0 \ne f_0\}$ is measurable.
 follows from the fact that $f^0 - f_0$ is.
+
+>[!done] 
+>
 
 >[!question] 1.3.7. 
 >A function $\varphi : \Omega \to \mathbf{R}$ is said to be *simple* if
