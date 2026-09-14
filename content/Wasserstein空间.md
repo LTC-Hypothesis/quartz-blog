@@ -19,7 +19,30 @@
 
 >[!warning] 
 >- $W_1$ is called the Kantorovich–Rubinstein distance. 
->- $W_p$ is 
+>- $W_p$ is still not a distance in the strict sense, because it might take the value $+\infty$.
 
 >[!example] 
->
+>For two Dirac measure, there is noly one transport way, 
+>$$
+>W_p(\delta_x,\delta_y)=d(x,y)
+>$$
+
+>[!example] 
+>Consider for $\varepsilon\in(0,1)$, the measure $\mu=(1-\varepsilon)\delta_0+\varepsilon\delta_R,\nu=\delta_0$ on $\mathbb{R}$. Compute $W_p(\mu,\nu)$.
+>We should find couple and marginal distribution. Since the second marginal distribution is $\delta_0$, we have 
+>$$
+>\pi(\mathbb{R}\times\{0\})=1
+>$$
+>For the first marginal distribution, 
+>$$
+>\pi(\{0\}\times\mathbb{R})=(1-\varepsilon),\pi(\{R\}\times\mathbb{R})=\varepsilon
+>$$
+>Then the adimissable couple is 
+>$$
+>\pi=(1-\varepsilon)\delta_{(0,0)}+\varepsilon\delta_{(R,0)}
+>$$
+>Hence, the Wasserstein distance is computed
+>$$
+>W_p(x,y)=\left(\int_{\mathbb{R}}|x-y|^p{d}\pi(x,y)\right)^{\frac{1}{p}}=\varepsilon^{\frac{1}{p}} R
+>$$
+
