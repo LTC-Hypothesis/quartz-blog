@@ -38,7 +38,26 @@
 >\Longrightarrow&\limsup_{n\to\infty}\sum_{m=1}^{\infty}\frac{m}{2^n}\mu(E_{n,m})\le\int_{X}f(x){d}\mu
 >\end{aligned}
 > $$
-> For another direction, 
+> For another direction, we take $0\le h\le f$ and $A=\{h(x)>0\}$ which satisfies $\mu(A)<\infty$, set $E_{n,0}=\{0\le f<\frac{1}{2^n}\}$, 
+> $$
+> \begin{aligned}
+>\int_{X}h(x){d}\mu&=\sum_{m=0}^{\infty}\int_{A\cap E_{n,m}}h(x){d}\mu\\
+>&\le \sum_{m=0}^{\infty}\frac{m+1}{2^n}\mu(A\cap E_{n,m})\\
+>&=\sum_{m=1}^{\infty}\frac{m}{2^n}\mu(A\cap E_{n,m})+\frac{1}{2^n}\mu(A)
+>\end{aligned}
+> $$
+> Then we obtain
+> $$
+> \liminf_{n\to\infty}\sum_{m=1}^{\infty}\frac{m}{2^n}\mu(A\cap E_{n,m})\ge \int_{X}h(x){d}\mu
+> $$
+> Take sup for all such function $h$, we obtain 
+> $$
+> \liminf_{n\to\infty}\sum_{m=1}^{\infty}\frac{m}{2^n}\mu(A\cap E_{n,m})\ge \int_{X}f(x){d}\mu
+> $$
+> Hence, as $n\to\infty$, 
+> $$
+> \sum_{m=1}^{\infty}\frac{m}{2^n}\mu(A\cap E_{n,m})\uparrow\int_{X}f(x){d}\mu
+> $$
 
 > [!question] 1.4.3. (i)
 > Let $g$ be an integrable function on $\mathbf{R}$ and $\epsilon > 0$. Use the definition of the integral to conclude there is a simple function $\varphi = \sum_k b_k 1_{A_k}$ with $\int |g - \varphi| dx < \epsilon$.

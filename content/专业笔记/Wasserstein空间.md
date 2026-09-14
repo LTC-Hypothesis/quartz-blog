@@ -9,13 +9,40 @@
 >$$
 
 >[!def] Wasserstein distance
->Let $(X,d)$ be a Polish metric space and $p\in[1,\infty)$. For any two probability measure $\mu,\nu$ on $X$, the Wasserstein distance is defined by the formula
+>Let $(\mathcal{X},d)$ be a Polish metric space and $p\in[1,\infty)$. For any two probability measure $\mu,\nu$ on $\mathcal{X}$, the Wasserstein distance is defined by the formula
 >$$
 >\begin{aligned}
 >W_p(\mu,\nu)&=\left(\inf_{\pi\in\Pi(\mu,\nu)}\int_{X}d(x,y)^p{d}\pi(x,y)\right)^{\frac{1}{p}}\\
 >&=\inf\left\{\mathbb{E}[d(X,Y)^p]^{\frac{1}{p}},\text{law}(X)=\mu,\text{law}(Y)=\nu\right\}
 >\end{aligned}
 >$$
+
+**Proof of $W_p$ satisfies the axioms of a distance**
+
+It is clear that $W_p(\mu,\nu)=W_p(\nu,\mu)$. If $W_p(\mu,\nu)=0$, then there exists a transference plan which is entirely concentrated on the diagonal $y=x$ in $\mathcal{X}\times\mathcal{X}$ denoted by $\Delta$. Therefore, 
+$$
+\pi(\Delta)=1,\pi(\Delta^c)=0
+$$
+For any Borel set $A$, 
+$$
+\mu(A)=\pi(A\times X),\nu(A)=\pi(X\times A)
+$$
+Note that
+$$
+(A\times X)\cap\Delta=(X\times A)\cap \Delta
+$$
+Then 
+$$
+\mu(A)=\pi(A\times X)=\pi((A\times X)\cap \Delta)=\pi((X\times A)\cap \Delta)=\nu(A)
+$$
+Hence, $W_p(\mu,\nu)=0\Longleftrightarrow \mu=\nu$. Finally, we W.T.S. the triangle inequality. We need a lemma called **Gluing Lemma**.
+
+>[!lemma] Gluing lemma
+>Let $(\mathcal{X}_i, \mu_i), i = 1, 2, 3,$ be Polish probability spaces. If $(X_1, X_2)$ is a coupling of $(\mu_1, \mu_2)$ and $(Y_2, Y_3)$ is a coupling of $(\mu_2, \mu_3)$, then one can construct a triple of random variables $(Z_1, Z_2, Z_3)$ such that $(Z_1, Z_2)$ has the same law as $(X_1, X_2)$ and $(Z_2, Z_3)$ has the same law as $(Y_2, Y_3)$.
+
+
+
+**QED**
 
 >[!warning] 
 >- $W_1$ is called the Kantorovich–Rubinstein distance. 
@@ -60,3 +87,5 @@
 >\sum_{j}\pi_{ij}=a_i,\sum_{i}\pi_{ij}=b_j
 >$$
 
+>[!def] Wasserstein space
+>
