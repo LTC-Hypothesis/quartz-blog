@@ -42,6 +42,9 @@
 >[!question] 1.3.4. (i) 
 >Show that a continuous function from $\mathbf{R}^d \to \mathbf{R}$ is a measurable map from $(\mathbf{R}^d, \mathcal{R}^d)$ to $(\mathbf{R}, \mathcal{R})$. 
 
+>[!done] 
+>
+
 >[!question] 1.3.4.(ii) 
 >Show that $\mathcal{R}^d$ is the smallest $\sigma$-field that makes all the continuous functions measurable.
 
