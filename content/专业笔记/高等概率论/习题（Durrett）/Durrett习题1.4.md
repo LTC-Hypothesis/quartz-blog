@@ -33,8 +33,12 @@
 > $$
 > then 
 > $$
-> \sum_{m=1}^{\infty}\frac{m}{2^n}\mu(E_{n,m})\le \sum_{m=1}^{\infty}\int_{E_{n,m}}f(x){d}\mu\le\int_{X}f(x){d}\mu|\longrightarrow
+> \begin{aligned}
+>&\sum_{m=1}^{\infty}\frac{m}{2^n}\mu(E_{n,m})\le \sum_{m=1}^{\infty}\int_{E_{n,m}}f(x){d}\mu\le\int_{X}f(x){d}\mu\\
+>\Longrightarrow&\limsup_{n\to\infty}\sum_{m=1}^{\infty}\frac{m}{2^n}\mu(E_{n,m})\le\int_{X}f(x){d}\mu
+>\end{aligned}
 > $$
+> For another direction, 
 
 > [!question] 1.4.3. (i)
 > Let $g$ be an integrable function on $\mathbf{R}$ and $\epsilon > 0$. Use the definition of the integral to conclude there is a simple function $\varphi = \sum_k b_k 1_{A_k}$ with $\int |g - \varphi| dx < \epsilon$.
