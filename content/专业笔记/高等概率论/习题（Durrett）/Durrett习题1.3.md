@@ -75,7 +75,16 @@
 >and *upper semicontinuous* (u.s.c.) if $-f$ is l.s.c. Show that $f$ is l.s.c. if and only if $\{x : f(x) \le a\}$ is closed for each $a \in \mathbf{R}$ and conclude that semicontinuous functions are measurable.
 
 >[!done] 
->
+>$\Longrightarrow$: Consider $\{x_n\}\subseteq\{x:f(x)\le a\}$ and $x_n\to x$, by lower semicontinuity, 
+>$$
+>f(x)\le \liminf_{n\to\infty}f(x_n)\le a
+>$$
+>Then $x\in \{y:f(y)\le a\}$ and thus $\{x:f(x)\le a\}$ is closed set.
+>$\Longleftarrow$: Consider for all $a$ s.t. $a<f(x)$, then the such $x\in \{x:f(x)\le a\}^c$ which is open. We have $\delta>0$ s.t. for $y$ s.t. $\|y-x\|<\delta\Longrightarrow f(y)>a$ and thus 
+>$$
+>\liminf_{y\to x}f(y)>a
+>$$
+>Let $a\uparrow f(x)$, we obtain $\liminf_{y\to x}f(y)\ge f(x)$。
 
 >[!question] 1.3.6. 
 >Let $f : \mathbf{R}^d \to \mathbf{R}$ be an arbitrary function and let $f^\delta(x) = \sup\{f(y) : |y - x| < \delta\}$ and $f_\delta(x) = \inf\{f(y) : |y - x| < \delta\}$ where $|z| = (z_1^2 + \dots + z_d^2)^{1/2}$. Show that $f^\delta$ is l.s.c. and $f_\delta$ is u.s.c. Let $f^0 = \lim_{\delta \downarrow 0} f^\delta$, $f_0 = \lim_{\delta \downarrow 0} f_\delta$, and conclude that the set of points at which $f$ is discontinuous $= \{f^0 \ne f_0\}$ is measurable.
