@@ -110,7 +110,19 @@ follows from the fact that $f^0 - f_0$ is.
 >$$
 >\mathcal{H}=\left\{f\circ X:f\text{ is Borel measurable function}\right\}
 >$$
->We W.T.S. $\mathcal{H}$ contains the all $\sigma(X)-$measurable simple function.
+>We W.T.S. $\mathcal{H}$ contains the all $\sigma(X)-$measurable simple function. Note that 
+>$$
+>\sigma(X)=\left\{X^{-1}(B):B\in\mathcal{R}\right\}
+>$$
+>consider the simple function on $\sigma(X)$, 
+>$$
+>\varphi(x)=\sum_{k=1}^{n}a_k\mathbb{1}_{A_k}(x),A_k\in\sigma(X)
+>$$
+>Then $A_k=X^{-1}(B_k)$. Set the function 
+>$$
+>f(x)=\sum_{k=1}^{m}a_k\mathbb{1}_{B_k}(x)
+>$$
+>$f$ is Borel measurable and $\varphi=f\circ X$ is also Borel measurable. 
 
 >[!question] 1.3.9. 
 >To get a constructive proof of the last result, note that $\{\omega : m2^{-n} \le Y < (m+1)2^{-n}\} = \{X \in B_{m,n}\}$ for some $B_{m,n} \in \mathcal{R}$ and set $f_n(x) = m2^{-n}$ for $x \in B_{m,n}$ and show that as $n \to \infty$ $f_n(x) \to f(x)$ and $Y = f(X)$.

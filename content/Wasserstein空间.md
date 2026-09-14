@@ -46,3 +46,17 @@
 >W_p(x,y)=\left(\int_{\mathbb{R}}|x-y|^p{d}\pi(x,y)\right)^{\frac{1}{p}}=\varepsilon^{\frac{1}{p}} R
 >$$
 
+>[!example] 
+>We can generalize the above example. If 
+>$$
+>\mu=\sum_{k=1}^{m}a_k\delta_{x_k},\nu=\sum_{k=1}^{n}b_k\delta_{y_k}
+>$$
+>Then the Wasserstein distance is 
+>$$
+>W_p(\mu,\nu)=\left(\min_{\pi_{ij}\ge0}\sum_{i,j=1}d(x_i,y_j)^p\pi_{ij}\right)^{\frac{1}{p}}
+>$$
+>where $(\pi_{ij})_{m\times n}$ be a matrix satisfying 
+>$$
+>\sum_{j}\pi_{ij}=a_i,\sum_{i}\pi_{ij}=b_j
+>$$
+
