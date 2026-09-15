@@ -65,13 +65,7 @@ $$
 \begin{aligned}
 ||h - f_0||^2 &\le ||h - (f_0+f)||^2 = ||(h-f_0)-f||^2\\
 & = ||h-f_0||^2 - 2Re\left\langle h-f_0, f\right\rangle +||f||^2\\
-\end{aligned}
-\end{equation}
-$$
-$$
-\begin{equation}
-\begin{aligned}
-\Longrightarrow 2Re\left\langle h-f_0, f\right\rangle\le ||f||^2, \forall f\in M
+\Longrightarrow 2Re\left\langle h-f_0, f\right\rangle&\le ||f||^2, \forall f\in M
 \end{aligned}
 \end{equation}
 $$
