@@ -43,7 +43,10 @@ Hence, $W_p(\mu,\nu)=0\Longleftrightarrow \mu=\nu$. Finally, we W.T.S. the trian
 Suppose the measure $\mu,\nu,\theta$. $(X_1,X_2)$ is a coupling of $(\mu,\nu)$ and $(Y_2,Y_3)$ is a coupling of $(\nu,\theta)$. By Gluing lemma, there exists $(Z_1,Z_2,Z_3)$ s.t. $(Z_1,Z_2)$ has the sam law as $(X_1,X_2)$ and $(Z_2,Z_3)$ has the same law as $(Y_2,Y_3)$. Then we have 
 $$
 \begin{aligned}
-W_p(\mu,\theta)
+W_p(\mu,\theta)&\le\left(\mathbb{E}\left[d(Z_1,Z_3)^p\right]\right)^{\frac{1}{p}}\\
+&\le \left(\mathbb{E}\left[(d(Z_1,Z_2)+d(Z_2,Z_3))^p\right]\right)^{\frac{1}{p}}\\
+&\le \left(\mathbb{E}[d(Z_1,Z_2)^p]\right)^{\frac{1}{p}}+\left(\mathbb{E}[d(Z_2,Z_3)^p]\right)^{\frac{1}{p}}\qquad\text{(Minkowski inequality)}\\
+&=W_p(\mu,\nu)+W_p(\nu,\theta)
 \end{aligned}
 $$
 
@@ -93,4 +96,16 @@ $$
 >$$
 
 >[!def] Wasserstein space
->
+>The Wasserstein space of $p$ order is defined as 
+>$$
+>\mathcal{P}_p(\mathcal{X})=\left\{\mu\in\mathcal{P}(\mathcal{X}):\int_{\mathcal{X}}d(x_0,x)^p\mu(dx)<+\infty\right\}
+>$$
+>$\mathcal{P}_{p}(\mathcal{X})$ will always be equipped with distance $W_p$ and thus becomes distance space $(\mathcal{P}_p(\mathcal{X}),W_p)$. 
+
+>[!warning] 
+>By H$\ddot{\text{o}}$lder's inequality, 
+>$$
+>p\le q\Longrightarrow W_p\le W_q
+>$$
+>It implies that $W_q$ convergence can obtain $W_p$ convergence.
+
