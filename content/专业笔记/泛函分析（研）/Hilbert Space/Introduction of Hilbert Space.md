@@ -25,6 +25,9 @@ we denote $\mathbb{F}$ either $\mathbb{R}$ or $\mathbb{C}$.
 > 
 > ^970a9c
 
+>[!thm] Continuity of inner product 
+>Suppose Hilbert space $\mathscr{H}$, $y\in\mathscr{H}$, $x_n\to x_0$, then $\langle x_n,y\rangle\to\langle x_0,y\rangle$
+
 > [!proposition] Norm
 > If $\left \langle \cdot,\cdot \right \rangle$ is a semi-inner product on $X$ and $||x|| = \sqrt{\left \langle x,x \right \rangle}$, then
 > 2. $||x+y||\le ||x|| + ||y||$

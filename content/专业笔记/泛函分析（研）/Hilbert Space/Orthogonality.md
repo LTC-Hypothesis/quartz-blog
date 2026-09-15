@@ -11,7 +11,7 @@ Orthogonality is the greatest advantage of a Hilbert space. By the properties of
 > If $f_1 , f_2 , \cdots ,f_n$ are pairwise orthogonal vectors in $H$, then $$||f_1 + f_2 + \cdots +f_n||^2 = ||f_1||^2 + \cdots +||f_n||^2$$
 
 > [!thm] Parallelogram Law
-> If $H$ is a Hilbert space and $f, g\in H$, then $$||f-g||^2 + ||f+g||^2 = ||f||^2 + ||g||^2$$
+> If $H$ is a Hilbert space and $f, g\in H$, then $$||f-g||^2 + ||f+g||^2 = 2(||f||^2 + ||g||^2)$$
 > 
 > ^758567
 
@@ -27,7 +27,7 @@ Orthogonality is the greatest advantage of a Hilbert space. By the properties of
 
 > [!thm]
 > If $H$ is a Hilbert space, $K$ is a **closed convex** nonempty subset of $H$, and $h\in H$, then there is a **unique** point $k_0$ in $K$ such that 
-> $$||h - k_0|| = dist(h,K) = \inf_{k\in K}||h - k||$$
+> $$||h - k_0|| = \text{dist}(h,K) = \inf_{k\in K}||h - k||$$
 
 **Proof** WLOG, we assume $h = 0$. In fact, we can consider $K - h = \{k - h:k\in K\}$ instead of $K$. W.T.S: there is a unique vector $k_0$ in $K$ such that 
 $$
