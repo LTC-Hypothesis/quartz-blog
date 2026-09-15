@@ -18,6 +18,9 @@ Orthogonality is the greatest advantage of a Hilbert space. By the properties of
 > [!def] Convex set
 > If $X$ is any vector space over $\mathbb{F}$ and $A \subset X$, then $A$ is a convex set if for any $x$ and $y$ in $A$ and $0 \le t \le 1$, $tx + (1 - t)y\in A$.
 
+>[!def] Subspace 
+>$K\subseteq H$, $k_1,k_2\in K$, $\alpha_1k_1+\alpha_2k_2\in K,\alpha_1,\alpha_2\in\mathbb{C}$. Subspace is convex set. 
+
 > [!warning]
 > - $\{tx + (1-t)y : 0\le t\le 1\}$ is the straight-line segment joining $x$ and $y$
 > - If $X$ is a vector space, then any linear subspace in $X$ is a convex set.
@@ -25,15 +28,15 @@ Orthogonality is the greatest advantage of a Hilbert space. By the properties of
 > - The intersection of any collection of convex sets is convex
 > - If $H$ is a Hilbert space, then every open ball $B(f; r) = \{g\in H:|| f - g || < r\}$ is convex, as is every closed ball.
 
-> [!thm]
+> [!thm] 
 > If $H$ is a Hilbert space, $K$ is a **closed convex** nonempty subset of $H$, and $h\in H$, then there is a **unique** point $k_0$ in $K$ such that 
 > $$||h - k_0|| = \text{dist}(h,K) = \inf_{k\in K}||h - k||$$
 
 **Proof** WLOG, we assume $h = 0$. In fact, we can consider $K - h = \{k - h:k\in K\}$ instead of $K$. W.T.S: there is a unique vector $k_0$ in $K$ such that 
 $$
-||k_0|| = dist(0,K) = \inf_{k\in K}||k||
+||k_0|| = \text{dist}(0,K) = \inf_{k\in K}||k||
 $$
-Let $d = dist(0,K)$, by definition, there exists $\{k_n\}$ s.t. $||k_n||\to d$. By [[Orthogonality#^758567| Parallelogram Law]], 
+Let $d = \text{dist}(0,K)$, by definition, there exists $\{k_n\}$ s.t. $||k_n||\to d$. By [[Orthogonality#^758567| Parallelogram Law]], 
 $$
 \left\|\frac{k_n -k_m}{2}\right\|^2 = \frac{1}{2}\left(\left\|k_n\right\|^2 + \left\|k_m\right\|^2\right) - \left\|\frac{k_n +k_m}{2}\right\|^2
 $$
@@ -41,7 +44,7 @@ Since K is convex, $\frac{k_n +k_m}{2}\in K\Longrightarrow \left\|\frac{k_n +k_m
 $$
 \left\|\frac{k_n -k_m}{2}\right\|^2\le d^2+ \frac{1}{4}\varepsilon^2 - d^2\Longrightarrow||k_n-k_m||\le \varepsilon
 $$
-Hence, $\{k_n\}$ is a Cauchy sequence in $H$. Since $H$ is a Hilbert space and $K$ is closed,there exists $k_o$ s.t. $k_n\to k_0\in K$ in $H$ and for any $\{k_n\}$ 
+Hence, $\{k_n\}$ is a Cauchy sequence in $H$. Since $H$ is a Hilbert space and $K$ is closed,there exists $k_0$ s.t. $k_n\to k_0\in K$ in $H$ and for any $\{k_n\}$ 
 $$
 d\le ||k_0||\le ||k_n-k_0||+||k_n||\to d
 $$
@@ -51,8 +54,8 @@ d\le ||\frac{1}{2}(h_0 + k_0)||\le \frac{1}{2}(||h_0|| + ||k_0||) = d
 $$
 it implies $||\frac{1}{2}(h_0 +k_0)|| = d$. By [[Orthogonality#^758567| Parallelogram Law]], $d^2 = d^2 - ||\frac{h_0 - k_0}{2}||^2\Longrightarrow h_0 = k_0$. **QED**
 
-> [!thm]
-> If $M$ is a **closed linear subspace** of $H$, $h\in H$, and $f_0$ is the **unique** element of $M$ such that $||h - f_0|| = dist(h,M)$, then $h-f_0\bot M$. Conversely, if $f_0\in M$ s.t. $h - f_0\bot M$, then $|| h - f_0 || = dist(h, M)$.
+> [!thm] Projection Theorem
+> If $M$ is a **closed linear subspace** of $H$, $h\in H$, and $f_0$ is the **unique** element of $M$ such that $||h - f_0|| = \text{dist}(h,M)$, then $h-f_0\bot M$. Conversely, if $f_0\in M$ s.t. $h - f_0\bot M$, then $|| h - f_0 || = \text{dist}(h, M)$.
 > 
 > ^45dc78
 
@@ -100,7 +103,7 @@ $$
 $\left\langle f,g\right\rangle=0$. Hence, $f\bot g,f\in A^{\bot}$ **QED**
 
 > [!warning]
-> Recall the [[Introduction#^45dc78|thm]], if $M$ is a closed linear subspace of $H$ and $h\in H$, then there is a unique element $f_0$ in $M$ such that $h-f_0\in M^{\bot}$. We can define a map, in fact, we call it projection mapping
+> Recall the [[Introduction of Hilbert Space#^45dc78|thm]], if $M$ is a closed linear subspace of $H$ and $h\in H$, then there is a unique element $f_0$ in $M$ such that $h-f_0\in M^{\bot}$. We can define a map, in fact, we call it projection mapping
 > $$
 > \mathbb{P}:H\to M, \ \mathbb{P}(h) = f_0
 > $$
