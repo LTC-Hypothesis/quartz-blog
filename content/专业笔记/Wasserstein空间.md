@@ -109,3 +109,5 @@ $$
 >$$
 >It implies that $W_q$ convergence can obtain $W_p$ convergence.
 
+>[!def] Weak convergence in $\mathcal{P}_p(\mathcal{X})$ / weak convergence of probability measure
+>
