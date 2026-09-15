@@ -72,6 +72,8 @@
 > $$
 > with $a_0 < a_1 < \ldots < a_k$, so that $\int |\varphi - q| < \epsilon$.
 
+^efb1c0
+
 > [!done]
 > 
 
@@ -97,3 +99,22 @@
 > Hint: If $g$ is a step function, this is easy. Now use the previous exercise.
 
 > [!done]
+> Suppose $g(x)$ is the step function i.e. $g(x)=\sum_{k=1}^{m}c_k\mathbb{1}_{(a_{k-1},a_k]}$, then 
+> $$
+> \begin{aligned}
+>\int_{0}^{T}g(x)\cos{nx}{d}x&=\sum_{k=1}^{m}c_k\int_{a_{k-1}}^{a_{k}}\cos(nx){d}x\\
+>&=\sum_{k=1}^{m}\frac{c_k}{n}(\sin{na_k}-\sin{na_{k-1}})\\
+>&\le 2\frac{\sum_{k=1}^{m}c_k}{n}\to0\text{ as }n\to\infty
+>\end{aligned}
+> $$
+> Suppose $g$ is general integrable function, by [[#^efb1c0|previous exercise]], there exists step function $q$ s.t. 
+> $$
+> \int_{0}^{T}|g-q|{d}x<\varepsilon
+> $$
+> Then 
+> $$
+> \begin{aligned}
+>\left|\int_{0}^{T}g(x)\cos{nx}{d}x\right|&\le \left|\int_{0}^{T}(g-q)\cos{nx}{d}x\right|+\left|\int_{0}^{T}q\cos{nx}{d}x\right|\\
+>&\le \varepsilon\frac{|\sin{nT}|}{n}+\left|\int_{0}^{T}q\cos{nx}{d}x\right|\to0\text{ as }n\to\infty
+>\end{aligned}
+> $$
