@@ -10,7 +10,7 @@ we denote $\mathbb{F}$ either $\mathbb{R}$ or $\mathbb{C}$.
 > 4. $u(x,y) = \overline{u(y,x)}$
 
 > [!warning]
-> 1. If $\alpha = 0$ or $\beta = 0$, $u(x,0) = (0,y) = 0, \forall x,y\in X$
+> 1. If $\alpha = 0$ or $\beta = 0$, $u(x,0) = u(0,y) = 0, \forall x,y\in X$
 
 > [!def] Inner product
 > An inner product on $X$ is a semi-inner product that also satisfies the following
@@ -33,11 +33,13 @@ we denote $\mathbb{F}$ either $\mathbb{R}$ or $\mathbb{C}$.
 > 4. $||x|| = 0\Longrightarrow x = 0$
 
 > [!proposition] Polar identity
-> If $\left \langle \cdot,\cdot \right \rangle$ is a semi-inner product on $X$ and $x,y\in X$, then$$||x+y||^2 = ||x||^2 + 2Re\left\langle x,y\right\rangle + ||y||^2$$
+> If $\left \langle \cdot,\cdot \right \rangle$ is a semi-inner product on $X$ and $x,y\in X$, then$$||x+y||^2 = ||x||^2 + 2\text{Re}\left\langle x,y\right\rangle + ||y||^2$$
 
 > [!def] Hilbert Space
 > Define metric:$d(x,y) = ||x-y||$. A Hilbert space is a vector space $H$ is a **complete metric space** with $d(\cdot,\cdot)$
 
+>[!warning] 
+>Inner product space $\Longrightarrow$ Normed space $\Longrightarrow$ metric spcae
 ## Examples
 $L^2(\mu)$ is a typical Hilbert space in measure theory.
 
