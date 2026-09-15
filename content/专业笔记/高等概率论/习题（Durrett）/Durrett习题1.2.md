@@ -36,6 +36,8 @@
 >[!question] 1.2.4. 
 >Show that if $F(x) = \mathbb{P}(X \leq x)$ is continuous then $Y = F(X)$ has a uniform distribution on $(0,1)$, that is, if $y \in [0,1]$, $\mathbb{P}(Y \leq y) = y$.
 
+^e7c1c7
+
 >[!done] 
 >We don't know whether $F(x)$ is strictly increasing and thus for fixed $y\in\mathbb{R}$ we set 
 >$$
