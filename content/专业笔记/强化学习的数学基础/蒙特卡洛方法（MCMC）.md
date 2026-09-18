@@ -38,4 +38,11 @@
 >![[Pasted image 20260918162442.png]]
 
 >[!note] MC Exploring Start 算法
+> >[!def] 访问
+> >通过执行策略$\pi$可以得到一列样本，
+> >$$
+> >s_1\xrightarrow{a_2}s_2\xrightarrow{a_4}s_1\xrightarrow{a_2}s_2
+> >$$
+> >如果一个状态动作对在一个回合中出现一次，我们称状态-动作被访问一次。
 > 
+> 前面MC Basic只是用一个回合中对状态-动作对的一次访问，这种方式很简单但是没有充分利用样本，一个回合中h
