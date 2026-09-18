@@ -18,5 +18,24 @@
 >  $$
 >2. Lipschitz条件：
 >   $$
->  |f()| 
+>  |f(t,x_1,y_1)-f(t,x_2,y_2)|+|g(t,x_1,y_1)-g(t,x_2,y_2)|\le c(|x_1-x_2|+|y_1-y_2|) 
 >  $$
+> 3. $g$一致Lipschitz连续，
+>    $$
+>   |g(t,x,y_1)-g(t,x,y_2)|\ge\alpha|y_1-y_2| 
+>   $$
+>  
+>则存在唯一解$(x,y)\in M_2(0,1;\mathbb{R}^d)\times M_2(0,1;\mathbb{R}^{d\times k})$。
+
+>[!note] 证明的思路，方法和顺序
+>- 证明思路：循循渐进，从简化的方程开始研究。Step1考虑的方程为
+>  $$
+>  x(t)+\int_{t}^{1}f(s){d}s+\int_{t}^{1}g(s)+y(s){d}s=X\tag{3}
+>  $$
+>  Step2考虑线性化的方程
+>  $$
+>  x(t)+\int_{t}^{1}f(s,y(s)){d}s+\int_{t}^{1}[g(s)+y(s)]{d}s=X\tag{4}
+>  $$
+>接下来才考虑方程（2）和（1）。
+>- 主要方法：对简化的情形使用Picard迭代，这个在[[Strong solutions#^d1379b|证明SDE和ODE的存在唯一性]]都有用到。还有一个重要的定理是[[Representations of Continuous Martingales in Terms of Brownian Motion|鞅表示定理]]。
+
