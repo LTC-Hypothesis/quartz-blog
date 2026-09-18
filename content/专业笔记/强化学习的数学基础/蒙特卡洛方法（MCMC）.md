@@ -45,4 +45,49 @@
 > >$$
 > >如果一个状态动作对在一个回合中出现一次，我们称状态-动作被访问一次。
 > 
-> 前面MC Basic只是用一个回合中对状态-动作对的一次访问，这种方式很简单但是没有充分利用样本，一个回合中h
+> 前面MC Basic估计动作值时，只是用一个回合中对状态-动作对的一次访问，这种方式很简单但是没有充分利用样本，一个回合中还会访问其他的状态-动作对，
+> $$
+>\begin{aligned}
+>& s_1 \xrightarrow{a_2} s_2 \xrightarrow{a_4} s_1 \xrightarrow{a_2} s_2 \xrightarrow{a_3} s_5 \xrightarrow{a_1} \dots \quad [\text{原始回合}] \\
+>& s_2 \xrightarrow{a_4} s_1 \xrightarrow{a_2} s_2 \xrightarrow{a_3} s_5 \xrightarrow{a_1} \dots \quad [\text{从 } (s_2, a_4) \text{ 开始的子回合}] \\
+>& s_1 \xrightarrow{a_2} s_2 \xrightarrow{a_3} s_5 \xrightarrow{a_1} \dots \quad [\text{从 } (s_1, a_2) \text{ 开始的子回合}] \\
+>& s_2 \xrightarrow{a_3} s_5 \xrightarrow{a_1} \dots \quad [\text{从 } (s_2, a_3) \text{ 开始的子回合}] \\
+>& s_5 \xrightarrow{a_1} \dots \quad [\text{从 } (s_5, a_1) \text{ 开始的子回合}]
+>\end{aligned}
+>$$
+>MC Exploring Start 算法是充分利用回合中的每次访问，提高效率的技巧就是：在计算每个状态-动作开始获得的回报，采用回溯的方法，慢慢推回最初的状态-动作。这个算法需要一个条件Exploring-Start条件：对每个状态-动作，都要有足够多的回合从它出发。
+>![[Pasted image 20260918175136.png]]
+>但是这一个条件是不太好满足的，我们并不能保证每一个状态又能有足够的回合来采样。
+
+在此我们引入一个软策略的方法，即一个策略能在任何状态下有非零概率选择任意动作。
+>[!def] $\varepsilon$-Greedy策略
+>这是一种常见的软策略，对于$\varepsilon\in[0,1]$，$\varepsilon$-Greedy策略有以下形式，
+>$$
+>\pi(a|s)=\begin{cases}
+>1-\frac{\varepsilon}{|\mathcal{A}(s)|}(|\mathcal{A}(s)-1|),&\text{最大值动作}\\
+>\frac{\varepsilon}{|\mathcal{A}(s)|},&\text{其他动作}
+>\end{cases}
+>$$
+>注意到
+>$$
+>1-\frac{\varepsilon}{|\mathcal{A}(s)|}(|\mathcal{A}(s)-1|)=1-\varepsilon+\frac{\varepsilon}{|\mathcal{A}(s)|}\ge\frac{\varepsilon}{|\mathcal{A}(s)|}
+>$$
+>即选择最大动作值的概率会比选择其他动作的概率要高。当$\varepsilon=0$时，就是普通的贪婪策略，探索性最低；当$\varepsilon=1$时，选择每个动作的概率都是$\frac{1}{|\mathcal{A}(s)|}$，此时探索性最强。
+
+>[!note] MC $\varepsilon$-Greedy 算法
+>此时我们需要把策略改进步骤改为
+>$$
+>\pi_{k+1}=\arg\max_{\pi_k\Pi_\varepsilon}\sum_{a}\pi(a|s)q_{\pi_k}(s,a)
+>$$
+>$\Pi_\varepsilon$表示所有的$\varepsilon$-Greedy策略，不难得到
+>$$
+>\pi_{k+1}=\begin{cases}
+>1-\frac{\varepsilon}{|\mathcal{A}(s)|}(|\mathcal{A}(s)-1|),&a=a^*_k\\
+>\frac{\varepsilon}{|\mathcal{A}(s)|},&a\ne a^*_k
+>\end{cases}
+>$$
+>其中$a^*_k=\arg\max_a q_{\pi_k}(s,a)$。
+>![[Pasted image 20260918180821.png]]
+
+>
+
