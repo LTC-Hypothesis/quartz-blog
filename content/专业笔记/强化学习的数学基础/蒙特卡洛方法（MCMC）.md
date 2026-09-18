@@ -89,5 +89,8 @@
 >其中$a^*_k=\arg\max_a q_{\pi_k}(s,a)$。
 >![[Pasted image 20260918180821.png]]
 
->
+>[!warning] 
+>注意到$\Pi_\varepsilon\subseteq\Pi$，策略可能在$\Pi_\varepsilon$中最优但不在$\Pi$中最优，因此$\varepsilon$-贪婪算法虽然增加了探索性，但牺牲了最优性，当$\varepsilon$非常小的时候会接近$\Pi$的最优策略。
+
+
 
