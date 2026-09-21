@@ -135,3 +135,26 @@
 >$$
 >\mathbb{E}(U_t+V_t)=\mathbb{E}J_0+\mathbb{E}\int_{0}^{T}U_s+V_s{d}s+\mathbb{E}Y
 >$$
+>不妨记$\beta\triangleq\mathbb{E}(U_t+V_t)$，于是
+>$$
+>\beta=\mathbb{E}(J_0+Y)+\beta T\Longrightarrow\beta=\frac{\mathbb{E}(J_0+Y)}{1-T}
+>$$
+>当$T>1$时，$\beta<0$与原本的$\beta>0$。这是因为和定理3.1中的条件$kT<1$相悖，不能保证在相当的大的时间内保持解的存在性。
+
+>[!example] 反例说明需要Lipschitz常数充分小
+>考虑系统
+>$$
+>\begin{cases}
+>U_t=J_0+\int_{0}^{t}V_s{d}s\\
+>V_t=\mathbb{E}\left[\int_{t}^{T}U_s{d}s+Y|\mathscr{F}_t\right]
+>\end{cases}
+>$$
+>取期望之后记$u(t)=\mathbb{E}U_t,v(t)=\mathbb{E}V_t$，注意到$u'(t)=v(t),v'(t)=-u(t)$，求解ODE得到
+>$$
+>\begin{cases}
+>u(t)=J_0\cos{t}+v(0)\sin{t}\\
+>v(t)=-J_0\sin{t}+v(0)\cos{t}
+>\end{cases}
+>$$
+>当$t=T$，$v(T)=\xi=-J_0\sin{T}+v(0)\cos{T}$，取$T=\frac{\pi}{2}$时发现$0<\xi=-J_0<0$，矛盾。**演化矩阵可逆，并不意味着混合初终端条件对应的边值问题可解。** 这正是作者构造第二个例子的用意：第一例归约后的系数矩阵是奇异的，而第二例连这一因素也排除了。
+>
