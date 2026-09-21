@@ -6,4 +6,20 @@
 >$$
 >Y_t=u(t,X_t)
 >$$
->其中要求$u\in C^{1,2}([0,T]\ti)$
+>其中要求$u(t,x)\in C^{1,2}([0,T]\times\mathbb{R}^n)$以保证能使用It$\hat{\text{o}}$公式。实际上就是使用It$\hat{\text{o}}$公式，然后和$Y_t$满足的倒向方程的系数进行比对，得到$u$满足的PDE，经过求解这个PDE从而得到FBSDE的解。那么经过下面四个步骤进行计算，就可以找到这样的解，
+>**Step1: 求解一个代数方程得到$z(t,x,y,p)$** 满足
+>$$
+>p\sigma(t,x,y)+\hat{\sigma}(t,x,y,p)=0
+>$$
+>**Step2：用得到的$z$求解拟线性抛物型PDE**
+>$$
+>\begin{cases}
+>u_t+\frac{1}{2}\text{tr}(u_{xx}\sigma(t,x,u)\sigma(t,x,u)^\top)+\langle b(t,x,u,z),u_x\rangle+\hat{b}(t,x,u,z)=0\\
+>u(T,x)=g(x)
+>\end{cases}
+>$$
+>**Step3：得到$u$之后只剩下求解SDE的解就可以得到$Y_t$和$Z_t$** 实际上还是把$Y_t=u(t,X_t)$代入到SDE中求解。
+>**Step4：** 令$Y_t=u(t,X_t),Z_t=z(t,X_t,u(t,X_t),u_x(t,X_t))$
+
+>[!warning] 局限性
+>局限性其实非常明显，中间过程要求解一个拟线性抛物型偏微分方程，就需要非常多的正则性假设以保证PDE的解存在，详细可以看假设(A1)-(A4)。
