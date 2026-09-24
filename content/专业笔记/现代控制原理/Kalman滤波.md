@@ -76,3 +76,4 @@
 >\widehat{X}_{k+1} = \Phi_{k+1,k} \widehat{X}_k + \Gamma_k u_k + K_{k+1} [Y_{k+1} - D_{k+1} u_{k+1} - C_{k+1} (\Phi_{k+1,k} \widehat{X}_k + \Gamma_k u_k)]\\
 >P_{k+1} = (I - K_{k+1} C_{k+1}) P_{k+1|k}
 >\end{cases}
+>$$
