@@ -14,13 +14,12 @@
 >$$
 >\widehat{X}_{k+1}=\Phi_{k+1,k}\widehat{X}_k+K_{k+1}(Y_{k+1}-C_{k+1}\Phi_{k+1,k}\widehat{X}_{k})\tag{2}
 >$$
->其中矩阵$K_{k+1}$称为增益矩阵，可知只需要寻找合适的增益矩阵，使得估计值$\widehat{X}_{k+1}$和实际值$X_{k+1}$的**误差**足够小即可。这里我们选取的衡量误差的标准是
+>其中矩阵$K_{k+1}$称为增益矩阵，可知只需要寻找合适的增益矩阵，使得估计值$\widehat{X}_{k+1}$和实际值$X_{k+1}$的**误差**足够小即可。这里我们选取的衡量误差的标准是方差
 >$$
 >P_{k+1}=\mathbb{E}\left[(X_{k+1}-\widehat{X}_{k+1})(X_{k+1}-\widehat{X}_{k+1})^\top\right]\tag{3}
 >$$
 
-# 无控制项的Kalman滤波公式
->[!note] 
+>[!note] 无控制项的Kalman滤波公式
 >考虑系统的状态方程与量测方程分别为
 >
 >$$
@@ -64,12 +63,37 @@
 
 **Proof**
 
-我们的目标是让$(3)$式最小化，
+我们的目标是让$(3)$式最小化。可以计算出，
+$$
+X_{k+1}-\widehat{X}_{k+1}=(I - K_{k+1}C_{k+1})[\Phi_{k+1,k}(X_k - \widehat{X}_k) + W_k] - K_{k+1}V_{k+1}
+$$
+于是
+$$
+P_{k+1} = (I - K_{k+1}C_{k+1})[\Phi_{k+1,k}P_k\Phi_{k+1,k}^T + Q_k](I - K_{k+1}C_{k+1})^T + K_{k+1}R_{k+1}K_{k+1}^T.
+$$
+定义预报误差
+$$
+\begin{aligned}
+P_{k+1|k}&=\mathbb{E}\left[(X_{k+1}-\Phi_{k+1,k}\widehat{X}_k)(X_{k+1}-\Phi_{k+1,k}\widehat{X}_k)^\top\right]\\
+&=\Phi_{k+1,k}P_k\Phi^\top_{k+1,k}+Q_k
+\end{aligned}
+$$
+于是估计值的方差改写为
+$$
+\begin{aligned}
+P_{k+1} &= (I - K_{k+1}C_{k+1})P_{k+1|k}(I - K_{k+1}C_{k+1})^T + K_{k+1}R_{k+1}K_{k+1}^T\\
+&=P_{k+1|k}-K_{k+1}C_{k+1}P_{k+1|k}-P_{k+1|k}C^\top_{k+1}K^\top_{k+1}+K_{k+1}(R_{k+1}+C_{k+1}P_{k+1|k}C^\top_{k+1})K^\top_{k+1}
+\end{aligned}
+$$
+记$S\triangleq(R_{k+1}+C_{k+1}P_{k+1|k}C^\top_{k+1})$，我们希望通过配方法将上式配成如下形式，
+$$
+P_{k+1}=(K_{k+1}-L)S(K_{k+1}-L)^\top
+$$
+其中$L$为待定矩阵
 
 **QED**
 
-# 带控制项的Kalman滤波公式
->[!note] 
+>[!note] 带控制项的Kalman滤波公式
 >当状态方程和量测方程中考虑控制 $u_k$ 的作用时，系统
 >$$
 >X_{k+1} = \Phi_{k+1,k} X_k + \Gamma_k u_k + B_k W_k,
