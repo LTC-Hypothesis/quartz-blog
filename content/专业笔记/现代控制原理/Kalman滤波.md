@@ -10,20 +10,52 @@
 
 # 无控制项的Kalman滤波公式
 >[!note] 
+>考虑系统的状态方程与量测方程分别为
+>
+>$$
+>X_{k+1} = \Phi_{k+1,k} X_k + W_k
+>$$
+>$$
+>Y_k = C_k X_k + V_k
+>$$
+>
+>其中 $\{W_k\}$ 与 $\{V_k\}$ 是互不相关的零均值噪声序列，即对任意的 $k$ 和 $j$，
+>
+>$$
+>\mathbb{E}[W_k] = 0, \quad \mathbb{E}[V_k] = 0,
+>$$
+>$$
+>\mathbb{E}[V_k V_j^T] = R_k \delta_{kj}, \quad \mathbb{E}[W_k W_j^T] = Q_k \delta_{kj}, \quad \mathbb{E}[W_k V_j^T] = 0,
+>$$
+>
+>又设初始状态 $X_0$ 的统计特征为
+>
+>$$
+>\mathbb{E}[X_0] = \bar{X}_0, \quad \mathbb{E}[(X_0 - \bar{X}_0)(X_0 - \bar{X}_0)^T] = P_0.
+>$$
+>
+>且 $X_0$ 与 $\{W_k\}, \{V_k\}$ 不相关，即
+>
+>$$
+>\mathbb{E}[(X_0 - \bar{X}_0)W_k^T] = 0, \quad \mathbb{E}[(X_0 - \bar{X}_0)V_k^T] = 0.
+>$$
+>相应的Kalman滤波公式为
 >$$
 >\begin{cases}
 >P_{k+1|k} = \Phi_{k+1,k} P_k \Phi_{k+1,k}^T + Q_k, \\
 >K_{k+1} = P_{k+1|k} C_{k+1}^T (C_{k+1} P_{k+1|k} C_{k+1}^T + R_{k+1})^{-1}, \\
 >\widehat{X}_{k+1} = \Phi_{k+1,k} \widehat{X}_k + K_{k+1} (Y_{k+1} - C_{k+1} \Phi_{k+1,k} \widehat{X}_k), \\
 >\begin{aligned}
->P_{k+1} &= P_{k+1|k} - P_{k+1|k} C_{k+1}^T (C_{k+1} P_{k+1|k} C_{k+1}^T + R_{k+1})^{-1} C_{k+1} P_{k+1|k} \\
->&= P_{k+1|k} - K_{k+1} C_{k+1} P_{k+1|k} \\
->&= (I - K_{k+1} C_{k+1}) P_{k+1|k}.
+>P_{k+1} = (I - K_{k+1} C_{k+1}) P_{k+1|k}.
 >\end{aligned}
 >\end{cases}
 >$$
 
+**Proof**
 
+
+
+**QED**
 
 # 带控制项的Kalman滤波公式
 >[!note] 
