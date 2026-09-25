@@ -112,6 +112,7 @@ Now we introduce the significant projection theorem.
 > 2. $|| \mathbb{P}(h) || \le || h ||$ for every $h$ in $H$
 > 3. $\mathbb{P}^2 = \mathbb{P}\circ  \mathbb{P}= \mathbb{P}$
 > 4. $Ker( \mathbb{P}) = M^{\bot},Im( \mathbb{P}) = M$
+> 5. $I-\mathbb{P}_M=\mathbb{P}_{M^\bot}$
 > 
 > ^73d5aa
 

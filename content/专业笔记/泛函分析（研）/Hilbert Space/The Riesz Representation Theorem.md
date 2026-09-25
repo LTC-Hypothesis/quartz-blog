@@ -20,7 +20,7 @@
 > If $L: H\to \mathbb{F}$ is a bounded linear functional, then there is a unique vector $h_0$ in $H$ such that $L(h) = \left\langle h, h_0\right\rangle$ for every $h$ in $H$. Moreover, $\|L\| = \|h_0\|$.
 
 **Proof**
-Let $M=Ker \ L$. Since $L$ is continuous and $M\le H$, $M\ne H$. Therefore, $M^{\bot}\ne\{0\}$. Hence there exists $f_0\in M^{\bot}$ , we note $a=L(f_0)$. For every $h\in H$, $\alpha=L(h)$, then $L(h-\frac{\alpha}{a}f_0)=L(h)-\frac{\alpha}{a}\cdot L(f_0)=0$. Then $h-\frac{\alpha}{a}f_0\in Ker \ L=M$. Hence, 
+Let $M=\text{Ker} \ L$. Since $L$ is continuous and $M\le H$, $M\ne H$. Therefore, $M^{\bot}\ne\{0\}$. Hence there exists $f_0\in M^{\bot}$ , we note $a=L(f_0)$. For every $h\in H$, $\alpha=L(h)$, then $L(h-\frac{\alpha}{a}f_0)=L(h)-\frac{\alpha}{a}\cdot L(f_0)=0$. Then $h-\frac{\alpha}{a}f_0\in Ker \ L=M$. Hence, 
 $$
 0=\left\langle f_0,h-\frac{\alpha}{a}f_0\right\rangle=\left\langle f_0,h\right\rangle-\frac{\alpha}{a}\|f_0\|^2\Longrightarrow L(h)=\left\langle h,\frac{af_0}{\|f_0\|^2}\right\rangle
 $$
