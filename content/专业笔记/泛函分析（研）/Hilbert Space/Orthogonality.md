@@ -135,6 +135,12 @@ Next we formally define the orthogonal projection.
 
 **Proof** Let $I$ is identity operator, i.e. $I:H\to H, I(h)=h$ and $\mathbb{P}=\mathbb{P}_M$, we claim $I-\mathbb{P}$ is the orthogonal projection from $H$ to $M^\bot$. In fact, firstly, $I-\mathbb{P}$ is a linear transform. And then, $h = h-\mathbb{P}(h) +\mathbb{P}(h)$, $||h||^2 = ||h-\mathbb{P}(h)||^2 + ||\mathbb{P}(h)||^2\ge ||h-\mathbb{P}(h)||^2$. Besides, $(I-\mathbb{P})^2 = I-2\mathbb{P}+\mathbb{P}^2 = I-\mathbb{P}$. Finally, $Ker(I-\mathbb{P}) = \{h\ |\ h = \mathbb{P}(h),h\in H\} = M$, $Im(I-\mathbb{P})=M^\bot$. Hence, $I-\mathbb{P}:H\to M^{\bot}$ is orthogonal projection. By [[Introduction of Hilbert Space#^73d5aa|projection theorem(4)]], $(M^\bot)^\bot = Ker(I-\mathbb{P}) =M$. **QED**
 
+>[!proposition]
+>Suppose $H$ is a Hilbert space, $M\subseteq H$, then $(M^\bot)^\bot=\overline{\text{span}(M)}$ where 
+>$$
+>\text{sapn}(M)=\left\{\sum_{i=1}^{n}\alpha_im_i:\alpha_i\in\mathbb{C},m_i\in M\right\}
+>$$
+
 ---
 
 ## Exercises
