@@ -99,4 +99,21 @@ $(5)\Longrightarrow(4)$: 若不然，存在$h$使得$\langle h,e_i\rangle=0,\for
 
 **QED**
 
-注意到以上讨论的情况都是在可数基意义下，如果是不可数的情况下
+注意到以上讨论的情况都是在可数基意义下，如果是不可数的情况下，我们无法定理不可数的求和，并且Zorn引理只能保证极大正交集的存在性，并不保证可数性。
+
+>[!thm] 
+>若$H$是可分的Hilbert空间，则$H$存在可数极大正交集。
+
+**Proof**
+
+若不存在可数极大正交集，我们定义规范正交集$\{e_\lambda\}_{\lambda\in\Lambda}$是不可数的，则考虑
+$$
+\|e_\lambda-e_{\lambda'}\|^2=\|e_\lambda\|^2+\|e_{\lambda'}\|^2=2\Longrightarrow\|e_\lambda-e_{\lambda'}\|=\sqrt{2}
+$$
+也就是说每个基$e_\lambda$都会保持同样的距离。根据可分性，存在可数稠密子集$\{s_1,\cdots,s_n,\cdots\}$，并且使得
+$$
+H\subseteq\bigcup_{i=1}^{\infty}B(s_i,\frac{\sqrt{2}}{3})
+$$
+这意味着$e_{\lambda}$和$e_{\lambda'}$在不同的球内，但是球有是可数多个的，这个$\{e_\lambda\}$的不可数性矛盾。
+
+**QED**
