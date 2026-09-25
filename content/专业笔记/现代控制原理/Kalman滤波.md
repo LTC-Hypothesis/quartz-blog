@@ -85,11 +85,26 @@ P_{k+1} &= (I - K_{k+1}C_{k+1})P_{k+1|k}(I - K_{k+1}C_{k+1})^T + K_{k+1}R_{k+1}K
 &=P_{k+1|k}-K_{k+1}C_{k+1}P_{k+1|k}-P_{k+1|k}C^\top_{k+1}K^\top_{k+1}+K_{k+1}(R_{k+1}+C_{k+1}P_{k+1|k}C^\top_{k+1})K^\top_{k+1}
 \end{aligned}
 $$
-记$S\triangleq(R_{k+1}+C_{k+1}P_{k+1|k}C^\top_{k+1})$，我们希望通过配方法将上式配成如下形式，
+记$S\triangleq(R_{k+1}+C_{k+1}P_{k+1|k}C^\top_{k+1})$，我们希望通过配方法将上式配出如下形式，
 $$
 P_{k+1}=(K_{k+1}-L)S(K_{k+1}-L)^\top
 $$
-其中$L$为待定矩阵
+其中$L$为待定矩阵，展开之后对比系数得到
+$$
+LS=P_{k+1|k}C^\top_{k+1}\Longrightarrow L=P_{k+1|k}C^\top_{k+1}S^{-1}
+$$
+展开之后会多出一项$P_{k+1|k}C^\top_{k+1}S^{-1}C_{k+1}P_{k+1|k}$所以要减去，因此得到
+$$
+\begin{aligned}
+P_{k+1}=&(K_{k+1}-P_{k+1|k}C^\top_{k+1}S^{-1})P_{k+1|k}(K_{k+1}-P_{k+1|k}C^\top_{k+1}S^{-1})^{\top}\\
+&+P_{k+1|k}-P_{k+1|k}C^\top_{k+1}S^{-1}C_{k+1}P_{k+1|k}
+\end{aligned}
+$$
+把$S$代入回去，我们可以看出只需要取增益矩阵为
+$$
+K_{k+1}=P_{k+1|k}C^\top_{k+1}S^{-1}
+$$
+即可，综上就能得到公式组(K1)。
 
 **QED**
 
