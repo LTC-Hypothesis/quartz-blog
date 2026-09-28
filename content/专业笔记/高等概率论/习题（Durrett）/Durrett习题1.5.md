@@ -81,7 +81,21 @@
 ^6212d2
 
 > [!done]
-> 
+> Note that 
+> $$
+> \int g-g\wedge n{d}\mu\uparrow0
+> $$
+> then for any $\varepsilon>0$, we can choose $N$ s.t. 
+> $$
+> \int g-g\wedge N{d}\mu<\frac{\varepsilon}{2}
+> $$
+> we choose $\delta=\frac{\varepsilon}{2N}$ and 
+> $$
+> \begin{aligned}
+>\int_A|g|{d}\mu&\le \int_A|g-g\wedge N|{d}\mu+\int_{A}g\wedge N{d}\mu\\
+>&\le \frac{\varepsilon}{2}+N\mu(A)<\varepsilon
+>\end{aligned}
+> $$
 
 > [!question] 1.5.8.
 > Show that if $f$ is integrable on $[a, b]$, $g(x) = \int_{[a,x]} f(y) dy$ is continuous on $(a, b)$.
@@ -100,6 +114,10 @@
 > Show that if $f$ has $\|f\|_p = (\int |f|^p d\mu)^{1/p} < \infty$, then there are simple functions $\varphi_n$ so that $\|\varphi_n - f\|_p \to 0$.
 
 > [!done]
+> There exists simple function $s_n$ s.t. $s$
+
+>[!warning] 
+>The class of simple functions is dense in $L^p(\Omega)$.
 
 > [!question] 1.5.10.
 > Show that if $\sum_n \int |f_n| d\mu < \infty$ then $\sum_n \int f_n d\mu = \int \sum_n f_n d\mu$.
