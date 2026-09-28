@@ -2,6 +2,11 @@
 > Suppose $\varphi$ is strictly convex, i.e., $>$ holds for $\lambda \in (0,1)$. Show that, under the assumptions of Theorem 1.6.2, $\varphi(\mathbb{E}X) = \mathbb{E}\varphi(X)$ implies $X = \mathbb{E}X$ a.s.
 
 > [!done]
+> Set $Y=X-\mathbb{E}X$, consider the variance of $Y$, 
+> $$
+> \text{Var}(Y)=\mathbb{E}Y^2=\mathbb{E}\left[X^2-2X\mathbb{E}(X)+(\mathbb{E}X)^2\right]=\mathbb{E}X^2-(\mathbb{E}X)^2
+> $$
+> Since $X$ satisfies $\mathbb{E}X^2=(\mathbb{E}X)^2$ with $f(x)=x^2$, $\text{Var}(Y)=0$. Therefore, $Y=\text{constant} \ a.s.-\mathbb{P}$ and $\mathbb{E}Y=0$, $Y=0$.
 
 > [!question] 1.6.2.
 > Suppose $\varphi : \mathbf{R}^n \to \mathbf{R}$ is convex. Imitate the proof of Theorem 1.5.1 to show
