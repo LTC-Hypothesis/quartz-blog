@@ -97,3 +97,10 @@
 > Show that if $\sum_n \int |f_n| d\mu < \infty$ then $\sum_n \int f_n d\mu = \int \sum_n f_n d\mu$.
 
 > [!done]
+> Note that 
+> $$
+> \begin{aligned}
+>\sum_{n=1}^{\infty}\int_{\Omega}|f_n|{d}\mu&=\lim_{m\to\infty}\sum_{n=1}^{m}\int_{\Omega}|f_n|{d}\mu=\lim_{m\to\infty}\int_{\Omega}\sum_{n=1}^{m}|f_n|{d}\mu\\
+>&\overset{\text{MCT}}{=}\int_{\Omega}
+>\end{aligned}
+> $$
