@@ -114,7 +114,22 @@
 > Show that if $f$ has $\|f\|_p = (\int |f|^p d\mu)^{1/p} < \infty$, then there are simple functions $\varphi_n$ so that $\|\varphi_n - f\|_p \to 0$.
 
 > [!done]
-> There exists simple function $s_n$ s.t. $s$
+> There exists simple function $s_n$ s.t. $s_n\uparrow |f|$, consider 
+> $$
+> \varphi_n=s_n\mathbb{1}_{\{f\ge0\}}-s_n\mathbb{1}_{\{f<0\}}
+> $$
+> then 
+> $$
+> |f-\varphi_n|=|f|-s_n\downarrow0
+> $$
+> so we obtain
+> $$
+> 0\le |f|^p-|f-\varphi_n|^p\downarrow|f|^p
+> $$
+> Hence, 
+> $$
+> \|\varphi_n-f\|_p^p=\|\varphi_n-f\|_p^p-\|f\|_p^p+\|f\|_p^p\uparrow0
+> $$
 
 >[!warning] 
 >The class of simple functions is dense in $L^p(\Omega)$.
