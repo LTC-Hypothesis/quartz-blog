@@ -34,27 +34,59 @@
 > So if $f \geq 0$, then $\nu(E) = \int_E f d\mu$ defines a measure.
 
 > [!done]
+> Note that 
+> $$
+> \begin{aligned}
+>\sum_{m=0}^{\infty}\int_{E_m}f{d}\mu=\sum_{m=0}^{\infty}\int_{\Omega}f\mathbb{1}_{E_m}{d}\mu=\lim_{n\to\infty}\sum_{m=0}^{n}\int_{\Omega}f\mathbb{1}_{E_m}{d}\mu=\lim_{n\to\infty}\int_{\Omega}\sum_{m=0}^{n}f\mathbb{1}_{E_m}{d}\mu
+>\end{aligned}
+> $$
+> By MCT, $\lim_{n\to\infty}\sum_{m=0}^{n}\mathbb{1}_{E_m}=\sum_{m=0}^{\infty}\mathbb{1}_{E_m}=\mathbb{1}_E$, then we obtain
+> $$
+> \sum_{m=0}^{\infty}\int_{E_m}f{d}\mu=\int_{\Omega}f\mathbb{1}_{E}{d}\mu=\int_{E}f{d}\mu
+> $$
+> If we define $\nu(E)=\int_Ef{d}\mu$, then 
+> $$
+> \nu\left(\bigcup_{m=0}^{\infty}E_m\right)=\int_{\bigcup_{m=0}^{\infty}E_m}f{d}\mu=\sum_{m=0}^{\infty}\int_{E_m}f{d}\mu=\sum_{m=0}^{\infty}\nu(E_m)
+> $$
 
 > [!question] 1.5.5.
 > If $g_n \uparrow g$ and $\int g_1^- d\mu < \infty$ then $\int g_n d\mu \uparrow \int g d\mu$.
+
 > [!done]
+> 
 
 > [!question] 1.5.6.
 > If $g_m \geq 0$ then $\int \sum_{m=0}^\infty g_m d\mu = \sum_{m=0}^\infty \int g_m d\mu$.
+
+
 > [!done]
 
-> [!question] 1.5.7.
-> Let $f \geq 0$. (i) Show that $f \wedge n \uparrow f$ and $f \wedge n d\mu \uparrow \int f d\mu$ as $n \to \infty$. (ii) Use (i) to conclude that if $g$ is integrable and $\epsilon > 0$ then we can pick $\delta > 0$ so that $\mu(A) < \delta$ implies $\int_A |g| d\mu < \epsilon$.
+> [!question] 1.5.7.(i)
+> Let $f \geq 0$. Show that $f \wedge n \uparrow f$ and $\int f \wedge n d\mu \uparrow \int f d\mu$ as $n \to \infty$. 
+
+>[!done] 
+>
+
+>[!question] 1.5.7(ii) 
+>Use (i) to conclude that if $g$ is integrable and $\epsilon > 0$ then we can pick $\delta > 0$ so that $\mu(A) < \delta$ implies $\int_A |g| d\mu < \epsilon$.
+
+
 > [!done]
 
 > [!question] 1.5.8.
 > Show that if $f$ is integrable on $[a, b]$, $g(x) = \int_{[a,x]} f(y) dy$ is continuous on $(a, b)$.
+
+
 > [!done]
 
 > [!question] 1.5.9.
 > Show that if $f$ has $\|f\|_p = (\int |f|^p d\mu)^{1/p} < \infty$, then there are simple functions $\varphi_n$ so that $\|\varphi_n - f\|_p \to 0$.
+
+
 > [!done]
 
 > [!question] 1.5.10.
 > Show that if $\sum_n \int |f_n| d\mu < \infty$ then $\sum_n \int f_n d\mu = \int \sum_n f_n d\mu$.
+
+
 > [!done]
