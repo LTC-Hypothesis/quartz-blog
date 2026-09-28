@@ -58,35 +58,42 @@
 > [!question] 1.5.6.
 > If $g_m \geq 0$ then $\int \sum_{m=0}^\infty g_m d\mu = \sum_{m=0}^\infty \int g_m d\mu$.
 
-
 > [!done]
+> By MCT, it is obtained directly.
 
 > [!question] 1.5.7.(i)
 > Let $f \geq 0$. Show that $f \wedge n \uparrow f$ and $\int f \wedge n d\mu \uparrow \int f d\mu$ as $n \to \infty$. 
 
 >[!done] 
->
+>By MCT, it is obtained directly.
 
 >[!question] 1.5.7(ii) 
 >Use (i) to conclude that if $g$ is integrable and $\epsilon > 0$ then we can pick $\delta > 0$ so that $\mu(A) < \delta$ implies $\int_A |g| d\mu < \epsilon$.
 
+^6212d2
 
 > [!done]
+> 
 
 > [!question] 1.5.8.
 > Show that if $f$ is integrable on $[a, b]$, $g(x) = \int_{[a,x]} f(y) dy$ is continuous on $(a, b)$.
 
-
 > [!done]
+> By [[#^6212d2|1.5.7.(ii)]], $\forall \varepsilon>0$, we pick $\delta>0$ s.t. $|x-y|<\delta$, implies 
+> $$
+> \int_{\{|x-y|<\delta\}}|f|{d}\mu<\varepsilon
+> $$
+> then we have 
+> $$
+> |g(x)-g(y)|=\int_{y}^{x}|f|{d}\mu<\varepsilon
+> $$
 
 > [!question] 1.5.9.
 > Show that if $f$ has $\|f\|_p = (\int |f|^p d\mu)^{1/p} < \infty$, then there are simple functions $\varphi_n$ so that $\|\varphi_n - f\|_p \to 0$.
-
 
 > [!done]
 
 > [!question] 1.5.10.
 > Show that if $\sum_n \int |f_n| d\mu < \infty$ then $\sum_n \int f_n d\mu = \int \sum_n f_n d\mu$.
-
 
 > [!done]
