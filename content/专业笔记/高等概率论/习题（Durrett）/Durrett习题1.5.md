@@ -53,7 +53,15 @@
 > If $g_n \uparrow g$ and $\int g_1^- d\mu < \infty$ then $\int g_n d\mu \uparrow \int g d\mu$.
 
 > [!done]
-> 
+> We note that $g_n$ is a general measurable function. If we want to use limit theorem, we have to construct a nonnegative function. We consider 
+> $$
+> g_n+g_1^-\ge g_1+g_1^-=g^+\ge0
+> $$
+> Since $g_n\uparrow g$, $g_n+g_1^-\uparrow g+g_1^-$, by MCT, we obtain
+> $$
+> \int_\Omega g_n+g_1^-{d}\mu\uparrow\int_\Omega g+g_1^-{d}\mu
+> $$
+> By $\int_\Omega g_1^-{d}\mu<\infty$, we obtain $\int_\Omega g_n{d}\mu\uparrow\int_\Omega g{d}\mu$.
 
 > [!question] 1.5.6.
 > If $g_m \geq 0$ then $\int \sum_{m=0}^\infty g_m d\mu = \sum_{m=0}^\infty \int g_m d\mu$.
@@ -101,6 +109,23 @@
 > $$
 > \begin{aligned}
 >\sum_{n=1}^{\infty}\int_{\Omega}|f_n|{d}\mu&=\lim_{m\to\infty}\sum_{n=1}^{m}\int_{\Omega}|f_n|{d}\mu=\lim_{m\to\infty}\int_{\Omega}\sum_{n=1}^{m}|f_n|{d}\mu\\
->&\overset{\text{MCT}}{=}\int_{\Omega}
+>&\overset{\text{MCT}}{=}\int_{\Omega}\sum_{n=1}^{\infty}|f_n|{d}\mu<\infty
+>\end{aligned}
+> $$
+> and 
+> $$
+> \begin{aligned}
+>\sum_{n=1}^{\infty}\int_{\Omega}f_n{d}\mu=\lim_{m\to\infty}\sum_{n=1}^{m}\int_{\Omega}f_n{d}\mu=\lim_{m\to\infty}\int_{\Omega}\sum_{n=1}^{m}f_n{d}\mu
+>\end{aligned}
+> $$
+> We W.T.S. 
+> $$
+> \lim_{m\to\infty}\int_\Omega \sum_{n=1}^{m}f_n{d}\mu=\int_{\Omega}\sum_{n=1}^{\infty}f_n{d}\mu
+> $$
+> Then 
+> $$
+> \begin{aligned}
+>\left|\int_\Omega \sum_{n=1}^{m}f_n{d}\mu-\int_{\Omega}\sum_{n=1}^{\infty}f_n{d}\mu\right|&=\left|\int_\Omega\sum_{n=m+1}^{\infty}f_n{d}\mu\right|\\
+>&\le \int_\Omega\sum_{n=m+1}^{\infty}|f_n|{d}\mu\to0\text{ as }m\to\infty
 >\end{aligned}
 > $$
