@@ -29,6 +29,12 @@ $$
 
 **Proof**
 
-取$H_1$和$H_2$的规范正交基$\{e_i\}_{i=1}^{\infty},\{f_i\}_{i=1}^{\infty}$
+取$H_1$和$H_2$的规范正交基$\{e_i\}_{i=1}^{\infty},\{f_i\}_{i=1}^{\infty}$, 构造映射
+$$
+\begin{aligned}
+&T:H_1\to H_2\\
+&\sum_{i=1}^{\infty}\langle h,e_i\rangle e_i\mapsto\sum_{i=1}^{\infty}\langle h,e_i\rangle f_i
+\end{aligned}
+$$
 
 **QED**
