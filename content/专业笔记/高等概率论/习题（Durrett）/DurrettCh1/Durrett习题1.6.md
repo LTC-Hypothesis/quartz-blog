@@ -41,9 +41,16 @@
 > $$
 
 > [!done]
+> Since $\mathbb{E}X^2<\infty$, then for sufficiently large $a>0$，$\mathbb{E}X^2\mathbb{1}_{\{|X|\ge a\}}<\varepsilon$. We have 
+> $$
+> a^2\mathbb{P}(|X|\ge a)=\mathbb{E}[a^2\mathbb{1}_{|X|\ge a}]\le \mathbb{E}[X^2\mathbb{1}_{\{|X|\ge a\}}]\to0\text{ as }a\to\infty
+> $$
 
 > [!question] 1.6.4.**One-sided Chebyshev bound.** (i) 
 > Let $a > b > 0$, $0 < p < 1$, and let $X$ have $\mathbb{P}(X = a) = p$ and $\mathbb{P}(X = -b) = 1 - p$. Apply Theorem 1.6.4 to $\varphi(x) = (x + b)^2$ and conclude that if $Y$ is any random variable with $\mathbb{E}Y = \mathbb{E}X$ and $\text{var}(Y) = \text{var}(X)$, then $\mathbb{P}(Y \geq a) \leq p$ and equality holds when $Y = X$.
+
+>[!done] 
+>
 
 > [!question] 1.6.4.**One-sided Chebyshev bound.** (ii) 
 > Suppose $\mathbb{E}Y = 0$, $\text{var}(Y) = \sigma^2$, and $a > 0$. Show that $\mathbb{P}(Y \geq a) \leq \sigma^2/(a^2 + \sigma^2)$, and there is a $Y$ for which equality holds.
@@ -58,8 +65,8 @@
 
 > [!done]
 
-> [!question] 1.6.6.
-> **A useful lower bound.** Let $Y \geq 0$ with $\mathbb{E}Y^2 < \infty$. Apply the Cauchy-Schwarz inequality to $Y 1_{(Y > 0)}$ and conclude
+> [!question] 1.6.6. **A useful lower bound.** 
+> Let $Y \geq 0$ with $\mathbb{E}Y^2 < \infty$. Apply the Cauchy-Schwarz inequality to $Y 1_{(Y > 0)}$ and conclude
 > $$
 > \mathbb{P}(Y > 0) \geq (\mathbb{E}Y)^2 / \mathbb{E}Y^2
 > $$
@@ -79,8 +86,8 @@
 
 > [!done]
 
-> [!question] 1.6.9.
-> **Inclusion-exclusion formula.** Let $A_1, A_2, \dots A_n$ be events and $A = \cup_{i=1}^n A_i$. Prove that $1_A = 1 - \prod_{i=1}^n (1 - 1_{A_i})$. Expand out the right hand side, then take expected value to conclude
+> [!question] 1.6.9.**Inclusion-exclusion formula.** 
+> Let $A_1, A_2, \dots A_n$ be events and $A = \cup_{i=1}^n A_i$. Prove that $1_A = 1 - \prod_{i=1}^n (1 - 1_{A_i})$. Expand out the right hand side, then take expected value to conclude
 > $$
 > \begin{aligned}
 > \mathbb{P}(\cup_{i=1}^n A_i) &= \sum_{i=1}^n \mathbb{P}(A_i) - \sum_{i<j} \mathbb{P}(A_i \cap A_j) \\
@@ -90,8 +97,8 @@
 
 > [!done]
 
-> [!question] 1.6.10.
-> **Bonferroni inequalities.** Let $A_1, A_2, \dots A_n$ be events and $A = \cup_{i=1}^n A_i$. Show that $1_A \leq \sum_{i=1}^n 1_{A_i}$, etc. and then take expected values to conclude
+> [!question] 1.6.10.**Bonferroni inequalities.** 
+> Let $A_1, A_2, \dots A_n$ be events and $A = \cup_{i=1}^n A_i$. Show that $1_A \leq \sum_{i=1}^n 1_{A_i}$, etc. and then take expected values to conclude
 > $$
 > \mathbb{P}(\cup_{i=1}^n A_i) \leq \sum_{i=1}^n \mathbb{P}(A_i)
 > $$
@@ -121,6 +128,14 @@
 > When $p(m) = 1/n$, this says the arithmetic mean exceeds the geometric mean.
 
 > [!done]
+> By convexity, 
+> $$
+> \begin{aligned}
+>\mathbb{E}e^X\ge e^{\mathbb{E}X}&\Longleftrightarrow\sum_{m=1}^{n}p(m)e^{\log y_m}\ge e^{\sum_{m=1}^{n}p(m)\log{y_m}}\\
+>&\Longleftrightarrow\sum_{m=1}^n p(m) y_m \geq \prod_{m=1}^n y_m^{p(m)}
+>\end{aligned}
+> 
+> $$
 
 > [!question] 1.6.13.
 > If $\mathbb{E}X_1^- < \infty$ and $X_n \uparrow X$ then $\mathbb{E}X_n \uparrow \mathbb{E}X$.
