@@ -58,9 +58,6 @@
 >[!def] 自伴算子
 >若有界线性算子$T$和伴随算子$T^*$满足$T=T^*$，则称$T$为自伴算子。
 
->[!def] 正规算子
->若有界线性算子$T$和伴随算子$T^*$满足$TT^*=T^*T$，则称$T$为正规算子。
-
 >[!proposition] 自伴算子的性质
 >$T$为自伴算子当且仅当$\forall x\in H,\langle Tx,x\rangle\in\mathbb{R}$。
 
@@ -107,3 +104,42 @@ $$
 
 >[!proposition] 推论
 >对有界算子$T$满足对$\forall x\in H$成立$\langle Tx,x\rangle=0$，则$T=0$。
+
+**Proof**
+
+考虑把$T$写成$T_1+iT_2$的形式，只需要取
+$$
+T_1=\frac{T+T^*}{2},T_2=\frac{T-T^*}{2i}
+$$
+
+**QED**
+
+>[!def] 正规算子
+>若有界线性算子$T$和伴随算子$T^*$满足$TT^*=T^*T$，则称$T$为正规算子。
+
+>[!proposition] 正规算子的性质
+>以下命题等价
+>1. $TT^*=T^*T$
+>2. $\|Tx\|=\|T^*x\|$
+>3. 若$T=T_1+iT_2$，则$T_1T_2=T_2T_1$
+
+>[!thm] 
+>若$T$有界，则$\text{Ker} \ T=(\text{range} \ T^*)^\bot$
+
+**Proof**
+
+$\Longrightarrow:$ 对$x\in\text{Ker} \ T$则$Tx=0$，注意到对任意的$y\in H$，
+$$
+0=\langle Tx,y\rangle=\langle x,T^*y\rangle\Longrightarrow x\in(\text{range} \ T^*)^\bot
+$$
+
+$\Longleftarrow:$ 对$x\in(\text{range} \ T^*)^\bot$，对任意的$y\in H$，
+$$
+0=\langle x,T^*y\rangle=\langle Tx,y\rangle\Longrightarrow Tx=0
+$$
+
+**QED**
+>[!proposition] 推论
+>1. $\text{Ker} \ T^*=(\text{range} \ T)^{\bot}$
+>2. $(\text{Ker} \ T)^\bot=\overline{\text{range} \ T^*}$
+>3. $(\text{Ker} \ T^*)^\bot=\overline{\text{range} \ T}$

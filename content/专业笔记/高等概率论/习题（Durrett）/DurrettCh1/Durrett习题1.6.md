@@ -119,6 +119,7 @@
 > If $X_n \geq 0$ then $\mathbb{E}(\sum_{n=0}^\infty X_n) = \sum_{n=0}^\infty \mathbb{E}X_n$.
 
 > [!done]
+> It is obtained by MCT directly.
 
 > [!question] 1.6.16.
 > If $X$ is integrable and $A_n$ are disjoint sets with union $A$ then
