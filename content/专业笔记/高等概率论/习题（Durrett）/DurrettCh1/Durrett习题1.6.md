@@ -69,12 +69,21 @@
 > Show that: if $\epsilon > 0$, $\inf\{\mathbb{P}(|X| > \epsilon) : \mathbb{E}X = 0, \text{var}(X) = 1\} = 0$.
 
 >[!done] 
->
+>Construct a r.v. $Z_p$, $0<p<1$, 
+>$$
+>\mathbb{P}(Z_p=0)=1-p,\mathbb{P}\left(Z_p=\frac{1}{\sqrt{p}}\right)=\frac{p}{2},\mathbb{P}\left(Z_p=-\frac{1}{\sqrt{p}}\right)=\frac{p}{2}
+>$$
+>It is easy to check $\mathbb{E}Z_p=0,\text{Var}(Z_p)=1$. For fixed $\varepsilon>0$, we choose $p$ small s.t. $\frac{1}{\sqrt{p}}>\varepsilon$, take $X=Z_p$, 
+>$$
+>\mathbb{P}(|X|\ge\varepsilon)=p
+>$$
+>Let $p\downarrow0$ and thus $\inf\{\mathbb{P}(|X| > \epsilon) : \mathbb{E}X = 0, \text{var}(X) = 1\} = 0$.
 
 > [!question] 1.6.5.**Two nonexistent lower bounds.** (ii) 
 > if $y \geq 1$, $\sigma^2 \in (0, \infty)$, $\inf\{\mathbb{P}(|X| > y) : \mathbb{E}X = 1, \text{var}(X) = \sigma^2\} = 0$.
 
 > [!done]
+> Take $X=1+\sigma Z_p$
 
 > [!question] 1.6.6. **A useful lower bound.** 
 > Let $Y \geq 0$ with $\mathbb{E}Y^2 < \infty$. Apply the Cauchy-Schwarz inequality to $Y 1_{(Y > 0)}$ and conclude
