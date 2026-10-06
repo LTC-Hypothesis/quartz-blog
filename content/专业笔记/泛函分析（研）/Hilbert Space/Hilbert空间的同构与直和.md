@@ -52,5 +52,5 @@ $$
 >
 >类似可以定义无穷直和
 >$$
->\bigoplus_{n=1}^{\infty}H_n=\left\{(h_1,h_2,\cdots)\right\}
+>\bigoplus_{n=1}^{\infty}H_n=\left\{(h_1,h_2,\cdots):h_n\in H_n,n\ge1,\sum_{n=1}^{\infty}\|h_n\|^2_{H_n}<\infty\right\}
 >$$
