@@ -17,24 +17,44 @@
 
 > [!done]
 
-> [!question] 1.6.3.
-> **Chebyshev's inequality is and is not sharp.** (i) Show that Theorem 1.6.4 is sharp by showing that if $0 < b \leq a$ are fixed there is an $X$ with $\mathbb{E}X^2 = b^2$ for which $\mathbb{P}(|X| \geq a) = b^2/a^2$. (ii) Show that Theorem 1.6.4 is not sharp by showing that if $X$ has $0 < \mathbb{E}X^2 < \infty$ then
+> [!question] 1.6.3.**Chebyshev's inequality is and is not sharp.** (i) 
+> Show that Theorem 1.6.4 is sharp by showing that if $0 < b \leq a$ are fixed there is an $X$ with $\mathbb{E}X^2 = b^2$ for which $\mathbb{P}(|X| \geq a) = b^2/a^2$. 
+
+>[!done] 
+>By Chebyshev's inequality we have known, 
+>$$
+>\mathbb{P}(|X|\ge a)\le\frac{b^2}{a^2}
+>$$
+>We should construct a r.v. s.t. the equality holds. Let $p\triangleq\frac{b^2}{a^2}\in(0,1)$, we define 
+>$$
+>\mathbb{P}(X=a)=p,\mathbb{P}(X=0)=1-p
+>$$
+>Then 
+>$$
+>\mathbb{P}(|X|\ge a)=\mathbb{P}(X=a)=p
+>$$
+
+> [!question] 1.6.3.**Chebyshev's inequality is and is not sharp.** (ii) 
+> Show that Theorem 1.6.4 is not sharp by showing that if $X$ has $0 < \mathbb{E}X^2 < \infty$ then
 > $$
 > \lim_{a \to \infty} a^2 \mathbb{P}(|X| \geq a) / \mathbb{E}X^2 = 0
 > $$
 
 > [!done]
 
-> [!question] 1.6.4.
-> **One-sided Chebyshev bound.** (i) Let $a > b > 0$, $0 < p < 1$, and let $X$ have $\mathbb{P}(X = a) = p$ and $\mathbb{P}(X = -b) = 1 - p$. Apply Theorem 1.6.4 to $\varphi(x) = (x + b)^2$ and conclude that if $Y$ is any random variable with $\mathbb{E}Y = \mathbb{E}X$ and $\text{var}(Y) = \text{var}(X)$, then $\mathbb{P}(Y \geq a) \leq p$ and equality holds when $Y = X$.
-> (ii) Suppose $\mathbb{E}Y = 0$, $\text{var}(Y) = \sigma^2$, and $a > 0$. Show that $\mathbb{P}(Y \geq a) \leq \sigma^2/(a^2 + \sigma^2)$, and there is a $Y$ for which equality holds.
+> [!question] 1.6.4.**One-sided Chebyshev bound.** (i) 
+> Let $a > b > 0$, $0 < p < 1$, and let $X$ have $\mathbb{P}(X = a) = p$ and $\mathbb{P}(X = -b) = 1 - p$. Apply Theorem 1.6.4 to $\varphi(x) = (x + b)^2$ and conclude that if $Y$ is any random variable with $\mathbb{E}Y = \mathbb{E}X$ and $\text{var}(Y) = \text{var}(X)$, then $\mathbb{P}(Y \geq a) \leq p$ and equality holds when $Y = X$.
+
+> [!question] 1.6.4.**One-sided Chebyshev bound.** (ii) 
+> Suppose $\mathbb{E}Y = 0$, $\text{var}(Y) = \sigma^2$, and $a > 0$. Show that $\mathbb{P}(Y \geq a) \leq \sigma^2/(a^2 + \sigma^2)$, and there is a $Y$ for which equality holds.
 
 > [!done]
 
-> [!question] 1.6.5.
-> **Two nonexistent lower bounds.**
-> Show that: (i) if $\epsilon > 0$, $\inf\{\mathbb{P}(|X| > \epsilon) : \mathbb{E}X = 0, \text{var}(X) = 1\} = 0$.
-> (ii) if $y \geq 1$, $\sigma^2 \in (0, \infty)$, $\inf\{\mathbb{P}(|X| > y) : \mathbb{E}X = 1, \text{var}(X) = \sigma^2\} = 0$.
+> [!question] 1.6.5.**Two nonexistent lower bounds.** (i) 
+> Show that: if $\epsilon > 0$, $\inf\{\mathbb{P}(|X| > \epsilon) : \mathbb{E}X = 0, \text{var}(X) = 1\} = 0$.
+
+> [!question] 1.6.5.**Two nonexistent lower bounds.** (ii) 
+> if $y \geq 1$, $\sigma^2 \in (0, \infty)$, $\inf\{\mathbb{P}(|X| > y) : \mathbb{E}X = 1, \text{var}(X) = \sigma^2\} = 0$.
 
 > [!done]
 
@@ -106,6 +126,14 @@
 > If $\mathbb{E}X_1^- < \infty$ and $X_n \uparrow X$ then $\mathbb{E}X_n \uparrow \mathbb{E}X$.
 
 > [!done]
+> Consider 
+> $$
+> X_n+X^{-}_1\ge X_1+X^-_1=X^+_1\ge0,X_n+X^-_1\uparrow X+X^-_1
+> $$
+> By MCT, 
+> $$
+> \mathbb{E}[X_n+X_1^-]\uparrow\mathbb{E}[X+X^-_1]\Longrightarrow\mathbb{E}X_n\uparrow\mathbb{E}X
+> $$
 
 > [!question] 1.6.14.
 > Let $X \geq 0$ but do NOT assume $\mathbb{E}(1/X) < \infty$. Show
@@ -129,3 +157,11 @@
 > i.e., the sum converges absolutely and has the value on the right.
 
 > [!done]
+> By MCT,
+> $$
+> \begin{aligned}
+>\sum_{n=0}^{\infty}\mathbb{E}(X;A_n)&=\sum_{n=0}^{\infty}\int_{A_n}X\mathbb{P}(d\omega)\\
+>&=\sum_{n=0}^{\infty}\int_\Omega X\mathbb{1}_{A_n}\mathbb{P}(d\omega)\\
+>&=\int_{\Omega}\sum_{n=0}^{\infty}X\mathbb{1}_{A_n}\mathbb{P}(d\omega)=\int_{A}X\mathbb{P}(d\omega)
+>\end{aligned}
+> $$
