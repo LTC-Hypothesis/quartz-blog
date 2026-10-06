@@ -36,5 +36,9 @@ $$
 &\sum_{i=1}^{\infty}\langle h,e_i\rangle e_i\mapsto\sum_{i=1}^{\infty}\langle h,e_i\rangle f_i
 \end{aligned}
 $$
+注意到
+$$
+\|Th\|^2=\|h\|^2=\sum_{n=1}^{}
+$$
 
 **QED**
