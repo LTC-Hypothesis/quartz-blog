@@ -83,7 +83,14 @@
 > if $y \geq 1$, $\sigma^2 \in (0, \infty)$, $\inf\{\mathbb{P}(|X| > y) : \mathbb{E}X = 1, \text{var}(X) = \sigma^2\} = 0$.
 
 > [!done]
-> Take $X=1+\sigma Z_p$
+> Take $X=1+\sigma Z_p$, we choose $p$ s.t. 
+> $$
+> \frac{1}{\sqrt{p}}>\frac{y+1}{\sigma}
+> $$
+> Then 
+> $$
+> \mathbb{P}(|X|>y)=p\downarrow0
+> $$
 
 > [!question] 1.6.6. **A useful lower bound.** 
 > Let $Y \geq 0$ with $\mathbb{E}Y^2 < \infty$. Apply the Cauchy-Schwarz inequality to $Y 1_{(Y > 0)}$ and conclude
@@ -92,11 +99,21 @@
 > $$
 
 > [!done]
+> Note that
+> $$
+> \begin{aligned}
+>\mathbb{E}[Y]&=\mathbb{E}Y\mathbb{1}_{\{Y>0\}}+\mathbb{E}\mathbb{1}_{\{Y\le0\}}\\
+>&\le\mathbb{E}Y\mathbb{1}_{\{Y>0\}}\\
+>&\le(\mathbb{E}Y^2)^{\frac{1}{2}}(\mathbb{P}(Y>0))^{\frac{1}{2}}\\
+>\Longrightarrow\mathbb{P}(Y>0)&\ge\frac{(\mathbb{E}(Y))^2}{\mathbb{E}Y^2}
+>\end{aligned}
+> $$
 
 > [!question] 1.6.7.
 > Let $\Omega = (0, 1)$ equipped with the Borel sets and Lebesgue measure. Let $\alpha \in (1, 2)$ and $X_n = n^\alpha 1_{(1/(n+1), 1/n)} \to 0$ a.s. Show that Theorem 1.6.8 can be applied with $h(x) = x$ and $g(x) = |x|^{2/\alpha}$, but the $X_n$ are not dominated by an integrable function.
 
 > [!done]
+> ![[Pasted image 20261006130715.png]]
 
 > [!question] 1.6.8.
 > Suppose that the probability measure $\mu$ has $\mu(A) = \int_A f(x) dx$ for all $A \in \mathcal{R}$. Use the proof technique of Theorem 1.6.9 to show that for any $g$ with $g \geq 0$ or $\int |g(x)| \mu(dx) < \infty$ we have
