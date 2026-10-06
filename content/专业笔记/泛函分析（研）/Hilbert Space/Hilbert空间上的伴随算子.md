@@ -52,3 +52,58 @@
 >[!proposition] 伴随算子的性质
 >1. $(\alpha T_1+\beta T_2)^*=\bar{\alpha}T^*_1+\bar{\beta}T^*_2$
 >2. $(T_1T_2)^*=T_2^*T_1^*$
+>3. $T^{**}=(T^*)^*=T$
+>4. $\|T^*\|=\|T\|=\|T^*T\|^{\frac{1}{2}}$
+
+>[!def] 自伴算子
+>若有界线性算子$T$和伴随算子$T^*$满足$T=T^*$，则称$T$为自伴算子。
+
+>[!def] 正规算子
+>若有界线性算子$T$和伴随算子$T^*$满足$TT^*=T^*T$，则称$T$为正规算子。
+
+>[!proposition] 自伴算子的性质
+>$T$为自伴算子当且仅当$\forall x\in H,\langle Tx,x\rangle\in\mathbb{R}$。
+
+**Proof**
+
+$\Longrightarrow:$ 显然。
+
+$\Longleftarrow:$ 对任意的$x,y\in H$，要证明$\langle Tx,y\rangle=\langle x,Ty\rangle$。考虑引入参数$\lambda\in\mathbb{C}$，根据假设$\langle T(x+\lambda y),x+\lambda y\rangle\in\mathbb{R}$，于是
+$$
+\begin{aligned}
+\langle Tx,x\rangle+\lambda\langle Ty,x\rangle+\bar{\lambda}\langle Tx,y\rangle+|\lambda|^2\langle Ty,y\rangle\in\mathbb{R}
+\end{aligned}
+$$
+从而$\lambda\langle Ty,x\rangle+\bar{\lambda}\langle Tx,y\rangle\in\mathbb{R}$，对于实数取一次共轭依然是自身，因此有
+$$
+\begin{aligned}
+&\overline{\lambda\langle Ty,x\rangle+\bar{\lambda}\langle Tx,y\rangle}=\lambda\langle Ty,x\rangle+\bar{\lambda}\langle Tx,y\rangle\\
+=&\bar{\lambda}\langle x,Ty\rangle+\lambda\langle y,Tx\rangle
+\end{aligned}
+$$
+取$\lambda=1$得到
+$$
+\langle x,Ty\rangle+\langle y,Tx\rangle=\langle Ty,x\rangle+\langle Tx,y\rangle
+$$
+取$\lambda=i$得到
+$$
+\langle y,Tx\rangle-\langle x,Ty\rangle=\langle Ty,x\rangle-\langle Tx,y\rangle
+$$
+两式相减即可得到$\langle Tx,y\rangle=\langle x,Ty\rangle$
+
+**QED**
+
+>[!proposition] 自伴算子的算子范数
+>若$T$为自伴算子，则$\|T\|=\sup_{\|x\|=1}|\langle Tx,x\rangle|$。
+
+**Proof**
+
+
+
+**QED**
+
+>[!proposition] 推论
+>若$T$为自伴算子，且对$\forall x\in H$满足$\langle Tx,x\rangle=0$，则$T=0$。
+
+>[!proposition] 推论
+>对有界算子$T$满足对$\forall x\in H$成立$\langle Tx,x\rangle=0$，则$T=0$。
