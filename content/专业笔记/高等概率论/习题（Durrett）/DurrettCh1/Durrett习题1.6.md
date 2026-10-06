@@ -50,7 +50,15 @@
 > Let $a > b > 0$, $0 < p < 1$, and let $X$ have $\mathbb{P}(X = a) = p$ and $\mathbb{P}(X = -b) = 1 - p$. Apply Theorem 1.6.4 to $\varphi(x) = (x + b)^2$ and conclude that if $Y$ is any random variable with $\mathbb{E}Y = \mathbb{E}X$ and $\text{var}(Y) = \text{var}(X)$, then $\mathbb{P}(Y \geq a) \leq p$ and equality holds when $Y = X$.
 
 >[!done] 
->
+>By Chebyshev's inequality, 
+>$$
+>\begin{aligned}
+>\mathbb{P}(Y\ge a)=\mathbb{P}(Y+b\ge a+b)&\le \frac{\mathbb{E}[Y+b]^2}{(a+b)^2}\\
+>&=\frac{\mathbb{E}X^2+2b\mathbb{E}X+b^2}{(a+b)^2}\\
+>&=\frac{a^2p+b^2(1-p)+2b(ap-b(1-p))+b^2}{(a+b)^2}\\
+>&=p
+>\end{aligned}
+>$$
 
 > [!question] 1.6.4.**One-sided Chebyshev bound.** (ii) 
 > Suppose $\mathbb{E}Y = 0$, $\text{var}(Y) = \sigma^2$, and $a > 0$. Show that $\mathbb{P}(Y \geq a) \leq \sigma^2/(a^2 + \sigma^2)$, and there is a $Y$ for which equality holds.
@@ -59,6 +67,9 @@
 
 > [!question] 1.6.5.**Two nonexistent lower bounds.** (i) 
 > Show that: if $\epsilon > 0$, $\inf\{\mathbb{P}(|X| > \epsilon) : \mathbb{E}X = 0, \text{var}(X) = 1\} = 0$.
+
+>[!done] 
+>
 
 > [!question] 1.6.5.**Two nonexistent lower bounds.** (ii) 
 > if $y \geq 1$, $\sigma^2 \in (0, \infty)$, $\inf\{\mathbb{P}(|X| > y) : \mathbb{E}X = 1, \text{var}(X) = \sigma^2\} = 0$.
