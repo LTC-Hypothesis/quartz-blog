@@ -114,6 +114,7 @@
 
 > [!done]
 > ![[Pasted image 20261006130715.png]]
+> We check (ii) and (iii): $\frac{|h(x)|}{g(x)}=|x|^{1-\frac{2}{\alpha}}\to0\text{ as }|x|\to\infty$ since $1-\frac{2}{\alpha}<0$. $\mathbb{E}g(X_n)=n^2(\frac{1}{n}-\frac{1}{n+1})=\frac{n}{n+1}\le1$. Then $\mathbb{E}h(X_n)=\mathbb{E}X_n\to0$.
 
 > [!question] 1.6.8.
 > Suppose that the probability measure $\mu$ has $\mu(A) = \int_A f(x) dx$ for all $A \in \mathcal{R}$. Use the proof technique of Theorem 1.6.9 to show that for any $g$ with $g \geq 0$ or $\int |g(x)| \mu(dx) < \infty$ we have
