@@ -38,7 +38,19 @@ $$
 $$
 注意到
 $$
-\|Th\|^2=\|h\|^2=\sum_{n=1}^{}
+\|Th\|^2=\|h\|^2=\sum_{n=1}^{\infty}|\langle h,e_n\rangle|^2
 $$
 
 **QED**
+
+>[!def] Hilbert空间的直和
+>前面我们提过Hilbert空间在[[Orthogonality|闭子空间上的直和分解]]。那么现在对任意的两个Hilbert空间能否定义他们的直和呢?这是可以的，只需要定义其元素和合适的内积即可，使得构成的直和为新的Hilbert空间。定义$H_1\oplus H_2$，
+>
+>1. **元素：** $H_1\times H_2=\left\{(h_1,h_2):h_1\in H_1,h_2\in H_2\right\}$
+>2. **线性：** $(h_1,h_2)\pm(\tilde{h}_1,\tilde{h}_2)=(h_1\pm\tilde{h}_1,h_2\pm\tilde{h}_2)$，$\lambda(h_1,h_2)=(\lambda h_1,\lambda h_2),\lambda\in\mathbb{C}$
+>3. **内积：** $\left\langle (h_1,h_2),(\tilde{h}_1,\tilde{h}_2)\right\rangle=\langle h_1,\tilde{h}_1\rangle_{H_1}+\langle h_2,\tilde{h}_2\rangle_{H_2}$
+>
+>类似可以定义无穷直和
+>$$
+>\bigoplus_{n=1}^{\infty}H_n=\left\{(h_1,h_2,\cdots)\right\}
+>$$
