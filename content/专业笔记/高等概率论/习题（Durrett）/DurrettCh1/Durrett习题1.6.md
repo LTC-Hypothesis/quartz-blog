@@ -153,6 +153,33 @@
 > $$
 
 > [!done]
+> Since $1-\mathbb{1}_{A_i}=\mathbb{1}_{A_i^c}$, De Morgan's law gives
+> $$
+> \prod_{i=1}^n(1-\mathbb{1}_{A_i})
+> =\mathbb{1}_{\bigcap_{i=1}^n A_i^c}
+> =\mathbb{1}_{A^c}
+> =1-\mathbb{1}_A.
+> $$
+> Hence $\mathbb{1}_A=1-\prod_{i=1}^n(1-\mathbb{1}_{A_i})$. Expanding the finite product and using $\prod_{i\in J}\mathbb{1}_{A_i}=\mathbb{1}_{\bigcap_{i\in J}A_i}$, we obtain
+> $$
+> \begin{aligned}
+> \mathbb{1}_A
+> &=\sum_{k=1}^n(-1)^{k-1}
+> \sum_{1\le i_1<\cdots<i_k\le n}
+> \prod_{j=1}^k\mathbb{1}_{A_{i_j}}\\
+> &=\sum_{k=1}^n(-1)^{k-1}
+> \sum_{1\le i_1<\cdots<i_k\le n}
+> \mathbb{1}_{A_{i_1}\cap\cdots\cap A_{i_k}}.
+> \end{aligned}
+> $$
+> Taking expectations and using $\mathbb{E}\mathbb{1}_B=\mathbb{P}(B)$ yields
+> $$
+> \boxed{\mathbb{P}\left(\bigcup_{i=1}^n A_i\right)
+> =\sum_{k=1}^n(-1)^{k-1}
+> \sum_{1\le i_1<\cdots<i_k\le n}
+> \mathbb{P}(A_{i_1}\cap\cdots\cap A_{i_k}).}
+> $$
+> This is the inclusion-exclusion formula. No independence assumption is needed.
 
 > [!question] 1.6.10.**Bonferroni inequalities.** 
 > Let $A_1, A_2, \dots A_n$ be events and $A = \cup_{i=1}^n A_i$. Show that $1_A \leq \sum_{i=1}^n 1_{A_i}$, etc. and then take expected values to conclude
@@ -168,6 +195,58 @@
 > In general, if we stop the inclusion exclusion formula after an even (odd) number of sums, we get a lower (upper) bound.
 
 > [!done]
+> Count the number of events occurring at a sample point:
+> $$
+> M=\sum_{i=1}^n\mathbb{1}_{A_i},\qquad
+> \mathbb{1}_A=\mathbb{1}_{\{M\ge1\}}.
+> $$
+> For $1\le k\le n$, put
+> $$
+> T_k=\sum_{1\le i_1<\cdots<i_k\le n}
+> \mathbb{1}_{A_{i_1}\cap\cdots\cap A_{i_k}}.
+> $$
+> If exactly $m$ events occur, exactly $\binom{m}{k}$ of their $k$-fold intersections occur. Thus $T_k=\binom{M}{k}$ pointwise, with $\binom{m}{k}=0$ when $k>m$.
+>
+> For $1\le r\le n$, define the truncated indicator sum
+> $$
+> B_r=\sum_{k=1}^r(-1)^{k-1}T_k.
+> $$
+> If $M=0$, then $B_r=0=\mathbb{1}_A$. If $M=m\ge1$, Pascal's identity gives
+> $$
+> \begin{aligned}
+> \sum_{k=0}^r(-1)^k\binom{m}{k}
+> &=\sum_{k=0}^r(-1)^k\binom{m-1}{k}
+> -\sum_{k=0}^{r-1}(-1)^k\binom{m-1}{k}\\
+> &=(-1)^r\binom{m-1}{r}.
+> \end{aligned}
+> $$
+> Consequently,
+> $$
+> B_r=1-(-1)^r\binom{m-1}{r}.
+> $$
+> Since $\binom{m-1}{r}\ge0$, this proves the pointwise bounds
+> $$
+> \begin{cases}
+> B_r\le\mathbb{1}_A,&r\text{ even},\\
+> B_r\ge\mathbb{1}_A,&r\text{ odd}.
+> \end{cases}
+> $$
+> In particular, $\mathbb{1}_A\le T_1$, $\mathbb{1}_A\ge T_1-T_2$, and $\mathbb{1}_A\le T_1-T_2+T_3$ (when the corresponding terms exist).
+>
+> Taking expectations, set
+> $$
+> S_r=\sum_{k=1}^r(-1)^{k-1}
+> \sum_{1\le i_1<\cdots<i_k\le n}
+> \mathbb{P}(A_{i_1}\cap\cdots\cap A_{i_k}).
+> $$
+> We obtain the Bonferroni inequalities:
+> $$
+> \boxed{\begin{cases}
+> S_r\le\mathbb{P}(A),&r\text{ even},\\
+> \mathbb{P}(A)\le S_r,&r\text{ odd}.
+> \end{cases}}
+> $$
+> The cases $r=1,2,3$ give the three inequalities in the question. For $r=n$, the binomial remainder vanishes and we recover the inclusion-exclusion formula. No independence assumption is needed.
 
 > [!question] 1.6.11.
 > If $\mathbb{E}|X|^k < \infty$ then for $0 < j < k$, $\mathbb{E}|X|^j < \infty$, and furthermore
@@ -214,6 +293,17 @@
 > $$
 
 > [!done]
+> We construct 
+> $$
+>Z_y=\begin{cases}
+>\frac{y}{X},X>y\\
+>0,X\le y
+>\end{cases}
+> $$
+> Let $y\to\infty$ and $y\downarrow0$, $Z_y\to0$ and $|Z_y|\le 1$, then by DCT(BCT), 
+> $$
+> \lim_{y\to\infty\text{ or }y\downarrow0}y\mathbb{E}\frac{1}{X}\mathbb{1}_{\{X>y\}}=\lim_{y\to\infty\text{ or }y\downarrow0}\mathbb{E}Z_y=0
+> $$
 
 > [!question] 1.6.15.
 > If $X_n \geq 0$ then $\mathbb{E}(\sum_{n=0}^\infty X_n) = \sum_{n=0}^\infty \mathbb{E}X_n$.
