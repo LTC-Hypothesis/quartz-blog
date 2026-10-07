@@ -102,7 +102,7 @@
 > Note that
 > $$
 > \begin{aligned}
->\mathbb{E}[Y]&=\mathbb{E}Y\mathbb{1}_{\{Y>0\}}+\mathbb{E}\mathbb{1}_{\{Y\le0\}}\\
+>\mathbb{E}[Y]&=\mathbb{E}Y\mathbb{1}_{\{Y>0\}}+\mathbb{E}Y\mathbb{1}_{\{Y\le0\}}\\
 >&\le\mathbb{E}Y\mathbb{1}_{\{Y>0\}}\\
 >&\le(\mathbb{E}Y^2)^{\frac{1}{2}}(\mathbb{P}(Y>0))^{\frac{1}{2}}\\
 >\Longrightarrow\mathbb{P}(Y>0)&\ge\frac{(\mathbb{E}(Y))^2}{\mathbb{E}Y^2}
@@ -123,6 +123,25 @@
 > $$
 
 > [!done]
+> **Step1:** $g(x)$ is indicatior function i.e. $g(x)=\mathbb{1}_{A}(x)$. Then 
+> $$
+> \int g(x)\mu(dx)=\int \mathbb{1}_{A}(x)\mu(dx)=\mu(A)=\int_{A}f(x)dx=\int \mathbb{1}_{A}(x)f(x){d}x
+> $$
+> 
+> **Step2:** $g(x)$ is simple function i.e. $g(x)=\sum_{m=1}^{n}a_m\mathbb{1}_{A_m}(x)$. Then 
+> $$
+> \begin{aligned}
+>\int g(x)\mu(dx)&=\int\sum_{m=1}^{n}a_m\mathbb{1}_{A_m}\mu(dx)=\sum_{m=1}^{n}a_m\mu(A_m)\\
+>&=\sum_{m=1}^{n}a_m\int_{A_m}f(x)dx=\int\sum_{m=1}^{n}a_m\mathbb{1}_{A_m}f(x){d}x
+>\end{aligned}
+> $$
+> 
+> **Step3:** $g(x)$ is nonnegative function. By approximation of simple function, there exists a sequence of simple functions $g_n\uparrow g$, then by MCT
+> $$
+> \begin{aligned}
+>\int g\mu(dx)=\lim_{n\to\infty}\int g_n(x)\mu(dx)=\lim_{n\to\infty}\int g_n(x)f(x){d}x=\int g(x)f(x){d}x
+>\end{aligned}
+> $$
 
 > [!question] 1.6.9.**Inclusion-exclusion formula.** 
 > Let $A_1, A_2, \dots A_n$ be events and $A = \cup_{i=1}^n A_i$. Prove that $1_A = 1 - \prod_{i=1}^n (1 - 1_{A_i})$. Expand out the right hand side, then take expected value to conclude

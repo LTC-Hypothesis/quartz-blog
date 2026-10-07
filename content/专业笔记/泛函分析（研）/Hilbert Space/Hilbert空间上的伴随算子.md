@@ -119,6 +119,7 @@ $$
 &=4M
 \end{aligned}
 $$
+现假设$\langle Tx,y\rangle=e^{i\theta}|\langle Tx,y\rangle|$，替换$x$为$e^{-i\theta}x$可以得到$|\langle Tx,y\rangle|\le M$，对所有$\|y\|=1$取上确界得到$\|Tx\|\le M$，再对所有$\|x\|=1$去上确界可以得到$\|T\|\le M$。
 
 **QED**
 
