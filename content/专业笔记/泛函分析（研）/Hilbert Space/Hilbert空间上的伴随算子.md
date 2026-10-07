@@ -95,7 +95,30 @@ $$
 
 **Proof**
 
-
+记$M\triangleq\sup_{\|x\|=1}|\langle Tx,x\rangle|$，注意到
+$$
+|\langle Tx,x\rangle|\le\|Tx\|\|x\|\le \|T\|\tag{$\|x\|=1$}
+$$
+因此$M\le \|T\|$，只需要证明$\|T\|\le M$。对于$\|x\|=\|y\|=1$，有
+$$
+\begin{aligned}
+\langle T(x\pm y),x\pm y\rangle&=\langle Tx,x\rangle\pm\langle Tx,y\rangle\pm\langle Ty,x\rangle+\langle Ty,y\rangle\\
+&=\langle Tx,x\rangle\pm\langle Tx,y\rangle\pm\overline{\langle Tx,y\rangle}+\langle Ty,y\rangle\\
+&=\langle Tx,x\rangle\pm\text{Re}\langle Tx,y\rangle+\langle Ty,y\rangle
+\end{aligned}
+$$
+两式相减得到
+$$
+4\text{Re}\langle Tx,y\rangle=\langle T(x+y),x+y\rangle-\langle T(x-y),x-y\rangle
+$$
+容易验证$|\langle Tx,x\rangle|\le M\|x\|^2$，从而
+$$
+\begin{aligned}
+4\text{Re}\langle Tx,y\rangle&\le M(\|x+y\|^2+\|x-y\|^2)\\
+&\le 2M(\|x\|^2+\|y\|^2)\\
+&=4M
+\end{aligned}
+$$
 
 **QED**
 
