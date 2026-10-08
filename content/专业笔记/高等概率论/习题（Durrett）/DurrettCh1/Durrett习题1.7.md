@@ -6,6 +6,7 @@
 > **Corollary.** Let $X = \{1, 2, \ldots\}$, $\mathcal{A} =$ all subsets of $X$, and $\mu_1 =$ counting measure. If $\sum_n \int |f_n| d\mu < \infty$ then $\sum_n \int f_n d\mu = \int \sum_n f_n d\mu$.
 
 > [!done]
+> 
 
 > [!question] 1.7.2.
 > Let $g \geq 0$ be a measurable function on $(X, \mathcal{A}, \mu)$. Use Theorem 1.7.2 to conclude that
