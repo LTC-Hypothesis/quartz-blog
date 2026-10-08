@@ -25,6 +25,7 @@
 >\int_Xg(x)\mu(dx)&=\int_X\int_{0}^{\infty}\mathbb{1}_E(x,y)\lambda({dy})\mu(dx)\\
 >&=\int_{0}^{\infty}\int_X\mathbb{1}_E(x,y)\mu(dx)\lambda(dy)\\
 >&=\int_{0}^{\infty}\mu\left\{x:g(x)>y\right\}\lambda(dy)
+>
 >\end{aligned}
 > $$
 
@@ -33,10 +34,20 @@
 > $\int_{(a,b]} \{F(y) - F(a)\} dG(y) = (\mu \times \nu)(\{(x,y) : a < x \leq y \leq b\})$
 
 >[!done] 
->
+>Note that 
+>$$
+>\begin{aligned}
+>\int_{(a,b]}F(y)-F(a)dG(y)&=\int_{(a,b]}\mu(a,y]dG(y)\\
+>&=\int_{(a,b]}\int_{\mathbb{R}}\mathbb{1}_{(a,y]}(x)d\mu dG(y)\\
+>&=(\mu\times\nu)\left\{(x,y):a<x\le y\le b\right\}
+>\end{aligned}
+>$$
 
 >[!question] 1.7.3.(ii) 
 > $\int_{(a,b]} F(y) dG(y) + \int_{(a,b]} G(y) dF(y) = F(b)G(b) - F(a)G(a) + \sum_{x \in (a,b]} \mu(\{x\})\nu(\{x\})$
+
+>[!done]
+>
 
 >[!question] 1.7.3.(iii) 
 > If $F = G$ is continuous then $\int_{(a,b]} 2F(y)dF(y) = F^2(b) - F^2(a)$.
