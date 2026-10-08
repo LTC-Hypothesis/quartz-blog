@@ -47,13 +47,35 @@
 > $\int_{(a,b]} F(y) dG(y) + \int_{(a,b]} G(y) dF(y) = F(b)G(b) - F(a)G(a) + \sum_{x \in (a,b]} \mu(\{x\})\nu(\{x\})$
 
 >[!done]
->
+>Denote 
+>$$
+>I_1=\left\{(x,y):a<x\le y\le b\right\},I_2=\left\{(x,y):a<y\le x\le b\right\}
+>$$
+>By (i) we can obtain
+>$$
+>\int_{(a,b]} \{F(y) - F(a)\} dG(y) = (\mu \times \nu)(I_1)\tag{1}
+>$$
+>$$
+>\int_{(a,b]} \{G(y) - G(a)\} dF(y) = (\mu \times \nu)(I_2)\tag{2}
+>$$
+>Note that $I_1\cup I_2=(a,b]^2,I_1\cap I_2=\{(x,x):x\in(a,b]\}$ and $(\mu \times \nu)(I_1\cup I_2)+(\mu \times \nu)(I_1\cap I_2)=(\mu \times \nu)(I_1)+(\mu \times \nu)(I_2)$, then we add (1) to (2)
+>$$
+>\begin{aligned}
+>\int_{(a,b]} F(y) dG(y) + \int_{(a,b]} G(y) dF(y) = &F(a)(G(b)-G(a))+G(a)(F(b)-F(a))\\
+>&+(\mu \times \nu)(I_1\cup I_2)+(\mu \times \nu)(I_1\cap I_2)\\
+>=&F(a)(G(b)-G(a))+G(a)(F(b)-F(a))\\
+>&+(F(b)-F(a))(G(b)-G(a))\\
+>&+\sum_{x\in(a,b]}\mu\{x\}\nu\{x\}\\
+>=&F(b)G(b)-F(a)G(a)+\sum_{x\in(a,b]}\mu\{x\}\nu\{x\}
+>\end{aligned}
+>$$
 
 >[!question] 1.7.3.(iii) 
 > If $F = G$ is continuous then $\int_{(a,b]} 2F(y)dF(y) = F^2(b) - F^2(a)$.
 > To see the second term in (ii) is needed, let $F(x) = G(x) = 1_{[0,\infty)}(x)$ and $a < 0 < b$.
 
 > [!done]
+> 
 
 > [!question] 1.7.4.
 > Let $\mu$ be a finite measure on $\mathbf{R}$ and $F(x) = \mu((-\infty, x])$. Show that
