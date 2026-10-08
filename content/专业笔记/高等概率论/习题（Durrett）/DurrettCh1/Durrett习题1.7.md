@@ -15,11 +15,25 @@
 > $$
 
 > [!done]
-> 
+> Denote set 
+> $$
+> E=\left\{(x,y)\in X\times[0,\infty):x\in X,0<y<g(x)\right\}
+> $$
+> then
+> $$
+> \begin{aligned}
+>\int_Xg(x)\mu(dx)&=\int_X\int_{0}^{\infty}\mathbb{1}_E(x,y)\lambda({dy})\mu(dx)\\
+>&=\int_{0}^{\infty}\int_X\mathbb{1}_E(x,y)\mu(dx)\lambda(dy)\\
+>&=\int_{0}^{\infty}\mu\left\{x:g(x)>y\right\}\lambda(dy)
+>\end{aligned}
+> $$
 
 > [!question] 1.7.3.（i）
 > Let $F, G$ be Stieltjes measure functions and let $\mu, \nu$ be the corresponding measures on $(\mathbf{R}, \mathcal{R})$. Show that
 > $\int_{(a,b]} \{F(y) - F(a)\} dG(y) = (\mu \times \nu)(\{(x,y) : a < x \leq y \leq b\})$
+
+>[!done] 
+>
 
 >[!question] 1.7.3.(ii) 
 > $\int_{(a,b]} F(y) dG(y) + \int_{(a,b]} G(y) dF(y) = F(b)G(b) - F(a)G(a) + \sum_{x \in (a,b]} \mu(\{x\})\nu(\{x\})$
