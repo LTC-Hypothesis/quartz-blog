@@ -153,8 +153,17 @@
 > $$
 > \begin{aligned}
 >\mathbb{P}(X+Y=N)&=\sum_{k=1}^{N}\mathbb{P}(X=k)\mathbb{P}(Y=N-k)\\
->&=p^N(1-p)^{(n+m)}\\
->&=
+>&=p^N(1-p)^{(n+m)-N}\sum_{k=1}^{N}\begin{pmatrix}
+>n\\
+>k
+>\end{pmatrix}\begin{pmatrix}
+>m\\
+>N-k
+>\end{pmatrix}\\
+>&=\begin{pmatrix}
+>n+m\\
+>N
+>\end{pmatrix}p^N(1-p)^{(n+m)-N}
 >\end{aligned}
 > $$
 
