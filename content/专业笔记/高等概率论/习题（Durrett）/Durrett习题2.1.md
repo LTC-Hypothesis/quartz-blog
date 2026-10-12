@@ -22,6 +22,10 @@
 > $$
 > c_1\cdots c_n=\prod_{i=1}^{n}\int_{\mathbb{R}}g_i(x_i){d}x_i=\int_{\mathbb{R}^n}f(x){d}x=1
 > $$
+> Hence，
+> $$
+> \mathbb{P}(X_1\in A_1,\cdots,X_n\in A_n)=\prod_{i=1}^{n}\int_{A_i}\frac{1}{c_i}g_i(x_i){d}x_i=\prod_{i=1}^{n}\mathbb{P}(X_i\in A_i)
+> $$
 
 > [!question] 2.1.2.
 > Suppose $X_1, \dots, X_n$ are random variables that take values in countable sets $S_1, \dots, S_n$. Then in order for $X_1, \dots, X_n$ to be independent, it is sufficient that whenever $x_i \in S_i$
