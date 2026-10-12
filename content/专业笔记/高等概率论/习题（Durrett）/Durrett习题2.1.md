@@ -129,6 +129,17 @@
 > In Example 1.6.13, we introduced the Poisson distribution with parameter $\lambda$, which is given by $\mathbb{P}(Z = k) = e^{-\lambda}\lambda^k/k!$ for $k = 0, 1, 2, \dots$. Use the previous exercise to show that if $X = \text{Poisson}(\lambda)$ and $Y = \text{Poisson}(\mu)$ are independent then $X + Y = \text{Poisson}(\lambda + \mu)$.
 
 > [!done]
+> We compute directly
+> $$
+> \begin{aligned}
+>\mathbb{P}(X+Y=n)&=\sum_{m=1}^{n}\mathbb{P}(X=m)\mathbb{P}(Y=n-m)\\
+>&=e^{-(\lambda+\mu)}\sum_{m=1}^{n}\frac{\lambda^m}{m!}\frac{\mu^{n-m}}{(n-m)!}\\
+>&=\frac{1}{n!}e^{-(\lambda+\mu)}\sum_{m=1}^{n}\begin{pmatrix}
+>n\\
+>m
+>\end{pmatrix}\lambda^m\mu^{n-m}=\frac{(\lambda+\mu)^n}{n!}e^{-(\lambda+\mu)}
+>\end{aligned}
+> $$
 
 > [!question] 2.1.12. (i)
 > $X$ is said to have a Binomial$(n,p)$ distribution if
@@ -138,6 +149,14 @@
 > (i) Show that if $X = \text{Binomial}(n,p)$ and $Y = \text{Binomial}(m,p)$ are independent then $X + Y = \text{Binomial}(n+m, p)$.
 
 > [!done]
+> We compute directly
+> $$
+> \begin{aligned}
+>\mathbb{P}(X+Y=N)&=\sum_{k=1}^{N}\mathbb{P}(X=k)\mathbb{P}(Y=N-k)\\
+>&=p^N(1-p)^{(n+m)}\\
+>&=
+>\end{aligned}
+> $$
 
 > [!question] 2.1.12. (ii)
 > (ii) Look at Example 1.6.12 and use induction to conclude that the sum of $n$ independent Bernoulli$(p)$ random variables is Binomial$(n,p)$.
