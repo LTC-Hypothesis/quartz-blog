@@ -34,11 +34,28 @@
 > $$
 
 > [!done]
+> FOr any Borel set $B_i$, 
+> $$
+> \begin{aligned}
+>\mathbb{P}(X_1\in B_1,\cdots, X_n\in B_n)&=\sum_{x_1\in B_1\cap S_1}\cdots\sum_{x_n\in B_n\cap S_n}\mathbb{P}(X_1= x_1,\cdots, X_n= x_n)\\
+>&=\sum_{x_1\in B_1\cap S_1}\cdots\sum_{x_n\in B_n\cap S_n}\prod_{i=1}^{n}\mathbb{P}(X_i= x_i)\\
+>&=\prod_{i=1}^{n}\sum_{x_i\in B_i\cap S_i}\mathbb{P}(X_i=x_i)=\prod_{i=1}^{n}\mathbb{P}(X_i\in B_i)
+>\end{aligned}
+> $$
 
 > [!question] 2.1.3. (i)
 > Let $\rho(x,y)$ be a metric. (i) Suppose $h$ is differentiable with $h(0) = 0$, $h'(x) > 0$ for $x > 0$ and $h'(x)$ decreasing on $[0, \infty)$. Then $h(\rho(x,y))$ is a metric.
 
 > [!done]
+> We only check triangle inequality. By $\rho$ is a metric, $\rho(x,z)\le \rho(x,y)+\rho(y,z)$, then 
+> $$
+> h(\rho(x,z))\le h(\rho(x,y)+\rho(y,z))
+> $$
+> we W.T.S. $h(s+t)\le h(s)+h(t)$, let $g(x)=h(x+t)-h(x)-h(t)$ for $x,t\ge 0$. Consider
+> $$
+> g'(x)=h'(x+t)-h'(x)\le 0
+> $$
+> Then $g(x)$ is decreasing and $g(0)=0$ and thus we have $h(x+t)-h(x)-h(t)\le0$.
 
 > [!question] 2.1.3. (ii)
 > (ii) $h(x) = x/(x+1)$ satisfies the hypotheses in (i).
@@ -49,6 +66,15 @@
 > Let $\Omega = (0,1)$, $\mathcal{F} =$ Borel sets, $\mathbb{P} =$ Lebesgue measure. $X_n(\omega) = \sin(2\pi n \omega)$, $n = 1, 2, \dots$ are uncorrelated but not independent.
 
 > [!done]
+> We compute 
+> $$
+> \begin{aligned}
+>\mathbb{E}X_nX_m&=\int_{0}^{1}\sin{(2\pi n\omega)}\sin{(2\pi m\omega)}{d}\omega\\
+>&=\int_{0}^{1}\frac{1}{2}\left(\cos(2\pi\omega(n-m))-\cos(2\pi\omega(n+m))\right){d}\omega\\
+>&=0
+>\end{aligned}
+> $$
+> Hence, $X_n(\omega)$ are uncorrelated. 
 
 > [!question] 2.1.5. (i)
 > Show that if $X$ and $Y$ are independent with distributions $\mu$ and $\nu$ then
@@ -67,6 +93,14 @@
 > Prove directly from the definition that if $X$ and $Y$ are independent and $f$ and $g$ are measurable functions then $f(X)$ and $g(Y)$ are independent.
 
 > [!done]
+> We compute directly, for any Borel set $A,B$
+> $$
+> \begin{aligned}
+>\mathbb{P}(f(X)\in A,g(Y)\in B)&=\mathbb{P}(X\in f^{-1}(A),Y\in g^{-1}(B))\\
+>&=\mathbb{P}(X\in f^{-1}(A))\mathbb{P}(Y\in g^{-1}(B))\\
+>&=\mathbb{P}(f(X)\in A)\mathbb{P}(g(Y)\in B)
+>\end{aligned}
+> $$
 
 > [!question] 2.1.7.
 > Let $K \geq 3$ be a prime and let $X$ and $Y$ be independent random variables that are uniformly distributed on $\{0, 1, \dots, K-1\}$. For $0 \leq n < K$, let $Z_n = X + nY \bmod K$. Show that $Z_0, Z_1, \dots, Z_{K-1}$ are **pairwise independent**, i.e., each pair is independent. They are not independent because if we know the values of two of the variables then we know the values of all the variables.
