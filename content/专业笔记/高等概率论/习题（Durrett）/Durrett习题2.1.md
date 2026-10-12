@@ -6,6 +6,7 @@
 > If $f(x)$ can be written as $g_1(x_1)\cdots g_n(x_n)$ where the $g_m \geq 0$ are measurable, then $X_1, X_2, \dots, X_n$ are independent. Note that the $g_m$ are not assumed to be probability densities.
 
 > [!done]
+> 
 
 > [!question] 2.1.2.
 > Suppose $X_1, \dots, X_n$ are random variables that take values in countable sets $S_1, \dots, S_n$. Then in order for $X_1, \dots, X_n$ to be independent, it is sufficient that whenever $x_i \in S_i$
