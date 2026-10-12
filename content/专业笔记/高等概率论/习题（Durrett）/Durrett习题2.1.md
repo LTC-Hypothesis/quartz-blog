@@ -6,7 +6,22 @@
 > If $f(x)$ can be written as $g_1(x_1)\cdots g_n(x_n)$ where the $g_m \geq 0$ are measurable, then $X_1, X_2, \dots, X_n$ are independent. Note that the $g_m$ are not assumed to be probability densities.
 
 > [!done]
-> 
+> Suppose that 
+> $$
+> c_i=\int_{\mathbb{R}}g_i(x_i){d}x_i\Longrightarrow 1=\int_{\mathbb{R}}\frac{1}{c_i}g_i(x_i){d}x_i
+> $$
+> Therefore, $\frac{1}{c_i}g_i(x_i)$ is density. Suppose $A=A_1\times\cdots A_n,A_i\in\mathbb{R}$, then 
+> $$
+> \mathbb{P}((X_1,\cdots,X_n)\in A)=\mathbb{P}(X_1\in A_1,\cdots, X_n\in A_n)
+> $$
+> and 
+> $$
+> \int_{A}f(x){d}x=\int_{A}g_1(x_1)\cdots g_n(x_n){d}x_n=(c_1\cdots c_n)\prod_{i=1}^{n}\int_{A_i}\frac{1}{c_i}g_i(x_i){d}x_i
+> $$
+> We only need to check 
+> $$
+> c_1\cdots c_n=\prod_{i=1}^{n}\int_{\mathbb{R}}g_i(x_i){d}x_i=\int_{\mathbb{R}^n}f(x){d}x=1
+> $$
 
 > [!question] 2.1.2.
 > Suppose $X_1, \dots, X_n$ are random variables that take values in countable sets $S_1, \dots, S_n$. Then in order for $X_1, \dots, X_n$ to be independent, it is sufficient that whenever $x_i \in S_i$
