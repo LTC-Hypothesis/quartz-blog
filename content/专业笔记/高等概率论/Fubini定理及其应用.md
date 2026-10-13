@@ -65,8 +65,72 @@ $$
 $$
 有不等式成立
 $$
-
-
+\sum_{n=0}^{\infty}\mathbb{P}(|X|>n+1)\le\sum_{n=0}^{\infty}\int_{n}^{n+1}\mathbb{P}(|X|>t){d}t\le\sum_{n=0}^{\infty}\mathbb{P}(|X|>n)
 $$
 
 **QED**
+
+>[!example] 
+>若$\mathbb{E}|X|<\infty$，则成立
+>$$
+>\lim_{t\to\infty}\mathbb{P}(|X|>t)=0,\lim_{t\to\infty}t\mathbb{P}(|X|>t)=0
+>$$
+
+**Proof**
+
+$\mathbb{E}|X|<\infty$可以得到
+$$
+\sum_{n=1}^{\infty}\mathbb{P}(|X|>n)<\infty
+$$
+则通项收敛到0，第一个极限成立。对于第二个极限，根据可积性考虑，
+$$
+\lim_{u\to\infty}u\mathbb{P}(|X|>2u)\le \lim_{u\to\infty}\int_{u}^{2u}\mathbb{P}(|X|>t)=0
+$$
+
+**QED**
+
+>[!example] 
+>若$X_n\xrightarrow{\mathbb{P}}X$，$X_n\ge0,X\ge0,X_n\le1$，证明：$\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X$。
+
+**Proof**
+
+由于$X_n\xrightarrow{\mathbb{P}}X$，因此$\mathbb{P}(|X_n-X|\ge\varepsilon)\to0\text{ as }n\to\infty$且$X\le1$。我们证明更强的结论，$\mathbb{E}|X_n-X|\to0$，
+$$
+\begin{aligned}
+\mathbb{E}|X_n-X|&=\int_{\Omega}|X_n-X|{d}\mathbb{P}\\
+&=\int_{\{|X_n-X|<\varepsilon\}}|X_n-X|{d}\mathbb{P}+\int_{\{|X_n-X|\ge\varepsilon\}}|X_n-X|{d}\mathbb{P}\\
+&\le \varepsilon+2\mathbb{P}\left(|X_n-X|\ge\varepsilon\right)
+\end{aligned}
+$$
+
+**QED**
+
+>[!warning] 依概率收敛下的控制收敛定理
+
+>[!example] 
+>若$\mathbb{P}(X_n>t)\to\mathbb{P}(X>t)\text{ as }n\to\infty,\forall t>0$，即$X_n\xrightarrow{d}X$，$X_n\ge0,X\ge0,X_n\le1,X\le1$，证明：$\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X$。
+
+**Proof**
+
+由期望计算公式，这里可以直接使用DCT，这是因为实际上$t\in(0,1)$，
+$$
+\mathbb{E}[X_n-X]=\int_{0}^{\infty}\mathbb{P}(X_n>t)-\mathbb{P}(X>t){d}t=\int_{0}^{1}\mathbb{P}(X_n>t)-\mathbb{P}(X>t){d}t
+$$
+
+**QED**
+
+>[!example] 
+>若$\mathbb{P}(X_n>t)\to\mathbb{P}(X>t)\text{ as }n\to\infty,\forall t>0$，即$X_n\xrightarrow{d}X$，$\mathbb{E}[X_n^2]\le1$，证明：$\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X$。
+
+**Proof**
+
+
+
+**QED**
+
+>[!example] 
+>$X_1,\cdots,X_n,i.i.d.$，$\mathbb{E}X_n=0,\mathbb{E}X_n^2=1$，令$S_n=\sum_{i=1}^{n}X_i$，证明：
+>$$
+>\lim_{n\to\infty}\mathbb{E}\left[\frac{|S_n|}{\sqrt{n}}\right]=\sqrt{\frac{2}{\pi}}=\mathbb{E}[N],N\sim \text{N}(0,1)
+>$$
+
