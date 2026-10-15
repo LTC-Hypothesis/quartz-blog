@@ -273,37 +273,24 @@ Thus elliptic equations also arise as stationary equations of evolution problems
 
 ## 5. Parabolic boundary — opening page
 
-The source begins with
+The opening page considers $u_t-a^2\Delta u=f(x,t)$ on a bounded space-time domain. The subsequent lecture includes the closure in its boundary convention:
 
 $$
-u_t-a^2\Delta u=f(x,t),\qquad
-D\subset\mathbb{R}^{n+1},\quad (x,t)\in D,
+\Gamma=\overline{\partial D\cap\{0\le t<T\}},\qquad D^*=\overline D\setminus\Gamma.
 $$
 
-where $D$ is bounded and connected, with initial time $0$ and terminal time $T$. For the cylinder
+For a cylinder,
 
 $$
-D=\Omega\times(0,T),
+D=\Omega\times(0,T),\qquad\Gamma=(\overline\Omega\times\{0\})\cup(\partial\Omega\times[0,T]),\qquad D^*=\Omega\times(0,T].
 $$
 
-the **parabolic boundary** is
+The terminal face over $\Omega$ belongs to the parabolic interior. The terminal lateral rim belongs to $\Gamma$ under this closed-boundary convention.
 
-$$
-\Gamma=
-(\overline\Omega\times\{0\})
-\cup(\partial\Omega\times[0,T)),
-$$
+See [[Classical Maximum Principles for Second-order Parabolic Equations#2.1 Parabolic boundary and operators]] for the continuation, the half-ball property at terminal points, and the precise convention for noncylindrical domains.
 
-and the lecture calls
+Source: [[PDE Note Week5 LectureSat.pdf#page=4|Week 5 Sat, p. 4]]; [[PDE Note Week6 LecWed.pdf#page=1|Week 6 Wed, continuation]].
 
-$$
-\overline D\setminus\Gamma=\Omega\times(0,T]
-$$
-
-the **parabolic interior**. In particular, the terminal face over $\Omega$ belongs to this set.
-
-> [!remark] 整理注 · general space-time domains
-> The manuscript writes $\Gamma=\partial D\cap\{0\le t<T\}$ and draws two further noncylindrical examples with the answers left blank. The cylinder formula is recorded above. For general space-time domains, the boundary relevant to a forward parabolic equation must be specified with its time direction; the displayed set formula should not automatically be used as a general definition. The unfinished examples and their diagrams are retained in the source page below, pending the subsequent lecture notes.
 ## Connections
 
 - [[弱极值原理]]: boundary control, comparison, uniqueness and a priori estimates.
