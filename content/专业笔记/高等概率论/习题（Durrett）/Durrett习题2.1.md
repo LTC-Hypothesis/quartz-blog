@@ -83,11 +83,15 @@
 > $$
 
 > [!done]
+> 
 
 > [!question] 2.1.5. (ii)
 > (ii) Conclude that if $X$ has continuous distribution $\mathbb{P}(X = Y) = 0$.
 
+^5f248c
+
 > [!done]
+> 
 
 > [!question] 2.1.6.
 > Prove directly from the definition that if $X$ and $Y$ are independent and $f$ and $g$ are measurable functions then $f(X)$ and $g(Y)$ are independent.
