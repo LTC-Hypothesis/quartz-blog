@@ -105,7 +105,7 @@
 > $$
 
 >[!warning] Why should we illustrate the **atom** is at most finite?
->We consider $Y\sim \text{Unif}(0,1)$. For each point $y\in(0,1)$, we have $\mathbb{P}(Y=y)=0$ but $\mathbb{P}(Y\in(0,1))=1$
+>We consider $Y\sim \text{Unif}(0,1)$. For each point $y\in(0,1)$, we have $\mathbb{P}(Y=y)=0$ but $\mathbb{P}(Y\in(0,1))=1$. It is inadmissible to represent the integral to summation. 
 
 > [!question] 2.1.5. (ii)
 > (ii) Conclude that if $X$ has continuous distribution $\mathbb{P}(X = Y) = 0$.
@@ -113,7 +113,7 @@
 ^5f248c
 
 > [!done]
-> 
+> Note that $\mu\{y\}=0$.
 
 > [!question] 2.1.6.
 > Prove directly from the definition that if $X$ and $Y$ are independent and $f$ and $g$ are measurable functions then $f(X)$ and $g(Y)$ are independent.
@@ -150,6 +150,15 @@
 > $$
 
 > [!done]
+> With the same idea in 2.1.5, we have 
+> $$
+> \begin{aligned}
+>\mathbb{P}(X+Y=n)&=\iint \mathbb{1}_{\{x+y=n\}}\mu({dx})\nu(\{dy\})\\
+>&=\int \int \mathbb{1}_{\{x=n-y\}}\mu({dx})\nu(dy)\\
+>&=\int\mu\{n-y\}\nu(dy)\\
+>&=\sum_{m}\mu\{n-m\}\nu\{m\}=\sum_{m}\mathbb{P}(X=n-m)\mathbb{P}(Y=m)
+>\end{aligned}
+> $$
 
 > [!question] 2.1.11.
 > In Example 1.6.13, we introduced the Poisson distribution with parameter $\lambda$, which is given by $\mathbb{P}(Z = k) = e^{-\lambda}\lambda^k/k!$ for $k = 0, 1, 2, \dots$. Use the previous exercise to show that if $X = \text{Poisson}(\lambda)$ and $Y = \text{Poisson}(\mu)$ are independent then $X + Y = \text{Poisson}(\lambda + \mu)$.
@@ -202,16 +211,36 @@
 > It should not be surprising that the distribution of $X + Y$ can be $F * G$ without the random variables being independent. Suppose $X, Y \in \{0, 1, 2\}$ and take each value with probability $1/3$. (a) Find the distribution of $X + Y$ assuming $X$ and $Y$ are independent.
 
 > [!done]
+> We compute
+> $$
+> \begin{aligned}
+>\mathbb{P}(X+Y\le z)=\begin{cases}
+>0,&z<0\\
+>\frac{1}{9},&0\le z<1\\
+>\frac{1}{3},&1\le z<2\\
+>\frac{2}{3},&2\le z<3\\
+>1,&3\le z
+>\end{cases}
+>\end{aligned}
+> $$
 
 > [!question] 2.1.13. (b)
 > (b) Find all the joint distributions $(X, Y)$ so that the distribution of $X + Y$ is the same as the answer to (a).
 
+| $(X,Y)$ | 0                                     | 1                                     | 2                                     |
+| ------- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
+| 0       | $(0,0)$ with $\mathbb{P}=\frac{1}{9}$ | $(0,1)$ with $\mathbb{P}=\frac{1}{9}$ | $(0,2)$ with $\mathbb{P}=\frac{1}{9}$ |
+| 1       | $(1,0)$ with $\mathbb{P}=\frac{1}{9}$ | $(1,1)$ with $\mathbb{P}=\frac{1}{9}$ | $(1,2)$ with $\mathbb{P}=\frac{1}{9}$ |
+| 2       | $(2,0)$ with $\mathbb{P}=\frac{1}{9}$ | $(2,1)$ with $\mathbb{P}=\frac{1}{9}$ | $(2,2)$ with $\mathbb{P}=\frac{1}{9}$ |
+
 > [!done]
+> 
 
 > [!question] 2.1.14.
 > Let $X, Y \geq 0$ be independent with distribution functions $F$ and $G$. Find the distribution function of $XY$.
 
 > [!done]
+> 
 
 > [!question] 2.1.15.
 > If we want an infinite sequence of coin tossings, we do not have to use Kolmogorov's theorem. Let $\Omega$ be the unit interval $(0,1)$ equipped with the Borel sets $\mathcal{F}$ and Lebesgue measure $\mathbb{P}$. Let $Y_n(\omega) = 1$ if $[2^n \omega]$ is odd and $0$ if $[2^n \omega]$ is even. Show that $Y_1, Y_2, \dots$ are independent with $\mathbb{P}(Y_k = 0) = \mathbb{P}(Y_k = 1) = 1/2$.
