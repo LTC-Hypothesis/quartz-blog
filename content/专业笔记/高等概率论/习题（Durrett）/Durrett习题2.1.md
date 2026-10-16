@@ -83,7 +83,29 @@
 > $$
 
 > [!done]
-> 
+> Note that 
+> $$
+> \begin{aligned}
+>\mathbb{P}(X+Y=0)&=\iint\mathbb{1}_{\{x+y=0\}}\mu({dx})\nu(\{dy\})\\
+>&=\int \int\mathbb{1}_{\{x=-y\}}\mu(dx)\nu(dy)\\
+>&=\int\mu\{-y\}\nu({d}y)
+>\end{aligned}
+> $$
+> Now we should illustrate the integral can be represent to summation. Let 
+> $$
+> D=\left\{a\in\mathbb{R}:\mu\{a\}>0\right\}
+> $$
+> and 
+> $$
+> D=\bigcup_{m=1}^{\infty}\left\{a:\mu\{a\}\ge\frac{1}{m}\right\}\triangleq\bigcup_{m=1}^{\infty}D_m
+> $$
+> Note that $\#\{D_m\}\le m$ and thus $\mu\{-y\}$ is non-zero on $-D\triangleq\left\{-a\right\}$, then 
+> $$
+> \int\mu\{-y\}\nu({dy})=\sum_{y}\mu\{-y\}\nu\{y\}
+> $$
+
+>[!warning] Why should we illustrate the **atom** is at most finite?
+>We consider $Y\sim \text{Unif}(0,1)$. For each point $y\in(0,1)$, we have $\mathbb{P}(Y=y)=0$ but $\mathbb{P}(Y\in(0,1))=1$
 
 > [!question] 2.1.5. (ii)
 > (ii) Conclude that if $X$ has continuous distribution $\mathbb{P}(X = Y) = 0$.
