@@ -240,7 +240,17 @@
 > Let $X, Y \geq 0$ be independent with distribution functions $F$ and $G$. Find the distribution function of $XY$.
 
 > [!done]
-> 
+> We consider the case $Y=0$ firstly. 
+> $$
+> \mathbb{P}(XY=0)=\mathbb{P}(Y=0)+\mathbb{P}(X=0,Y\ne0)=G(0)+F(0)(1-G(0))
+> $$
+> For $z>0,Y\ne0$, 
+> $$
+> \begin{aligned}
+>\mathbb{P}(XY\le z)&=\iint\mathbb{1}_{\{xy\le z\}}dF(x)dG(y)\\
+>&=\int_{0}^{\infty} F\left(\frac{z}{y}\right){d}G(y)
+>\end{aligned}
+> $$
 
 > [!question] 2.1.15.
 > If we want an infinite sequence of coin tossings, we do not have to use Kolmogorov's theorem. Let $\Omega$ be the unit interval $(0,1)$ equipped with the Borel sets $\mathcal{F}$ and Lebesgue measure $\mathbb{P}$. Let $Y_n(\omega) = 1$ if $[2^n \omega]$ is odd and $0$ if $[2^n \omega]$ is even. Show that $Y_1, Y_2, \dots$ are independent with $\mathbb{P}(Y_k = 0) = \mathbb{P}(Y_k = 1) = 1/2$.
