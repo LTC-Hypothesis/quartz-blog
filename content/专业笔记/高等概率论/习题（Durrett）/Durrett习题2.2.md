@@ -24,7 +24,20 @@
 > The $L^2$ weak law generalizes immediately to certain dependent sequences. Suppose $\mathbb{E}X_n = 0$ and $\mathbb{E}X_n X_m \leq r(n-m)$ for $m \leq n$ (no absolute value on the left-hand side!) with $r(k) \to 0$ as $k \to \infty$. Show that $(X_1 + \dots + X_n)/n \to 0$ in probability.
 
 > [!done]
-> 
+> Since $r(k)\to0\text{ as }k\to\infty$, for any $\varepsilon>0$, there exists $N\in\mathbb{N}$, for $k\ge N$ s.t. $r(k)<\varepsilon$. Then for $n\ge N$ 
+> $$
+> \begin{aligned}
+>\mathbb{E}\left|\frac{\sum_{i=1}^{n}X_i}{n}\right|^2&=\frac{1}{n^2}\mathbb{E}\left(\sum_{i=1}^{n}X_i^2+2\sum_{1\le i<j\le n}X_iX_j\right)\\
+>&\le \frac{r(0)}{n}+\frac{2}{n^2}\sum_{\{j-i\ge N\}\cup\{j-i<N\}}r(j-i)\\
+>&\le \frac{r(0)}{n}+\frac{2}{n^2}\sum_{\{j-i\ge N\}\cup\{j-i<N\}}r(j-i)\\
+>&\le \frac{r(0)}{n}+\frac{2}{n^2}\sum_{\{j-i\ge N\}}\varepsilon+\frac{2}{n^2}\sum_{\{j-i\le N\}}r(j-i)
+>\end{aligned}
+> $$
+> Then 
+> $$
+> \limsup_{n\to\infty}\mathbb{E}\left|\frac{\sum_{i=1}^{n}X_i}{n}\right|^2\le\varepsilon
+> $$
+> Then $\frac{1}{n}\sum_{i=1}^{n}X_i\xrightarrow{L^2}0$ and thus in probability.
 
 > [!question] 2.2.3. (i)
 > **Monte Carlo integration.** (i) Let $f$ be a measurable function on $[0,1]$ with $\int_0^1 |f(x)|dx < \infty$. Let $U_1, U_2, \dots$ be independent and uniformly distributed on $[0,1]$, and let
@@ -34,11 +47,16 @@
 > Show that $I_n \to I \equiv \int_0^1 f dx$ in probability.
 
 > [!done]
+> By WLLN, 
+> $$
+> I_n\xrightarrow{\mathbb{P}}\mathbb{E}f(U_1)=\int_{0}^{1}f(x){d}x
+> $$
 
 > [!question] 2.2.3. (ii)
 > (ii) Suppose $\int_0^1 |f(x)|^2 dx < \infty$. Use Chebyshev's inequality to estimate $\mathbb{P}(|I_n - I| > a/n^{1/2})$.
 
 > [!done]
+> 
 
 > [!question] 2.2.4.
 > Let $X_1, X_2, \dots$ be i.i.d. with $\mathbb{P}(X_i = (-1)^k k) = C/k^2 \log k$ for $k \geq 2$ where $C$ is chosen to make the sum of the probabilities = 1. Show that $\mathbb{E}|X_i| = \infty$, but there is a finite constant $\mu$ so that $S_n/n \to \mu$ in probability.
