@@ -74,7 +74,13 @@
 > $$
 > \mu\triangleq\sum_{k=2}^{\infty}\frac{(-1)^kC}{k\log{k}}=\mathbb{E}X_i<\infty
 > $$
-> 
+> Note that 
+> $$
+> \begin{aligned}
+>x\mathbb{P}(|X_i|>x)&=x\sum_{k>x}\frac{C}{k^2\log{k}}\\
+>&\le\frac{x}{\log{x}}
+>\end{aligned}
+> $$
 
 > [!question] 2.2.5.
 > Let $X_1, X_2, \dots$ be i.i.d. with $\mathbb{P}(X_i > x) = e/x \log x$ for $x \geq e$. Show that $\mathbb{E}|X_i| = \infty$, but there is a sequence of constants $\mu_n \to \infty$ so that $S_n/n - \mu_n \to 0$ in probability.
