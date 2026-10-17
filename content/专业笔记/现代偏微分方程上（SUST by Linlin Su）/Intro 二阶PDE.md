@@ -43,12 +43,7 @@ where $f$ is given and $u$ is the unknown.
 
 ### Linear, semilinear and quasilinear equations
 
-| Type        | Form                                            | Dependence of the principal coefficients |
-| ----------- | ----------------------------------------------- | ---------------------------------------- |
-| Linear      | $a_{ij}(x)u_{x_i x_j}+b_i(x)u_{x_i}+c(x)u=f(x)$ | $x$ only                                 |
-| Semilinear  | $a_{ij}(x)u_{x_i x_j}+b(x,u,Du)=0$              | $x$ only                                 |
-| Quasilinear | $a_{ij}(x,u,Du)u_{x_i x_j}+b(x,u,Du)=0$         | May depend on $u,Du$                     |
-
+![[Pasted image 20261017120351.png]]
 All three are linear in the highest-order derivatives $D^2u$; the lower-order terms in a semilinear or quasilinear equation need not be linear.
 
 ## 2. Harmonic, subharmonic and superharmonic functions

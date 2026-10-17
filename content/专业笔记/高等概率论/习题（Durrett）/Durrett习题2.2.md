@@ -78,8 +78,17 @@
 > $$
 > \begin{aligned}
 >x\mathbb{P}(|X_i|>x)&=x\sum_{k>x}\frac{C}{k^2\log{k}}\\
->&\le\frac{x}{\log{x}}
+>&\le\frac{Cx}{\log{x}}\sum_{k>x}\frac{1}{k^2}\\
+>&\le \frac{Cx}{\left\lfloor x\right\rfloor\log{x}}\le\frac{C}{\log{x}}\to0\text{ as }x\to+\infty
 >\end{aligned}
+> $$
+> and 
+> $$
+> \mu_n\triangleq\mathbb{E}X_i\mathbb{1}_{\{|X_i|\le n\}}=\sum_{k=1}^{n}\frac{(-1)^kC}{k\log{k}}\to\mu
+> $$
+> Then 
+> $$
+> \frac{S_n}{n}-\mu_n\xrightarrow{\mathbb{P}}0,\frac{S_n}{n}-\mu=(\frac{S_n}{n}-\mu_n)+(\mu_n-\mu)\xrightarrow{\mathbb{P}}0
 > $$
 
 > [!question] 2.2.5.
