@@ -1,13 +1,30 @@
 > [!question] 2.2.1.
 > Let $X_1, X_2, \dots$ be uncorrelated with $\mathbb{E}X_i = \mu_i$ and $\text{var}(X_i)/i \to 0$ as $i \to \infty$. Let $S_n = X_1 + \dots + X_n$ and $\nu_n = \mathbb{E}S_n/n$ then as $n \to \infty$, $S_n/n - \nu_n \to 0$ in $L^2$ and in probability.
 
-> [!done]
-> 
+>[!done] 
+>Since $\frac{1}{i}\text{Var}(X_i)\to\varepsilon$, for any $\varepsilon>0$, for sufficiently large $i$, there exists $N\in\mathbb{N}$ s.t. $i\ge N$, we have 
+>$$
+>\text{Var}(X_i)\le\varepsilon i
+>$$
+>We compute for $n\ge N$
+>$$
+>\begin{aligned}
+>\mathbb{E}\left|\frac{S_n}{n}-\nu_n\right|^2&=\frac{\sum_{i=1}^{n}\text{Var}(X_i)}{n^2}\\
+>&=\frac{\sum_{i=1}^{N}\text{Var}(X_i)}{n^2}+\frac{1}{n^2}\sum_{i=N+1}^{n}\text{Var}(X_i)\\
+>&\le \frac{\sum_{i=1}^{N}\text{Var}(X_i)}{n^2}+\varepsilon\frac{n(n-N)}{n^2}
+>\end{aligned}
+>$$
+>Thus, 
+>$$
+>\limsup_{n\to\infty}\mathbb{E}\left|\frac{S_n}{n}-\nu_n\right|^2\le \varepsilon
+>$$
+>Hence, $\frac{S_n}{n}-\nu_n\xrightarrow{L^2}0$ and thus in probability.
 
 > [!question] 2.2.2.
 > The $L^2$ weak law generalizes immediately to certain dependent sequences. Suppose $\mathbb{E}X_n = 0$ and $\mathbb{E}X_n X_m \leq r(n-m)$ for $m \leq n$ (no absolute value on the left-hand side!) with $r(k) \to 0$ as $k \to \infty$. Show that $(X_1 + \dots + X_n)/n \to 0$ in probability.
 
 > [!done]
+> 
 
 > [!question] 2.2.3. (i)
 > **Monte Carlo integration.** (i) Let $f$ be a measurable function on $[0,1]$ with $\int_0^1 |f(x)|dx < \infty$. Let $U_1, U_2, \dots$ be independent and uniformly distributed on $[0,1]$, and let
