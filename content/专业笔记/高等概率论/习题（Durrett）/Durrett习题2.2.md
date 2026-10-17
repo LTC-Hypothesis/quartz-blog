@@ -62,6 +62,19 @@
 > Let $X_1, X_2, \dots$ be i.i.d. with $\mathbb{P}(X_i = (-1)^k k) = C/k^2 \log k$ for $k \geq 2$ where $C$ is chosen to make the sum of the probabilities = 1. Show that $\mathbb{E}|X_i| = \infty$, but there is a finite constant $\mu$ so that $S_n/n \to \mu$ in probability.
 
 > [!done]
+> Mote that 
+> $$
+> \mathbb{E}|X_i|=\sum_{k=2}^{\infty}\frac{C}{k\log{k}}
+> $$
+> we can check 
+> $$
+> \int_{2}^{\infty}\frac{1}{x\log{x}}{d}x=\log(\log{x})|_{2}^{\infty}=\infty
+> $$
+> Then $\mathbb{E}|X_i|=\infty$. Denote the $\mu$ by 
+> $$
+> \mu\triangleq\sum_{k=2}^{\infty}\frac{(-1)^kC}{k\log{k}}=\mathbb{E}X_i<\infty
+> $$
+> 
 
 > [!question] 2.2.5.
 > Let $X_1, X_2, \dots$ be i.i.d. with $\mathbb{P}(X_i > x) = e/x \log x$ for $x \geq e$. Show that $\mathbb{E}|X_i| = \infty$, but there is a sequence of constants $\mu_n \to \infty$ so that $S_n/n - \mu_n \to 0$ in probability.
@@ -87,8 +100,8 @@
 
 > [!done]
 
-> [!question] 2.2.8.
-> **An unfair "fair game."** Let $p_k = 1/2^k k(k+1)$, $k = 1, 2, \dots$ and $p_0 = 1 - \sum_{k \geq 1} p_k$.
+> [!question] 2.2.8.  An unfair "fair game."
+> Let $p_k = 1/2^k k(k+1)$, $k = 1, 2, \dots$ and $p_0 = 1 - \sum_{k \geq 1} p_k$.
 > $$
 > \sum_{k=1}^\infty 2^k p_k = (1 - \frac{1}{2}) + (\frac{1}{2} - \frac{1}{3}) + \dots = 1
 > $$
@@ -103,7 +116,7 @@
 
 > [!done]
 
-> [!question] 2.2.9.
-> **Weak law for positive variables.** Suppose $X_1, X_2, \dots$ are i.i.d., $\mathbb{P}(0 \leq X_i < \infty) = 1$ and $\mathbb{P}(X_i > x) > 0$ for all $x$. Let $\mu(s) = \int_0^s x dF(x)$ and $\nu(s) = \mu(s)/s(1-F(s))$. It is known that there exist constants $a_n$ so that $S_n/a_n \to 1$ in probability, if and only if $\nu(s) \to \infty$ as $s \to \infty$. Pick $b_n \geq 1$ so that $n\mu(b_n) = b_n$ (this works for large $n$), and use Theorem 2.2.11 to prove that the condition is sufficient.
+> [!question] 2.2.9.Weak law for positive variables.
+>  Suppose $X_1, X_2, \dots$ are i.i.d., $\mathbb{P}(0 \leq X_i < \infty) = 1$ and $\mathbb{P}(X_i > x) > 0$ for all $x$. Let $\mu(s) = \int_0^s x dF(x)$ and $\nu(s) = \mu(s)/s(1-F(s))$. It is known that there exist constants $a_n$ so that $S_n/a_n \to 1$ in probability, if and only if $\nu(s) \to \infty$ as $s \to \infty$. Pick $b_n \geq 1$ so that $n\mu(b_n) = b_n$ (this works for large $n$), and use Theorem 2.2.11 to prove that the condition is sufficient.
 
 > [!done]
