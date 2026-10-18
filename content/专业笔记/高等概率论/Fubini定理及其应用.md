@@ -7,6 +7,26 @@
 >实际上容易验证$\mathbb{P}_1\otimes\mathbb{P}_2$为$\mathscr{A}$上的测度，其中$\mathscr{A}=\left\{A\times B:A\in\mathscr{F}_1,B\in\mathscr{F}_2\right\}$。根据[[测度论基础#^fa2ae7|Caretheodory延拓定理]]，可以延拓为$\mathscr{F}_1\otimes\mathscr{F}_2$上的测度。
 
 >[!def] 核函数方法（马氏过程）
+>**概率核**：设 $(\Omega_1,\mathscr F_1)$、$(\Omega_2,\mathscr F_2)$ 为可测空间。若 $K:\Omega_1\times\mathscr F_2\to[0,1]$ 满足：固定 $x$ 时，$K(x,\cdot)$ 是概率测度；固定 $B\in\mathscr F_2$ 时，$x\mapsto K(x,B)$ 可测，则称 $K$ 为概率核。
+>
+>**构造联合测度**：给定 $\Omega_1$ 上的概率测度 $\mu$，在 $\mathscr F_1\otimes\mathscr F_2$ 上定义
+>$$
+>(\mu\otimes K)(C)=\int_{\Omega_1}\left[\int_{\Omega_2}\mathbf1_C(x,y)K(x,dy)\right]\mu(dx).
+>$$
+>特别地，$(\mu\otimes K)(A\times B)=\int_A K(x,B)\mu(dx)$。这表示“先按 $\mu$ 选取 $x$，再按 $K(x,\cdot)$ 选取 $y$”。可测性可由矩形集经 $\pi$–$\lambda$ 定理推广，可列可加性由单调收敛定理得到。
+>
+>**与独立性的关系**：这一般只是乘积空间上的联合测度；若 $K(x,B)=\nu(B)$ 不依赖 $x$，就退化为普通乘积测度 $\mu\otimes\nu$，两个坐标独立。
+>
+>**构造马氏链**：在同一状态空间 $(S,\mathscr S)$ 上，给定初始分布 $\mu_0$ 和转移核 $K$，通过迭代积分定义有限维分布
+>$$
+>\mathbb P(X_0\in A_0,\ldots,X_n\in A_n)
+>=\int_{A_0}\mu_0(dx_0)\int_{A_1}K(x_0,dx_1)\cdots\int_{A_n}K(x_{n-1},dx_n).
+>$$
+>Ionescu–Tulcea 定理保证这些分布唯一确定 $S^{\mathbb N_0}$ 的乘积 $\sigma$-代数上的概率测度。坐标过程满足
+>$$
+>\mathbb P(X_{n+1}\in B\mid\sigma(X_0,\ldots,X_n))=K(X_n,B)\quad\text{a.s.}
+>$$
+>即下一步的条件分布只依赖当前状态；马氏性一般不意味着各时刻的随机变量相互独立。
 
 通常情况我们的乘积测度都是第一种。在乘积测度下容易构造相应的积分。
 >[!def] 乘积测度下重积分
