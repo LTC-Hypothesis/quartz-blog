@@ -95,6 +95,11 @@
 > Let $X_1, X_2, \dots$ be i.i.d. with $\mathbb{P}(X_i > x) = e/x \log x$ for $x \geq e$. Show that $\mathbb{E}|X_i| = \infty$, but there is a sequence of constants $\mu_n \to \infty$ so that $S_n/n - \mu_n \to 0$ in probability.
 
 > [!done]
+> Note that 
+> $$
+> \mathbb{P}(X_i\le e)=1-\mathbb{P}(X_i>e)=0
+> $$
+> 
 
 > [!question] 2.2.6. (i)
 > (i) Show that if $X \geq 0$ is integer valued $\mathbb{E}X = \sum_{n \geq 1} \mathbb{P}(X \geq n)$.
