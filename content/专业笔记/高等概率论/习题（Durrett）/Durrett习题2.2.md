@@ -188,6 +188,30 @@
 >&=1+2^{\lfloor\frac{m(n)}{2}\rfloor+1}+\frac{8\cdot2^{m(n)}}{m(n)^2}=O\left(\frac{2^{m(n)}}{m^2(n)}\right)
 >\end{aligned}
 > $$
+> Then we have 
+> $$
+> \frac{1}{b_n^2}\sum_{k=1}^{n}\mathbb{E}\bar{X}_{k}^2\le C\frac{n}{2^{2m(n)}}\frac{2^{m(n)}}{m^2(n)}\le C\frac{1}{\sqrt{m(n)}}\to0\text{ as }n\to\infty
+> $$
+> and we compute 
+> $$
+> \begin{aligned}
+> a_n\triangleq\sum_{k=1}^{n}\mathbb{E}\bar{X}_{k}&=n\mathbb{E}\bar{X}_1\\
+> &=-n\mathbb{E}X_1\mathbb{1}_{\{|X_1|>2^{m(n)}\}}\\
+> &=-n\sum_{k=m(n)+1}^{\infty}(2^k-1)p_k\\
+> &=-n\sum_{k=m(n)+1}^{\infty}\left(\frac{1}{k(k+1)}-p_k\right)\\
+> &=-\frac{n}{m(n)+1}+n\mathbb{P}(|X_1|>2^{m(n)})
+>\end{aligned}
+> $$
+> Hence, we obtain
+> $$
+> \frac{S_n-a_n}{b_n}\xrightarrow{\mathbb{P}}0\text{ as }n\to\infty
+> $$
+> then 
+> $$
+> \begin{aligned}
+>\frac{S_n}{n/ \log_2{n}}=\frac{S_n-a_n}{b_n}\cdot\frac{\log_2{n}\cdot b_n}{n}+\frac{\log_2{n}\cdot a_n}{n}
+>\end{aligned}
+> $$
 
 > [!question] 2.2.9.Weak law for positive variables.
 >  Suppose $X_1, X_2, \dots$ are i.i.d., $\mathbb{P}(0 \leq X_i < \infty) = 1$ and $\mathbb{P}(X_i > x) > 0$ for all $x$. Let $\mu(s) = \int_0^s x dF(x)$ and $\nu(s) = \mu(s)/s(1-F(s))$. It is known that there exist constants $a_n$ so that $S_n/a_n \to 1$ in probability, if and only if $\nu(s) \to \infty$ as $s \to \infty$. Pick $b_n \geq 1$ so that $n\mu(b_n) = b_n$ (this works for large $n$), and use Theorem 2.2.11 to prove that the condition is sufficient.
