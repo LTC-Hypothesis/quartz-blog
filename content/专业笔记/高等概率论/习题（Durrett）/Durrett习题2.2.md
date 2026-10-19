@@ -209,7 +209,7 @@
 > then 
 > $$
 > \begin{aligned}
->\frac{S_n}{n/ \log_2{n}}=\frac{S_n-a_n}{b_n}\cdot\frac{\log_2{n}\cdot b_n}{n}+\frac{\log_2{n}\cdot a_n}{n}
+>\frac{S_n}{n/ \log_2{n}}=\frac{S_n-a_n}{b_n}\cdot\frac{\log_2{n}\cdot b_n}{n}+\frac{\log_2{n}\cdot a_n}{n}\xrightarrow{\mathbb{P}}-1
 >\end{aligned}
 > $$
 
