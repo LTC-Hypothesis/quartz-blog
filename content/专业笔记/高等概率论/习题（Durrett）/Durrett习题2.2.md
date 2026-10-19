@@ -99,17 +99,37 @@
 > $$
 > \mathbb{P}(X_i\le e)=1-\mathbb{P}(X_i>e)=0
 > $$
-> 
+> Then 
+> $$
+> \mathbb{E}|X_i|=\int_{e}^{\infty}\mathbb{P}(|X_i|>x){d}x=\int_{e}^{\infty}\mathbb{P}(X_i>x){d}x=\int_{e}^{\infty}\frac{e}{x\log{x}}{dx}=\infty
+> $$
+> Let $\mu_n\triangleq\mathbb{E}|X_i|\mathbb{1}_{\{|X_i|\le n\}}$ and $\mu_n\to\infty\text{ as }n\to\infty$. Since 
+> $$
+> x\mathbb{P}(X_i>x)=\frac{e}{\log{x}}\to0\text{ as }x\to\infty
+> $$
+> Then $\frac{S_n}{n}-\mu_n\xrightarrow{\mathbb{P}}0$.
 
 > [!question] 2.2.6. (i)
 > (i) Show that if $X \geq 0$ is integer valued $\mathbb{E}X = \sum_{n \geq 1} \mathbb{P}(X \geq n)$.
 
 > [!done]
+> Note that 
+> $$
+> X=\sum_{n=1}^{\infty}\mathbb{1}_{\{X\ge n\}}
+> $$
 
 > [!question] 2.2.6. (ii)
 > (ii) Find a similar expression for $\mathbb{E}X^2$.
 
 > [!done]
+> We compute by definition, 
+> $$
+> \begin{aligned}
+>\mathbb{E}X^2&=\sum_{n=1}^{\infty}n^2\mathbb{P}(X=n)\\
+>&=\mathbb{P}(X=1)+(1+3)\mathbb{P}(X=2)+\cdots+(1+3+\cdots+(2n-1))\mathbb{P}(X=n)+\cdots\\
+>&=\sum_{n=1}^{\infty}(2n-1)\mathbb{P}(X\ge n)
+>\end{aligned}
+> $$
 
 > [!question] 2.2.7.
 > Generalize Lemma 2.2.13 to conclude that if $H(x) = \int_{(-\infty, x]} h(y) dy$ with $h(y) \geq 0$, then
@@ -119,6 +139,13 @@
 > An important special case is $H(x) = \exp(\theta x)$ with $\theta > 0$.
 
 > [!done]
+> We compute
+> $$
+> \begin{aligned}
+>\int_{-\infty}^\infty h(y)\mathbb{P}(X \geq y) dy&=\int_{-\infty}^{\infty}\int_{\Omega}h(y)\mathbb{1}_{\{X\ge y\}}{d}\mathbb{P}{d}y=\int_{\Omega}\int_{-\infty}^{X}h(y){d}y{d}\mathbb{P}\\
+>&=\int_{\Omega}H(X){d}\mathbb{P}=\mathbb{E}H(X)
+>\end{aligned}
+> $$
 
 > [!question] 2.2.8.  An unfair "fair game."
 > Let $p_k = 1/2^k k(k+1)$, $k = 1, 2, \dots$ and $p_0 = 1 - \sum_{k \geq 1} p_k$.
@@ -135,6 +162,14 @@
 > $$
 
 > [!done]
+> Note that 
+> $$
+> \begin{aligned}
+>\mathbb{E}X_n&=-1\cdot p_0+\sum_{k=1}^{\infty}p_k(2^k-1)\\
+>&=-1+\sum_{k=1}^{\infty}p_k+\sum_{k=1}^{\infty}p_k\cdot2^k-\sum_{k=1}^{\infty}p_k=0
+>\end{aligned}
+> $$
+> 
 
 > [!question] 2.2.9.Weak law for positive variables.
 >  Suppose $X_1, X_2, \dots$ are i.i.d., $\mathbb{P}(0 \leq X_i < \infty) = 1$ and $\mathbb{P}(X_i > x) > 0$ for all $x$. Let $\mu(s) = \int_0^s x dF(x)$ and $\nu(s) = \mu(s)/s(1-F(s))$. It is known that there exist constants $a_n$ so that $S_n/a_n \to 1$ in probability, if and only if $\nu(s) \to \infty$ as $s \to \infty$. Pick $b_n \geq 1$ so that $n\mu(b_n) = b_n$ (this works for large $n$), and use Theorem 2.2.11 to prove that the condition is sufficient.
