@@ -169,7 +169,8 @@
 >&=-1+\sum_{k=1}^{\infty}p_k+\sum_{k=1}^{\infty}p_k\cdot2^k-\sum_{k=1}^{\infty}p_k=0
 >\end{aligned}
 > $$
-> 
+> ![[Pasted image 20261019153903.png]]
+> Take $b_n=2^{m(n)}$, 
 
 > [!question] 2.2.9.Weak law for positive variables.
 >  Suppose $X_1, X_2, \dots$ are i.i.d., $\mathbb{P}(0 \leq X_i < \infty) = 1$ and $\mathbb{P}(X_i > x) > 0$ for all $x$. Let $\mu(s) = \int_0^s x dF(x)$ and $\nu(s) = \mu(s)/s(1-F(s))$. It is known that there exist constants $a_n$ so that $S_n/a_n \to 1$ in probability, if and only if $\nu(s) \to \infty$ as $s \to \infty$. Pick $b_n \geq 1$ so that $n\mu(b_n) = b_n$ (this works for large $n$), and use Theorem 2.2.11 to prove that the condition is sufficient.
