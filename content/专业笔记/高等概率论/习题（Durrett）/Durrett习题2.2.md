@@ -170,7 +170,24 @@
 >\end{aligned}
 > $$
 > ![[Pasted image 20261019153903.png]]
-> Take $b_n=2^{m(n)}$, 
+> Take $b_n=2^{m(n)}$, we check the condition (i), 
+> $$
+> \begin{aligned}
+>\sum_{k=1}^{n}\mathbb{P}(|X_k|>b_n)&=n\mathbb{P}(|X_1|>2^{m(n)})\\
+>&= n\sum_{k=m(n)+1}^{\infty}p_k\\
+>&\le \frac{n}{m(n)(m(n)+1)}\sum_{k=m(n)+1}^{\infty}\frac{1}{2^k}\\
+>&=\frac{n}{2^{m(n)}m(n)(m(n)+1)}\le \frac{\sqrt{m(n)}}{(m(n)+1)}\to0\text{ as }n\to\infty
+>\end{aligned}
+> $$
+> We check the condition (ii), note that 
+> $$
+> \begin{aligned}
+>\mathbb{E}\bar{X}_{k}^2&=p_0+\sum_{k=1}^{m(n)}(2^k-1)^2p_k\\
+>&\le 1+\sum_{k=1}^{m(n)}\frac{2^k}{k(k+1)}\\
+>&\le 1+\sum_{1\le k\le \lfloor \frac{m(n)}{2}\rfloor}2^k+\frac{4}{m^2}\sum_{\lfloor\frac{m(n)}{2}\rfloor<k\le m(n)}2^{k}\\
+>&=1+2^{\lfloor\frac{m(n)}{2}\rfloor+1}+\frac{8\cdot2^{m(n)}}{m(n)^2}=O\left(\frac{2^{m(n)}}{m^2(n)}\right)
+>\end{aligned}
+> $$
 
 > [!question] 2.2.9.Weak law for positive variables.
 >  Suppose $X_1, X_2, \dots$ are i.i.d., $\mathbb{P}(0 \leq X_i < \infty) = 1$ and $\mathbb{P}(X_i > x) > 0$ for all $x$. Let $\mu(s) = \int_0^s x dF(x)$ and $\nu(s) = \mu(s)/s(1-F(s))$. It is known that there exist constants $a_n$ so that $S_n/a_n \to 1$ in probability, if and only if $\nu(s) \to \infty$ as $s \to \infty$. Pick $b_n \geq 1$ so that $n\mu(b_n) = b_n$ (this works for large $n$), and use Theorem 2.2.11 to prove that the condition is sufficient.
