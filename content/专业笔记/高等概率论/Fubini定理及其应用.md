@@ -148,6 +148,10 @@ $$
 
 **Proof**
 
+先考虑$X_n.X\ge0$的情况。由Chebyshev不等式，
+$$
+\mathbb{P}(X_n>t)\le\min\left\{1,\frac{1}{t^2}\right\}\text{ and }\int_{0}^{\infty}\min\left\{1,\frac{1}{t^2}\right\}{d}t=2
+$$
 
 
 **QED**
