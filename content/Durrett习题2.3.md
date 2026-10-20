@@ -11,7 +11,7 @@
 > **Dominated convergence.** Suppose $X_n \to X$ in probability and (a) $|X_n| \leq Y$ with $\mathbb{E}Y < \infty$ or (b) there is a continuous function $g$ with $g(x) > 0$ for large $x$ with $|x|/g(x) \to 0$ as $|x| \to \infty$ so that $\mathbb{E}g(X_n) \leq C < \infty$ for all $n$. Show that $\mathbb{E}X_n \to \mathbb{E}X$.
 
 > [!done]
-> For case (a), we have obtained [[^|the result]].
+> For case (a), we have obtained [[Fubini定理及其应用#^fd31fb|the result]]. We only consider the case (b). 
 
 > [!question] 2.3.6.
 > **Metric for convergence in probability.** Show (a) that $d(X,Y) = \mathbb{E}(|X-Y|/(1+|X-Y|))$ defines a metric on the set of random variables, i.e., (i) $d(X,Y) = 0$ if and only if $X = Y$ a.s., (ii) $d(X,Y) = d(Y,X)$, (iii) $d(X,Z) \leq d(X,Y) + d(Y,Z)$ and (b) that $d(X_n,X) \to 0$ as $n \to \infty$ if and only if $X_n \to X$ in probability.

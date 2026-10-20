@@ -131,6 +131,8 @@ $$
 >\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X
 >$$
 
+^fd31fb
+
 >[!example] 
 >若$\mathbb{P}(X_n>t)\to\mathbb{P}(X>t)\text{ as }n\to\infty,\forall t>0$，即$X_n\xrightarrow{d}X$，$X_n\ge0,X\ge0,X_n\le1,X\le1$，证明：$\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X$。
 
