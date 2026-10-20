@@ -1,26 +1,18 @@
->[!note] 2026.10.20 手稿整理
->本篇对应手稿第 4–6 页，沿用 $X_i,S_n,\mu,C$ 及三角阵 $X_{n,k}$、集券时刻 $\tau_k^n$ 等记号。包括 $L^2$ 弱大数定律、Bernstein 多项式、三角阵、集券问题及随机置换循环分解。最后补充截断法和仅要求一阶绝对矩有限的经典 WLLN；补充出处列于文末。
->
->相容性定理及独立变量的构造见 [[独立性#Kolmogorov 相容性定理]]。
-
 全文 $\log$ 均表示自然对数。
-
-## 1. 弱大数定律在说什么？
-
-令
-$$
-S_n=X_1+\cdots+X_n.
-$$
-弱大数定律（Weak Law of Large Numbers，WLLN）的典型结论是
-$$
-\frac{S_n}{n}\xrightarrow{\mathbb P}\mu,
-$$
-也就是对每个 $\varepsilon>0$，
-$$
-\mathbb P\left(\left|\frac{S_n}{n}-\mu\right|>\varepsilon\right)
-\longrightarrow0.
-$$
-样本平均与 $\mu$ 相差超过固定误差的概率，随着样本量增大而趋于 $0$。
+>[!note] 弱大数定律在说什么？
+>令
+>$$
+>S_n=X_1+\cdots+X_n.
+>$$
+>弱大数定律（Weak Law of Large Numbers，WLLN）的典型结论是
+>$$
+>\frac{S_n}{n}\xrightarrow{\mathbb P}\mu,
+>$$
+>也就是对每个 $\varepsilon>0$，
+>$$
+>\mathbb P\left(\left|\frac{S_n}{n}-\mu\right|>\varepsilon\right)\longrightarrow0
+>$$
+>样本平均与 $\mu$ 相差超过固定误差的概率，随着样本量增大而趋于 $0$。
 
 >[!note] “弱”指什么？
 >这里“弱”指结论采用**依概率收敛**。强大数定律的结论则是
@@ -29,10 +21,8 @@ $$
 >$$
 >几乎处处收敛蕴含依概率收敛，反向一般不成立。WLLN 中的“弱”也不要直接等同于“弱收敛（依分布收敛）”；不过极限为常数时，依分布收敛与依概率收敛等价。
 
-## 2. 方差方法：$L^2$ 弱大数定律
-
->[!thm] 不相关且方差一致有界的 WLLN
->设 $X_1,X_2,\ldots$ 两两不相关，且
+>[!thm] $L^2$ 弱大数定律
+>设 $X_1,X_2,\ldots$ 两两不相关，i.e. $\mathbb{E}X_iX_j=\mathbb{E}X_i\mathbb{E}X_j$，且
 >$$
 >\mathbb E X_i=\mu,\qquad
 >\operatorname{Var}(X_i)\le C<\infty,\qquad i\ge1.
@@ -73,10 +63,7 @@ $$
 $$
 于是
 $$
-\mathbb E\left|\frac{S_n}{n}-\mu\right|^2
-=\operatorname{Var}\left(\frac{S_n}{n}\right)
-=\frac{\operatorname{Var}(S_n)}{n^2}
-\le\frac Cn\longrightarrow0.
+\mathbb E\left|\frac{S_n}{n}-\mu\right|^2=\operatorname{Var}\left(\frac{S_n}{n}\right)=\frac{\operatorname{Var}(S_n)}{n^2}\le\frac{C}{n}\longrightarrow0\text{ as }n\to\infty
 $$
 这已经证明 $L^2$ 收敛。
 
@@ -105,8 +92,6 @@ $$
 >\frac{\operatorname{Var}(S_n)}{n^2}\longrightarrow0,
 >$$
 >就有 $S_n/n\to\mu$ 于 $L^2$；因为均方误差等于“方差加偏差的平方”。
-
-## 3. 应用：Bernstein 多项式与一致逼近
 
 >[!thm] Bernstein 多项式逼近
 >设 $f\in C([0,1])$，定义
@@ -193,8 +178,6 @@ $$
 >[!note] 这里不能省略的一步
 >固定 $p$ 后，WLLN 可以说明 $S_n/n\to p$，再结合有界连续性可推出 $f_n(p)\to f(p)$。但这只给出逐点收敛。要证明一致收敛，必须给出同时适用于所有 $p$ 的误差控制；这里依靠 $p(1-p)\le1/4$ 以及 $f$ 的一致连续性。
 
-## 4. 三角阵与一般的方差判据
-
 >[!def] 三角阵及行和
 >三角阵是如下形式的随机变量族：
 >$$
@@ -225,7 +208,7 @@ $$
 >$$
 >若确定的数列 $b_n>0$ 满足
 >$$
->\frac{\sigma_n^2}{b_n^2}\longrightarrow0,
+>\frac{\sigma_n^2}{b_n^2}\longrightarrow0,\tag{技术性条件}
 >$$
 >则
 >$$
@@ -261,8 +244,6 @@ $$
 \longrightarrow a
 $$
 于 $L^2$，从而也依概率收敛。后面的两个例子都按这个顺序处理。
-
-## 5. 集券问题：集齐 $n$ 种券要多久？
 
 >[!example] 均匀集券模型
 >固定 $n$ 种券，每次独立、等概率抽取一种。令
@@ -360,13 +341,6 @@ $$
 $$
 $p=1$ 时也直接成立。
 
->[!note] 参考讲义的一处笔误
->李立颖讲义第 40 页此处写为 $\mathbb E Y^2\le1/p^2$，该式一般不成立。后续方差估计实际需要、并且正确的是
->$$
->\operatorname{Var}(Y)\le1/p^2.
->$$
->例如 $p=1/2$ 时，$\mathbb E Y^2=6$，而 $1/p^2=4$。
-
 **第四步：估计总等待时间的均值和方差。**
 
 记调和数
@@ -428,11 +402,7 @@ $$
 >$$
 >WLLN 还说明随机总时间相对于这个尺度的波动趋于零，而不仅是期望具有该量级。
 
-## 6. 随机置换的循环数
-
 手稿最后开始讨论循环分解；以下依据 Durrett Example 2.2.8 和 Lemma 2.2.9 补全其概率模型及大数定律。
-
-### 6.1 先看手稿中的置换
 
 设
 $$
@@ -554,211 +524,3 @@ $$
 
 **QED**
 
->[!note] 与 Rényi 破纪录问题的联系（补充）
->[[独立性#^renyi-record|Rényi 破纪录问题]]中，第 $k$ 次刷新纪录的指标相互独立，成功概率为 $1/k$。把本节指标反向编号后，成功概率也为 $1/k$。
->
->因此前 $n$ 次独立同分布连续观测的纪录总数，与 $n$ 元均匀置换的循环数**同分布**，均值和方差都分别为
->$$
->H_n,\qquad H_n-\sum_{k=1}^n\frac1{k^2}.
->$$
->这是一种分布上的联系，并不意味着两个不同模型中的随机变量天然逐点相等。
-
-## 7. 补充：截断法与仅有一阶矩的 WLLN
-
-前面的方差方法要求处理的变量具有有限二阶矩。若只知道 $\mathbb E|X_1|<\infty$，可以先截断变量，控制截断改变样本的概率，再对截断后的和使用方差估计。
-
-### 7.1 截断三角阵
-
->[!thm] 三角阵的截断型弱大数定律
->对每个 $n$，设 $X_{n,1},\ldots,X_{n,n}$ 相互独立。取 $b_n>0$ 且 $b_n\to\infty$，定义
->$$
->\overline X_{n,k}
->=X_{n,k}\mathbf1_{\{|X_{n,k}|\le b_n\}},
->\qquad
->a_n=\sum_{k=1}^n\mathbb E\overline X_{n,k}.
->$$
->若
->$$
->\sum_{k=1}^n\mathbb P(|X_{n,k}|>b_n)\longrightarrow0,
->\tag{T1}
->$$
->且
->$$
->\frac1{b_n^2}\sum_{k=1}^n
->\mathbb E\overline X_{n,k}^{\,2}\longrightarrow0,
->\tag{T2}
->$$
->则对 $S_n=\sum_{k=1}^nX_{n,k}$，
->$$
->\frac{S_n-a_n}{b_n}\xrightarrow{\mathbb P}0.
->$$
-
-注意 $a_n$ 是**截断后**的均值之和，不一定等于 $\mathbb E S_n$；原变量的期望甚至可能不存在。
-
-**Proof**
-
-令 $\overline S_n=\sum_{k=1}^n\overline X_{n,k}$。对任意 $\varepsilon>0$，
-$$
-\mathbb P\left(\left|\frac{S_n-a_n}{b_n}\right|>\varepsilon\right)
-\le
-\mathbb P(S_n\ne\overline S_n)
-+
-\mathbb P\left(\left|\frac{\overline S_n-a_n}{b_n}\right|>\varepsilon\right).
-\tag{T3}
-$$
-这个估计来自事件包含：如果 $S_n=\overline S_n$，第一个和偏离 $a_n$ 就等价于截断和偏离 $a_n$。
-
-对于第一项，只有至少一个变量被截断，两个和才可能不同，故
-$$
-\mathbb P(S_n\ne\overline S_n)
-\le\mathbb P\left(\bigcup_{k=1}^n\{|X_{n,k}|>b_n\}\right)
-\le\sum_{k=1}^n\mathbb P(|X_{n,k}|>b_n)\longrightarrow0.
-$$
-这里使用不等号：即使有变量被截断，其改变也可能相互抵消。
-
-对于第二项，$\overline X_{n,k}$ 是分别作用于各 $X_{n,k}$ 的可测函数，因此仍然行内独立，且
-$$
-\mathbb E\overline S_n=a_n,\qquad
-\operatorname{Var}(\overline S_n)
-=\sum_{k=1}^n\operatorname{Var}(\overline X_{n,k})
-\le\sum_{k=1}^n\mathbb E\overline X_{n,k}^{\,2}.
-$$
-由 Chebyshev 不等式，
-$$
-\mathbb P\left(\left|\frac{\overline S_n-a_n}{b_n}\right|>\varepsilon\right)
-\le\frac1{\varepsilon^2b_n^2}
-\sum_{k=1}^n\mathbb E\overline X_{n,k}^{\,2}
-\longrightarrow0.
-$$
-代入式 $(\mathrm{T3})$ 即得结论。
-
-**QED**
-
->[!note] 两个条件分别控制什么？
->$(\mathrm{T1})$ 控制“有样本越过截断阈值”的概率；$(\mathrm{T2})$ 控制截断和相对于 $b_n$ 的波动。保留的部分必须是 $\{|X_{n,k}|\le b_n\}$；讲义第 40 页式 (4.9) 中指标函数上的不等号有笔误，应以其分段定义为准。
-
-### 7.2 独立同分布且可积的 WLLN
-
->[!thm] 经典弱大数定律
->若 $X_1,X_2,\ldots$ 独立同分布，且
->$$
->\mathbb E|X_1|<\infty,\qquad \mu=\mathbb E X_1,
->$$
->则
->$$
->\frac{X_1+\cdots+X_n}{n}\xrightarrow{\mathbb P}\mu.
->$$
->这里不要求 $\mathbb E X_1^2<\infty$。
-
-**Proof**
-
-在截断三角阵定理中取
-$$
-X_{n,k}=X_k,\qquad b_n=n,\qquad
-\overline X_{n,k}=X_k\mathbf1_{\{|X_k|\le n\}}.
-$$
-分三步核对。
-
-**第一步：大值出现的总概率趋于零。**
-
-由同分布性，
-$$
-\begin{aligned}
-\sum_{k=1}^n\mathbb P(|X_{n,k}|>n)
-&=n\,\mathbb P(|X_1|>n)\\
-&\le\mathbb E\left[|X_1|\mathbf1_{\{|X_1|>n\}}\right]
-\longrightarrow0.
-\end{aligned}
-$$
-最后一步由控制收敛定理：被积函数趋于 $0$，并由可积变量 $|X_1|$ 控制。
-
-**第二步：截断二阶矩除以 $n$ 后趋于零。**
-
-同分布性给出
-$$
-\frac1{n^2}\sum_{k=1}^n\mathbb E\overline X_{n,k}^{\,2}
-=\mathbb E\left[\frac{X_1^2}{n}
-\mathbf1_{\{|X_1|\le n\}}\right].
-$$
-对每个有限的 $X_1(\omega)$，括号内趋于 $0$；而在 $\{|X_1|\le n\}$ 上，
-$$
-0\le\frac{X_1^2}{n}\mathbf1_{\{|X_1|\le n\}}
-\le |X_1|.
-$$
-再次由控制收敛定理，右端期望趋于 $0$。这一步不需要原变量具有有限二阶矩。
-
-**第三步：将截断均值换回原均值。**
-
-记
-$$
-m_n=\mathbb E\left[X_1\mathbf1_{\{|X_1|\le n\}}\right],
-\qquad a_n=nm_n.
-$$
-这里用 $m_n$ 表示单个变量的截断均值，以免与前面 $\mu_n=\mathbb E S_n$ 混淆。
-
-截断定理给出
-$$
-\frac{S_n}{n}-m_n\xrightarrow{\mathbb P}0.
-$$
-同时，$X_1\mathbf1_{\{|X_1|\le n\}}\to X_1$ 且绝对值被 $|X_1|$ 控制，所以
-$$
-m_n\longrightarrow\mathbb E X_1=\mu.
-$$
-因此，对任意 $\varepsilon>0$，当 $n$ 足够大时 $|m_n-\mu|<\varepsilon/2$，从而
-$$
-\mathbb P\left(\left|\frac{S_n}{n}-\mu\right|>\varepsilon\right)
-\le
-\mathbb P\left(\left|\frac{S_n}{n}-m_n\right|>\frac\varepsilon2\right)
-\longrightarrow0.
-$$
-
-**QED**
-
->[!example] 一阶矩有限、二阶矩无限也可以使用 WLLN
->设 $X_i$ 独立同分布，密度为
->$$
->f(x)=\alpha x^{-\alpha-1}\mathbf1_{\{x\ge1\}},
->\qquad 1<\alpha<2.
->$$
->直接积分得到
->$$
->\mathbb E X_1=\frac{\alpha}{\alpha-1}<\infty,
->\qquad\mathbb E X_1^2=\infty.
->$$
->所以前面的有限方差证明不能直接用于原变量，但截断法给出
->$$
->\frac{S_n}{n}\xrightarrow{\mathbb P}\frac{\alpha}{\alpha-1}.
->$$
-
-## 8. 复习时的主线与参考来源
-
-方差方法的共同结构是
-$$
-\boxed{
-\frac{S_n}{b_n}
-=\frac{\mathbb E S_n}{b_n}
-+\frac{S_n-\mathbb E S_n}{b_n},
-\qquad
-\frac{\operatorname{Var}(S_n)}{b_n^2}\to0.
-}
-$$
-先确定均值的主要尺度，再证明波动相对于这一尺度可以忽略。二阶矩不可用时，先截断，再重复同一思路。
-
-| 模型 | 中心或均值 | 尺度 | 所得结论 |
-| --- | --- | --- | --- |
-| 不相关、共同均值 $\mu$、方差一致有界 | $n\mu$ | $n$ | $S_n/n\to\mu$ 于 $L^2$ 及依概率 |
-| 集齐 $n$ 种券的时间 | $nH_n$ | $n\log n$ | $S_n/(n\log n)\to1$ 于 $L^2$ 及依概率 |
-| 均匀置换的循环数 | $H_n$ | $\log n$ | $S_n/\log n\to1$ 于 $L^2$ 及依概率 |
-| i.i.d. 且 $\mathbb E|X_1|<\infty$ | 截断中心 $nm_n$，$m_n\to\mu$ | $n$ | $S_n/n\to\mu$ 依概率 |
-
-参考来源及补充范围：
-
-- **手稿《2026.10.20.pdf》第 4–6 页**：$L^2$ 弱律、Bernstein 多项式、三角阵的方差判据、集券问题，以及随机置换的循环分解例子。本篇补全其中的概率估计和独立性论证。
-- **Rick Durrett, *Probability: Theory and Examples***，第五版，2019-01-11 版本，§2.2：
-  - Theorems 2.2.1、2.2.3：方差公式与 $L^2$ WLLN，印刷第 56–57 页（PDF 第 64–65 页）。
-  - Example 2.2.4：Bernstein 多项式，印刷第 58 页（PDF 第 66 页）。
-  - Theorem 2.2.6、Example 2.2.7：三角阵方差判据与集券问题，印刷第 59–60 页（PDF 第 67–68 页）。
-  - Example 2.2.8、Lemma 2.2.9：随机置换的循环数及闭合指标独立性，印刷第 60–61 页（PDF 第 68–69 页）。
-  - Theorem 2.2.11：截断型三角阵 WLLN，印刷第 62–63 页（PDF 第 70–71 页）；Theorem 2.2.14：可积 i.i.d. 变量的 WLLN，印刷第 64 页（PDF 第 72 页）。
-- **LI Liying, *Lecture Note for MAT8030: Advanced Probability***，2024-12-26 draft，§4.2，第 39–41 页：Proposition 4.6、Example 4.5、Theorems 4.7–4.8。沿用其 $\tau_k^n,X_{n,k}$ 记号，补全讲义略去的集券等待时间独立性；几何分布矩与截断定义中的笔误已在正文对应位置注明。
-- **进一步补充**：循环数与 Rényi 纪录数同分布、一阶矩证明中的直接控制收敛论证，以及 Pareto 分布例子，用于说明结论之间的联系和假设的作用。
