@@ -126,6 +126,10 @@ $$
 **QED**
 
 >[!warning] 依概率收敛下的控制收敛定理
+>若$X_n\xrightarrow{\mathbb{P}}X$且$|X_n|\le Y$，其中$Y$满足$\mathbb{E}|Y|<\infty$，则满足
+>$$
+>\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X
+>$$
 
 >[!example] 
 >若$\mathbb{P}(X_n>t)\to\mathbb{P}(X>t)\text{ as }n\to\infty,\forall t>0$，即$X_n\xrightarrow{d}X$，$X_n\ge0,X\ge0,X_n\le1,X\le1$，证明：$\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X$。
@@ -140,7 +144,7 @@ $$
 **QED**
 
 >[!example] 
->若$\mathbb{P}(X_n>t)\to\mathbb{P}(X>t)\text{ as }n\to\infty,\forall t>0$，即$X_n\xrightarrow{d}X$，$\mathbb{E}[X_n^2]\le1$，证明：$\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X$。
+>若$\mathbb{P}(X_n>t)\to\mathbb{P}(X>t)\text{ as }n\to\infty,\forall t>0$，$\mathbb{E}[X_n^2]\le1$，证明：$\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X$。
 
 **Proof**
 
@@ -151,6 +155,6 @@ $$
 >[!example] 
 >$X_1,\cdots,X_n,i.i.d.$，$\mathbb{E}X_n=0,\mathbb{E}X_n^2=1$，令$S_n=\sum_{i=1}^{n}X_i$，证明：
 >$$
->\lim_{n\to\infty}\mathbb{E}\left[\frac{|S_n|}{\sqrt{n}}\right]=\sqrt{\frac{2}{\pi}}=\mathbb{E}[N],N\sim \text{N}(0,1)
+>\lim_{n\to\infty}\mathbb{E}\left[\frac{|S_n|}{\sqrt{n}}\right]=\sqrt{\frac{2}{\pi}}=\mathbb{E}[|N|],N\sim \text{N}(0,1)
 >$$
 
