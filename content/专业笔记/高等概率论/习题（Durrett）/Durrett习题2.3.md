@@ -25,10 +25,37 @@
 >[!question] 2.3.6.Metric for convergence in probability.(b)
 >Show that $d(X_n,X) \to 0$ as $n \to \infty$ if and only if $X_n \to X$ in probability. 
 
+>[!done] 
+>$\Longrightarrow:$ Since $d(X_n,X)\to0$ i.e. 
+>$$
+>\mathbb{E}\frac{|X_n-X|}{1+|X_n-X|}\to0\text{ as }n\to\infty
+>$$
+>Then for any $\varepsilon>0$, we have 
+>$$
+>\begin{aligned}
+>\mathbb{P}(|X_n-X|\ge\varepsilon)&=\int_{\{|X_n-X|\ge\varepsilon\}}1d\mathbb{P}\\
+>&=\int_{\{|X_n-X|\ge\varepsilon\}}\frac{|X_n-X|}{1+|X_n-X|}\cdot\frac{1+|X_n-X|}{|X_n-X|}{d}\mathbb{P}\\
+>&\le \frac{1+\varepsilon}{\varepsilon}\mathbb{E}\frac{|X_n-X|}{1+|X_n-X|}\to0
+>\end{aligned}
+>$$
+>Hence, $X_n\xrightarrow{\mathbb{P}}X$. 
+>$\Longleftarrow:$ Suppose $X_n\xrightarrow{\mathbb{P}} X$, then for any $\varepsilon>0$
+>$$
+>\begin{aligned}
+>\mathbb{E}\frac{|X_n-X|}{1+|X_n-X|}&=\left(\int_{\{|X_n-X|\ge\varepsilon\}}+\int_{\{|X_n-X|<\varepsilon\}}\right)\frac{|X_n-X|}{1+|X_n-X|}{d}\mathbb{P}\\
+>&\le\frac{\varepsilon}{1+\varepsilon}+\mathbb{P}(|X_n-X|\ge\varepsilon)
+>\end{aligned}
+>$$
+>We obtain
+>$$
+>\limsup_{n\to\infty}\mathbb{E}\frac{|X_n-X|}{1+|X_n-X|}\le\frac{\varepsilon}{1+\varepsilon}\text{ and }\varepsilon\to0^+
+>$$
+
 > [!question] 2.3.7.
 > Show that random variables are a complete space under the metric defined in the previous exercise, i.e., if $d(X_m, X_n) \to 0$ whenever $m, n \to \infty$ then there is a r.v. $X_\infty$ so that $X_n \to X_\infty$ in probability.
 
 > [!done]
+> 
 
 > [!question] 2.3.8.
 > Let $A_n$ be a sequence of independent events with $\mathbb{P}(A_n) < 1$ for all $n$. Show that $\mathbb{P}(\cup A_n) = 1$ implies $\sum_n \mathbb{P}(A_n) = \infty$ and hence $\mathbb{P}(A_n \text{ i.o.}) = 1$.
