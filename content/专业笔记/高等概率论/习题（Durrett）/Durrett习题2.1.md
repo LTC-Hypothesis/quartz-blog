@@ -60,6 +60,8 @@
 > [!question] 2.1.3. (ii)
 > (ii) $h(x) = x/(x+1)$ satisfies the hypotheses in (i).
 
+^9fde07
+
 > [!done]
 
 > [!question] 2.1.4.

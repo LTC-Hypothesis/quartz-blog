@@ -17,6 +17,7 @@
 > **Metric for convergence in probability.** Show (a) that $d(X,Y) = \mathbb{E}(|X-Y|/(1+|X-Y|))$ defines a metric on the set of random variables, i.e., (i) $d(X,Y) = 0$ if and only if $X = Y$ a.s., (ii) $d(X,Y) = d(Y,X)$, (iii) $d(X,Z) \leq d(X,Y) + d(Y,Z)$ and (b) that $d(X_n,X) \to 0$ as $n \to \infty$ if and only if $X_n \to X$ in probability.
 
 > [!done]
+> For (iii), note that de function $\frac{x}{1+x}$ is [[Durrett习题2.1#^9fde07|decreasing]]
 
 > [!question] 2.3.7.
 > Show that random variables are a complete space under the metric defined in the previous exercise, i.e., if $d(X_m, X_n) \to 0$ whenever $m, n \to \infty$ then there is a r.v. $X_\infty$ so that $X_n \to X_\infty$ in probability.
