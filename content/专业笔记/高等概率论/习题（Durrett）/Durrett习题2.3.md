@@ -13,11 +13,17 @@
 > [!done]
 > For case (a), we have obtained [[Fubini定理及其应用#^fd31fb|the result]]. We only consider the case (b). 
 
-> [!question] 2.3.6.
-> **Metric for convergence in probability.** Show (a) that $d(X,Y) = \mathbb{E}(|X-Y|/(1+|X-Y|))$ defines a metric on the set of random variables, i.e., (i) $d(X,Y) = 0$ if and only if $X = Y$ a.s., (ii) $d(X,Y) = d(Y,X)$, (iii) $d(X,Z) \leq d(X,Y) + d(Y,Z)$ and (b) that $d(X_n,X) \to 0$ as $n \to \infty$ if and only if $X_n \to X$ in probability.
+> [!question] 2.3.6.Metric for convergence in probability.(a) 
+>  Show that $d(X,Y) = \mathbb{E}(|X-Y|/(1+|X-Y|))$ defines a metric on the set of random variables, i.e., (i) $d(X,Y) = 0$ if and only if $X = Y$ a.s., (ii) $d(X,Y) = d(Y,X)$, (iii) $d(X,Z) \leq d(X,Y) + d(Y,Z)$. 
 
 > [!done]
-> For (iii), note that de function $\frac{x}{1+x}$ is [[Durrett习题2.1#^9fde07|decreasing]]
+> For (iii), note that de function $\frac{x}{1+x}$ is [[Durrett习题2.1#^9fde07|increasing]]. Since $|\cdot|$ is a metric, we have 
+> $$
+> |X-Z|\le|X-Y|+|Y-Z|\Longrightarrow\frac{|X-Z|}{1+|X-Z|}\le\frac{|X-Y|}{1+|X-Y|}+\frac{|Y-Z|}{1+|Y-Z|}
+> $$
+
+>[!question] 2.3.6.Metric for convergence in probability.(b)
+>Show that $d(X_n,X) \to 0$ as $n \to \infty$ if and only if $X_n \to X$ in probability. 
 
 > [!question] 2.3.7.
 > Show that random variables are a complete space under the metric defined in the previous exercise, i.e., if $d(X_m, X_n) \to 0$ whenever $m, n \to \infty$ then there is a r.v. $X_\infty$ so that $X_n \to X_\infty$ in probability.
