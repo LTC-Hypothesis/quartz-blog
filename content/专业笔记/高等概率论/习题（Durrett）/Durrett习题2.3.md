@@ -107,6 +107,10 @@
 > Let $X_1, X_2, \dots$ be independent with $\mathbb{P}(X_n = 1) = p_n$ and $\mathbb{P}(X_n = 0) = 1 - p_n$. Show that (i) $X_n \to 0$ in probability if and only if $p_n \to 0$.
 
 > [!done]
+> Note that $\mathbb{E}[X_n]=\mathbb{E}[X_n^2]=p_n$. "$\Longleftarrow$" is obviously. We prove "$\Longrightarrow$". We  can use the metric characterization of convergence in probability, we have 
+> $$
+> \mathbb{E}\frac{|X_n|}{1+|X_n|}\to0\Longrightarrow\frac{1}{2}p_n\to0
+> $$
 
 > [!question] 2.3.11. (ii)
 > (ii) $X_n \to 0$ a.s. if and only if $\sum p_n < \infty$.
