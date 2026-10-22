@@ -73,12 +73,21 @@
 > Let $A_n$ be a sequence of independent events with $\mathbb{P}(A_n) < 1$ for all $n$. Show that $\mathbb{P}(\cup A_n) = 1$ implies $\sum_n \mathbb{P}(A_n) = \infty$ and hence $\mathbb{P}(A_n \text{ i.o.}) = 1$.
 
 > [!done] 
-> 
+> We consider 
+> $$
+> \mathbb{P}\left(\bigcup_{n=1}^{\infty}A_n\right)=1\Longrightarrow\mathbb{P}\left(\bigcap_{n=1}^{\infty}A_n^c\right)=\prod_{n=1}^{\infty}(1-\mathbb{P}(A_n))=0
+> $$
+> We suppose $\sum_{n=1}^{\infty}\mathbb{P}(A_n)<\infty$, then $\mathbb{P}(A_n)\to0$, for sufficiently large $M,N\in\mathbb{N}$, we have $\mathbb{P}(A_n)\le\frac{1}{2},n\ge N,M$. Then 
+> $$
+> \prod_{n=N}^{M}(1-\mathbb{P}(A_n))=e^{\sum_{n=N}^{M}\log{(1-\mathbb{P}(A_n))}}\ge e^{-2\sum_{n=N}^{M}\mathbb{P}(A_n)}\ge e^{-2\sum_{n=N}^{\infty}\mathbb{P}(A_n)}>0
+> $$
+> It is contradict with $\prod_{n=1}^{\infty}(1-\mathbb{P}(A_n))=0$. Hence, $\sum_{n=1}^{\infty}\mathbb{P}(A_n)=\infty$. 
 
 > [!question] 2.3.9. (i)
 > (i) If $\mathbb{P}(A_n) \to 0$ and $\sum_{n=1}^\infty \mathbb{P}(A_n^c \cap A_{n+1}) < \infty$ then $\mathbb{P}(A_n \text{ i.o.}) = 0$.
 
 > [!done]
+> 
 
 > [!question] 2.3.9. (ii)
 > (ii) Find an example of a sequence $A_n$ to which the result in (i) can be applied but the Borel-Cantelli lemma cannot.
