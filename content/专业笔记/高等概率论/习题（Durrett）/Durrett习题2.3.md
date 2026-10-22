@@ -55,12 +55,25 @@
 > Show that random variables are a complete space under the metric defined in the previous exercise, i.e., if $d(X_m, X_n) \to 0$ whenever $m, n \to \infty$ then there is a r.v. $X_\infty$ so that $X_n \to X_\infty$ in probability.
 
 > [!done]
-> 
+> Note that 
+> $$
+> \mathbb{P}(|X_m-X_n|\ge\varepsilon)\le\frac{1+\varepsilon}{\varepsilon}d(X_m,X_n)\to0\text{ as }m,n\to\infty
+> $$
+> We can take subsequence $X_{n_k}$ s.t. 
+> $$
+> \mathbb{P}(|X_{n_{k+1}}-X_{n_k}|\ge\varepsilon)\le\frac{\varepsilon}{2^{k+1}}\Longrightarrow\sum_{k=1}^{\infty}\mathbb{P}(|X_{n_{k+1}}-X_{n_k}|\ge\varepsilon)\le\varepsilon
+> $$
+> By [[积分与期望#^5c2707|Borel-Cantelli's lemma]], 
+> $$
+> \mathbb{P}(|X_{n_{k+1}}-X_{n_k}|\ge\varepsilon,\text{i.o.})=0
+> $$
+> i.e. for any $\varepsilon>0$, there exists further subsequence $\{X_{n_{k}}\}$ converges and thus $X_n\to X_{\infty}$.
 
 > [!question] 2.3.8.
 > Let $A_n$ be a sequence of independent events with $\mathbb{P}(A_n) < 1$ for all $n$. Show that $\mathbb{P}(\cup A_n) = 1$ implies $\sum_n \mathbb{P}(A_n) = \infty$ and hence $\mathbb{P}(A_n \text{ i.o.}) = 1$.
 
-> [!done]
+> [!done] 
+> 
 
 > [!question] 2.3.9. (i)
 > (i) If $\mathbb{P}(A_n) \to 0$ and $\sum_{n=1}^\infty \mathbb{P}(A_n^c \cap A_{n+1}) < \infty$ then $\mathbb{P}(A_n \text{ i.o.}) = 0$.
