@@ -312,7 +312,7 @@ $$
 若 $Y\sim\operatorname{Geo}(p)$，$q=1-p$，则
 $$
 \mathbb E z^Y=\sum_{r=1}^\infty p q^{r-1}z^r
-=\frac{pz}{1-qz}.
+=\frac{pz}{1-qz}.\tag{概率母函数}
 $$
 在 $z=1$ 处求一阶、二阶导数，得到
 $$
@@ -379,13 +379,6 @@ $$
 $$
 
 **QED**
-
->[!note] 为什么是 $n\log n$，不是 $n$？
->已经集齐 $n-m$ 种时，找到下一种新券的平均等待时间为 $n/m$。最后一种平均就要等 $n$ 次；所有阶段的等待时间相加为
->$$
->n+\frac n2+\cdots+\frac nn=nH_n\sim n\log n.
->$$
->WLLN 还说明随机总时间相对于这个尺度的波动趋于零，而不仅是期望具有该量级。
 
 >[!example] 均匀随机置换的循环数
 >

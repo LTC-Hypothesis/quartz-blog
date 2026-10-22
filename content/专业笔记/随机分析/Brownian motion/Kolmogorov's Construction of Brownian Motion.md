@@ -122,7 +122,7 @@
 >   $$
 >   f(x_1,\cdots,x_n)=\frac{1}{\sqrt{2\pi s_1}}e^{-\frac{x_1^2}{2s_1}}\prod_{j=2}^{n}\frac{1}{\sqrt{2\pi(s_j-s_{j-1})}}e^{-\frac{(x_j-x_{j-1})^2}{2(s_j-s_{j-1})}}
 >   $$
-> - Suppose if $t=(t_1,\cdots,t_n)$, every $t_j$ are not necessarily ordered but are distinct. For $A\in\mathcal{B}(\mathbb{R}^n)$, let $Q_t(A)$ be the probability under this distribution that $(B_{t_1}, \cdots , B_{t_n})$ is in $A$. This defines a family of finite-dimensional distributions ${Q_t}_{t\in T}$ which is **consistent**. Then the random vector $(B_{t_1}, \cdots , B_{t_n})$ have the distributions of $F$, where $t_j$ must be ordered from smallest to largest. 
+> - Suppose if $t=(t_1,\cdots,t_n)$, every $t_j$ are not necessarily ordered but are distinct. For $A\in\mathcal{B}(\mathbb{R}^n)$, let $Q_t(A)$ be the probability under this distribution that $(B_{t_1}, \cdots , B_{t_n})$ is in $A$. This defines a family of finite-dimensional distributions $\{Q_t\}_{t\in T}$ which is **consistent**. Then the random vector $(B_{t_1}, \cdots , B_{t_n})$ have the distributions of $F$, where $t_j$ must be ordered from smallest to largest. 
 
 ^dd51a8
 
