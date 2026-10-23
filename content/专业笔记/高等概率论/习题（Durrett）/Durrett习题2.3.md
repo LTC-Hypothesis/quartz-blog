@@ -7,8 +7,8 @@
 > \mathbb{E}X\le \liminf_{k\to\infty}\mathbb{E}X_{n(m_k)}=\liminf_{n\to\infty}\mathbb{E}X_n
 > $$
 
-> [!question] 2.3.5.
-> **Dominated convergence.** Suppose $X_n \to X$ in probability and (a) $|X_n| \leq Y$ with $\mathbb{E}Y < \infty$ or (b) there is a continuous function $g$ with $g(x) > 0$ for large $x$ with $|x|/g(x) \to 0$ as $|x| \to \infty$ so that $\mathbb{E}g(X_n) \leq C < \infty$ for all $n$. Show that $\mathbb{E}X_n \to \mathbb{E}X$.
+> [!question] 2.3.5. **Dominated convergence.**
+> Suppose $X_n \to X$ in probability and (a) $|X_n| \leq Y$ with $\mathbb{E}Y < \infty$ or (b) there is a continuous function $g$ with $g(x) > 0$ for large $x$ with $|x|/g(x) \to 0$ as $|x| \to \infty$ so that $\mathbb{E}g(X_n) \leq C < \infty$ for all $n$. Show that $\mathbb{E}X_n \to \mathbb{E}X$.
 
 > [!done]
 > For case (a), we have obtained [[Fubini定理及其应用#^fd31fb|the result]]. We only consider the case (b). 
