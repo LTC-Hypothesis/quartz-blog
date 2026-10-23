@@ -244,7 +244,7 @@ $$
 $$
 其中$-q\bar f_yA$与$Aq\bar f_y$抵消，$-q\bar f_zB$与协变差项$q\bar f_zB$抵消。剩余部分为
 $$
-{d}\widetilde p_s=left[-\bar b_x\widetilde p_s+\bar f_xq_s-\bar\sigma_x\widetilde k_s\right]{d}s+\widetilde k_s{d}W_s.\tag{38}
+{d}\widetilde{p}_s=\left[-\bar{b}_x\widetilde{p}_s+\bar{f}_xq_s-\bar{\sigma}_x\widetilde{ k_s}\right]{d}s+\widetilde{k_s}{d}W_s.\tag{38}
 $$
 又有$\widetilde p_T=q_TV_x(T,\bar X_T)=-q_T\Phi_x(\bar X_T)$，因此候选过程满足伴随BSDE。多维时逐列计算扩散项，得到(24)。
 
