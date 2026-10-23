@@ -94,8 +94,8 @@
 
 > [!done]
 
-> [!question] 2.3.10.
-> **Kochen-Stone lemma.** Suppose $\sum \mathbb{P}(A_k) = \infty$. Use Exercises 1.6.6 and 2.3.1 to show that if
+> [!question] 2.3.10.**Kochen-Stone lemma.**
+> Suppose $\sum \mathbb{P}(A_k) = \infty$. Use Exercises 1.6.6 and 2.3.1 to show that if
 > $$
 > \limsup_{n \to \infty} \left( \sum_{k=1}^n \mathbb{P}(A_k) \right)^2 \Bigg/ \left( \sum_{1 \leq j,k \leq n} \mathbb{P}(A_j \cap A_k) \right) = \alpha > 0
 > $$
