@@ -11,7 +11,35 @@
 > Suppose $X_n \to X$ in probability and (a) $|X_n| \leq Y$ with $\mathbb{E}Y < \infty$ or (b) there is a continuous function $g$ with $g(x) > 0$ for large $x$ with $|x|/g(x) \to 0$ as $|x| \to \infty$ so that $\mathbb{E}g(X_n) \leq C < \infty$ for all $n$. Show that $\mathbb{E}X_n \to \mathbb{E}X$.
 
 > [!done]
-> For case (a), we have obtained [[Fubini定理及其应用#^fd31fb|the result]]. We only consider the case (b). 
+> For case (a), we have obtained [[Fubini定理及其应用#^fd31fb|the result]]. We only consider the case (b). Since $\frac{|x|}{g(x)}\to0\text{ as }|x|\to\infty$, for $\varepsilon>0$, there exists $R>0$, as $|x|>R$, we have 
+> $$
+> |x|\le \varepsilon\cdot g(x)
+> $$
+> We estimate 
+> $$
+> \mathbb{E}|X_n|\mathbb{1}_{\{|X_n|> R\}}\le\varepsilon\mathbb{E}g(X_n)\mathbb{1}_{\{|X_n|>R\}}\le C\varepsilon\tag{$*$}
+> $$
+> We define the truncation
+> $$
+> T_R(x)=\begin{cases}
+>-R,&x<-R\\
+>x,&-R\le x\le R\\
+>R,&x>R
+>\end{cases}
+> $$
+> Note that we have 
+> $$
+> |x-T_R(x)|\le |x|\mathbb{1}_{\{|x|>R\}}
+> $$
+> and 
+> $$
+> \begin{aligned}
+>|\mathbb{E}X_n-\mathbb{E}X|\le\mathbb{E}|X_n-T_R(X_n)|+|\mathbb{E}T_R(X_n)-T_R(X)|+\mathbb{E}|T_R(X)-X|
+>\end{aligned}
+> $$
+> For the first item, by estimation ($*$), we have $\mathbb{E}|X_n-T_R(X_n)|\le C\varepsilon$. 
+> 
+>For the se
 
 > [!question] 2.3.6.Metric for convergence in probability.(a) 
 >  Show that $d(X,Y) = \mathbb{E}(|X-Y|/(1+|X-Y|))$ defines a metric on the set of random variables, i.e., (i) $d(X,Y) = 0$ if and only if $X = Y$ a.s., (ii) $d(X,Y) = d(Y,X)$, (iii) $d(X,Z) \leq d(X,Y) + d(Y,Z)$. 
