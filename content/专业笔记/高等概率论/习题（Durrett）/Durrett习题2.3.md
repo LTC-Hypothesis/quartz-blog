@@ -39,7 +39,17 @@
 > $$
 > For the first item, by estimation ($*$), we have $\mathbb{E}|X_n-T_R(X_n)|\le C\varepsilon$. 
 > 
->For the se
+>For the second item, since $X_n\xrightarrow{\mathbb{P}}X$ and $T_R(x)$ is continuous and bounded, $T_R(X_n)\xrightarrow{\mathbb{P}}T_R(X)$ and $\mathbb{E}T_R(X_n)\to\mathbb{E}T_R(X)$ by [[Fubini定理及其应用#^42f750|the result]]. 
+>
+>For the final item, since $X_n\xrightarrow{\mathbb{P}}X$, we can take subsequence $X_{n_k}$ s.t. $X_{n_k}\xrightarrow{a.s.}X$ and $g(x)$ is continuous, by Fatou's lemma we obtain 
+>$$
+>\mathbb{E}g(X)\le \liminf_{k\to\infty}\mathbb{E}g(X_{n_k})\le C
+>$$
+>Then we can obtain the estimation of ($*$) similarly for the final item. Above all, we obtain
+>$$
+>|\mathbb{E}X_n-\mathbb{E}X|\le (2C+1)\varepsilon
+>$$
+>It implies $\mathbb{E}X_n\to\mathbb{E}X$. 
 
 > [!question] 2.3.6.Metric for convergence in probability.(a) 
 >  Show that $d(X,Y) = \mathbb{E}(|X-Y|/(1+|X-Y|))$ defines a metric on the set of random variables, i.e., (i) $d(X,Y) = 0$ if and only if $X = Y$ a.s., (ii) $d(X,Y) = d(Y,X)$, (iii) $d(X,Z) \leq d(X,Y) + d(Y,Z)$. 
@@ -121,6 +131,10 @@
 > (ii) Find an example of a sequence $A_n$ to which the result in (i) can be applied but the Borel-Cantelli lemma cannot.
 
 > [!done]
+> We take $\Omega=[0,1],\mathbb{P}=\text{Leb},A_n=[0,\frac{1}{n}]$. we have $\text{Leb}(A_n)=\frac{1}{n}\to0$ and $\text{Leb}(A_n^c\cap A_{n+1})=\text{Leb}(\emptyset)=0$, then $\mathbb{P}(A_n,\text{i.o.})=\text{Leb}(\{0\})=0$. But we check the condition of Borel-Cantelli lemma, 
+> $$
+> \sum_{n=1}^{\infty}\text{Leb}(A_n)=\sum_{n=1}^{\infty}\frac{1}{n}=\infty
+> $$
 
 > [!question] 2.3.10.**Kochen-Stone lemma.**
 > Suppose $\sum \mathbb{P}(A_k) = \infty$. Use Exercises 1.6.6 and 2.3.1 to show that if
@@ -130,6 +144,7 @@
 > then $\mathbb{P}(A_n \text{ i.o.}) \geq \alpha$. The case $\alpha = 1$ contains Theorem 2.3.7.
 
 > [!done]
+> 
 
 > [!question] 2.3.11. (i)
 > Let $X_1, X_2, \dots$ be independent with $\mathbb{P}(X_n = 1) = p_n$ and $\mathbb{P}(X_n = 0) = 1 - p_n$. Show that (i) $X_n \to 0$ in probability if and only if $p_n \to 0$.

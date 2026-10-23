@@ -112,6 +112,8 @@ $$
 >[!example] 
 >若$X_n\xrightarrow{\mathbb{P}}X$，$X_n\ge0,X\ge0,X_n\le1$，证明：$\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X$。
 
+^42f750
+
 **Proof**
 
 由于$X_n\xrightarrow{\mathbb{P}}X$，因此$\mathbb{P}(|X_n-X|\ge\varepsilon)\to0\text{ as }n\to\infty$且$X\le1$。我们证明更强的结论，$\mathbb{E}|X_n-X|\to0$，
