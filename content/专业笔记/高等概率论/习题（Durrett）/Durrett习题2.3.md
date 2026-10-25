@@ -147,7 +147,7 @@
 > $$
 > Finally, we have 
 > $$
-> \mathbb{P}(A_n,\text{i.o.})\le\mathbb{P}(B_n,\text{i.o.})+\mathbb{P}\left(\bigcup_{}^{}\right)
+> \mathbb{P}(A_n,\text{i.o.})\le\mathbb{P}(B_n,\text{i.o.})+\mathbb{P}\left(\bigcup_{m=1}^{\infty}C_m\right)=0\Longrightarrow\mathbb{P}(A_n,\text{i.o.})=0
 > $$
 
 > [!question] 2.3.9. (ii)
@@ -167,7 +167,18 @@
 > then $\mathbb{P}(A_n \text{ i.o.}) \geq \alpha$. The case $\alpha = 1$ contains Theorem 2.3.7.
 
 > [!done]
-> 
+> Fix $m\in\mathbb{N}$, for $n\ge m$, consider 
+> $$
+> S_{m,n}=\sum_{k=m}^{n}\mathbb{1}_{A_k},\{S_{m,n}>0\}=\bigcup_{k=m}^{n}A_k
+> $$
+> By [[Durrett习题1.6#^5033bb|E.x.1.6.6]], we have 
+> $$
+> \mathbb{P}\left(\bigcup_{k=m}^{n}A_k\right)\ge\frac{\left(\sum_{k=m}^{n}\mathbb{P}(A_k)\right)^2}{\sum_{m\le j,k\le n}\mathbb{P}(A_j\cap A_k)}=\frac{\left(\sum_{k=m}^{n}\mathbb{P}(A_k)\right)^2}{\left(\sum_{k=1}^{n}\mathbb{P}(A_k)\right)^2}\frac{\left(\sum_{k=1}^{n}\mathbb{P}(A_k)\right)^2}{\sum_{m\le j,k\le n}\mathbb{P}(A_j\cap A_k)}
+> $$
+> Let $T_n:=\sum_{k=1}^{n}\mathbb{P}(A_k)$, note that 
+> $$
+> \frac{\left(\sum_{k=m}^{n}\mathbb{P}(A_k)\right)^2}{\left(\sum_{k=1}^{n}\mathbb{P}(A_k)\right)^2}=\frac{(T_n-T_{m-1})^2}{T_n^2}
+> $$
 
 > [!question] 2.3.11. (i)
 > Let $X_1, X_2, \dots$ be independent with $\mathbb{P}(X_n = 1) = p_n$ and $\mathbb{P}(X_n = 0) = 1 - p_n$. Show that (i) $X_n \to 0$ in probability if and only if $p_n \to 0$.
