@@ -177,7 +177,15 @@
 > $$
 > Let $T_n:=\sum_{k=1}^{n}\mathbb{P}(A_k)$, note that 
 > $$
-> \frac{\left(\sum_{k=m}^{n}\mathbb{P}(A_k)\right)^2}{\left(\sum_{k=1}^{n}\mathbb{P}(A_k)\right)^2}=\frac{(T_n-T_{m-1})^2}{T_n^2}
+> \frac{\left(\sum_{k=m}^{n}\mathbb{P}(A_k)\right)^2}{\left(\sum_{k=1}^{n}\mathbb{P}(A_k)\right)^2}=\frac{(T_n-T_{m-1})^2}{T_n^2}\to1\text{ as }n\to\infty
+> $$
+> Then we obtain
+> $$
+> \alpha=\limsup_{n\to\infty}\frac{\left(\sum_{k=1}^{n}\mathbb{P}(A_k)\right)^2}{\sum_{1\le j,k\le n}\mathbb{P}(A_j\cap A_k)}\le\mathbb{P}\left(\bigcup_{k=m}^{\infty}A_k\right)
+> $$
+> Note that LHS is decreasing and low bounded, then 
+> $$
+> \alpha\le \lim_{n\to\infty}\mathbb{P}\left(\bigcup_{k=m}^{\infty}A_k\right)=\mathbb{P}\left(\bigcap_{m=1}^{\infty}\bigcup_{k=m}^{\infty}A_k\right)=\mathbb{P}(A_n,\text{i.o.})
 > $$
 
 > [!question] 2.3.11. (i)
@@ -193,6 +201,16 @@
 > (ii) $X_n \to 0$ a.s. if and only if $\sum p_n < \infty$.
 
 > [!done]
+> $\Longleftarrow:$ For $0<\varepsilon<1$, note that 
+> $$
+> \sum_{n=1}^{\infty}\mathbb{P}(|X_n|\ge\varepsilon)=\sum_{n=1}^{\infty}\mathbb{P}(X_n\ge\varepsilon)=\sum_{n=1}^{\infty}p_n<\infty
+> $$
+> By Borel-Cantelli's lemma, 
+> $$
+> \mathbb{P}\left(\{|X_n|\ge\varepsilon\},\text{i.o.}\right)=0\text{ i.e. }
+> $$
+> 
+>$\Longrightarrow:$ 
 
 > [!question] 2.3.12.
 > Let $X_1, X_2, \dots$ be a sequence of r.v.'s on $(\Omega, \mathcal{F}, \mathbb{P})$ where $\Omega$ is a countable set and $\mathcal{F}$ consists of all subsets of $\Omega$. Show that $X_n \to X$ in probability implies $X_n \to X$ a.s.
