@@ -125,7 +125,30 @@
 > (i) If $\mathbb{P}(A_n) \to 0$ and $\sum_{n=1}^\infty \mathbb{P}(A_n^c \cap A_{n+1}) < \infty$ then $\mathbb{P}(A_n \text{ i.o.}) = 0$.
 
 > [!done]
-> 
+> We denote $B_n:=A_n^c\cap A_{n+1}$. By Borel-Cantelli's lemma, we have $\mathbb{P}(B_n,\text{i.o.})=0$. For fixed $m\in\mathbb{N}$, let 
+> $$
+> C_m\triangleq\bigcap_{n=m}^{\infty}A_n
+> $$
+> Note that for $n\ge m$, $C_m\subseteq A_n$ and $\mathbb{P}(A_n)\to0$,
+> $$
+> 0\le\mathbb{P}(C_m)\le\mathbb{P}(A_n)\to0
+> $$
+> Therefore, $\mathbb{P}(C_m)=0$ and thus $\mathbb{P}(\bigcup_{m=1}^{\infty}C_m)=0$. Now we claim that 
+> $$
+> \limsup_{n\to\infty}A_n\subseteq\limsup_{n\to\infty}B_n\cup\bigcup_{m=1}^{\infty}C_m
+> $$
+> For $\omega\in\limsup_{n\to\infty}A_n$, suppose $\omega\notin\limsup_{n\to\infty}B_n$ and we W.T.S. $\omega\in\bigcup_{m=1}^{\infty}C_m$. Since $\omega\notin\limsup_{n\to\infty}B_n$, it implies there exists $N\in\mathbb{N}$, for $n\ge N$, 
+> $$
+> \omega\notin B_n=A_n^c\cap A_{n+1}\Longrightarrow\omega\in A_n\cup A_{n+1}^c
+> $$
+> If $\omega\notin A_n$, then $\omega\in A_{n+1}^c$ i.e. $\omega\notin A_{n+1}$. If we suppose for some $k\ge N$ s.t. $\omega\notin A_k$ and thus $\omega\notin A_{k+1},A_{k+2},\cdots$, in other words, $A_n$ occurs finite times. It is a contradiction with $\omega\in\limsup_{n\to\infty}A_n$. Therefore, 
+> $$
+> \omega\in\bigcap_{n=N}^{\infty}A_n\subseteq\bigcup_{m=1}^{\infty}C_m
+> $$
+> Finally, we have 
+> $$
+> \mathbb{P}(A_n,\text{i.o.})\le\mathbb{P}(B_n,\text{i.o.})+\mathbb{P}\left(\bigcup_{}^{}\right)
+> $$
 
 > [!question] 2.3.9. (ii)
 > (ii) Find an example of a sequence $A_n$ to which the result in (i) can be applied but the Borel-Cantelli lemma cannot.
