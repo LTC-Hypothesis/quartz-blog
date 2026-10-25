@@ -227,7 +227,18 @@
 > If $X_n$ is any sequence of random variables, there are constants $c_n \to \infty$ so that $X_n/c_n \to 0$ a.s.
 
 > [!done]
-> 
+> We choose $c_n$ like 
+> $$
+> a_n=\min\left\{m:\mathbb{P}(|X_n|>m)<\frac{1}{2^n}\right\},c_n=n\cdot a_n
+> $$
+> such $c_n\ge n$ and thus $c_n\to\infty$, s.t. 
+> $$
+> \mathbb{P}\left(\left|\frac{X_n}{c_n}\right|\ge\frac{1}{n}\right)\le\frac{1}{2^n}
+> $$
+> By Borel-Cantelli's lemma, for large $n$, 
+> $$
+> \left|\frac{X_n}{c_n}\right|\le\frac{1}{n},\text{a.s.-}\mathbb{P}\Longrightarrow\frac{X_n}{c_n}\to0
+> $$
 
 > [!question] 2.3.14.
 > Let $X_1, X_2, \dots$ be independent. Show that $\sup X_n < \infty$ a.s. if and only if $\sum_n \mathbb{P}(X_n > A) < \infty$ for some $A$.
