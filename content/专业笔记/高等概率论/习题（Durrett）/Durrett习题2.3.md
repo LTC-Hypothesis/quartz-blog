@@ -287,7 +287,7 @@
 >&\le n\cdot(1-F(\lambda_n))
 >\end{aligned}
 > $$
-> Now we only need to prove $\sum_{n=1}^{\infty}(1-F(\lambda_n))$ and $\sum_{n=1}^{\infty}n(1-F(\lambda_n))$ have the same property of convergence. Note that $1-F(\lambda_n)\downarrow0$
+> 
 
 > [!question] 2.3.17. (i)
 > Let $Y_1, Y_2, \dots$ be i.i.d. Find necessary and sufficient conditions for (i) $Y_n/n \to 0$ almost surely.
