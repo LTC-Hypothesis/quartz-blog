@@ -93,7 +93,7 @@ $$
 >$$
 >就有 $S_n/n\to\mu$ 于 $L^2$；因为均方误差等于“方差加偏差的平方”。
 
->[!thm] Bernstein 多项式逼近
+>[!example] Bernstein 多项式逼近
 >设 $f\in C([0,1])$，定义
 >$$
 >f_n(x)=\sum_{m=0}^n
