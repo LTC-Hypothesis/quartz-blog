@@ -207,20 +207,27 @@
 > $$
 > By Borel-Cantelli's lemma, 
 > $$
-> \mathbb{P}\left(\{|X_n|\ge\varepsilon\},\text{i.o.}\right)=0\text{ i.e. }
+> \mathbb{P}\left(\{|X_n|\ge\varepsilon\},\text{i.o.}\right)=0\text{ i.e. }\exists N\in\mathbb{N},n\ge N,|X_n|\le\varepsilon,\text{a.s.-}\mathbb{P}
 > $$
+> It implies $X_n\xrightarrow{a.s.}0$.
 > 
->$\Longrightarrow:$ 
+>$\Longrightarrow:$ Suppose $\sum_{n=1}^{\infty}p_n=\infty$, by Borel-Cantelli's lemma, 
+>$$
+>\mathbb{P}(X_n=1,\text{i.o.})=1\text{ i.e. }X_n=1\text{ for infinite n}
+>$$
+>It is a contradiction with $X_n\xrightarrow{a.s.}0$.
 
 > [!question] 2.3.12.
 > Let $X_1, X_2, \dots$ be a sequence of r.v.'s on $(\Omega, \mathcal{F}, \mathbb{P})$ where $\Omega$ is a countable set and $\mathcal{F}$ consists of all subsets of $\Omega$. Show that $X_n \to X$ in probability implies $X_n \to X$ a.s.
 
 > [!done]
+> 
 
 > [!question] 2.3.13.
 > If $X_n$ is any sequence of random variables, there are constants $c_n \to \infty$ so that $X_n/c_n \to 0$ a.s.
 
 > [!done]
+> 
 
 > [!question] 2.3.14.
 > Let $X_1, X_2, \dots$ be independent. Show that $\sup X_n < \infty$ a.s. if and only if $\sum_n \mathbb{P}(X_n > A) < \infty$ for some $A$.
