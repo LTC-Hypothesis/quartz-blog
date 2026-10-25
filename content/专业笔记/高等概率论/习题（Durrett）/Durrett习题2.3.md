@@ -225,10 +225,19 @@
 > $$
 > \{\omega\}\subseteq\left\{\omega:|X_n(\omega)-X(\omega)|\ge\varepsilon\right\}\Longrightarrow0<\mathbb{P}\{\omega\}\le\mathbb{P}(|X_n(\omega)-X(\omega)|\ge\varepsilon)
 > $$ 
-> Then we obtain
+> But $\mathbb{P}(|X_n-X|\ge\varepsilon)\to\text{ as }n\to\infty$, we obtain $\mathbb{P}\{\omega\}=0\Longrightarrow\Longleftarrow$ with $\mathbb{P}\{\omega\}>0$. It implies that $\omega\notin\left\{\omega:|X_n(\omega)-X(\omega)|\ge\varepsilon\right\}$ and thus $\omega\in\left\{\omega:|X_n(\omega)-X(\omega)|<\varepsilon\right\}$ which is 
 > $$
-> \sum_{n=1}^{\infty}\mathbb{P}(|X_n-X|\ge\varepsilon)=\infty
+> \forall\varepsilon>0,\exists N\in\mathbb{N},\forall n\ge N,|X_n(\omega)-X(\omega)|<\varepsilon
 > $$
+> i.e. $X_n(\omega)\to X(\omega)$. Finally, we should consider the point with zero probability. We denote it by 
+> $$
+> N=\left\{\omega:\mathbb{P}\{\omega\}=0\right\}
+> $$
+> Since $\Omega$ is countable, and $N$ is at most coutable, therefore, 
+> $$
+> \mathbb{P}(N)=\sum_{\omega\in N}\mathbb{P}\{\omega\}=0
+> $$
+> Hence,  $X_n\xrightarrow{a.s.}X$. 
 
 > [!question] 2.3.13.
 > If $X_n$ is any sequence of random variables, there are constants $c_n \to \infty$ so that $X_n/c_n \to 0$ a.s.
@@ -251,11 +260,15 @@
 > Let $X_1, X_2, \dots$ be independent. Show that $\sup X_n < \infty$ a.s. if and only if $\sum_n \mathbb{P}(X_n > A) < \infty$ for some $A$.
 
 > [!done]
+> $\Longleftarrow:$ By Borel-Cantelli's lemma, $\mathbb{P}(X_n>A,\text{i.o.})=0$ which implies for such $A>0$, there exists $N\in\mathbb{N},\forall n\ge N$, $X_n\le A$. Let $M_1=\max\{X_1,\cdots,X_{N}\}$, then $\sup_{n}X_n\le M_1\wedge A<\infty$. 
+> 
+>$\Longrightarrow:$ Suppose $\sum_{n=1}^{\infty}\mathbb{P}(X_n>A)=\infty$ for any $A$, then by Borel-Cantelli's lemma, $\mathbb{P}(X_n>A,\text{i.o.})=1$ which implies for any $N\in\mathbb{N}$, there exists $n_0>N$ s.t. $X_{n_0}>A$. It is a contradiction with $\sup_{n}X_n<\infty$. 
 
 > [!question] 2.3.15. (i)
 > Let $X_1, X_2, \dots$ be i.i.d. with $\mathbb{P}(X_i > x) = e^{-x}$, let $M_n = \max_{1 \leq m \leq n} X_m$. Show that (i) $\limsup_{n \to \infty} X_n / \log n = 1$ a.s.
 
 > [!done]
+> 
 
 > [!question] 2.3.15. (ii)
 > (ii) $M_n / \log n \to 1$ a.s.
