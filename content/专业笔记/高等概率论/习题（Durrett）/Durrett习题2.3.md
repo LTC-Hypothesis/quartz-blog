@@ -221,7 +221,14 @@
 > Let $X_1, X_2, \dots$ be a sequence of r.v.'s on $(\Omega, \mathcal{F}, \mathbb{P})$ where $\Omega$ is a countable set and $\mathcal{F}$ consists of all subsets of $\Omega$. Show that $X_n \to X$ in probability implies $X_n \to X$ a.s.
 
 > [!done]
-> 
+> We consider the point $\{\omega\}$ with positive probability. If it satisfies for any $\varepsilon>0$, $|X_n(\omega)-X(\omega)|\ge\varepsilon$, i.e. 
+> $$
+> \{\omega\}\subseteq\left\{\omega:|X_n(\omega)-X(\omega)|\ge\varepsilon\right\}\Longrightarrow0<\mathbb{P}\{\omega\}\le\mathbb{P}(|X_n(\omega)-X(\omega)|\ge\varepsilon)
+> $$ 
+> Then we obtain
+> $$
+> \sum_{n=1}^{\infty}\mathbb{P}(|X_n-X|\ge\varepsilon)=\infty
+> $$
 
 > [!question] 2.3.13.
 > If $X_n$ is any sequence of random variables, there are constants $c_n \to \infty$ so that $X_n/c_n \to 0$ a.s.
