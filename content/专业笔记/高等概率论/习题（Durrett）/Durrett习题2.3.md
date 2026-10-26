@@ -288,7 +288,7 @@
 > [!done]
 > It is well-known 
 > $$
-> \mathbb{P}(M_n>x)=1-(1-e^{-x})^n
+> \mathbb{P}(M_n\le x)=(1-e^{-x})^n
 > $$
 > 
 
