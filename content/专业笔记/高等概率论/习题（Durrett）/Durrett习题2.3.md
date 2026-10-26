@@ -268,7 +268,18 @@
 > Let $X_1, X_2, \dots$ be i.i.d. with $\mathbb{P}(X_i > x) = e^{-x}$, let $M_n = \max_{1 \leq m \leq n} X_m$. Show that (i) $\limsup_{n \to \infty} X_n / \log n = 1$ a.s.
 
 > [!done]
-> 
+>  We consider 
+> $$
+> \mathbb{P}\left\{\frac{X_n}{\log{n}}>1+\varepsilon\right\}=\frac{1}{n^{1+\varepsilon}}\Longrightarrow\sum_{n=1}^{\infty}\mathbb{P}\left\{\frac{X_n}{\log{n}}>1+\varepsilon\right\}<\infty
+> $$
+> By Borel-Cantelli's lemma, we obtain $\mathbb{P}\left(\frac{X_n}{\log{n}}>1+\varepsilon,\text{i.o.}\right)=0$ i.e. there exists $N$, for $n\ge N$, we have 
+> $$
+> \frac{X_n}{\log{n}}\le 1+\varepsilon\Longrightarrow\limsup_{n\to\infty}\frac{X_n}{\log{n}}\le 1+\varepsilon
+> $$
+> and let $\varepsilon\to0^+$, we obtain $\limsup_{n\to\infty}\frac{X_n}{\log{n}}\le 1$. For another direction, 
+> $$
+> \mathbb{P}\left\{\frac{X_n}{\log{n}}>1\right\}=\frac{1}{n}\Longrightarrow
+> $$
 
 > [!question] 2.3.15. (ii)
 > (ii) $M_n / \log n \to 1$ a.s.
@@ -287,7 +298,11 @@
 >$$
 >\max_{1\le m\le n}X_m(\omega)=\max\left\{\max_{1\le m\le k}X_m(\omega),\max_{k+1\le m\le n}X_m(\omega)\right\}
 >$$
->We have obtained $\max_{k+1\le m\le n}X_m(\omega)\le \lambda_n$. For fixed $k$, there exists $n_0$ s.t. $n\ge n_0$, it holds $\lambda_n>$
+>We have obtained $\max_{k+1\le m\le n}X_m(\omega)\le \lambda_n$. For fixed $k$, there exists $n_0$ s.t. $n\ge n_0$, it holds $\lambda_n>\max_{1\le m\le k}X_m(\omega)$. Therefore, $\max_{1\le m\le n}X_m(\omega)\le \lambda_n$ for large $n$ $\Longrightarrow\Longleftarrow$ with $\omega\in\{A_n,\text{i.o.}\}$. 
+>we have 
+>$$
+>\sum_{n=1}^{\infty}\mathbb{P}(B_n)<\infty\text{ and }\infty\Longrightarrow\mathbb{P}(B_n,\text{i.o.})=\mathbb{P}(A_n,\text{i.o.})=0\text{ or }1
+>$$
 
 > [!question] 2.3.17. (i)
 > Let $Y_1, Y_2, \dots$ be i.i.d. Find necessary and sufficient conditions for (i) $Y_n/n \to 0$ almost surely.
