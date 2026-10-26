@@ -283,7 +283,11 @@
 >$$
 >\{A_n,\text{i.o.}\}=\{B_n,\text{i.o.}\}
 >$$
->It is obvious that $\{B_n,\text{i.o.}\}\subseteq\{A_n,\text{i.o.}\}$. Suppose $\omega\notin\{B_n,\text{i.o.}\}$, then there exists $k\in\mathbb{N}$, for $n\ge k$, $X_m(\omega)\le \lambda_n$. 
+>It is obvious that $\{B_n,\text{i.o.}\}\subseteq\{A_n,\text{i.o.}\}$. Suppose $\omega\notin\{B_n,\text{i.o.}\}$, then there exists $k\in\mathbb{N}$, for $m\ge k$, $X_m(\omega)\le \lambda_n$. Consider 
+>$$
+>\max_{1\le m\le n}X_m(\omega)=\max\left\{\max_{1\le m\le k}X_m(\omega),\max_{k+1\le m\le n}X_m(\omega)\right\}
+>$$
+>We have obtained $\max_{k+1\le m\le n}X_m(\omega)\le \lambda_n$. For fixed $k$, there exists $n_0$ s.t. $n\ge n_0$, it holds $\lambda_n>$
 
 > [!question] 2.3.17. (i)
 > Let $Y_1, Y_2, \dots$ be i.i.d. Find necessary and sufficient conditions for (i) $Y_n/n \to 0$ almost surely.
