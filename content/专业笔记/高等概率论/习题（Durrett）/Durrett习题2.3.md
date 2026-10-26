@@ -278,13 +278,15 @@
 > $$
 > and let $\varepsilon\to0^+$, we obtain $\limsup_{n\to\infty}\frac{X_n}{\log{n}}\le 1$. For another direction, 
 > $$
-> \mathbb{P}\left\{\frac{X_n}{\log{n}}>1\right\}=\frac{1}{n}\Longrightarrow
+> \mathbb{P}\left\{\frac{X_n}{\log{n}}>1\right\}=\frac{1}{n}\Longrightarrow\sum_{n=1}^{\infty}\mathbb{P}\left\{\frac{X_n}{\log{n}}>1\right\}=\infty
 > $$
+> By Borel-Cantelli's lemma, $\mathbb{P}\left(\frac{X_n}{\log{n}}>1,\text{i.o.}\right)=1$ i.e. $\limsup_{n\to\infty}\frac{X_n}{\log{n}}\ge1$. Above all, $\limsup_{n\to\infty}\frac{X_n}{\log{n}}=1,a\text{ a.s.}$
 
 > [!question] 2.3.15. (ii)
 > (ii) $M_n / \log n \to 1$ a.s.
 
 > [!done]
+> 
 
 > [!question] 2.3.16.
 > Let $X_1, X_2, \dots$ be i.i.d. with distribution $F$, let $\lambda_n \uparrow \infty$, and let $A_n = \{\max_{1 \leq m \leq n} X_m > \lambda_n\}$. Show that $\mathbb{P}(A_n \text{ i.o.}) = 0$ or $1$ according as $\sum_{n \geq 1} (1 - F(\lambda_n)) < \infty$ or $= \infty$.
