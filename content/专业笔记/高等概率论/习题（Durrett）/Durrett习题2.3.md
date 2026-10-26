@@ -279,15 +279,11 @@
 > Let $X_1, X_2, \dots$ be i.i.d. with distribution $F$, let $\lambda_n \uparrow \infty$, and let $A_n = \{\max_{1 \leq m \leq n} X_m > \lambda_n\}$. Show that $\mathbb{P}(A_n \text{ i.o.}) = 0$ or $1$ according as $\sum_{n \geq 1} (1 - F(\lambda_n)) < \infty$ or $= \infty$.
 
 > [!done]
-> Note that 
-> $$
-> \begin{aligned}
->\mathbb{P}(A_n)&=1-\prod_{m=1}^{n}\mathbb{P}(X_m\le \lambda_n)=1-F^n(\lambda_n)\\
->&=(1-F(\lambda_n))(1+F(\lambda_n)+\cdots+F^{n-1}(\lambda_n))\\
->&\le n\cdot(1-F(\lambda_n))
->\end{aligned}
-> $$
-> 
+>Let $B_n=\{X_n>\lambda_n\}$, we claim that 
+>$$
+>\{A_n,\text{i.o.}\}=\{B_n,\text{i.o.}\}
+>$$
+>It is obvious that $\{B_n,\text{i.o.}\}\subseteq\{A_n,\text{i.o.}\}$. Suppose $\omega\notin\{B_n,\text{i.o.}\}$, then there exists $k\in\mathbb{N}$, for $n\ge k$, $X_m(\omega)\le \lambda_n$. 
 
 > [!question] 2.3.17. (i)
 > Let $Y_1, Y_2, \dots$ be i.i.d. Find necessary and sufficient conditions for (i) $Y_n/n \to 0$ almost surely.
