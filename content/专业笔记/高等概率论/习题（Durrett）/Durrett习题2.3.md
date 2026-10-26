@@ -290,7 +290,27 @@
 > $$
 > \mathbb{P}(M_n\le x)=(1-e^{-x})^n
 > $$
-> 
+> Since $\limsup_{n\to\infty}\frac{X_n}{\log{n}}=1$, there exists $N\in\mathbb{N}$, for $n\ge m\ge N$, $X_m\le (1+\varepsilon)\log{n}$. Then 
+> $$
+> M_n(\omega)\le\max\left\{\max_{1\le k\le N}X_k,(1+\varepsilon)\log{n}\right\}
+> $$
+> For sufficiently large $n$, $(1+\varepsilon)\log{n}\ge\max_{1\le k\le N}X_k$. Therefore, 
+> $$
+> \limsup_{n\to\infty}\frac{M_n}{\log{n}}\le1+\varepsilon
+> $$
+> For another direction, we compute
+> $$
+> \mathbb{P}\left(\frac{M_n}{\log{n}}\le 1-\varepsilon\right)\le\left(1-e^{-(1-\varepsilon)\log{n}}\right)^n\le e^{-n^\varepsilon}\Longrightarrow\sum_{n=1}^{\infty}\mathbb{P}\left(\frac{M_n}{\log{n}}\le 1-\varepsilon\right)<\infty
+> $$
+> Then by Borel-Cantelli's lemma, we obtain $\mathbb{P}(\frac{M_n}{\log{n}}\le 1-\varepsilon,\text{i.o.})=0$, then 
+> $$
+> \liminf_{n\to\infty}\frac{M_n}{\log{n}}\ge1-\varepsilon
+> $$
+> Above all, we obtain
+> $$
+> 1-\varepsilon\le\liminf_{n\to\infty}\frac{M_n}{\log{n}}\le\limsup_{n\to\infty}\frac{M_n}{\log{n}}\le1+\varepsilon
+> $$
+> and let $\varepsilon\to0^+$, we have $\lim_{n\to\infty}\frac{M_n}{\log{n}}=1$. 
 
 > [!question] 2.3.16.
 > Let $X_1, X_2, \dots$ be i.i.d. with distribution $F$, let $\lambda_n \uparrow \infty$, and let $A_n = \{\max_{1 \leq m \leq n} X_m > \lambda_n\}$. Show that $\mathbb{P}(A_n \text{ i.o.}) = 0$ or $1$ according as $\sum_{n \geq 1} (1 - F(\lambda_n)) < \infty$ or $= \infty$.
