@@ -286,6 +286,10 @@
 > (ii) $M_n / \log n \to 1$ a.s.
 
 > [!done]
+> It is well-known 
+> $$
+> \mathbb{P}(M_n>x)=1-(1-e^{-x})^n
+> $$
 > 
 
 > [!question] 2.3.16.
@@ -303,7 +307,7 @@
 >We have obtained $\max_{k+1\le m\le n}X_m(\omega)\le \lambda_n$. For fixed $k$, there exists $n_0$ s.t. $n\ge n_0$, it holds $\lambda_n>\max_{1\le m\le k}X_m(\omega)$. Therefore, $\max_{1\le m\le n}X_m(\omega)\le \lambda_n$ for large $n$ $\Longrightarrow\Longleftarrow$ with $\omega\in\{A_n,\text{i.o.}\}$. 
 >we have 
 >$$
->\sum_{n=1}^{\infty}\mathbb{P}(B_n)<\infty\text{ and }\infty\Longrightarrow\mathbb{P}(B_n,\text{i.o.})=\mathbb{P}(A_n,\text{i.o.})=0\text{ or }1
+>\sum_{n=1}^{\infty}\mathbb{P}(B_n)<\infty\text{ or }=\infty\Longrightarrow\mathbb{P}(B_n,\text{i.o.})=\mathbb{P}(A_n,\text{i.o.})=0\text{ or }=1
 >$$
 
 > [!question] 2.3.17. (i)
