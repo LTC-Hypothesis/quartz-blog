@@ -145,7 +145,13 @@ $$
 >[!thm] 0-1律
 >对于独立的 r.v. $\{A_n\}$ ，则成立
 >$$
->\sum_{n=1}^{\infty}\mathbb{P}(A_n)
+>\sum_{n=1}^{\infty}\mathbb{P}(A_n)\begin{cases}
+><\infty\\
+>=\infty
+>\end{cases}\Longrightarrow\mathbb{P}(A_n,\text{i.o.})\begin{cases}
+>=0\\
+>=1
+>\end{cases}
 >$$
 
 >[!thm] 一阶绝对矩无限时，样本平均不存在有限极限
