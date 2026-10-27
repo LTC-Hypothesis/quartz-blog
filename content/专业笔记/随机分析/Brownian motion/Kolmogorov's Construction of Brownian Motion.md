@@ -57,24 +57,25 @@
 > [!note] Construction of Brownian Motion
 > - **Goal**: construct a probability measure $\mathbb{P}$ on $(\Omega,\mathcal{F})=(\mathbb{R}^{[0,\infty)},\mathcal{B}(\mathbb{R}^{[0,\infty)}))$ s.t. the process $B_t$ satisfies $B_t(\omega)\triangleq \mu(t)$, which is called **coordinate mapping process** and is **almost** a standard, one-dimensional Brownian motion under $\mathbb{P}$ 
 > - For $0=s_0<s_1<\cdots<s_n$, the cumulative distribution function for $(B_{s_1},\cdots,B_{s_n})$ must be
->   $$
->   \begin{align}
+>   
+> $$
+> \begin{align}
 > &F_{(s_1,\cdots,s_n)}(x_1,\cdots,x_n)\\
 > =&\int_{-\infty}^{x_1}\cdots\int_{-\infty}^{x_n}p(s_1,0,y_1)p(s_2-s_1,y_1,y_2)\cdots p(s_n-s_{n-1},y_{n-1},y_n){d}y_1\cdots dy_n
 > \end{align}
->   $$
+> $$
 >   where $p$ is **Guassian Kernel**,
->   $$
->   p(t,x,y)\triangleq\frac{1}{\sqrt{2\pi t}}e^{-\frac{(x-y)^2}{2t}}
->   $$
+>  $$
+>  p(t,x,y)\triangleq\frac{1}{\sqrt{2\pi t}}e^{-\frac{(x-y)^2}{2t}}
+> $$
 > - We can **verify $F_{(s_1,\cdots,s_n)}(x_1,\cdots,x_n)$ is equivalent to $\{B_{s_j}-B_{s_{j-1}}\}_{j=1}^{n}$ is independent increments.** 
 >   $\Longrightarrow$: We obtain the joint density function of $(B_{s_1},\cdots,B_{s_n})$ is 
->   $$
->   f_{(s_1,\cdots,s_n)}(x_1,\cdots,x_n)=p(s_1,0,x_1)\prod_{j=2}^{n}p(s_j-s_{j-1},x_{j-1},x_j)
->   $$
+>  $$
+>  f_{(s_1,\cdots,s_n)}(x_1,\cdots,x_n)=p(s_1,0,x_1)\prod_{j=2}^{n}p(s_j-s_{j-1},x_{j-1},x_j)
+>  $$
 >   Let $(B_{s_1},\cdots,B_{s_n}-B_{s_n})=(Y_1,\cdots,Y_n)$. Note that 
->   $$
->   \begin{bmatrix}
+> $$
+> \begin{bmatrix}
 > Y_1\\
 > \vdots\\
 > Y_n
@@ -87,11 +88,11 @@
 > B_{s_1}\\
 > \vdots\\
 > B_{s_n}
-> \end{bmatrix}
->   $$
->   $$
->   \Longrightarrow
->   \begin{bmatrix}
+>\end{bmatrix}
+> $$
+>  $$
+> \Longrightarrow
+> \begin{bmatrix}
 > B_{s_1}\\
 > \vdots\\
 > B_{s_n}\end{bmatrix}=\begin{bmatrix}
@@ -100,28 +101,28 @@
 > \vdots &\vdots &\vdots & &\vdots\\
 > 1 &1 &1 &\cdots &1
 > \end{bmatrix}
->   \begin{bmatrix}
+> \begin{bmatrix}
 > Y_1\\
 > \vdots\\
 > Y_n
 > \end{bmatrix}
->   $$
+> $$
 >   Then $g(y_1,\cdots,y_n)=f_{(s_1,\cdots,s_n)}(y_1,y_1+y_2\cdots,\sum_{i=1}^{n}y_i)$, that is 
->   $$
->   \begin{align}
+> $$
+> \begin{align}
 > g(y_1,\cdots,y_n)&=p(s_1,0,y_1)\prod_{j=2}^{n}p(s_j-s_{j-1},\sum_{i=1}^{j-1}y_i,\sum_{i=1}^{j}y_{j})\\
 > &=\frac{1}{\sqrt{2\pi s_1}}e^{-\frac{y_1^2}{2s_1}}\prod_{j=2}^{n}\frac{1}{\sqrt{2\pi(s_j-s_{j-1})}}e^{-\frac{y_j^2}{2(s_j-s_{j-1})}}
 > \end{align}
->   $$
+> $$
 >   Hence, $\{B_{s_j}-B_{s_{j-1}}\}_{j=1}^{n}$ are independent and $\sim N(0,s_j-s_{j-1})$. 
 >   $\Longleftarrow$: Suppose $\{B_{s_j}-B_{s_{j-1}}\}_{j=1}^{n}$ are independent, the joint density is 
->   $$
->   g(y_1,\cdots,y_n)=\frac{1}{\sqrt{2\pi s_1}}e^{-\frac{y_1^2}{2s_1}}\prod_{j=2}^{n}\frac{1}{\sqrt{2\pi(s_j-s_{j-1})}}e^{-\frac{y_j^2}{2(s_j-s_{j-1})}}
->   $$
+> $$
+> g(y_1,\cdots,y_n)=\frac{1}{\sqrt{2\pi s_1}}e^{-\frac{y_1^2}{2s_1}}\prod_{j=2}^{n}\frac{1}{\sqrt{2\pi(s_j-s_{j-1})}}e^{-\frac{y_j^2}{2(s_j-s_{j-1})}}
+> $$
 >   By the linear transform, 
->   $$
->   f(x_1,\cdots,x_n)=\frac{1}{\sqrt{2\pi s_1}}e^{-\frac{x_1^2}{2s_1}}\prod_{j=2}^{n}\frac{1}{\sqrt{2\pi(s_j-s_{j-1})}}e^{-\frac{(x_j-x_{j-1})^2}{2(s_j-s_{j-1})}}
->   $$
+>  $$
+>  f(x_1,\cdots,x_n)=\frac{1}{\sqrt{2\pi s_1}}e^{-\frac{x_1^2}{2s_1}}\prod_{j=2}^{n}\frac{1}{\sqrt{2\pi(s_j-s_{j-1})}}e^{-\frac{(x_j-x_{j-1})^2}{2(s_j-s_{j-1})}}
+>  $$
 > - Suppose if $t=(t_1,\cdots,t_n)$, every $t_j$ are not necessarily ordered but are distinct. For $A\in\mathcal{B}(\mathbb{R}^n)$, let $Q_t(A)$ be the probability under this distribution that $(B_{t_1}, \cdots , B_{t_n})$ is in $A$. This defines a family of finite-dimensional distributions $\{Q_t\}_{t\in T}$ which is **consistent**. Then the random vector $(B_{t_1}, \cdots , B_{t_n})$ have the distributions of $F$, where $t_j$ must be ordered from smallest to largest. 
 
 ^dd51a8
