@@ -83,7 +83,6 @@
 >
 > <span style="color:#c62828;">【补理由，−1分】(iii) 还用到了 </span>$\color{#c62828}{h(s+t)\le h(s)+h(t)}$<span style="color:#c62828;">，单调性本身不足以推出所写结论；可明确引用 2.1.3(i)，然后对点态不等式取期望。严格说这是按 a.s. 相等取等价类后的度量。</span>
 
-
 >[!question] 2.3.6.Metric for convergence in probability.(b)
 >Show that $d(X_n,X) \to 0$ as $n \to \infty$ if and only if $X_n \to X$ in probability. 
 
