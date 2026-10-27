@@ -372,15 +372,18 @@
 > $$
 > and let $\varepsilon\to0^+$, $\frac{X_{n_k}}{n_{k}^\alpha}\xrightarrow{a.s.}a$. For such $n_k$ and any $n\in\mathbb{N}$, note that $n_{k}\le n\le n_{k+1}$, it holds 
 > $$
-> \frac{X_{n_k}}{n_{k}^\alpha}\frac{n^\alpha_k}{n_{k+1}^\alpha}=\frac{X_{n_k}}{n_{k+1}^\alpha}\le\frac{X_n}{n^\alpha}\le\frac{X_{n_{k+1}}}{n_k^\alpha}=
+> \frac{X_{n_k}}{n_{k}^\alpha}\frac{n^\alpha_k}{n_{k+1}^\alpha}=\frac{X_{n_k}}{n_{k+1}^\alpha}\le\frac{X_n}{n^\alpha}\le\frac{X_{n_{k+1}}}{n_k^\alpha}=\frac{X_{n_{k+1}}}{n_{k+1}^\alpha}\frac{n^\alpha_{k+1}}{n_{k}^\alpha}
 > $$
+> as $k\to\infty$, LHS and RHS both converge to $a$ and thus $\frac{X_n}{n^\alpha}\xrightarrow{a.s.}a$. 
 
 > [!question] 2.3.19.
 > Let $X_n$ be independent Poisson r.v.'s with $\mathbb{E}X_n = \lambda_n$, and let $S_n = X_1 + \dots + X_n$. Show that if $\sum \lambda_n = \infty$ then $S_n / \mathbb{E}S_n \to 1$ a.s.
 
 > [!done]
+> 
 
 > [!question] 2.3.20.
 > Show that if $X_n$ is the outcome of the $n$th play of the St. Petersburg game (Example 2.2.16) then $\limsup_{n \to \infty} X_n/(n \log_2 n) = \infty$ a.s. and hence the same result holds for $S_n$. This shows that the convergence $S_n/(n \log_2 n) \to 1$ in probability proved in Section 2.2 does not occur a.s.
 
 > [!done]
+> 
