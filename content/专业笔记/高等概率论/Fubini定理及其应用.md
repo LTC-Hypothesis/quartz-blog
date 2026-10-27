@@ -69,6 +69,8 @@ $$
 >\mathbb{E}|X|^p=\int_{0}^{\infty}pt^{p-1}\mathbb{P}(|X|>t){d}t
 >$$
 
+^f5a22d
+
 >[!example] 可积的充要条件
 >$\mathbb{E}|X|<\infty$当且仅当成立
 >$$

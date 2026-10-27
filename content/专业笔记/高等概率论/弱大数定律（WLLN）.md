@@ -497,3 +497,204 @@ $$
 
 **QED**
 
+>[!note] Truncation（截断）
+>对随机变量 $X$，在水平 $b>0$ 处截断，记
+>$$
+>\overline X=X\mathbb{1}_{\{|X|\le b\}}.
+>$$
+>截断后 $\overline X$ 有界，因而可以使用方差估计。证明时分别控制“大值部分被截去的概率”和“截断后变量的波动”，最后把结论转回原变量。
+>
+>这里是把超过阈值的部分置为 $0$，与把 $X$ 的值限制在 $[-b,b]$ 内的截尾函数不同。
+
+>[!thm] 三角阵的截断估计
+>对每个 $n\ge1$，设 $X_{n,k},1\le k\le n$ 相互独立。令 $b_n>0,b_n\to\infty$，并定义
+>$$
+>\overline X_{n,k}=X_{n,k}\mathbb{1}_{\{|X_{n,k}|\le b_n\}}.
+>$$
+>若满足
+>$$
+>\sum_{k=1}^n\mathbb{P}(|X_{n,k}|>b_n)\to0,\tag{T1}
+>$$
+>以及
+>$$
+>\frac1{b_n^2}\sum_{k=1}^n\mathbb{E}\overline X_{n,k}^{\,2}\to0,\tag{T2}
+>$$
+>则对
+>$$
+>S_n=\sum_{k=1}^nX_{n,k},\qquad a_n=\sum_{k=1}^n\mathbb{E}\overline X_{n,k},
+>$$
+>成立
+>$$
+>\frac{S_n-a_n}{b_n}\xrightarrow{\mathbb{P}}0.
+>$$
+
+^wlln-truncation
+
+**Proof**
+
+令 $\overline S_n=\sum_{k=1}^n\overline X_{n,k}$。任取 $\varepsilon>0$，按 $S_n$ 是否等于 $\overline S_n$ 分解事件，得到
+$$
+\begin{aligned}
+\mathbb{P}\left(\left|\frac{S_n-a_n}{b_n}\right|>\varepsilon\right)
+&\le\mathbb{P}(S_n\ne\overline S_n)
++\mathbb{P}\left(\left|\frac{\overline S_n-a_n}{b_n}\right|>\varepsilon\right).
+\end{aligned}
+$$
+
+对于第一项，若每个 $X_{n,k}=\overline X_{n,k}$，则两个和必相等，因此
+$$
+\begin{aligned}
+\mathbb{P}(S_n\ne\overline S_n)
+&\le\mathbb{P}\left(\bigcup_{k=1}^n\{X_{n,k}\ne\overline X_{n,k}\}\right)\\
+&\le\sum_{k=1}^n\mathbb{P}(|X_{n,k}|>b_n)\to0
+\end{aligned}
+$$
+by $(\mathrm{T1})$。这里是事件包含，不是事件相等，因为被截去的项可能相互抵消。
+
+对于第二项，由于 $\overline X_{n,k}$ 是 $X_{n,k}$ 的可测函数，截断后仍然行内独立。又 $\mathbb{E}\overline S_n=a_n$，故由 Chebyshev 不等式，
+$$
+\begin{aligned}
+\mathbb{P}\left(\left|\frac{\overline S_n-a_n}{b_n}\right|>\varepsilon\right)
+&\le\frac{\mathbb{E}|\overline S_n-a_n|^2}{\varepsilon^2b_n^2}\\
+&=\frac1{\varepsilon^2b_n^2}\sum_{k=1}^n\operatorname{Var}(\overline X_{n,k})\\
+&\le\frac1{\varepsilon^2b_n^2}\sum_{k=1}^n\mathbb{E}\overline X_{n,k}^{\,2}\to0
+\end{aligned}
+$$
+by $(\mathrm{T2})$。两项相加即得结论。
+
+**QED**
+
+>[!warning]
+>$a_n$ 是截断后的均值之和，一般不能直接替换成 $\mathbb{E}S_n$；原变量的期望甚至可能不存在。条件 $(\mathrm{T2})$ 中的分母为 $b_n^2$，与 Chebyshev 不等式中的归一化一致。
+
+>[!thm] 尾概率条件下的弱大数定律
+>设 $X_1,X_2,\cdots$ 为 i.i.d. 随机变量，且
+>$$
+>x\mathbb{P}(|X_1|>x)\to0\text{ as }x\to\infty.
+>$$
+>记
+>$$
+>S_n=\sum_{k=1}^nX_k,\qquad
+>\mu_n=\mathbb{E}\left[X_1\mathbb{1}_{\{|X_1|\le n\}}\right],
+>$$
+>则
+>$$
+>\frac{S_n}{n}-\mu_n\xrightarrow{\mathbb{P}}0.
+>$$
+
+^wlln-tail
+
+**Proof**
+
+应用[[#^wlln-truncation|三角阵截断定理]]，取
+$$
+X_{n,k}=X_k,\qquad b_n=n,\qquad
+\overline X_{n,k}=X_k\mathbb{1}_{\{|X_k|\le n\}}.
+$$
+
+**验证条件 $(\mathrm{T1})$。** 由同分布性及假设，
+$$
+\sum_{k=1}^n\mathbb{P}(|X_{n,k}|>n)
+=n\mathbb{P}(|X_1|>n)\to0.
+$$
+
+**验证条件 $(\mathrm{T2})$。** 由[[Fubini定理及其应用|尾积分公式]]，
+$$
+\mathbb{E}\overline X_{n,k}^{\,2}
+=\int_0^\infty2y\mathbb{P}(|\overline X_{n,k}|>y)\,dy
+\le\int_0^n2y\mathbb{P}(|X_k|>y)\,dy.
+$$
+积分上限可以取 $n$，因为 $|\overline X_{n,k}|\le n$。更具体地，当 $0\le y<n$ 时，
+$$
+\mathbb{P}(|\overline X_{n,k}|>y)
+=\mathbb{P}(y<|X_k|\le n)
+=\mathbb{P}(|X_k|>y)-\mathbb{P}(|X_k|>n)
+\le\mathbb{P}(|X_k|>y).
+$$
+因此
+$$
+\begin{aligned}
+\frac1{n^2}\sum_{k=1}^n\mathbb{E}\overline X_{n,k}^{\,2}
+&\le\frac1n\int_0^n2y\mathbb{P}(|X_1|>y)\,dy\\
+&=\frac1n\int_0^ng(y)\,dy,
+\end{aligned}
+$$
+其中
+$$
+g(y)=2y\mathbb{P}(|X_1|>y).
+$$
+由假设 $g(y)\to0$，并且 $0\le g(y)\le2y$，故 $g$ 在整个 $[0,\infty)$ 上有界：在有界区间用 $g(y)\le2y$，在足够大的 $y$ 处用 $g(y)\to0$。设 $g(y)\le M$。
+
+作换元 $y=nx$，令 $g_n(x)=g(nx)$，则
+$$
+\frac1n\int_0^ng(y)\,dy=\int_0^1g_n(x)\,dx.
+$$
+对每个 $x>0$，$nx\to\infty$，所以 $g_n(x)\to0$；$x=0$ 时 $g_n(0)=0$。又 $0\le g_n(x)\le M$，由[[积分与期望#^9122df|控制收敛定理（DCT）]]，
+$$
+\int_0^1g_n(x)\,dx\to0.
+$$
+这就验证了 $(\mathrm{T2})$。
+
+最后，截断中心为
+$$
+a_n=\sum_{k=1}^n\mathbb{E}\overline X_{n,k}=n\mu_n,
+$$
+所以
+$$
+\frac{S_n-a_n}{n}=\frac{S_n}{n}-\mu_n\xrightarrow{\mathbb{P}}0.
+$$
+
+**QED**
+
+>[!thm] 可积的 i.i.d. 随机变量满足 WLLN
+>若 $X_1,X_2,\cdots$ 为 i.i.d. 随机变量，$\mathbb{E}|X_1|<\infty$，记 $\mu=\mathbb{E}X_1,S_n=\sum_{k=1}^nX_k$，则
+>$$
+>\frac{S_n}{n}\xrightarrow{\mathbb{P}}\mu.
+>$$
+
+^wlln-integrable
+
+**Proof**
+
+首先，
+$$
+x\mathbb{P}(|X_1|>x)
+\le\mathbb{E}\left[|X_1|\mathbb{1}_{\{|X_1|>x\}}\right]\to0
+$$
+by DCT。因此可应用[[#^wlln-tail|尾概率条件下的 WLLN]]。另一方面，由 $|X_1\mathbb{1}_{\{|X_1|\le n\}}|\le|X_1|$，再用 DCT，
+$$
+\mu_n=\mathbb{E}\left[X_1\mathbb{1}_{\{|X_1|\le n\}}\right]\to\mathbb{E}X_1=\mu.
+$$
+于是
+$$
+\frac{S_n}{n}-\mu
+=\left(\frac{S_n}{n}-\mu_n\right)+(\mu_n-\mu)
+\xrightarrow{\mathbb{P}}0.
+$$
+
+**QED**
+
+>[!note] 截断阈值换成 $n^{1/p}$
+>若 $0<p<2$，且 $x^p\mathbb{P}(|X_1|>x)\to0$，可取 $b_n=n^{1/p}$，并记
+>$$
+>\mu_n^{(p)}=\mathbb{E}\left[X_1\mathbb{1}_{\{|X_1|\le n^{1/p}\}}\right].
+>$$
+>这时结论相应为
+>$$
+>\frac{S_n-n\mu_n^{(p)}}{n^{1/p}}\xrightarrow{\mathbb{P}}0.
+>$$
+>确实，$n\mathbb{P}(|X_1|>b_n)=b_n^p\mathbb{P}(|X_1|>b_n)\to0$。对任意 $\eta>0$，取 $M$ 使得 $y\ge M$ 时 $\mathbb{P}(|X_1|>y)\le\eta y^{-p}$，则
+>$$
+>\begin{aligned}
+>\frac n{b_n^2}\mathbb{E}\left[X_1^2\mathbb{1}_{\{|X_1|\le b_n\}}\right]
+>&\le b_n^{p-2}\int_0^M2y\mathbb{P}(|X_1|>y)\,dy
+>+2\eta b_n^{p-2}\int_M^{b_n}y^{1-p}\,dy\\
+>&\le b_n^{p-2}\int_0^M2y\mathbb{P}(|X_1|>y)\,dy
+>+\frac{2\eta}{2-p}.
+>\end{aligned}
+>$$
+>先令 $n\to\infty$，再令 $\eta\downarrow0$，得到第二个截断条件。
+>
+>因此不只是截断阈值要变，归一化及中心项也要一起改变。这一论证需要 $p<2$；例如 $X_i\sim N(0,1)$ 时虽然 $x^2\mathbb{P}(|X_1|>x)\to0$，但 $S_n/\sqrt n\sim N(0,1)$，不会依概率趋于 $0$。
+
+
