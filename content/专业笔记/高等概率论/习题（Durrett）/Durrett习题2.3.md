@@ -356,7 +356,23 @@
 > [!done]
 > Note that 
 > $$
-> \mathbb{P}\left(\left|\frac{X_n}{n^\alpha}-a\right|\ge\varepsilon\right)\le\frac{a^2}{\varepsilon^2}+\frac{a^2}{\varepsilon^2}
+> \mathbb{P}\left(\left|\frac{X_n}{n^\alpha}-a\right|\ge\varepsilon\right)\le\frac{\text{Var}(X_n)}{\varepsilon^2n^\alpha}-\frac{2a\mathbb{E}X_n}{\varepsilon^2n^\alpha}+\frac{a^2(\mathbb{E}X_n)^2}{\varepsilon^2n^{2\alpha}}+\frac{a^2}{\varepsilon^2}\to0\text{ as }n\to\infty
+> $$
+> and we obtain
+> $$
+> \mathbb{P}\left(\left|\frac{X_n}{n^\alpha}-a\right|\ge\varepsilon\right)\sim\frac{1}{n^{2\alpha-\beta}}\text{ as }n\to\infty
+> $$
+> We choose subsequence $n_k\triangleq\lfloor k^{1+\frac{1}{\delta}}\rfloor$ where $\delta=2\alpha-\beta$. Therefore, by above estimation, we have 
+> $$
+> \mathbb{P}\left(\left|\frac{X_{n_k}}{n_k^\alpha}-a\right|\ge\varepsilon\right)\le\frac{C}{n_k^{\delta}}=\frac{C}{k^{1+\delta}}
+> $$
+> By Borel-Cantelli's lemma, we have 
+> $$
+> \limsup_{k\to\infty}\left|\frac{X_{n_k}}{n_k^\alpha}-a\right|\le \varepsilon
+> $$
+> and let $\varepsilon\to0^+$, $\frac{X_{n_k}}{n_{k}^\alpha}\xrightarrow{a.s.}a$. For such $n_k$ and any $n\in\mathbb{N}$, note that $n_{k}\le n\le n_{k+1}$, it holds 
+> $$
+> \frac{X_{n_k}}{n_{k}^\alpha}\frac{n^\alpha_k}{n_{k+1}^\alpha}=\frac{X_{n_k}}{n_{k+1}^\alpha}\le\frac{X_n}{n^\alpha}\le\frac{X_{n_{k+1}}}{n_k^\alpha}=
 > $$
 
 > [!question] 2.3.19.
