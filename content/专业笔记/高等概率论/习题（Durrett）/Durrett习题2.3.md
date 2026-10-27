@@ -354,6 +354,10 @@
 > Let $0 \leq X_1 \leq X_2 \dots$ be random variables with $\mathbb{E}X_n \sim an^\alpha$ with $a, \alpha > 0$, and $\text{var}(X_n) \leq Bn^\beta$ with $\beta < 2\alpha$. Show that $X_n/n^\alpha \to a$ a.s.
 
 > [!done]
+> Note that 
+> $$
+> \mathbb{P}\left(\left|\frac{X_n}{n^\alpha}-a\right|\ge\varepsilon\right)\le\frac{a^2}{\varepsilon^2}+\frac{a^2}{\varepsilon^2}
+> $$
 
 > [!question] 2.3.19.
 > Let $X_n$ be independent Poisson r.v.'s with $\mathbb{E}X_n = \lambda_n$, and let $S_n = X_1 + \dots + X_n$. Show that if $\sum \lambda_n = \infty$ then $S_n / \mathbb{E}S_n \to 1$ a.s.
