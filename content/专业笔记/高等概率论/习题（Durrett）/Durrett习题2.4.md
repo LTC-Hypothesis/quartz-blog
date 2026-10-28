@@ -31,13 +31,28 @@
 > Let $X_0 = (1,0)$ and define $X_n \in \mathbf{R}^2$ inductively by declaring that $X_{n+1}$ is chosen at random from the ball of radius $|X_n|$ centered at the origin, i.e., $X_{n+1}/|X_n|$ is uniformly distributed on the ball of radius 1 and independent of $X_1, \dots, X_n$. Prove that $n^{-1} \log |X_n| \to c$ a.s. and compute $c$.
 
 > [!done]
-> 
+> Let $Y_n:=\frac{X_{n+1}}{|X_n|}\Longrightarrow X_{n+1}=|X_n|Y_n\Longrightarrow |X_{n+1}|=|X_n||Y_n|\Longrightarrow\log|Y_n|=\log|X_{n+1}|-\log|X_n|$. Since $|X_0|=1,\log|X_0|=0$, we have 
+> $$
+> \frac{1}{n}\log|X_n|=\frac{1}{n}\sum_{i=1}^{n}\log|Y_i|
+> $$
+> Note that $|Y_i|$ are independent. We compute the expectation, 
+> $$
+> \begin{aligned}
+>\mathbb{E}\log|Y_1|&=\int_{B(0,1)}\log{\sqrt{y_1^2+y_2^2}}{d}y_1{d}y_2\\
+>&=2\pi\int_{0}^{1}r\log{r}{d}r=-\frac{\pi}{2}
+>\end{aligned}
+> $$
+> By SLLN, 
+> $$
+> \frac{1}{n}\sum_{i=1}^{n}\log|Y_i|\xrightarrow{a.s.}-\frac{\pi}{2}
+> $$
 
 > [!question] 2.4.3. **Investment problem.**(i)
 >  We assume that at the beginning of each year you can buy bonds for $\$1$ that are worth $\$ a$ at the end of the year or stocks that are worth a random amount $V \geq 0$. If you always invest a fixed proportion $p$ of your wealth in bonds, then your wealth at the end of year $n+1$ is $W_{n+1} = (ap + (1 - p)V_n)W_n$. Suppose $V_1, V_2, \dots$ are i.i.d. with $\mathbb{E}V_n^2 < \infty$ and $\mathbb{E}(V_n^{-2}) < \infty$.
 >   (i) Show that $n^{-1} \log W_n \to c(p)$ a.s.
 
 > [!done]
+> 
 
 > [!question] 2.4.3. (ii)
 > (ii) Show that $c(p)$ is concave. [Use Theorem A.5.1 in the Appendix to justify differentiating under the expected value.]

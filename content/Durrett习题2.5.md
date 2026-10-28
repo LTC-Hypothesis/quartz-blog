@@ -1,0 +1,78 @@
+> [!question] 2.5.1.
+> Suppose $X_1, X_2, \dots$ are i.i.d. with $\mathbb{E}X_i = 0$, $\text{var}(X_i) = C < \infty$. Use Theorem 2.5.5 with $n = m^\alpha$ where $\alpha(2p - 1) > 1$ to conclude that if $S_n = X_1 + \dots + X_n$ and $p > 1/2$ then $S_n/n^p \to 0$ almost surely.
+
+> [!done]
+
+> [!question] 2.5.2.
+> The converse of Theorem 2.5.12 is much easier. Let $p > 0$. If $S_n/n^{1/p} \to 0$ a.s. then $\mathbb{E}|X_1|^p < \infty$.
+
+> [!done]
+
+> [!question] 2.5.3.
+> Let $X_1, X_2, \dots$ be i.i.d. standard normals. Show that for any $t$
+> $$
+> \sum_{n=1}^\infty X_n \cdot \frac{\sin(n\pi t)}{n} \quad \text{converges a.s.}
+> $$
+> We will see this series again at the end of Section 8.1 [REF].
+
+> [!done]
+
+> [!question] 2.5.4. (i)
+> Let $X_1, X_2, \dots$ be independent with $\mathbb{E}X_n = 0$, $\text{var}(X_n) = \sigma_n^2$. (i) Show that if $\sum_n \sigma_n^2/n^2 < \infty$ then $\sum_n X_n/n$ converges a.s. and hence $n^{-1} \sum_{m=1}^n X_m \to 0$ a.s.
+
+> [!done]
+
+> [!question] 2.5.4. (ii)
+> (ii) Suppose $\sum \sigma_n^2/n^2 = \infty$ and without loss of generality that $\sigma_n^2 \leq n^2$ for all $n$. Show that there are independent random variables $X_n$ with $\mathbb{E}X_n = 0$ and $\text{var}(X_n) \leq \sigma_n^2$ so that $X_n/n$ and hence $n^{-1} \sum_{m \leq n} X_m$ does not converge to 0 a.s.
+
+> [!done]
+
+> [!question] 2.5.5.
+> Let $X_n \geq 0$ be independent for $n \geq 1$. The following are equivalent:
+> (i) $\sum_{n=1}^\infty X_n < \infty$ a.s. (ii) $\sum_{n=1}^\infty [\mathbb{P}(X_n > 1) + \mathbb{E}(X_n 1_{(X_n \leq 1)})] < \infty$
+> (iii) $\sum_{n=1}^\infty \mathbb{E}(X_n/(1 + X_n)) < \infty$.
+
+> [!done]
+
+> [!question] 2.5.6.
+> Let $\psi(x) = x^2$ when $|x| \leq 1$ and $= |x|$ when $|x| \geq 1$. Show that if $X_1, X_2, \dots$ are independent with $\mathbb{E}X_n = 0$ and $\sum_{n=1}^\infty \mathbb{E}\psi(X_n) < \infty$ then $\sum_{n=1}^\infty X_n$ converges a.s.
+
+> [!done]
+
+> [!question] 2.5.7.
+> Let $X_n$ be independent. Suppose $\sum_{n=1}^\infty \mathbb{E}|X_n|^{p(n)} < \infty$ where $0 < p(n) \leq 2$ for all $n$ and $\mathbb{E}X_n = 0$ when $p(n) > 1$. Show that $\sum_{n=1}^\infty X_n$ converges a.s.
+
+> [!done]
+
+> [!question] 2.5.8.
+> Let $X_1, X_2, \dots$ be i.i.d. and not $\equiv 0$. Then the radius of convergence of the power series $\sum_{n \geq 1} X_n(\omega)z^n$ (i.e., $r(\omega) = \sup\{c : \sum |X_n(\omega)|c^n < \infty\}$) is 1 a.s. or 0 a.s., according as $\mathbb{E}\log^+|X_1| < \infty$ or $= \infty$ where $\log^+ x = \max(\log x, 0)$.
+
+> [!done]
+
+> [!question] 2.5.9.
+> Let $X_1, X_2, \dots$ be independent and let $S_{m,n} = X_{m+1} + \dots + X_n$. Then
+> $$
+> (\star) \qquad \mathbb{P} \left( \max_{m < j \leq n} |S_{m,j}| > 2a \right) \min_{m < k \leq n} \mathbb{P}(|S_{k,n}| \leq a) \leq \mathbb{P}(|S_{m,n}| > a)
+> $$
+
+> [!done]
+
+> [!question] 2.5.10.
+> Use $(\star)$ to prove a theorem of P. Lévy: Let $X_1, X_2, \dots$ be independent and let $S_n = X_1 + \dots + X_n$. If $\lim_{n \to \infty} S_n$ exists in probability then it also exists a.s.
+
+> [!done]
+
+> [!question] 2.5.11.
+> Let $X_1, X_2, \dots$ be i.i.d. and $S_n = X_1 + \dots + X_n$. Use $(\star)$ to conclude that if $S_n/n \to 0$ in probability then $(\max_{1 \leq m \leq n} S_m)/n \to 0$ in probability.
+
+> [!done]
+
+> [!question] 2.5.12. (i)
+> Let $X_1, X_2, \dots$ be i.i.d. and $S_n = X_1 + \dots + X_n$. Suppose $a_n \uparrow \infty$ and $a(2^n)/a(2^{n-1})$ is bounded. (i) Use $(\star)$ to show that if $S_n/a(n) \to 0$ in probability and $S_{2^n}/a(2^n) \to 0$ a.s. then $S_n/a(n) \to 0$ a.s.
+
+> [!done]
+
+> [!question] 2.5.12. (ii)
+> (ii) Suppose in addition that $\mathbb{E}X_1 = 0$ and $\mathbb{E}X_1^2 < \infty$. Use the previous exercise and Chebyshev's inequality to conclude that $S_n/n^{1/2}(\log_2 n)^{1/2+\epsilon} \to 0$ a.s.
+
+> [!done]
