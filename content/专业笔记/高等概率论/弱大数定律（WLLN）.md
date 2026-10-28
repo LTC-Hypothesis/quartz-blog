@@ -457,9 +457,9 @@ $$
 
 具体地，记 $p_{n,k}=1/(n-k+1)$。对 $x_1,\ldots,x_n\in\{0,1\}$，用条件概率逐步迭代，
 $$
-\mathbb P(X_{n,1}=x_1,\ldots,X_{n,n}=x_n)
-=\prod_{k=1}^n
-\mathbb P(X_{n,k}=x_k),
+\begin{aligned}
+\mathbb P(X_{n,1}=x_1,\ldots,X_{n,n}=x_n)=\prod_{k=1}^n\mathbb P(X_{n,k}=x_k),
+\end{aligned}
 $$
 其中边际为 Bernoulli$(p_{n,k})$。最后一步 $p_{n,n}=1$，即最后一个循环必然闭合。整行指标的独立性得证。
 
@@ -674,7 +674,7 @@ $$
 
 **QED**
 
->[!note] 截断阈值换成 $n^{1/p}$
+>[!warning] 截断阈值换成 $n^{1/p}$
 >若 $0<p<2$，且 $x^p\mathbb{P}(|X_1|>x)\to0$，可取 $b_n=n^{1/p}$，并记
 >$$
 >\mu_n^{(p)}=\mathbb{E}\left[X_1\mathbb{1}_{\{|X_1|\le n^{1/p}\}}\right].

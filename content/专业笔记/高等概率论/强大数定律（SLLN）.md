@@ -206,8 +206,8 @@ $$
 $$
 但是，在 $A$ 上有无穷多个 $n$ 满足 $|X_{n+1}|/(n+1)>1$。若 $\omega\in C\cap A$，则对其中充分大的 $n$，
 $$
-\left|\frac{S_n}{n}-\frac{S_{n+1}}{n+1}\right|
-\ge\frac{|X_{n+1}|}{n+1}-\left|\frac{S_n}{n(n+1)}\right|
+\left|\frac{S_n(\omega)}{n}-\frac{S_{n+1}(\omega)}{n+1}\right|
+\ge\frac{|X_{n+1}(\omega)|}{n+1}-\left|\frac{S_n(\omega)}{n(n+1)}\right|
 >\frac23,
 $$
 与相邻两项之差趋于 $0$ 矛盾。故 $C\cap A=\varnothing$，于是
@@ -218,7 +218,7 @@ $$
 **QED**
 
 >[!example] Rényi 破纪录问题的 SLLN
->设 $X_1,X_2,\cdots$ 为 i.i.d. 随机变量，共同分布函数连续，令
+>回忆[[独立性#^renyi-record|Rényi 破纪录问题]]设 $X_1,X_2,\cdots$ 为 i.i.d. 随机变量，共同分布函数连续，令
 >$$
 >A_k=\{X_k>\max_{1\le j<k}X_j\},\quad k\ge2,\qquad A_1=\Omega.
 >$$
@@ -232,8 +232,6 @@ $$
 >$$
 
 ^slln-record
-
-这里的 $R_n$ 对应[[独立性#^renyi-record|Rényi 破纪录问题]]中的纪录总数，以下证明强大数律。
 
 >[!thm] Kolmogorov 强大数定律
 >设 $X_1,X_2,\cdots$ 为 i.i.d. 随机变量，$\mathbb{E}|X_1|<\infty$，记
