@@ -5,7 +5,7 @@
 >\begin{cases}
 >v_{t+1}(s_t)=v_t(s_t)-\alpha_t(s_t)(v_t(s_t)-(r_{t+1}+\gamma v_t(s_{t+1})))\\
 >v_{t+1}(s)=v_t(s),s\ne s_t
->\end{cases}
+>\end{cases}\tag{TD}
 >$$
 >其中$v_t(s_t)$为$t$时刻对状态值$v_{\pi}(s_t)$的估计，$\alpha_t(s_t)$为$t$时刻$s_t$的学习率。
 
@@ -36,4 +36,14 @@ TD算法的设计本质上是，对Bellman方程使用随机近似算法求解�
 >=&v_t(s_t)-\alpha_t(s_t)(v_t(s_{t})-(r_{t+1}+\gamma v_t(s_{t+1})))
 >\end{aligned}
 >$$
->
+
+>[!warning] 性质分析
+>关于算法（TD），
+>$$
+>\textcolor{red}{v_{t+1}(s_{t})}=\textcolor{blue}{v_t(s_t)}-\alpha_t(s_t)(\textcolor{green}{v_t(s_{t})-(r_{t+1}+\gamma v_t(s_{t+1}))})
+>$$
+>$\textcolor{red}{更新状态值}$，$\textcolor{blue}{当前状态值}$，$\textcolor{green}{TD误差}$。我们记
+>$$
+>\bar{v}_t\triangleq r_{t+1}+\gamma v_t(s_{t+1})
+>$$
+>称为TD目标。
