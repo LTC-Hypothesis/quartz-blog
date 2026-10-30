@@ -36,7 +36,19 @@
 > The converse of Theorem 2.5.12 is much easier. Let $p > 0$. If $S_n/n^{1/p} \to 0$ a.s. then $\mathbb{E}|X_1|^p < \infty$.
 
 > [!done]
-> 
+> Let $Y=|X_1|^p$, note that 
+> $$
+> \mathbb{E}Y<\infty\Longleftrightarrow\sum_{n=1}^{\infty}\mathbb{P}(Y>n)<\infty
+> $$
+> Since $\frac{S_n}{\sqrt[p]{n}}\xrightarrow{a.s.}0$, we have 
+> $$
+> \frac{X_n}{\sqrt[p]{n}}=\frac{S_n}{\sqrt[p]{n}}-\frac{S_{n-1}}{\sqrt[p]{n-1}}\sqrt[p]{\frac{n-1}{n}}\xrightarrow{a.s}0
+> $$
+> Therefore, denote the event by 
+> $$
+> A_n:=\{|X_n|>\sqrt[p]{n}\}\Longrightarrow\mathbb{P}(A_n,\text{i.o.})=0
+> $$
+> If $\sum_{n=1}^{\infty}\mathbb{P}(Y>n)=\infty$, since $A_n$ are independent, by 2nd Borel-Cantelli''s lemma, $\mathbb{P}(Y>n,\text{i.o.})=1\Longrightarrow\Longleftarrow$ with $\mathbb{P}(A_n,\text{i.o.})=0$. Hence, we prove it. 
 
 > [!question] 2.5.3.
 > Let $X_1, X_2, \dots$ be i.i.d. standard normals. Show that for any $t$
@@ -46,6 +58,18 @@
 > We will see this series again at the end of Section 8.1 [REF].
 
 > [!done]
+> Let $Y_n:=X_n\cdot\frac{\sin{(n\pi t)}}{n}$, then 
+> $$
+> \mathbb{E}Y_n=0,\mathbb{E}Y_n^2=\frac{\sin^2(n\pi t)}{n^2}
+> $$
+> Since 
+> $$
+> \left|\frac{\sin^2(n\pi t)}{n^2}\right|\le\frac{1}{n^2}\Longrightarrow\sum_{n=1}^{\infty}\frac{\sin^2(n\pi t)}{n^2}<\infty
+> $$
+> Then 
+> $$
+> \sum_{n=1}^{\infty}Y_n<\infty\text{ with probability one}
+> $$
 
 > [!question] 2.5.4. (i)
 > Let $X_1, X_2, \dots$ be independent with $\mathbb{E}X_n = 0$, $\text{var}(X_n) = \sigma_n^2$. (i) Show that if $\sum_n \sigma_n^2/n^2 < \infty$ then $\sum_n X_n/n$ converges a.s. and hence $n^{-1} \sum_{m=1}^n X_m \to 0$ a.s.
