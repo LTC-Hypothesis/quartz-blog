@@ -30,7 +30,10 @@
 
 > [!question] 2.5.5.
 > Let $X_n \geq 0$ be independent for $n \geq 1$. The following are equivalent:
-> (i) $\sum_{n=1}^\infty X_n < \infty$ a.s. (ii) $\sum_{n=1}^\infty [\mathbb{P}(X_n > 1) + \mathbb{E}(X_n 1_{(X_n \leq 1)})] < \infty$
+> (i) $\sum_{n=1}^\infty X_n < \infty$ a.s.
+> 
+> (ii) $\sum_{n=1}^\infty [\mathbb{P}(X_n > 1) + \mathbb{E}(X_n 1_{(X_n \leq 1)})] < \infty$
+> 
 > (iii) $\sum_{n=1}^\infty \mathbb{E}(X_n/(1 + X_n)) < \infty$.
 
 > [!done]
