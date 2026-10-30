@@ -2,6 +2,7 @@
 > Suppose $X_1, X_2, \dots$ are i.i.d. with $\mathbb{E}X_i = 0$, $\text{var}(X_i) = C < \infty$. Use Theorem 2.5.5 with $n = m^\alpha$ where $\alpha(2p - 1) > 1$ to conclude that if $S_n = X_1 + \dots + X_n$ and $p > 1/2$ then $S_n/n^p \to 0$ almost surely.
 
 > [!done]
+> 
 
 > [!question] 2.5.2.
 > The converse of Theorem 2.5.12 is much easier. Let $p > 0$. If $S_n/n^{1/p} \to 0$ a.s. then $\mathbb{E}|X_1|^p < \infty$.
