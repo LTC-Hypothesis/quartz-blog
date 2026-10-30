@@ -2,12 +2,41 @@
 > Suppose $X_1, X_2, \dots$ are i.i.d. with $\mathbb{E}X_i = 0$, $\text{var}(X_i) = C < \infty$. Use Theorem 2.5.5 with $n = m^\alpha$ where $\alpha(2p - 1) > 1$ to conclude that if $S_n = X_1 + \dots + X_n$ and $p > 1/2$ then $S_n/n^p \to 0$ almost surely.
 
 > [!done]
-> 
+> Firstly, we consider 
+> $$
+> \mathbb{P}\left(\max_{1\le k\le n}|S_k|\ge\varepsilon n^p\right)\le\frac{\text{Var}(S_n)}{\varepsilon^2 n^{2p}}\le\frac{C}{\varepsilon^2n^{(2p-1)}}
+> $$
+> We take $n=m^\alpha$ and obtain by $\alpha(2p-1)>1$ 
+> $$
+> \sum_{m=1}^{\infty}\frac{C}{\varepsilon^2m^{\alpha(2p-1)}}<\infty
+> $$
+> After passing subsequence $n_m=\left \lceil  m^\alpha\right \rceil$, we have 
+> $$
+> \mathbb{P}\left(\max_{1\le k\le n_m}|S_k|\ge\varepsilon n_m^p\right)\le\frac{C}{\varepsilon^2n_m^{(2p-1)}}\le\frac{C}{\varepsilon^2m^{\alpha(2p-1)}}
+> $$
+> By Borel-Cantelli's lemma,
+> $$
+> \sum_{m=1}^{\infty}\mathbb{P}\left(\max_{1\le k\le n_m}|S_k|\ge\varepsilon n_m^p\right)<\infty\Longrightarrow\mathbb{P}\left(\max_{1\le k\le n_m}|S_k|\ge\varepsilon n_m^p,\text{i.o.}\right)=0
+> $$
+> Then for any $k\in\mathbb{N}$, there exists $N\in\mathbb{N}$ and $\Omega_k$ with probability $1$, for $m\ge N$ and $\omega\in\Omega_k$, it holds 
+> $$
+> \max_{1\le j\le n_m}|S_j(\omega)|<\frac{1}{k}\cdot n_m^p
+> $$
+> Let $\Omega_*=\bigcap_{k=1}^{\infty}\Omega_k$, for $\omega\in\Omega_*$, 
+> $$
+> \mathbb{P}\left(\bigcap_{k=1}^{\infty}\bigcup_{N=1}^{\infty}\bigcap_{m=N}^{\infty}\left\{\frac{\max_{1\le j\le n_m}|S_j|}{n_m^p}\le\frac{1}{k}\right\}\right)=1
+> $$
+> It implies $\frac{\max_{1\le j\le n_m}|S_j|}{n_m^p}\xrightarrow{a.s.}0$. Now for any $n\in\mathbb{N}$, there exists $n_{m}\le n<n_{m+1}$
+> $$
+> \frac{|S_n|}{n^p}\le\frac{\max_{1\le k\le n_{m+1}}|S_k|}{n_m^p}=\frac{\max_{1\le k\le n_{m+1}}|S_k|}{n_{m+1}^p}\frac{n_{m+1}^p}{n_{m}^p}\to0\text{ a.s. }m\to\infty
+> $$
+> Hence, $\frac{S_n}{n^p}\xrightarrow{a.s.}0$.
 
 > [!question] 2.5.2.
 > The converse of Theorem 2.5.12 is much easier. Let $p > 0$. If $S_n/n^{1/p} \to 0$ a.s. then $\mathbb{E}|X_1|^p < \infty$.
 
 > [!done]
+> 
 
 > [!question] 2.5.3.
 > Let $X_1, X_2, \dots$ be i.i.d. standard normals. Show that for any $t$
