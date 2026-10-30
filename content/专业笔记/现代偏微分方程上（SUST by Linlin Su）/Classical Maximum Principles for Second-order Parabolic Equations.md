@@ -1,10 +1,5 @@
 # Classical Maximum Principles for Second-order Parabolic Equations
 
-[[Intro 二阶PDE]] · [[弱极值原理]] · [[强极值原理]]
-
-> [!remark] Source
-> [[PDE Note Week6 LecWed.pdf|Week 6 Wed, pp. 1–11]]; [[PDE Note Week7 LecMon.pdf|Week 7 Mon, pp. 1–13]]; [[PDE Note Week7 LecWed.pdf|Week 7 Wed, pp. 1–11]]. Repeated blackboard statements are merged with their proofs. The opening page is [[PDE Note Week5 LectureSat.pdf#page=4|Week 5 Sat, p. 4]].
-
 ## 2.1 Parabolic boundary and operators
 
 Let $D\subset\mathbb{R}^{n+1}$ be a bounded domain, with coordinates $(x,t)$, such that $0<t<T$ in $D$ and $\overline D$ meets both $t=0$ and $t=T$. In this lecture, define
@@ -45,8 +40,6 @@ $$
 $C^{2,1}$ means two continuous spatial derivatives and one continuous time derivative, with one-sided time derivatives on the terminal face when it is included.
 
 ## 2.2 Weak Maximum Principle
-
-Source: [[PDE Note Week6 LecWed.pdf#page=5|Week 6, pp. 5–10]].
 
 For $u_t-\Delta u=f\le0$, the physical picture is a heat sink (“fridge”). The expected maximum is controlled by initial and lateral data.
 

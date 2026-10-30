@@ -2,7 +2,7 @@
 title: 首页
 ---
 
-# 我的知识库
+# Stochastic.Liu的知识库
 
 欢迎来到我的 Quartz 笔记网站。
 
