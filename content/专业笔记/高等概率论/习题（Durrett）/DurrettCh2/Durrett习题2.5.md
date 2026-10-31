@@ -75,6 +75,8 @@
 > Let $X_1, X_2, \dots$ be independent with $\mathbb{E}X_n = 0$, $\text{var}(X_n) = \sigma_n^2$. (i) Show that if $\sum_n \sigma_n^2/n^2 < \infty$ then $\sum_n X_n/n$ converges a.s. and hence $n^{-1} \sum_{m=1}^n X_m \to 0$ a.s.
 
 > [!done]
+> Since 
+> $$$$
 
 > [!question] 2.5.4. (ii)
 > (ii) Suppose $\sum \sigma_n^2/n^2 = \infty$ and without loss of generality that $\sigma_n^2 \leq n^2$ for all $n$. Show that there are independent random variables $X_n$ with $\mathbb{E}X_n = 0$ and $\text{var}(X_n) \leq \sigma_n^2$ so that $X_n/n$ and hence $n^{-1} \sum_{m \leq n} X_m$ does not converge to 0 a.s.
