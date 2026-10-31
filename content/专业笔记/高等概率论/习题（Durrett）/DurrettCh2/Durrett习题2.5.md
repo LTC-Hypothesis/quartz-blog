@@ -185,7 +185,29 @@
 
 > [!done]
 > Define the event 
-> $
+> $$
+> A_k\triangleq\left\{|S_{m,j}|\le 2a,\forall m<j<k,|S_{m,k}|>2a\right\}
+> $$
+> and note that 
+> $$
+> \left\{\max_{m<k\le n}|S_{k,j}|>2a\right\}=\bigcup_{k=m+1}^{n}A_k
+> $$
+> For fixed $k$, when $A_k$ happen and $|S_{k,n}|\le a$, we have 
+> $$
+> |S_{m,n}|=|S_{m,k}+S_{k,n}|\ge|S_{m,k}|-|S_{k,n}|>a
+> $$
+> It implies 
+> $$
+> \bigcup_{k=m+1}^{n}(A_{k}\cap\{|S_{k,n}|\le a\})\subseteq\{|S_{m,n}|>a\}
+> $$
+> Taking probability and by independence, we obtain
+> $$
+> \begin{aligned}
+>\mathbb{P}\{|S_{m,n}|>a\}\ge&\sum_{k=m+1}^{n}\mathbb{P}(A_k\cap\{|S_{k,n}|\le a\})\\
+>\ge&\sum_{k=m+1}^{n}\mathbb{P}(A_k)\mathbb{P}(\{|S_{k,n}|\le a\})\\
+>\ge&\mathbb{P}\left(\max_{m<k\le n}|S_{k,j}|>2a\right)\min_{m<k\le n}\mathbb{P}(\{|S_{k,n}|\le a\})
+>\end{aligned}
+> $$ 
 
 > [!question] 2.5.10.
 > Use $(\star)$ to prove a theorem of P. Lévy: Let $X_1, X_2, \dots$ be independent and let $S_n = X_1 + \dots + X_n$. If $\lim_{n \to \infty} S_n$ exists in probability then it also exists a.s.
