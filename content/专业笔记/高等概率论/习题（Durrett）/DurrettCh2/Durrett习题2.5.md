@@ -140,7 +140,7 @@
 > $$
 > Then 
 > $$
-> \sum_{n=1}^{\infty}X_n
+> \sum_{n=1}^{\infty}X_n\le\sum_{n=1}^{N-1}X_n+\sum_{n=N}^{\infty}2\frac{X_n}{1+X_n}<\infty
 > $$
 
 > [!question] 2.5.6.
