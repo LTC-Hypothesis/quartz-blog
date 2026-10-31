@@ -58,6 +58,7 @@
 > We will see this series again at the end of Section 8.1 [REF].
 
 > [!done]
+> ![[Pasted image 20261031081350.png]]
 > Let $Y_n:=X_n\cdot\frac{\sin{(n\pi t)}}{n}$, then 
 > $$
 > \mathbb{E}Y_n=0,\mathbb{E}Y_n^2=\frac{\sin^2(n\pi t)}{n^2}
@@ -76,12 +77,15 @@
 
 > [!done]
 > Since 
-> $$$$
+> $$
+> \sum_{n=1}^{\infty}\text{Var}\left(\frac{X_n}{n}\right)=\sum_{n=1}^{\infty}\frac{\sigma_{n}^2}{n^2}<\infty\Longrightarrow\sum_{n=1}^{\infty}\frac{X_n}{n}<\infty,\text{a.s.}
+> $$
 
 > [!question] 2.5.4. (ii)
 > (ii) Suppose $\sum \sigma_n^2/n^2 = \infty$ and without loss of generality that $\sigma_n^2 \leq n^2$ for all $n$. Show that there are independent random variables $X_n$ with $\mathbb{E}X_n = 0$ and $\text{var}(X_n) \leq \sigma_n^2$ so that $X_n/n$ and hence $n^{-1} \sum_{m \leq n} X_m$ does not converge to 0 a.s.
 
 > [!done]
+> 
 
 > [!question] 2.5.5.
 > Let $X_n \geq 0$ be independent for $n \geq 1$. The following are equivalent:
