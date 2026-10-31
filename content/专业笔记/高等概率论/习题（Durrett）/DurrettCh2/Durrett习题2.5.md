@@ -130,7 +130,18 @@
 > \mathbb{E}\frac{X_n}{1+X_n}\le\mathbb{P}(X_n>1)+\mathbb{E}X_n\mathbb{1}_{\{X_n\le 1\}}
 > $$
 >  
-> (iii) $\Longrightarrow$ (i): 
+> (iii) $\Longrightarrow$ (i): Since $\sum_{n=1}^{\infty}\mathbb{E}\frac{X_n}{1+X_n}<\infty$, 
+> $$
+> \frac{X_n}{1+X_n}\to0
+> $$
+> If $X_n>1\Longrightarrow \frac{X_n}{1+X_n}\ge\frac{1}{2}$, then there exists $N\in\mathbb{N}$ s.t. $n\ge N$, it holds $X_n\le 1$ and 
+> $$
+> X_n=(1+X_n)\frac{X_n}{1+X_n}\le2\frac{X_n}{1+X_n}
+> $$
+> Then 
+> $$
+> \sum_{n=1}^{\infty}X_n
+> $$
 
 > [!question] 2.5.6.
 > Let $\psi(x) = x^2$ when $|x| \leq 1$ and $= |x|$ when $|x| \geq 1$. Show that if $X_1, X_2, \dots$ are independent with $\mathbb{E}X_n = 0$ and $\sum_{n=1}^\infty \mathbb{E}\psi(X_n) < \infty$ then $\sum_{n=1}^\infty X_n$ converges a.s.
