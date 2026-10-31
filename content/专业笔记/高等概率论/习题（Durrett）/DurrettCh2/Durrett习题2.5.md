@@ -111,6 +111,8 @@
 > 
 > (iii) $\sum_{n=1}^\infty \mathbb{E}(X_n/(1 + X_n)) < \infty$.
 
+^2d3d94
+
 > [!done]
 > (i) $\Longrightarrow$ (ii): Note that 
 > $$
@@ -147,11 +149,28 @@
 > Let $\psi(x) = x^2$ when $|x| \leq 1$ and $= |x|$ when $|x| \geq 1$. Show that if $X_1, X_2, \dots$ are independent with $\mathbb{E}X_n = 0$ and $\sum_{n=1}^\infty \mathbb{E}\psi(X_n) < \infty$ then $\sum_{n=1}^\infty X_n$ converges a.s.
 
 > [!done]
+> Note that 
+> $$
+> \begin{aligned}
+>\mathbb{E}\psi(X_n)=&\mathbb{E}\psi(X_n)\mathbb{1}_{\{|X_n|\le 1\}}+\mathbb{E}\psi(X_n)\mathbb{1}_{\{|X_n|>1\}}\\
+>=&\mathbb{E}X_n^2\mathbb{1}_{\{|X_n|\le 1\}}+\mathbb{E}|X_n|\mathbb{1}_{\{|X_n|>1\}}\\
+>\ge&\mathbb{P}(|X_n|>1)+\mathbb{E}|X_n|^2\mathbb{1}_{\{|X_n|\le 1\}}
+>\end{aligned}
+> $$
+> Then we obtain 
+> $$
+> \sum_{n=1}^{\infty}\left[\mathbb{P}(|X_n|>1)+\mathbb{E}|X_n|^2\mathbb{1}_{\{|X_n|\le 1\}}\right]\le\sum_{n=1}^{\infty}\mathbb{E}\psi(X_n)<\infty
+> $$
+> By [[#^2d3d94|E.x.2.5.5]], 
+> $$
+> \sum_{n=1}^{\infty}|X_n|<\infty,\text{a.s.}\Longrightarrow\sum_{n=1}^{\infty}X_n<\infty,\text{a.s.}
+> $$
 
 > [!question] 2.5.7.
 > Let $X_n$ be independent. Suppose $\sum_{n=1}^\infty \mathbb{E}|X_n|^{p(n)} < \infty$ where $0 < p(n) \leq 2$ for all $n$ and $\mathbb{E}X_n = 0$ when $p(n) > 1$. Show that $\sum_{n=1}^\infty X_n$ converges a.s.
 
 > [!done]
+> 
 
 > [!question] 2.5.8.
 > Let $X_1, X_2, \dots$ be i.i.d. and not $\equiv 0$. Then the radius of convergence of the power series $\sum_{n \geq 1} X_n(\omega)z^n$ (i.e., $r(\omega) = \sup\{c : \sum |X_n(\omega)|c^n < \infty\}$) is 1 a.s. or 0 a.s., according as $\mathbb{E}\log^+|X_1| < \infty$ or $= \infty$ where $\log^+ x = \max(\log x, 0)$.
@@ -165,6 +184,8 @@
 > $$
 
 > [!done]
+> Define the event 
+> $
 
 > [!question] 2.5.10.
 > Use $(\star)$ to prove a theorem of P. Lévy: Let $X_1, X_2, \dots$ be independent and let $S_n = X_1 + \dots + X_n$. If $\lim_{n \to \infty} S_n$ exists in probability then it also exists a.s.
