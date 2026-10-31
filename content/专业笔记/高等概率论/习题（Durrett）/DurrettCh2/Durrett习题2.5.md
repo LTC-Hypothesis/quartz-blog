@@ -85,7 +85,23 @@
 > (ii) Suppose $\sum \sigma_n^2/n^2 = \infty$ and without loss of generality that $\sigma_n^2 \leq n^2$ for all $n$. Show that there are independent random variables $X_n$ with $\mathbb{E}X_n = 0$ and $\text{var}(X_n) \leq \sigma_n^2$ so that $X_n/n$ and hence $n^{-1} \sum_{m \leq n} X_m$ does not converge to 0 a.s.
 
 > [!done]
-> 
+> Define r.v. $X_n$ satisfies
+> $$
+> \mathbb{P}(X_n=\pm n)=\frac{p_n}{2},\mathbb{P}(X_n=0)=1-p_n
+> $$
+> We calculate the expectation and variance, 
+> $$
+> \mathbb{E}(X_n)=0,\text{Var}(X_n)=n^2p_n
+> $$
+> We hope $\text{Var}(X_n)\le \sigma_n^2$ and thus we take $p_n=\frac{\sigma_n^2}{2n^2}<1$. Now we denote the event by $A_n:=\{|X_n|=n\}$, by 2nd Borel-Cantelli's lemma, 
+> $$
+> \sum_{n=1}^{\infty}\mathbb{P}(A_n)=\sum_{n=1}^{\infty}\frac{\sigma_n^2}{2n^2}=\infty\Longrightarrow\mathbb{P}(A_n,\text{i.o.})=1
+> $$
+> It implies that $\{\frac{X_n}{n}=\pm1,\text{i.o.}\}$ with probability one and thus $\frac{X_n}{n}\nrightarrow0$. Suppose $S_n=\sum_{m=1}^{n}X_m$ and $\frac{S_n}{n}\to0$, then 
+> $$
+> \frac{X_n}{n}=\frac{S_n}{n}-\frac{n-1}{n}\frac{S_{n-1}}{n-1}\to0\Longrightarrow\Longleftarrow
+> $$
+> Hence, $\frac{S_n}{n}\nrightarrow0$.
 
 > [!question] 2.5.5.
 > Let $X_n \geq 0$ be independent for $n \geq 1$. The following are equivalent:
@@ -96,6 +112,18 @@
 > (iii) $\sum_{n=1}^\infty \mathbb{E}(X_n/(1 + X_n)) < \infty$.
 
 > [!done]
+> (i) $\Longrightarrow$ (ii): Note that 
+> $$
+>\mathbb{P}(X_n > 1) + \mathbb{E}(X_n 1_{(X_n \leq 1)})\le\mathbb{E}X_n 
+> $$
+> Now by [[Durrett习题1.6#^ce62b7|exchanging summation and expectation]], 
+> $$
+> \sum_{n=1}^{\infty}\mathbb{E}X_n=\mathbb{E}\sum_{n=1}^{\infty}X_n<\infty
+> $$
+> 
+> (ii) $\Longrightarrow$ (iii):
+>  
+> (iii) $\Longrightarrow$ (i): 
 
 > [!question] 2.5.6.
 > Let $\psi(x) = x^2$ when $|x| \leq 1$ and $= |x|$ when $|x| \geq 1$. Show that if $X_1, X_2, \dots$ are independent with $\mathbb{E}X_n = 0$ and $\sum_{n=1}^\infty \mathbb{E}\psi(X_n) < \infty$ then $\sum_{n=1}^\infty X_n$ converges a.s.

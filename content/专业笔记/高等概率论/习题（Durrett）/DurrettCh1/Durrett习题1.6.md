@@ -310,6 +310,8 @@
 > [!question] 1.6.15.
 > If $X_n \geq 0$ then $\mathbb{E}(\sum_{n=0}^\infty X_n) = \sum_{n=0}^\infty \mathbb{E}X_n$.
 
+^ce62b7
+
 > [!done]
 > It is obtained by MCT directly.
 
