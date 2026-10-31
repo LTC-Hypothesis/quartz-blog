@@ -121,7 +121,14 @@
 > \sum_{n=1}^{\infty}\mathbb{E}X_n=\mathbb{E}\sum_{n=1}^{\infty}X_n<\infty
 > $$
 > 
-> (ii) $\Longrightarrow$ (iii):
+> (ii) $\Longrightarrow$ (iii): Note that 
+> $$
+> \frac{X_n}{1+X_n}=\frac{X_n}{1+X_n}\mathbb{1}_{\{X_n>1\}}+\frac{X_n}{1+X_n}\mathbb{1}_{\{X_n<1\}}\le \mathbb{1}_{\{X_n>1\}}+X_n\mathbb{1}_{\{X_n\le 1\}}
+> $$
+> Therefore, 
+> $$
+> \mathbb{E}\frac{X_n}{1+X_n}\le\mathbb{P}(X_n>1)+\mathbb{E}X_n\mathbb{1}_{\{X_n\le 1\}}
+> $$
 >  
 > (iii) $\Longrightarrow$ (i): 
 
