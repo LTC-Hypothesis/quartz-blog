@@ -253,12 +253,37 @@
 > Let $X_1, X_2, \dots$ be i.i.d. and $S_n = X_1 + \dots + X_n$. Use $(\star)$ to conclude that if $S_n/n \to 0$ in probability then $(\max_{1 \leq m \leq n} S_m)/n \to 0$ in probability.
 
 > [!done]
-> 
+> By $(*)$, we have 
+> $$
+> \mathbb{P}\left(\max_{1\le k<n}|S_k|>2an\right)\min_{0\le k<n}\mathbb{P}\left(|S_k|\le an\right)\le\mathbb{P}\left(|S_n|> 2an\right)
+> $$
+> For sufficiently large $n$, there exists $N$, when $n\ge N$, 
+> $$
+> \mathbb{P}\left(\frac{|S_n|}{n}>2a\right)\le\frac{\varepsilon}{2}
+> $$
+> Now we W.T.S. 
+> $$
+> \max_{0\le k<n}\mathbb{P}\left(|S_k|>an\right)\to0\text{ a.s. }n\to\infty
+> $$
+> we devide two parts, 
+> $$
+> \begin{aligned}
+>\max_{0\le k<n}\mathbb{P}\left(|S_k|>an\right)\le&\max_{0\le k<N}\mathbb{P}\left(|S_k|>an\right)+\max_{N\le k<n}\mathbb{P}\left(|S_k|>an\right)\\
+>\le&\max_{0\le k<N}\mathbb{P}\left(|S_k|>an\right)+\max_{N\le k<n}\mathbb{P}\left(|S_k|>ak\right)\\
+>\le&\max_{0\le k<N}\mathbb{P}\left(|S_k|>an\right)+\frac{\varepsilon}{2}
+>\end{aligned}
+> $$
+> Then we obtain 
+> $$
+> \limsup_{n\to\infty}\max_{0\le k<n}\mathbb{P}\left(|S_k|>an\right)\le\frac{\varepsilon}{2}
+> $$
+> It implies $\min_{0\le k<n}\mathbb{P}\left(|S_k|\le an\right)\to1$. 
 
 > [!question] 2.5.12. (i)
 > Let $X_1, X_2, \dots$ be i.i.d. and $S_n = X_1 + \dots + X_n$. Suppose $a_n \uparrow \infty$ and $a(2^n)/a(2^{n-1})$ is bounded. (i) Use $(\star)$ to show that if $S_n/a(n) \to 0$ in probability and $S_{2^n}/a(2^n) \to 0$ a.s. then $S_n/a(n) \to 0$ a.s.
 
 > [!done]
+> 
 
 > [!question] 2.5.12. (ii)
 > (ii) Suppose in addition that $\mathbb{E}X_1 = 0$ and $\mathbb{E}X_1^2 < \infty$. Use the previous exercise and Chebyshev's inequality to conclude that $S_n/n^{1/2}(\log_2 n)^{1/2+\epsilon} \to 0$ a.s.
