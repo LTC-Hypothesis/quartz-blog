@@ -213,12 +213,47 @@
 > Use $(\star)$ to prove a theorem of P. Lévy: Let $X_1, X_2, \dots$ be independent and let $S_n = X_1 + \dots + X_n$. If $\lim_{n \to \infty} S_n$ exists in probability then it also exists a.s.
 
 > [!done]
-> Since $S_n\xrightarrow{\mathbb{P}}S$, then $S_n$ is a Cauchy
+> We should note that $S_{m,n}=S_{n}-S_m$. Since $S_n$ converges in probability, then $S_n$ is a Cauchy sequence in probability, i.e. 
+> $$
+> \forall\varepsilon,\exists N,\text{ for }n>m>N,\forall a>0,\mathbb{P}\left(|S_{n}-S_m|>a\right)\le\varepsilon
+> $$
+> Then for each $m<k<n$, it holds 
+> $$
+> \min_{m<k<n}\mathbb{P}(|S_m-S_k|\le a)\ge1-\varepsilon
+> $$
+> and by $(*)$, we have 
+> $$
+> \begin{aligned}
+>&\mathbb{P} \left( \max_{m < j \leq n} |S_{m,j}| > 2a \right) \min_{m < k \leq n} \mathbb{P}(|S_{k,n}| \leq a) \leq \mathbb{P}(|S_{m,n}| > a)\\
+>\Longrightarrow&\mathbb{P} \left( \max_{m < j \leq n} |S_{m,j}| > 2a \right)\le\frac{\varepsilon}{1-\varepsilon}
+>\end{aligned}
+> $$
+> For fixed $m$, let $n\to\infty$, we obtain 
+> $$
+> \mathbb{P}\left(\sup_{j>m}|S_{m,j}|>2a\right)\le\frac{\varepsilon}{1-\varepsilon}
+> $$
+> for any $k,j>m$, we have 
+> $$
+> \sup_{j,k>m}|S_k-S_j|\le\sup_{j>m}|S_{m,j}|+\sup_{k>m}|S_{m,k}|
+> $$
+> Then 
+> $$
+> \begin{aligned}
+>\mathbb{P}\left(\sup_{j,k>m}|S_j-S_k|\ge4a\right)&\le\mathbb{P}\left(\sup_{j>m}|S_{m,j}|>2a\right)+\mathbb{P}\left(\sup_{k>m}|S_{m,j}|>2a\right)\\
+>&\le\frac{2\varepsilon}{1-\varepsilon}
+>\end{aligned}\tag{$*1$}
+> $$
+> We can take $a=\frac{1}{4r}$ where $r\in\mathbb{N_+}$. It implies there exists $\omega\in\Omega_r$ s.t. $(*1)$ holds and let $\Omega_*:=\bigcap_{r=1}^{\infty}\Omega_r$. For $\omega\notin\Omega_*$ and its complement is with probability one, it holds 
+> $$
+> \text{ for any }j,k>m>N,|S_j-S_k|\le\frac{1}{r},\forall r\in\mathbb{N_+}
+> $$
+> It implies $S_n$ is a Cauchy sequence a.s. and thus $S_n$ converges a.s.
 
 > [!question] 2.5.11.
 > Let $X_1, X_2, \dots$ be i.i.d. and $S_n = X_1 + \dots + X_n$. Use $(\star)$ to conclude that if $S_n/n \to 0$ in probability then $(\max_{1 \leq m \leq n} S_m)/n \to 0$ in probability.
 
 > [!done]
+> 
 
 > [!question] 2.5.12. (i)
 > Let $X_1, X_2, \dots$ be i.i.d. and $S_n = X_1 + \dots + X_n$. Suppose $a_n \uparrow \infty$ and $a(2^n)/a(2^{n-1})$ is bounded. (i) Use $(\star)$ to show that if $S_n/a(n) \to 0$ in probability and $S_{2^n}/a(2^n) \to 0$ a.s. then $S_n/a(n) \to 0$ a.s.
