@@ -106,7 +106,7 @@ $$
 $$
 则通项收敛到0，第一个极限成立。对于第二个极限，根据可积性考虑，
 $$
-\lim_{u\to\infty}u\mathbb{P}(|X|>2u)\le \lim_{u\to\infty}\int_{u}^{2u}\mathbb{P}(|X|>t)=0
+\lim_{u\to\infty}u\mathbb{P}(|X|>2u)\le \lim_{u\to\infty}\int_{u}^{2u}\mathbb{P}(|X|>t){d}t=0
 $$
 
 **QED**
