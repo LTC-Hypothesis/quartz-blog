@@ -213,7 +213,7 @@
 > Use $(\star)$ to prove a theorem of P. Lévy: Let $X_1, X_2, \dots$ be independent and let $S_n = X_1 + \dots + X_n$. If $\lim_{n \to \infty} S_n$ exists in probability then it also exists a.s.
 
 > [!done]
-> 
+> Since $S_n\xrightarrow{\mathbb{P}}S$, then $S_n$ is a Cauchy
 
 > [!question] 2.5.11.
 > Let $X_1, X_2, \dots$ be i.i.d. and $S_n = X_1 + \dots + X_n$. Use $(\star)$ to conclude that if $S_n/n \to 0$ in probability then $(\max_{1 \leq m \leq n} S_m)/n \to 0$ in probability.
