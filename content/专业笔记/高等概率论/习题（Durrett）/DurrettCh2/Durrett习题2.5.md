@@ -195,6 +195,11 @@
 > Let $X_1, X_2, \dots$ be i.i.d. and not $\equiv 0$. Then the radius of convergence of the power series $\sum_{n \geq 1} X_n(\omega)z^n$ (i.e., $r(\omega) = \sup\{c : \sum |X_n(\omega)|c^n < \infty\}$) is 1 a.s. or 0 a.s., according as $\mathbb{E}\log^+|X_1| < \infty$ or $= \infty$ where $\log^+ x = \max(\log x, 0)$.
 
 > [!done]
+> By Cauchy-Adamard's formula, 
+> $$
+> \frac{1}{r(\omega)}=\limsup_{n\to\infty}\sqrt[n]{X_n(\omega)}
+> $$
+> and let $$
 
 > [!question] 2.5.9.
 > Let $X_1, X_2, \dots$ be independent and let $S_{m,n} = X_{m+1} + \dots + X_n$. Then
