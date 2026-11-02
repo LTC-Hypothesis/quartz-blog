@@ -320,5 +320,11 @@
 > - $\frac{a(2^n)}{a(2^{k-1})}=\sqrt{2}\left(\frac{n}{n-1}\right)^{\frac{1}{2}+\varepsilon}\le2^{1+\varepsilon}$
 > - By Chebyshev's inequality, 
 > $$
-> \mathbb{P}\left(\frac{|S_n|}{n^\frac{1}{2}\log^{\frac{1}{2}+\varepsilon}}{n}\right)
+> \mathbb{P}\left(\frac{|S_n|}{n^\frac{1}{2}\log_2^{\frac{1}{2}+\varepsilon}{n}}>\delta\right)\le\frac{C}{\log_2^{1+2\varepsilon}n}\to0\Longrightarrow\frac{S_n}{a(n)}\xrightarrow{\mathbb{P}}0
 > $$
+> and 
+> $$
+> \mathbb{P}\left(\frac{|S_{2^n}|}{2^{\frac{n}{2}}n^{\frac{1}{2}+\varepsilon}}>\delta\right)\le\frac{C}{n^{1+2\varepsilon}}\to0\Longrightarrow\frac{S_{2^n}}{a(2^n)}\xrightarrow{a.s.}0
+> $$
+> 
+>Hence, $\frac{S_{n}}{a(n)}\xrightarrow{a.s.}0$. 
