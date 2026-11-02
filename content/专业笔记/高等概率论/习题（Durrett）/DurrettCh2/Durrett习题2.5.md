@@ -170,7 +170,26 @@
 > Let $X_n$ be independent. Suppose $\sum_{n=1}^\infty \mathbb{E}|X_n|^{p(n)} < \infty$ where $0 < p(n) \leq 2$ for all $n$ and $\mathbb{E}X_n = 0$ when $p(n) > 1$. Show that $\sum_{n=1}^\infty X_n$ converges a.s.
 
 > [!done]
-> 
+> We want to use the three series theorem. Let $Y_n:=X_n\mathbb{1}_{\{|X_n|\le1\}}$. Note that for $0<p(n)<2$,
+> $$
+> \mathbb{P}(|X_n|>1)\le\mathbb{E}|X_n|\mathbb{1}_{|X_n|>1}\le\mathbb{E}|X_n|^{p(n)}
+> $$
+> $$
+> \text{Var}(Y_n)\le\mathbb{E}Y_n^2=\mathbb{E}|X_n|^2\mathbb{1}_{\{|X_n|\le1\}}\le\mathbb{E}|X_n|^{p(n)}
+> $$
+> Then we obtain 
+> $$
+> \sum_{n=1}^{\infty}\mathbb{P}(|X_n|>1)<\infty,\sum_{n=1}^{\infty}\text{Var}(Y_n)<\infty,\text{a.s.}
+> $$
+> We only need to show that $\sum_{n=1}^{\infty}\mathbb{E}Y_n<\infty$. Denote the index set $I=\{n:p(n)>1\}$, then we have 
+> $$
+> \begin{aligned}
+>\sum_{n=1}^{\infty}|\mathbb{E}Y_n|&=\sum_{n\in I}|\mathbb{E}Y_n|+\sum_{n\in I^c}|\mathbb{E}Y_n|\\
+>&\le\sum_{n\in I^c}\mathbb{E}|X_n|\mathbb{1}_{\{|X_n|\le 1\}}\\
+>&\le \sum_{n=1}^{\infty}\mathbb{E}|X_n|^{p(n)}<\infty
+>\end{aligned}
+> $$
+> Hence, the conditions of three series hold and thus $\sum_{n=1}^{\infty}X_n<\infty,a.s.$
 
 > [!question] 2.5.8.
 > Let $X_1, X_2, \dots$ be i.i.d. and not $\equiv 0$. Then the radius of convergence of the power series $\sum_{n \geq 1} X_n(\omega)z^n$ (i.e., $r(\omega) = \sup\{c : \sum |X_n(\omega)|c^n < \infty\}$) is 1 a.s. or 0 a.s., according as $\mathbb{E}\log^+|X_1| < \infty$ or $= \infty$ where $\log^+ x = \max(\log x, 0)$.
