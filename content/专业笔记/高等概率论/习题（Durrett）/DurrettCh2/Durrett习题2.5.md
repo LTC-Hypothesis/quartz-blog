@@ -283,7 +283,22 @@
 > Let $X_1, X_2, \dots$ be i.i.d. and $S_n = X_1 + \dots + X_n$. Suppose $a_n \uparrow \infty$ and $a(2^n)/a(2^{n-1})$ is bounded. (i) Use $(\star)$ to show that if $S_n/a(n) \to 0$ in probability and $S_{2^n}/a(2^n) \to 0$ a.s. then $S_n/a(n) \to 0$ a.s.
 
 > [!done]
-> 
+> Firstly, let $T_k=\sum_{j=2^{k-1}}^{2^k}S_j$ and we claim 
+> $$
+> \sum_{k=1}^{\infty}\mathbb{P}\left(|T_k|>\varepsilon\cdot a(2^k)\right)<\infty
+> $$
+> If the conclusion is not, then by independent and 2nd Borel-Cantelli's lemma, 
+> $$
+> \mathbb{P}\left(|T_k|>\varepsilon\cdot a(2^k),\text{i.o.}\right)=1\Longrightarrow\frac{T_k}{a(2^k)}\nrightarrow0
+> $$
+> But 
+> $$
+> \frac{T_k}{a(2^k)}=\frac{S_{2^k}}{a(2^k)}-\frac{a(2^{k-1})}{a(2^k)}\frac{S_{2^{k-1}}}{a(2^{k-1})}\xrightarrow{a.s.}0\Longrightarrow\Longleftarrow
+> $$
+> Then the claim holds and by 1st Borel-Cantelli's lemma, $\frac{T_k}{a(2^k)}\xrightarrow{a.s.}0$. Note that $T_k=S_{2^{k-1},2^k}$. By $(*)$, 
+> $$
+> \mathbb{P}\left(\max_{2^{k-1}<n\le 2^k}|S_n|>2\varepsilon\cdot a(2^k)\right)\min_{2^{k-1}\le n<2^k}\mathbb{P}\left(|S_n|\le\varepsilon a(2^k)\right)\le\mathbb{P}(|S_{2^{k-1},2^k}|>\varepsilon a(2^k))
+> $$
 
 > [!question] 2.5.12. (ii)
 > (ii) Suppose in addition that $\mathbb{E}X_1 = 0$ and $\mathbb{E}X_1^2 < \infty$. Use the previous exercise and Chebyshev's inequality to conclude that $S_n/n^{1/2}(\log_2 n)^{1/2+\epsilon} \to 0$ a.s.
