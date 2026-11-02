@@ -279,6 +279,8 @@
 > $$
 > It implies $\min_{0\le k<n}\mathbb{P}\left(|S_k|\le an\right)\to1$. 
 
+^6b788d
+
 > [!question] 2.5.12. (i)
 > Let $X_1, X_2, \dots$ be i.i.d. and $S_n = X_1 + \dots + X_n$. Suppose $a_n \uparrow \infty$ and $a(2^n)/a(2^{n-1})$ is bounded. (i) Use $(\star)$ to show that if $S_n/a(n) \to 0$ in probability and $S_{2^n}/a(2^n) \to 0$ a.s. then $S_n/a(n) \to 0$ a.s.
 
@@ -297,10 +299,26 @@
 > $$
 > Then the claim holds and by 1st Borel-Cantelli's lemma, $\frac{T_k}{a(2^k)}\xrightarrow{a.s.}0$. Note that $T_k=S_{2^{k-1},2^k}$. By $(*)$, 
 > $$
-> \mathbb{P}\left(\max_{2^{k-1}<n\le 2^k}|S_n|>2\varepsilon\cdot a(2^k)\right)\min_{2^{k-1}\le n<2^k}\mathbb{P}\left(|S_n|\le\varepsilon a(2^k)\right)\le\mathbb{P}(|S_{2^{k-1},2^k}|>\varepsilon a(2^k))
+> \begin{aligned}
+>&\mathbb{P}\left(\max_{2^{k-1}<n\le 2^k}|S_{n,2^k}|>2\varepsilon\cdot a(2^k)\right)\min_{2^{k-1}\le n<2^k}\mathbb{P}\left(|S_{2^{k-1},n}|\le\varepsilon a(2^k)\right)\\
+>\le&\mathbb{P}(|S_{n,2^k}|>\varepsilon a(2^k))
+>\end{aligned}
 > $$
+> We only need to show that 
+> $$
+> \max_{2^{k-1}\le n<2^k}\mathbb{P}(|S_{2^{k-1},2^k}|>\varepsilon a(2^k))\to0\text{ a.s. }k\to\infty
+> $$
+> We should note that the fact of the same distribution i.e. $S_{n,2^k}\overset{d}{=}S_{2^k-n}$, then with the same discussion of [[#^6b788d|final step]], we can obtain the result. 
+> 
 
 > [!question] 2.5.12. (ii)
 > (ii) Suppose in addition that $\mathbb{E}X_1 = 0$ and $\mathbb{E}X_1^2 < \infty$. Use the previous exercise and Chebyshev's inequality to conclude that $S_n/n^{1/2}(\log_2 n)^{1/2+\epsilon} \to 0$ a.s.
 
 > [!done]
+> Let $a(n)=n^\frac{1}{2}\log_2^{\frac{1}{2}+\varepsilon}{n}$. We should check 
+> - $a(n)\uparrow\infty$
+> - $\frac{a(2^n)}{a(2^{k-1})}=\sqrt{2}\left(\frac{n}{n-1}\right)^{\frac{1}{2}+\varepsilon}\le2^{1+\varepsilon}$
+> - By Chebyshev's inequality, 
+> $$
+> \mathbb{P}\left(\frac{|S_n|}{n^\frac{1}{2}\log^{\frac{1}{2}+\varepsilon}}{n}\right)
+> $$
