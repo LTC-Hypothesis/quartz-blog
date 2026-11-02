@@ -1,9 +1,5 @@
 # Chain Rule & Sobolev Space
 
-2025.12.1, 2025.12.3 · [[PDE Week13 Mon.pdf|Source, pp. 1–2]]; [[PDE Week13 Wed.pdf|continuation, pp. 1–3]]; [[剩下的几次课.pdf#page=1|density theorem, pp. 1–2]]
-
-[[Weak Derivatives]] · [[Approximation of bad functions by good functions]] → [[Sobolev Inequalities & Compact Embeddings]]
-
 ## Chain rule
 
 Recall the lecture's local notation $W^1(\Omega)=W^{1,1}_{\mathrm{loc}}(\Omega)$.
@@ -95,8 +91,6 @@ $$
 $$
 
 ## Completeness, separability and reflexivity
-
-Source: [[PDE Week13 Wed.pdf#page=1|pp. 1–2]].
 
 > [!thm] Banach property
 > $W^{k,p}(\Omega)$ is a Banach space for $1\le p\le\infty$.
