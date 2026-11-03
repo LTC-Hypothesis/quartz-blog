@@ -203,11 +203,21 @@
 > $$
 > \mathbb{P}(|X_n|\ge e^{\varepsilon n})=\mathbb{P}(Y_n\ge\varepsilon n)=\mathbb{P}(Y_1\ge\varepsilon n)
 > $$
-> If $\mathbb{E}Y_n<\infty$, by Chebyshev's inequality, 
+> If $\mathbb{E}Y_n<\infty$, then 
 > $$
-> \mathbb{P}(Y_1\ge\varepsilon n)\le\frac{\mathbb{E}Y_1}{\varepsilon n}
+> \sum_{n=1}^{\infty}\mathbb{P}(Y_1\ge\varepsilon n)<\infty
 > $$
-> 
+> By 1st Borel-Cantelli's lemma, $\mathbb{P}(Y_1\ge\varepsilon n,\text{i.o.})=0$, which implies $\limsup_{n\to\infty}|X_n|^\frac{1}{n}\le e^\varepsilon$ and let $\varepsilon\to0^+$, we obtain $r(\omega)\ge 1$. 
+> Since $X_n$ are not $\equiv0$, there exists constant $b$ s.t. 
+> $$
+> \sum_{n=1}^{\infty}\mathbb{P}(|X_n|>b)=\infty
+> $$
+> By 2nd Borel-Cantelli's lemma, $\mathbb{P}(|X_n|>b,\text{i.o.})=1$ and thus $\limsup_{n\to\infty}|X_n|^{\frac{1}{n}}\ge1$. Hence, $r(\omega)=1$. 
+> Now if $\mathbb{E}Y_1=\infty$, then 
+> $$
+> \sum_{n=1}^{\infty}\mathbb{P}(Y_1>\varepsilon n)=\infty\Longrightarrow\mathbb{P}(Y_1>\varepsilon n,\text{i.o.})=1
+> $$
+> Then $\limsup_{n\to\infty}|X_n|^\frac{1}{n}>e^\varepsilon$, we can choose sufficiently large $\varepsilon$ s.t. $r(\omega)=0$. 
 
 > [!question] 2.5.9.
 > Let $X_1, X_2, \dots$ be independent and let $S_{m,n} = X_{m+1} + \dots + X_n$. Then
