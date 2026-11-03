@@ -1043,9 +1043,4 @@ $$
 >$$
 >应用上面的判别准则即可。它具体说明了额外矩条件可以提供更细的波动估计；只有“高阶矩存在”而没有数值控制时，不能据此比较两个分布谁在均值附近更集中。
 
->[!note] 本次整理的参考位置
->正文以 2026.11.3 手稿为主，保留 $n_k,T_k,Y_k,T_n,k(n),W_n,\mathscr{F}'_n,\mathscr{T},H_k,Z_k$ 等局部记号。
->
->- Durrett, *Probability: Theory and Examples*, 5th ed.：Theorem 2.3.9、2.3.11（书上第 71–73 页）；§2.4 的 Etemadi 证明及 Lemma 2.4.2–2.4.4（第 76–78 页）；§2.5 的尾事件、0-1 律、最大不等式与随机级数方法（第 81–87 页）；Exercise 2.5.9–2.5.10。本地 PDF 页码比书页多 $8$。
->- 李立颖，*Lecture Note for MAT8030: Advanced Probability*：Proposition 4.11–4.12 与 §4.3.2（第 43–46 页）；Definition 4.1、Theorem 4.16、Proposition 4.17–4.18（第 47–49 页）；Proposition 4.22、Lemma 4.23 与 Proposition 4.24（第 51–52 页）。此讲义的 PDF 页码与书页一致。
->- Lévy 中位数形式及其证明按手稿补全；尾和形式与[[Durrett习题2.5|已有的习题 2.5.9]]对应。随机调和级数、加权判别准则与有限方差下的速度估计作为补充。
+
