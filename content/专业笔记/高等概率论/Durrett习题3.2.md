@@ -1,0 +1,146 @@
+> [!question] 3.2.1.
+> Give an example of random variables $X_n$ with densities $f_n$ so that $X_n \Rightarrow$ a uniform distribution on $(0,1)$ but $f_n(x)$ does not converge to 1 for any $x \in [0,1]$.
+
+> [!done]
+
+> [!question] 3.2.2.
+> **Convergence of maxima.** Let $X_1, X_2, \dots$ be independent with distribution $F$, and let $M_n = \max_{m \leq n} X_m$. Then $\mathbb{P}(M_n \leq x) = F(x)^n$. Prove the following limit laws for $M_n$:
+
+> [!done]
+
+> [!question] 3.2.2. (i)
+> (i) If $F(x) = 1 - x^{-\alpha}$ for $x \geq 1$ where $\alpha > 0$ then for $y > 0$
+> $$
+> \mathbb{P}(M_n/n^{1/\alpha} \leq y) \to \exp(-y^{-\alpha})
+> $$
+
+> [!done]
+
+> [!question] 3.2.2. (ii)
+> (ii) If $F(x) = 1 - |x|^\beta$ for $-1 \leq x \leq 0$ where $\beta > 0$ then for $y < 0$
+> $$
+> \mathbb{P}(n^{1/\beta} M_n \leq y) \to \exp(-|y|^\beta)
+> $$
+
+> [!done]
+
+> [!question] 3.2.2. (iii)
+> (iii) If $F(x) = 1 - e^{-x}$ for $x \geq 0$ then for all $y \in (-\infty, \infty)$
+> $$
+> \mathbb{P}(M_n - \log n \leq y) \to \exp(-e^{-y})
+> $$
+> The limits that appear above are called the **extreme value distributions**. The last one is called the **double exponential** or **Gumbel distribution**. Necessary and sufficient conditions for $(M_n - b_n)/a_n$ to converge to these limits were obtained by Gnedenko (1943). For a recent treatment, see Resnick (1987).
+
+> [!done]
+
+> [!question] 3.2.3. (i)
+> Let $X_1, X_2, \dots$ be i.i.d. and have the standard normal distribution. (i) From Theorem 1.2.6, we know
+> $$
+> \mathbb{P}(X_i > x) \sim \frac{1}{\sqrt{2\pi}x} e^{-x^2/2} \quad \text{as } x \to \infty
+> $$
+> Use this to conclude that for any real number $\theta$
+> $$
+> \mathbb{P}(X_i > x + (\theta/x))/\mathbb{P}(X_i > x) \to e^{-\theta}
+> $$
+
+> [!done]
+
+> [!question] 3.2.3. (ii)
+> (ii) Show that if we define $b_n$ by $\mathbb{P}(X_i > b_n) = 1/n$
+> $$
+> \mathbb{P}(b_n(M_n - b_n) \leq x) \to \exp(-e^{-x})
+> $$
+
+> [!done]
+
+> [!question] 3.2.3. (iii)
+> (iii) Show that $b_n \sim (2\log n)^{1/2}$ and conclude $M_n/(2\log n)^{1/2} \to 1$ in probability.
+
+> [!done]
+
+> [!question] 3.2.4.
+> **Fatou's lemma.** Let $g \geq 0$ be continuous. If $X_n \Rightarrow X_\infty$ then
+> $$
+> \liminf_{n \to \infty} \mathbb{E}g(X_n) \geq \mathbb{E}g(X_\infty)
+> $$
+
+> [!done]
+
+> [!question] 3.2.5.
+> **Integration to the limit.** Suppose $g, h$ are continuous with $g(x) > 0$, and $|h(x)|/g(x) \to 0$ as $|x| \to \infty$. If $F_n \Rightarrow F$ and $\int g(x) dF_n(x) \leq C < \infty$ then
+> $$
+> \int h(x) dF_n(x) \to \int h(x) dF(x)
+> $$
+
+> [!done]
+
+> [!question] 3.2.6.
+> **The Lévy Metric.** Show that
+> $$
+> \rho(F, G) = \inf\{\epsilon : F(x-\epsilon) - \epsilon \leq G(x) \leq F(x+\epsilon) + \epsilon \text{ for all } x\}
+> $$
+> defines a metric on the space of distributions and $\rho(F_n, F) \to 0$ if and only if $F_n \Rightarrow F$.
+
+> [!done]
+
+> [!question] 3.2.7.
+> **The Ky Fan metric** on random variables is defined by
+> $$
+> \alpha(X, Y) = \inf\{\epsilon \geq 0 : \mathbb{P}(|X - Y| > \epsilon) \leq \epsilon\}
+> $$
+> Show that if $\alpha(X, Y) = \alpha$ then the corresponding distributions have Lévy distance $\rho(F, G) \leq \alpha$.
+
+> [!done]
+
+> [!question] 3.2.8.
+> Let $\alpha(X, Y)$ be the metric in the previous exercise and let $\beta(X, Y) = \mathbb{E}(|X - Y|/(1 + |X - Y|))$ be the metric of Exercise 2.3.6. If $\alpha(X, Y) = a$ then
+> $$
+> a^2/(1 + a) \leq \beta(X, Y) \leq a + (1 - a)a/(1 + a)
+> $$
+
+> [!done]
+
+> [!question] 3.2.9.
+> If $F_n \Rightarrow F$ and $F$ is continuous then $\sup_x |F_n(x) - F(x)| \to 0$.
+
+> [!done]
+
+> [!question] 3.2.10.
+> If $F$ is any distribution function there is a sequence of distribution functions of the form $\sum_{m=1}^n a_{n,m} 1_{(x_{n,m} \leq x)}$ with $F_n \Rightarrow F$.
+
+> [!done]
+
+> [!question] 3.2.11.
+> Let $X_n, 1 \leq n \leq \infty$, be integer valued. Show that $X_n \Rightarrow X_\infty$ if and only if $\mathbb{P}(X_n = m) \to \mathbb{P}(X_\infty = m)$ for all $m$.
+
+> [!done]
+
+> [!question] 3.2.12.
+> Show that if $X_n \to X$ in probability then $X_n \Rightarrow X$ and that, conversely, if $X_n \Rightarrow c$, where $c$ is a constant then $X_n \to c$ in probability.
+
+> [!done]
+
+> [!question] 3.2.13.
+> **Converging together lemma.** If $X_n \Rightarrow X$ and $Y_n \Rightarrow c$, where $c$ is a constant then $X_n + Y_n \Rightarrow X + c$. A useful consequence of this result is that if $X_n \Rightarrow X$ and $Z_n - X_n \Rightarrow 0$ then $Z_n \Rightarrow X$.
+
+> [!done]
+
+> [!question] 3.2.14.
+> Suppose $X_n \Rightarrow X$, $Y_n \geq 0$, and $Y_n \Rightarrow c$, where $c > 0$ is a constant then $X_n Y_n \Rightarrow cX$. This result is true without the assumptions $Y_n \geq 0$ and $c > 0$. We have imposed these only to make the proof less tedious.
+
+> [!done]
+
+> [!question] 3.2.15.
+> Show that if $X_n = (X_n^1, \dots, X_n^n)$ is uniformly distributed over the surface of the sphere of radius $\sqrt{n}$ in $\mathbf{R}^n$ then $X_n^1 \Rightarrow$ a standard normal. Hint: Let $Y_1, Y_2, \dots$ be i.i.d. standard normals and let $X_n^i = Y_i(n/\sum_{m=1}^n Y_m^2)^{1/2}$.
+
+> [!done]
+
+> [!question] 3.2.16.
+> Suppose $Y_n \geq 0$, $\mathbb{E}Y_n^\alpha \to 1$ and $\mathbb{E}Y_n^\beta \to 1$ for some $0 < \alpha < \beta$. Show that $Y_n \to 1$ in probability.
+
+> [!done]
+
+> [!question] 3.2.17.
+> For each $K < \infty$ and $y < 1$ there is a $c_{y,K} > 0$ so that $\mathbb{E}X^2 = 1$ and $\mathbb{E}X^4 \leq K$ implies $\mathbb{P}(|X| > y) \geq c_{y,K}$.
+
+> [!done]
