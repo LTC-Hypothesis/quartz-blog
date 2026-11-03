@@ -199,7 +199,15 @@
 > $$
 > \frac{1}{r(\omega)}=\limsup_{n\to\infty}\sqrt[n]{X_n(\omega)}
 > $$
-> and let $$
+> and let $Y_n:=\log^+{|X_n|}$. We W.T.S. $\frac{1}{r(\omega)}\le1$. For $\varepsilon>0$, consider 
+> $$
+> \mathbb{P}(|X_n|\ge e^{\varepsilon n})=\mathbb{P}(Y_n\ge\varepsilon n)=\mathbb{P}(Y_1\ge\varepsilon n)
+> $$
+> If $\mathbb{E}Y_n<\infty$, by Chebyshev's inequality, 
+> $$
+> \mathbb{P}(Y_1\ge\varepsilon n)\le\frac{\mathbb{E}Y_1}{\varepsilon n}
+> $$
+> 
 
 > [!question] 2.5.9.
 > Let $X_1, X_2, \dots$ be independent and let $S_{m,n} = X_{m+1} + \dots + X_n$. Then
