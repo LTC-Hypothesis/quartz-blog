@@ -257,7 +257,7 @@ $$
 \le\sum_{i=1}^{n}\mathbb{E}X_i^2
 =\sum_{i=1}^{n}\mathbb{P}(A_i)=\mathbb{E}S_n.
 $$
-于是对 $\delta>0$，by Chebyshev's inequality，
+于是对 $\delta>0$，由Chebyshev不等式，
 $$
 \mathbb{P}\bigl(|S_n-\mathbb{E}S_n|>\delta\mathbb{E}S_n\bigr)
 \le\frac{\operatorname{Var}(S_n)}
