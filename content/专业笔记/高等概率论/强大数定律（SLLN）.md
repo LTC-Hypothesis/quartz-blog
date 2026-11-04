@@ -823,7 +823,7 @@ $$
 
 **Proof**
 
-令 $S_n=\sum_{j=1}^{n}X_j$。W.T.S. $S_n$ 是 a.s. Cauchy 列。沿用手稿记号，
+令 $S_n=\sum_{j=1}^{n}X_j$。W.T.S. $S_n$ 是 a.s. Cauchy 列。考虑证明 $S_n$ 几乎必然是一个Cauchy列，
 $$
 W_k=\sup_{m,n\ge k}|S_m-S_n|,
 \qquad
@@ -860,7 +860,7 @@ $$
 \mathbb{P}\left(\bigcap_{k=1}^{\infty}\{W_k>1/r\}\right)
 =\lim_{k\to\infty}\mathbb{P}(W_k>1/r)=0.
 $$
-对 $r$ 取可数并的补集，得到 a.s. 对每个 $r$ 存在 $k_r$，使 $k\ge k_r$ 时 $W_k\le1/r$。因此 $W_k\downarrow0$ a.s.，即 $S_n$ 为 Cauchy 列。由[[度量空间|$\mathbb{R}$ 的完备性]]，$S_n$ 收敛到有限值。
+对 $r$ 取可数并的补集，得到 a.s. 对每个 $r$ 存在 $k_r$，使 $k\ge k_r$ 时 $W_k\le1/r$。因此 $W_k\downarrow0$ a.s.，即 $S_n$ 为 Cauchy 列。
 
 **QED**
 
@@ -876,7 +876,7 @@ $$
 >\sum_{n=1}^{\infty}\left|\frac{\xi_n}{n}\right|
 >=\sum_{n=1}^{\infty}\frac1n=\infty.
 >$$
->上述定理给出的是级数收敛，不是绝对收敛。对有正负项的级数，宜写“收敛到有限值”，不能只写 $\sum_nX_n<+\infty$，因为这个不等式没有排除趋于 $-\infty$。
+>上述定理给出的是级数收敛，不是绝对收敛。
 
 >[!lemma] Kronecker 引理
 >设 $a_n>0,a_n\uparrow\infty$，$x_n$ 为实数。若级数
@@ -897,7 +897,7 @@ $$
 $$
 b_n=\sum_{k=1}^{n}\frac{x_k}{a_k}\to b.
 $$
-则 $x_k=a_k(b_k-b_{k-1})$。By Abel's transformation（分部求和），
+则 $x_k=a_k(b_k-b_{k-1})$。由Abel变换（分部求和），
 $$
 \begin{aligned}
 \frac1{a_n}\sum_{k=1}^{n}x_k
