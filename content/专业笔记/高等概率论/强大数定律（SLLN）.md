@@ -614,7 +614,11 @@ $$
 $$
 \bigcup_{r=1}^{\infty}\sigma\left(X_{k+1},\cdots,X_{k+r}\right).
 $$
-后者是递增的 $\sigma$-代数之并，因而是 $\pi$-系，且生成 $\mathscr{F}'_{k+1}$。由[[测度论基础#^2245d8|$\pi$-$\lambda$ 定理]]，$\mathscr{D}_B=\mathscr{F}'_{k+1}$，故
+后者是递增的 $\sigma$-代数之并，因而是 $\pi$-系，且生成 $\mathscr{F}'_{k+1}$, i.e. 
+$$
+\mathscr{F}'_{k+1}=\sigma\left(\bigcup_{r=1}^{\infty}\sigma(X_{k+1},\cdots,X_{k+r})\right)
+$$
+由[[测度论基础#^2245d8|$\pi$-$\lambda$ 定理]]，$\mathscr{D}_B=\mathscr{F}'_{k+1}$，故
 $$
 \mathscr{F}_k\perp\!\!\!\!\perp\mathscr{F}'_{k+1}.
 $$
@@ -632,7 +636,7 @@ $$
 $$
 \mathscr{D}_A=\mathscr{F}_\infty,
 \qquad\text{即}\qquad
-\mathscr{T}\perp\mathscr{F}_\infty.
+\mathscr{T}\perp\!\!\!\!\perp\mathscr{F}_\infty.
 $$
 又 $\mathscr{T}\subseteq\mathscr{F}_\infty$，所以 $A$ 与自身独立，
 $$
