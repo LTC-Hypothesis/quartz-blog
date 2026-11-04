@@ -304,14 +304,14 @@ $$
 
 **QED**
 
->[!note] 子列加单调夹逼(经典方法，严肃学习)
+>[!warning] 子列加单调夹逼(经典方法，严肃学习)
 >这里 $S_n$ 与 $\mathbb{E}S_n$ 分别单调递增，但 $S_n/\mathbb{E}S_n$ 一般不单调，不能直接由其依概率收敛推出 a.s. 收敛。
 >
 >先选出使误差概率可求和的子列，再利用分子、分母的单调性及相邻归一化常数之比趋于 $1$，就能把子列收敛推广到整列。这也是后面几何子列证明的出发点。
 >
 >计数型强律只要求两两独立；它还给出 $\sum_n\mathbb{1}_{A_n}=\infty$ a.s.，从而把[[#^bc-second|第二 Borel-Cantelli 引理]]推广到了两两独立情形。
 
-xia'mian
+下面证明强大数定律，分别为Etemadi和Kolmogorov的证明。
 
 >[!thm] Kolmogorov 强大数定律
 >设 $X_1,X_2,\cdots$ 为 i.i.d. 随机变量，$S_n=\sum_{k=1}^{n}X_k$。则 $S_n/n$ 几乎必然收敛到有限极限的充要条件是
@@ -380,7 +380,7 @@ $$
 =\int_0^{\infty}2y\mathbb{P}(|Y_k|>y)\,dy
 \le\int_0^k2y\mathbb{P}(|X_1|>y)\,dy.
 $$
-被积函数非负，by [[Fubini定理及其应用|Tonelli 定理]] 可交换求和与积分，
+被积函数非负，by [[Fubini定理及其应用|Fubini 定理]] 可交换求和与积分，
 $$
 \begin{aligned}
 \sum_{k=1}^{\infty}\frac{\mathbb{E}Y_k^2}{k^2}
@@ -392,7 +392,7 @@ $$
 \mathbb{P}(|X_1|>y)\,dy.
 \end{aligned}
 $$
-It suffices to show
+只需要证明
 $$
 2y\sum_{k>y}\frac1{k^2}\le4,\qquad y\ge0.
 $$
@@ -415,16 +415,7 @@ $$
 =4\mathbb{E}|X_1|.
 $$
 
->[!warning] 截断二阶矩公式
->手稿中 $\mathbb{E}Y_k^2$ 与 $\int_0^k2y\mathbb{P}(|X_1|>y)\,dy$ 之间应为 $\le$。准确地说，
->$$
->\mathbb{E}Y_k^2
->=\int_0^k2y\mathbb{P}(|X_1|>y)\,dy
->-k^2\mathbb{P}(|X_1|>k).
->$$
->这里是把大于阈值的部分置零，不能与 $|X_1|\wedge k$ 混同。
-
-Now return to $T_n/n\xrightarrow{a.s.}\mu$。
+现在回到证明 $T_n/n\xrightarrow{a.s.}\mu$。
 
 **第一种证明：几何子列与单调性（Etemadi's argument）**
 
@@ -466,7 +457,7 @@ $$
 <\infty.
 \end{aligned}
 $$
-By Borel-Cantelli，并对 $\delta=1/r$ 取可数交，
+由Borel-Cantelli引理，
 $$
 \frac{T_{k(n)}-\mathbb{E}T_{k(n)}}{k(n)}
 \xrightarrow{a.s.}0.
@@ -477,7 +468,7 @@ $$
 =\mathbb{E}\bigl[X_1\mathbb{1}_{\{X_1\le k\}}\bigr]
 \to\mathbb{E}X_1=\mu.
 $$
-By Stolz（这里也就是 Cesàro 平均），
+由Stolz公式，
 $$
 \frac{\mathbb{E}T_n}{n}
 =\frac1n\sum_{k=1}^{n}\mathbb{E}Y_k\to\mu.
@@ -536,16 +527,14 @@ $$
 
 **QED**
 
->[!note] 两两独立已经足够
->上面的充分性证明只在方差求和时使用独立性，实际上两两独立即可。这就是 Durrett 中的 Etemadi 强律：两两独立、同分布且一阶绝对矩有限，仍有 $S_n/n\xrightarrow{a.s.}\mathbb{E}X_1$。
->
+>[!warning] 
 >几何子列的作用是保证
 >$$
 >\sum_{\{n:k(n)\ge m\}}\frac1{k(n)^2}\le\frac{C_\alpha}{m^2},
 >$$
 >从而能使用截断方差估计；随后令 $\alpha\downarrow1$ 消除夹逼两端的误差。不能只取 $\alpha=2$，就直接把两端都写成 $\mu$。
 
->[!def] Tail $\sigma$-algebra
+>[!def] 尾 $\sigma$ 代数
 >设 $X_1,X_2,\cdots$ 为实值随机变量，记
 >$$
 >\mathscr{F}_n=\sigma(X_1,\cdots,X_n),\qquad
@@ -602,7 +591,7 @@ $$
 
 **Proof**
 
-It suffices to show $\mathscr{T}$ 与自身独立。沿用上面的记号，并令
+只需要证明 $\mathscr{T}$ 与自身独立，并令
 $$
 \mathscr{F}_\infty
 =\sigma(X_1,X_2,\cdots)
@@ -611,8 +600,7 @@ $$
 
 首先，由[[独立性|独立随机变量分组后生成的 $\sigma$-代数仍独立]]，对任意 $k,r\ge1$，
 $$
-\mathscr{F}_k\ \perp\
-\sigma(X_{k+1},\cdots,X_{k+r}).
+\mathscr{F}_k\ \perp\!\!\!\!\perp\sigma(X_{k+1},\cdots,X_{k+r}).
 $$
 固定 $B\in\mathscr{F}_k$。令
 $$
@@ -652,12 +640,7 @@ $$
 
 **QED**
 
->[!note]
->不能仅由 $\mathscr{T}$ 分别与每个 $\sigma(X_k)$ 独立，就直接断言它与 $\mathscr{F}_\infty$ 独立。上面实际证明的是它与每个有限过去 $\mathscr{F}_k$ 独立，再通过 $\pi$-$\lambda$ 定理扩张。
->
->0-1 律说明独立随机级数的收敛事件概率只能为 $0$ 或 $1$。要判断究竟是哪一个，仍需下面的最大不等式与矩估计。
-
->[!thm] Kolmogorov's maximal inequality
+>[!thm] Kolmogorov 极大不等式
 >设 $X_1,\cdots,X_n$ 相互独立，$\mathbb{E}X_k=0,\operatorname{Var}(X_k)<\infty$，$S_k=\sum_{j=1}^{k}X_j$。对任意 $x>0$，
 >$$
 >\mathbb{P}\left(\max_{1\le k\le n}|S_k|\ge x\right)
@@ -669,7 +652,7 @@ $$
 
 **Proof**
 
-按第一次越界的位置分解，令
+按第一次越界的位置分解，这是非常标准的方法，需要严肃学习，令
 $$
 A_k=\{|S_k|\ge x,\ |S_j|<x,\ 1\le j<k\}.
 $$
@@ -729,7 +712,7 @@ $$
 
 ^median
 
->[!thm] Lévy's maximal inequality（中位数形式）
+>[!thm] Lévy 极大不等式（中位数形式）
 >设 $X_1,\cdots,X_n$ 相互独立，$S_k=\sum_{j=1}^{k}X_j$。记
 >$$
 >b_k=m(S_k-S_n),\qquad 1\le k\le n.
@@ -1003,33 +986,4 @@ $$
 >$$
 >第一步用到的级数收敛定理，在这里由 Kolmogorov 最大不等式证明；无需把它与前面的 Lévy 最大不等式混称。
 
->[!proposition] 加权强律判别准则（补充）
->设 $X_n$ 相互独立且平方可积，$a_n>0,a_n\uparrow\infty$。若
->$$
->\sum_{n=1}^{\infty}\frac{\operatorname{Var}(X_n)}{a_n^2}<\infty,
->$$
->则
->$$
->\frac1{a_n}\sum_{k=1}^{n}(X_k-\mathbb{E}X_k)
->\xrightarrow{a.s.}0.
->$$
->证明只需对 $(X_n-\mathbb{E}X_n)/a_n$ 使用级数收敛定理，再用 Kronecker 引理。不要求同分布；取 $a_n=n$ 即得常用的方差判别准则。
-
 ^slln-variance-criterion
-
->[!example] 有限二阶矩时的收敛速度（补充）
->设 $X_n$ i.i.d.，$\mathbb{E}X_1=0,\mathbb{E}X_1^2=\sigma^2<\infty$。对每个固定 $\varepsilon>0$，
->$$
->\frac{S_n}{\sqrt n(\log n)^{1/2+\varepsilon}}
->\xrightarrow{a.s.}0.
->$$
->事实上取 $a_n=\sqrt n(\log n)^{1/2+\varepsilon},n\ge2$，并取 $0<a_1\le a_2$，则
->$$
->\sum_{n=1}^{\infty}\frac{\operatorname{Var}(X_n)}{a_n^2}
->=\frac{\sigma^2}{a_1^2}
->+\sigma^2\sum_{n=2}^{\infty}
->\frac1{n(\log n)^{1+2\varepsilon}}<\infty.
->$$
->应用上面的判别准则即可。它具体说明了额外矩条件可以提供更细的波动估计；只有“高阶矩存在”而没有数值控制时，不能据此比较两个分布谁在均值附近更集中。
-
-
