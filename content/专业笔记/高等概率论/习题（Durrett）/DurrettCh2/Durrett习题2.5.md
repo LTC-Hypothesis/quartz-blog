@@ -1,19 +1,19 @@
-<!-- codex-grading-20261103:summary:start -->
+%% codex-grading-20261103:2.5.1:start %%
 > [!info] 作业批改（2026-11-03）
 > <span style="color:#ef5350;">总分：111 / 150 分。仅计本笔记已写的 14 份答案（按题／小问计），按批注前原稿评分。</span>
 > <span style="color:#ef5350;">满分按难度分配，逐题列于答案开头。原文保留，红字为评分和必要修正；一般英文措辞不扣分，同源错误不重复扣分。有符号级数的“&lt;∞”按上下文理解为收敛到有限实数，不另扣措辞分。</span>
-<!-- codex-grading-20261103:summary:end -->
+%% codex-grading-20261103:2.5.1:start %%
 
 > [!question] 2.5.1.
 > Suppose $X_1, X_2, \dots$ are i.i.d. with $\mathbb{E}X_i = 0$, $\text{var}(X_i) = C < \infty$. Use Theorem 2.5.5 with $n = m^\alpha$ where $\alpha(2p - 1) > 1$ to conclude that if $S_n = X_1 + \dots + X_n$ and $p > 1/2$ then $S_n/n^p \to 0$ almost surely.
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.1:start -->
+> %% codex-grading-20261103:2.5.1:start %%
 > <span style="color:#ef5350;">【评分】10 / 10 分。证明成立。</span>
 >
 > <span style="color:#ef5350;">【记号补充，不扣分】随机阈值应写作 </span>$\color{#ef5350}{N=N(\omega,k)}$<span style="color:#ef5350;">；末步补明 </span>$\color{#ef5350}{n_{m+1}/n_m\to1}$<span style="color:#ef5350;">。后面的集合表达已体现逐样本的量词。</span>
-> <!-- codex-grading-20261103:2.5.1:end -->
+> %% codex-grading-20261103:2.5.1:end %%
 >
 > Firstly, we consider 
 > $$
@@ -50,11 +50,11 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.2:start -->
+> %% codex-grading-20261103:2.5.2:start %%
 > <span style="color:#ef5350;">【评分】9 / 10 分。思路正确；BC 的事件对象写错，扣 1 分。</span>
 >
 > <span style="color:#ef5350;">【修正】第二 Borel–Cantelli 应推出 </span>$\color{#ef5350}{\mathbb P(A_n\ \mathrm{i.o.})=1}$<span style="color:#ef5350;">。同分布只给出 </span>$\color{#ef5350}{\mathbb P(A_n)=\mathbb P(Y>n)}$<span style="color:#ef5350;">，不能把无穷次发生事件换成同一个 </span>$\color{#ef5350}{Y}$<span style="color:#ef5350;"> 的尾事件；对有限的 </span>$\color{#ef5350}{Y}$<span style="color:#ef5350;">，</span>$\color{#ef5350}{\mathbb P(Y>n\ \mathrm{i.o.})=0}$<span style="color:#ef5350;">。</span>
-> <!-- codex-grading-20261103:2.5.2:end -->
+> %% codex-grading-20261103:2.5.2:end %%
 >
 > Let $Y=|X_1|^p$, note that 
 > $$
@@ -79,9 +79,9 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.3:start -->
+> %% codex-grading-20261103:2.5.3:start %%
 > <span style="color:#ef5350;">【评分】5 / 5 分。对每个固定 t，独立性、零均值和可求和方差均满足所引定理。</span>
-> <!-- codex-grading-20261103:2.5.3:end -->
+> %% codex-grading-20261103:2.5.3:end %%
 >
 > ![[Pasted image 20261031081350.png]]
 > Let $Y_n:=X_n\cdot\frac{\sin{(n\pi t)}}{n}$, then 
@@ -102,11 +102,11 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.4-i:start -->
+> %% codex-grading-20261103:2.5.4-i:start %%
 > <span style="color:#ef5350;">【评分】6 / 10 分。级数收敛已证；遗漏题目要求的平均值极限，扣 4 分。</span>
 >
 > <span style="color:#ef5350;">【补全】由 </span>$\color{#ef5350}{\sum_n X_n/n}$<span style="color:#ef5350;"> 几乎必然收敛，对每条收敛的样本路径应用 Kronecker 引理（取权重 </span>$\color{#ef5350}{b_n=n}$<span style="color:#ef5350;">），得到 </span>$\color{#ef5350}{\frac1n\sum_{m=1}^nX_m\to0}$<span style="color:#ef5350;"> a.s.。</span>
-> <!-- codex-grading-20261103:2.5.4-i:end -->
+> %% codex-grading-20261103:2.5.4-i:end %%
 >
 > Since 
 > $$
@@ -118,11 +118,11 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.4-ii:start -->
+> %% codex-grading-20261103:2.5.4-ii:start %%
 > <span style="color:#ef5350;">【评分】10 / 10 分。构造与最后的逆否论证正确。</span>
 >
 > <span style="color:#ef5350;">【补充，不扣分】按所给边缘分布独立构造各 </span>$\color{#ef5350}{X_n}$<span style="color:#ef5350;">；此时 </span>$\color{#ef5350}{0\le p_n\le1/2}$<span style="color:#ef5350;">，可使用第二 Borel–Cantelli。</span>
-> <!-- codex-grading-20261103:2.5.4-ii:end -->
+> %% codex-grading-20261103:2.5.4-ii:end %%
 >
 > Define r.v. $X_n$ satisfies
 > $$
@@ -154,13 +154,13 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.5:start -->
+> %% codex-grading-20261103:2.5.5:start %%
 > <span style="color:#ef5350;">【评分】9 / 15 分。第一箭头的有限性推断错误，扣 5 分；第三箭头漏写 Tonelli 关键步骤，扣 1 分。</span>
 >
 > <span style="color:#ef5350;">【修正】(i) 只给出 </span>$\color{#ef5350}{\sum_nX_n<\infty}$<span style="color:#ef5350;"> a.s.，不能推出 </span>$\color{#ef5350}{\mathbb E\sum_nX_n<\infty}$<span style="color:#ef5350;">；Tonelli 的等式仍可能两边都为无穷。第一箭头可改用三列级数定理的必要性（截断水平取 1）：尾概率级数及非负截断均值级数均收敛，正好得到 (ii)。</span>
 >
 > <span style="color:#ef5350;">【补证】(iii) 到 (i) 先写 </span>$\color{#ef5350}{\mathbb E\sum_n\frac{X_n}{1+X_n}=\sum_n\mathbb E\frac{X_n}{1+X_n}<\infty}$<span style="color:#ef5350;">，故该随机级数 a.s. 有限，后面的趋零与比较才有依据。另，(ii) 到 (iii) 的分解中 </span>$\color{#ef5350}{\{X_n<1\}}$<span style="color:#ef5350;"> 应改为 </span>$\color{#ef5350}{\{X_n\le1\}}$<span style="color:#ef5350;">。</span>
-> <!-- codex-grading-20261103:2.5.5:end -->
+> %% codex-grading-20261103:2.5.5:end %%
 >
 > (i) $\Longrightarrow$ (ii): Note that 
 > $$
@@ -198,11 +198,11 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.6:start -->
+> %% codex-grading-20261103:2.5.6:start %%
 > <span style="color:#ef5350;">【评分】5 / 10 分。尾概率和截断二阶矩估计正确；误用 2.5.5，且未控制截断均值，合扣 5 分。</span>
 >
 > <span style="color:#ef5350;">【修正】不能由截断二阶矩可和推出绝对收敛。令 </span>$\color{#ef5350}{Y_n=X_n\mathbf1_{\{|X_n|\le1\}}}$<span style="color:#ef5350;">，改用三列级数定理：原稿已控制尾概率及方差；由零均值再补 </span>$\color{#ef5350}{|\mathbb EY_n|=|\mathbb E[X_n\mathbf1_{\{|X_n|>1\}}]|\le\mathbb E[|X_n|\mathbf1_{\{|X_n|>1\}}]\le\mathbb E\psi(X_n)}$<span style="color:#ef5350;">。因此截断均值绝对可和，得到原级数收敛；不要保留“绝对收敛”的推断。</span>
-> <!-- codex-grading-20261103:2.5.6:end -->
+> %% codex-grading-20261103:2.5.6:end %%
 >
 > Note that 
 > $$
@@ -226,11 +226,11 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.7:start -->
+> %% codex-grading-20261103:2.5.7:start %%
 > <span style="color:#ef5350;">【评分】10 / 15 分。尾部矩比较在 p(n)&lt;1 时失效，扣 2 分；截断均值不能直接删去，扣 3 分。</span>
 >
 > <span style="color:#ef5350;">【修正】尾概率直接用 </span>$\color{#ef5350}{\mathbb P(|X_n|>1)\le\mathbb E|X_n|^{p(n)}}$<span style="color:#ef5350;">，不经过 </span>$\color{#ef5350}{\mathbb E[|X_n|\mathbf1_{\{|X_n|>1\}}]}$<span style="color:#ef5350;">。对 </span>$\color{#ef5350}{n\in I}$<span style="color:#ef5350;">，</span>$\color{#ef5350}{\mathbb EX_n=0}$<span style="color:#ef5350;"> 不意味着 </span>$\color{#ef5350}{\mathbb EY_n=0}$<span style="color:#ef5350;">，而是 </span>$\color{#ef5350}{\mathbb EY_n=-\mathbb E[X_n\mathbf1_{\{|X_n|>1\}}]}$<span style="color:#ef5350;">，故 </span>$\color{#ef5350}{|\mathbb EY_n|\le\mathbb E|X_n|^{p(n)}}$<span style="color:#ef5350;">。将此项与 </span>$\color{#ef5350}{I^c}$<span style="color:#ef5350;"> 的原估计一起保留，才能得到总和有限；</span>$\color{#ef5350}{p(n)=2}$<span style="color:#ef5350;"> 同样适用。</span>
-> <!-- codex-grading-20261103:2.5.7:end -->
+> %% codex-grading-20261103:2.5.7:end %%
 >
 > We want to use the three series theorem. Let $Y_n:=X_n\mathbb{1}_{\{|X_n|\le1\}}$. Note that for $0<p(n)<2$,
 > $$
@@ -258,11 +258,11 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.8:start -->
+> %% codex-grading-20261103:2.5.8:start %%
 > <span style="color:#ef5350;">【评分】7 / 10 分。BC 事件对象两处同源错误合扣 2 分；无穷分支的阈值极限不完整，扣 1 分。</span>
 >
 > <span style="color:#ef5350;">【修正】根值公式应为 </span>$\color{#ef5350}{L=\limsup_n|X_n|^{1/n}}$<span style="color:#ef5350;">。两处 BC 都应作用于 </span>$\color{#ef5350}{\{Y_n>\varepsilon n\}}$<span style="color:#ef5350;">（有限分支也可用 </span>$\color{#ef5350}{\ge}$<span style="color:#ef5350;">），不能换成同一个 </span>$\color{#ef5350}{Y_1}$<span style="color:#ef5350;"> 的事件。有限分支取 </span>$\color{#ef5350}{\varepsilon=1/j}$<span style="color:#ef5350;"> 并作可数交；非零条件给出某个 </span>$\color{#ef5350}{b>0}$<span style="color:#ef5350;"> 满足 </span>$\color{#ef5350}{\mathbb P(|X_1|>b)>0}$<span style="color:#ef5350;">。无穷分支对每个整数 </span>$\color{#ef5350}{j\ge1}$<span style="color:#ef5350;"> 得 </span>$\color{#ef5350}{L\ge e^j}$<span style="color:#ef5350;"> a.s.，再作可数交才有 </span>$\color{#ef5350}{L=\infty}$<span style="color:#ef5350;">、</span>$\color{#ef5350}{r=0}$<span style="color:#ef5350;">；一个固定的“大阈值”不够，且这里只能先写 </span>$\color{#ef5350}{\ge}$<span style="color:#ef5350;">。</span>
-> <!-- codex-grading-20261103:2.5.8:end -->
+> %% codex-grading-20261103:2.5.8:end %%
 >
 > By Cauchy-Adamard's formula, 
 > $$
@@ -296,11 +296,11 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.9:start -->
+> %% codex-grading-20261103:2.5.9:start %%
 > <span style="color:#ef5350;">【评分】10 / 10 分。首次越界分解与概率估计成立；下标按同源笔误处理，不扣分。</span>
 >
 > <span style="color:#ef5350;">【记号修正】两处最大值事件均应写作 </span>$\color{#ef5350}{\{\max_{m<j\le n}|S_{m,j}|>2a\}}$<span style="color:#ef5350;">。补明 </span>$\color{#ef5350}{A_k}$<span style="color:#ef5350;"> 两两不交，故并集概率可求和；固定 </span>$\color{#ef5350}{k}$<span style="color:#ef5350;"> 时，</span>$\color{#ef5350}{A_k}$<span style="color:#ef5350;"> 与剩余尾和独立，故交事件概率可相乘（此处可写等号）。</span>
-> <!-- codex-grading-20261103:2.5.9:end -->
+> %% codex-grading-20261103:2.5.9:end %%
 >
 > Define the event 
 > $$
@@ -332,13 +332,13 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.10:start -->
+> %% codex-grading-20261103:2.5.10:start %%
 > <span style="color:#ef5350;">【评分】10 / 15 分。量词及事件记号合扣 1 分；缺少从概率估计到 a.s. 的递减事件论证，扣 4 分。</span>
 >
 > <span style="color:#ef5350;">【修正】起始量词应是“对每个 </span>$\color{#ef5350}{a>0}$<span style="color:#ef5350;">、</span>$\color{#ef5350}{0<\varepsilon<1}$<span style="color:#ef5350;">，存在 </span>$\color{#ef5350}{N(a,\varepsilon)}$<span style="color:#ef5350;">”；最小概率因子控制的是 </span>$\color{#ef5350}{|S_n-S_k|}$<span style="color:#ef5350;">。令 </span>$\color{#ef5350}{D_m=\sup_{j,k>m}|S_j-S_k|}$<span style="color:#ef5350;">，它单调不增，且对 </span>$\color{#ef5350}{m\ge N(a,\varepsilon)}$<span style="color:#ef5350;"> 有 </span>$\color{#ef5350}{\mathbb P(D_m>4a)\le\varepsilon/(1-\varepsilon)}$<span style="color:#ef5350;">。此处用严格的 </span>$\color{#ef5350}{>}$<span style="color:#ef5350;">，与右侧阈值一致。</span>
 >
 > <span style="color:#ef5350;">【补证】先让 </span>$\color{#ef5350}{m\to\infty}$<span style="color:#ef5350;">，再让 </span>$\color{#ef5350}{\varepsilon\downarrow0}$<span style="color:#ef5350;">，由概率上连续性得 </span>$\color{#ef5350}{\mathbb P(\bigcap_m\{D_m>4a\})=0}$<span style="color:#ef5350;">。再取 </span>$\color{#ef5350}{a=1/(4r)}$<span style="color:#ef5350;"> 并作可数交，才得到 a.s. Cauchy；应在这个概率为 1 的交集内部论证。每个精度对应的阈值 </span>$\color{#ef5350}{N}$<span style="color:#ef5350;"> 可以依赖 </span>$\color{#ef5350}{r,\omega}$<span style="color:#ef5350;">。</span>
-> <!-- codex-grading-20261103:2.5.10:end -->
+> %% codex-grading-20261103:2.5.10:end %%
 >
 > We should note that $S_{m,n}=S_{n}-S_m$. Since $S_n$ converges in probability, then $S_n$ is a Cauchy sequence in probability, i.e. 
 > $$
@@ -381,11 +381,11 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.11:start -->
+> %% codex-grading-20261103:2.5.11:start %%
 > <span style="color:#ef5350;">【评分】8 / 10 分。分段控制正确；同源阈值错误扣 1 分，遗漏最后代回结论扣 1 分。</span>
 >
 > <span style="color:#ef5350;">【修正】首式应为 </span>$\color{#ef5350}{\mathbb P(\max_{1\le k\le n}|S_k|>2an)\,q_n\le\mathbb P(|S_n|>an)}$<span style="color:#ef5350;">，其中 </span>$\color{#ef5350}{q_n=\min_{0\le k<n}\mathbb P(|S_k|\le an)}$<span style="color:#ef5350;">；选择 </span>$\color{#ef5350}{N}$<span style="color:#ef5350;"> 时也用阈值 </span>$\color{#ef5350}{a}$<span style="color:#ef5350;">，不能由阈值 </span>$\color{#ef5350}{2a}$<span style="color:#ef5350;"> 的估计控制较小阈值。你已证明 </span>$\color{#ef5350}{q_n\to1}$<span style="color:#ef5350;">，代回即得最大值概率趋零，再用 </span>$\color{#ef5350}{|\max_{1\le k\le n}S_k|\le\max_{1\le k\le n}|S_k|}$<span style="color:#ef5350;"> 完成结论。概率数值的收敛不需写 a.s.。</span>
-> <!-- codex-grading-20261103:2.5.11:end -->
+> %% codex-grading-20261103:2.5.11:end %%
 >
 > By $(*)$, we have 
 > $$
@@ -420,7 +420,7 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.12-i:start -->
+> %% codex-grading-20261103:2.5.12-i:start %%
 > <span style="color:#ef5350;">【评分】8 / 15 分。分块增量定义扣 1 分；极大不等式及目标指标扣 2 分；缺块内 BC 与有界比值插值，扣 4 分。</span>
 >
 > <span style="color:#ef5350;">【修正】应为 </span>$\color{#ef5350}{T_k=\sum_{j=2^{k-1}+1}^{2^k}X_j=S_{2^k}-S_{2^{k-1}}}$<span style="color:#ef5350;">，不是部分和 </span>$\color{#ef5350}{S_j}$<span style="color:#ef5350;"> 的总和。后文按正确含义给出了整块尾概率的可求和性，这部分思路成立。尾和最大值的方向也可以保留：将该块变量倒序后使用 </span>$\color{#ef5350}{(*)}$<span style="color:#ef5350;"> 即可。</span>
@@ -428,7 +428,7 @@
 > <span style="color:#ef5350;">【补全】记 </span>$\color{#ef5350}{m_k=2^{k-1}}$<span style="color:#ef5350;">、</span>$\color{#ef5350}{N_k=2^k}$<span style="color:#ef5350;">、</span>$\color{#ef5350}{b_k=a(N_k)}$<span style="color:#ef5350;">，令 </span>$\color{#ef5350}{R_k=\max_{m_k<n\le N_k}|S_{n,N_k}|}$<span style="color:#ef5350;">、</span>$\color{#ef5350}{q_k=\min_{m_k\le n<N_k}\mathbb P(|S_{m_k,n}|\le\varepsilon b_k)}$<span style="color:#ef5350;">。需证明的是 </span>$\color{#ef5350}{q_k\to1}$<span style="color:#ef5350;">，由同分布和前题的小下标／大下标分段法得到；正确右端是整块概率 </span>$\color{#ef5350}{\mathbb P(|T_k|>\varepsilon b_k)}$<span style="color:#ef5350;">。最终 </span>$\color{#ef5350}{\mathbb P(R_k>2\varepsilon b_k)\le2\mathbb P(|T_k|>\varepsilon b_k)}$<span style="color:#ef5350;">，故左侧可求和；BC 加可数阈值给出 </span>$\color{#ef5350}{R_k/b_k\to0}$<span style="color:#ef5350;"> a.s.。</span>
 >
 > <span style="color:#ef5350;">【最后一步】对 </span>$\color{#ef5350}{m_k<n\le N_k}$<span style="color:#ef5350;">，</span>$\color{#ef5350}{\frac{|S_n|}{a(n)}\le\frac{a(N_k)}{a(m_k)}\left(\frac{|S_{N_k}|}{a(N_k)}+\frac{R_k}{a(N_k)}\right)\to0}$<span style="color:#ef5350;"> a.s.。这里才用到题设的相邻二进制归一化因子比值有界。</span>
-> <!-- codex-grading-20261103:2.5.12-i:end -->
+> %% codex-grading-20261103:2.5.12-i:end %%
 >
 > Firstly, let $T_k=\sum_{j=2^{k-1}}^{2^k}S_j$ and we claim 
 > $$
@@ -461,11 +461,11 @@
 
 > [!done]
 >
-> <!-- codex-grading-20261103:2.5.12-ii:start -->
+> %% codex-grading-20261103:2.5.12-ii:start %%
 > <span style="color:#ef5350;">【评分】4 / 5 分。归一化及两个概率界正确；最后漏写可求和性与 BC，扣 1 分。</span>
 >
 > <span style="color:#ef5350;">【补证】对固定 </span>$\color{#ef5350}{\delta>0}$<span style="color:#ef5350;">，</span>$\color{#ef5350}{\sum_k\mathbb P(|S_{2^k}|/a(2^k)>\delta)\le\frac{\operatorname{Var}(X_1)}{\delta^2}\sum_k k^{-(1+2\varepsilon)}<\infty}$<span style="color:#ef5350;">。用 BC 并取 </span>$\color{#ef5350}{\delta=1/j}$<span style="color:#ef5350;"> 才能得 a.s. 收敛，不能仅由概率趋零推出。比值式下标统一为 </span>$\color{#ef5350}{a(2^k)/a(2^{k-1})}$<span style="color:#ef5350;">，归一化从 </span>$\color{#ef5350}{n\ge2}$<span style="color:#ef5350;"> 开始即可；这些记号不另扣分。</span>
-> <!-- codex-grading-20261103:2.5.12-ii:end -->
+> %% codex-grading-20261103:2.5.12-ii:end %%
 >
 > Let $a(n)=n^\frac{1}{2}\log_2^{\frac{1}{2}+\varepsilon}{n}$. We should check 
 > - $a(n)\uparrow\infty$
