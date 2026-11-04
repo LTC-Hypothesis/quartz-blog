@@ -987,6 +987,5 @@ $$
 >\xrightarrow{a.s.}0.
 >\end{gathered}
 >$$
->第一步用到的级数收敛定理，在这里由 Kolmogorov 最大不等式证明；无需把它与前面的 Lévy 最大不等式混称。
 
 ^slln-variance-criterion
