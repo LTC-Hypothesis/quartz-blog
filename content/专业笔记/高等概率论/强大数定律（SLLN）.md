@@ -608,15 +608,15 @@ $$
 =\{C\in\mathscr{F}'_{k+1}:
 \mathbb{P}(B\cap C)=\mathbb{P}(B)\mathbb{P}(C)\}.
 $$
-这是一个 $\lambda$-系，并包含
+这是一个 $\lambda$-类，并包含
 $$
-\bigcup_{r=1}^{\infty}\sigma(X_{k+1},\cdots,X_{k+r}).
+\sigma\left(\bigcup_{r=1}^{\infty}X_{k+r}\right).
 $$
 后者是递增的 $\sigma$-代数之并，因而是 $\pi$-系，且生成 $\mathscr{F}'_{k+1}$。由[[测度论基础#^2245d8|$\pi$-$\lambda$ 定理]]，$\mathscr{D}_B=\mathscr{F}'_{k+1}$，故
 $$
-\mathscr{F}_k\perp\mathscr{F}'_{k+1}.
+\mathscr{F}_k\perp\!\!\!\!\perp\mathscr{F}'_{k+1}.
 $$
-由于 $\mathscr{T}\subseteq\mathscr{F}'_{k+1}$，得到 $\mathscr{F}_k\perp\mathscr{T}$，对每个 $k$ 都成立。
+由于 $\mathscr{T}\subseteq\mathscr{F}'_{k+1}$，得到 $\mathscr{F}_k\perp\!\!\!\!\perp\mathscr{T}$，对每个 $k$ 都成立。
 
 再固定 $A\in\mathscr{T}$，令
 $$
