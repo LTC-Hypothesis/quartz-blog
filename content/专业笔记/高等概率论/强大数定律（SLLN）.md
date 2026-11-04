@@ -739,7 +739,7 @@ $$
 H_k^+=H_k\cap\{S_k-b_k\ge x\},\qquad
 H_k^-=H_k\cap\{S_k-b_k\le-x\}.
 $$
-由于 $x>0$，$H_k=H_k^+\mathbin{\dot\cup}H_k^-$。又 $S_k-S_n$ 与 $\mathscr{F}_k$ 独立，且 $b_k$ 是其中位数，
+由于 $x>0$，$H_k=H_k^+\cup H_k^-$。又 $S_k-S_n$ 与 $\mathscr{F}_k$ 独立，且 $b_k$ 是其中位数，
 $$
 \begin{aligned}
 \mathbb{P}\bigl(H_k^+\cap\{S_k-S_n\le b_k\}\bigr)
@@ -748,11 +748,11 @@ $$
 &\ge\frac12\mathbb{P}(H_k^-).
 \end{aligned}
 $$
-在第一个交事件上，
+在 $H_k^+\cap\{S_k-S_n\le b_k\}$ 上，
 $$
 S_n=S_k-(S_k-S_n)\ge S_k-b_k\ge x;
 $$
-在第二个交事件上，
+在 $H_k^-\cap\{S_k-S_n\ge b_k\}$上，
 $$
 S_n\le S_k-b_k\le-x.
 $$
@@ -765,7 +765,7 @@ $$
 &=\frac12\mathbb{P}\left(\max_{1\le k\le n}|S_k-b_k|\ge x\right).
 \end{aligned}
 $$
-即得结论。手稿中的 $H_k$ 含绝对值，所以这里需分别处理正、负越界；不能直接在整个 $H_k$ 上写 $S_k-b_k\ge x$。
+即得结论。
 
 **QED**
 
@@ -812,11 +812,6 @@ $$
 
 **QED**
 
->[!note]
->手稿中以尾概率之和代替 $c$，在该和小于 $1$ 时也能给出上界。这里改取最大值，条件更弱，得到的估计也更强。
->
->把起点 $0$ 换成 $m$，就是[[Durrett习题2.5|习题 2.5.9 的尾和估计]]。习题 2.5.10 再用它证明：独立随机变量的部分和若依概率收敛到有限随机变量，则也几乎必然收敛。
-
 >[!thm] 独立中心化随机级数的收敛
 >设 $X_1,X_2,\cdots$ 相互独立，$\mathbb{E}X_n=0$。若
 >$$
@@ -836,7 +831,7 @@ U_k=\sup_{m\ge k}|S_m-S_k|.
 $$
 $W_k$ 是非负的扩展实值随机变量，且 $W_k\downarrow$。由三角不等式，$W_k\le2U_k$。
 
-先对有限区间使用[[#^kolmogorov-maximal|Kolmogorov 最大不等式]]。对 $N>k$，
+先对有限区间使用[[#^kolmogorov-maximal|Kolmogorov 极大不等式]]0。对 $N>k$，
 $$
 \mathbb{P}\left(\max_{k\le m\le N}|S_m-S_k|>\varepsilon\right)
 \le\frac1{\varepsilon^2}
