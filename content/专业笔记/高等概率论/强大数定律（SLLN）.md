@@ -598,7 +598,9 @@ $$
 =\sigma\left(\bigcup_{k=1}^{\infty}\mathscr{F}_k\right).
 $$
 
-首先，由[[独立性|独立随机变量分组后生成的 $\sigma$-代数仍独立]]，对任意 $k,r\ge1$，
+**Step1: 证明$\mathscr{F}_k\perp\!\!\!\!\perp\mathscr{F}'_{k+1}$**
+
+首先，由[[独立性#^sigma-independent|独立随机变量分组后生成的 $\sigma$-代数仍独立]]，对任意 $k,r\ge1$，
 $$
 \mathscr{F}_k\ \perp\!\!\!\!\perp\sigma(X_{k+1},\cdots,X_{k+r}).
 $$
@@ -610,12 +612,14 @@ $$
 $$
 这是一个 $\lambda$-类，并包含
 $$
-\sigma\left(\bigcup_{r=1}^{\infty}X_{k+r}\right).
+\bigcup_{r=1}^{\infty}\sigma\left(X_{k+1},\cdots,X_{k+r}\right).
 $$
 后者是递增的 $\sigma$-代数之并，因而是 $\pi$-系，且生成 $\mathscr{F}'_{k+1}$。由[[测度论基础#^2245d8|$\pi$-$\lambda$ 定理]]，$\mathscr{D}_B=\mathscr{F}'_{k+1}$，故
 $$
 \mathscr{F}_k\perp\!\!\!\!\perp\mathscr{F}'_{k+1}.
 $$
+**Step2: 证明 $\mathscr{T}\perp\!\!\!\!\perp\mathscr{F}_\infty$**
+
 由于 $\mathscr{T}\subseteq\mathscr{F}'_{k+1}$，得到 $\mathscr{F}_k\perp\!\!\!\!\perp\mathscr{T}$，对每个 $k$ 都成立。
 
 再固定 $A\in\mathscr{T}$，令
