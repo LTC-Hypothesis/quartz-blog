@@ -4,6 +4,8 @@
 >[!lemma] Zorn引理
 >设$X$为偏序集，若$X$的全序子集有界，则$X$有极大元。
 
+^d11bce
+
 >[!def] Hilbert空间上的基
 >称$\left\{e_i\right\}_{i=1}^{n}$为Hilbert空间上一组基，若对任意的$h\in H$，都有$h=\sum_{i=1}^{\infty}\alpha_ie_i$。
 
