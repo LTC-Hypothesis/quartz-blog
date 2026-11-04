@@ -259,15 +259,12 @@ $$
 $$
 于是对 $\delta>0$，由Chebyshev不等式，
 $$
-\mathbb{P}\bigl(|S_n-\mathbb{E}S_n|>\delta\mathbb{E}S_n\bigr)
-\le\frac{\operatorname{Var}(S_n)}
-{\delta^2(\mathbb{E}S_n)^2}
-\le\frac1{\delta^2\mathbb{E}S_n}\to0.
-\tag{1}
+\mathbb{P}\bigl(|S_n-\mathbb{E}S_n|>\delta\mathbb{E}S_n\bigr)\le\frac{\operatorname{Var}(S_n)}
+{\delta^2(\mathbb{E}S_n)^2}\le\frac1{\delta^2\mathbb{E}S_n}\to0.\tag{1}
 $$
 这里 $\mathbb{E}S_n\to\infty$，故分母从某一项起为正。这首先给出 $S_n/\mathbb{E}S_n\xrightarrow{\mathbb{P}}1$。
 
-Now prove convergence a.s. 取
+现在证明几乎必然收敛。取
 $$
 n_k=\inf\{n:\mathbb{E}S_n\ge k^2\},\qquad T_k=S_{n_k}.
 $$
@@ -277,9 +274,7 @@ k^2\le\mathbb{E}T_k\le k^2+1.
 $$
 在 $(1)$ 中取 $n=n_k$，则
 $$
-\sum_{k=1}^{\infty}
-\mathbb{P}\bigl(|T_k-\mathbb{E}T_k|>\delta\mathbb{E}T_k\bigr)
-\le\frac1{\delta^2}\sum_{k=1}^{\infty}\frac1{k^2}<\infty.
+\sum_{k=1}^{\infty}\mathbb{P}\bigl(|T_k-\mathbb{E}T_k|>\delta\mathbb{E}T_k\bigr)\le\frac1{\delta^2}\sum_{k=1}^{\infty}\frac1{k^2}<\infty.
 $$
 由[[积分与期望#^5c2707|Borel-Cantelli 第一引理]]，对 $\delta=1/r,r\ge1$ 取可数交，得到
 $$
@@ -290,12 +285,7 @@ $$
 $$
 \begin{aligned}
 \frac{T_k}{\mathbb{E}T_k}
-\frac{\mathbb{E}T_k}{\mathbb{E}T_{k+1}}
-&=\frac{T_k}{\mathbb{E}T_{k+1}}\\
-&\le\frac{S_n}{\mathbb{E}S_n}\\
-&\le\frac{T_{k+1}}{\mathbb{E}T_k}
-=\frac{T_{k+1}}{\mathbb{E}T_{k+1}}
-\frac{\mathbb{E}T_{k+1}}{\mathbb{E}T_k}.
+\frac{\mathbb{E}T_k}{\mathbb{E}T_{k+1}}=\frac{T_k}{\mathbb{E}T_{k+1}}\le\frac{S_n}{\mathbb{E}S_n}\le\frac{T_{k+1}}{\mathbb{E}T_k}=\frac{T_{k+1}}{\mathbb{E}T_{k+1}}\frac{\mathbb{E}T_{k+1}}{\mathbb{E}T_k}.
 \end{aligned}
 $$
 又
@@ -305,22 +295,23 @@ $$
 $$
 两端都趋于 $1$，所以 $S_n/\mathbb{E}S_n\xrightarrow{a.s.}1$。
 
-回到破纪录计数 $W_n$，由 $\sum_{m=1}^{n}1/m\sim\log n$，
+回到破纪录计数 $R_n$，由 $\sum_{m=1}^{n}1/m\sim\log n$，
 $$
-\frac{W_n}{\log n}
-=\frac{W_n}{\sum_{m=1}^{n}1/m}
+\frac{R_n}{\log n}=\frac{R_n}{\sum_{m=1}^{n}1/m}
 \cdot\frac{\sum_{m=1}^{n}1/m}{\log n}
 \xrightarrow{a.s.}1.
 $$
 
 **QED**
 
->[!note] 子列加单调夹逼
+>[!note] 子列加单调夹逼(经典方法，严肃学习)
 >这里 $S_n$ 与 $\mathbb{E}S_n$ 分别单调递增，但 $S_n/\mathbb{E}S_n$ 一般不单调，不能直接由其依概率收敛推出 a.s. 收敛。
 >
 >先选出使误差概率可求和的子列，再利用分子、分母的单调性及相邻归一化常数之比趋于 $1$，就能把子列收敛推广到整列。这也是后面几何子列证明的出发点。
 >
 >计数型强律只要求两两独立；它还给出 $\sum_n\mathbb{1}_{A_n}=\infty$ a.s.，从而把[[#^bc-second|第二 Borel-Cantelli 引理]]推广到了两两独立情形。
+
+xia'mian
 
 >[!thm] Kolmogorov 强大数定律
 >设 $X_1,X_2,\cdots$ 为 i.i.d. 随机变量，$S_n=\sum_{k=1}^{n}X_k$。则 $S_n/n$ 几乎必然收敛到有限极限的充要条件是
@@ -341,7 +332,7 @@ $$
 Y_k=X_k\mathbb{1}_{\{|X_k|\le k\}},\qquad
 T_n=\sum_{k=1}^{n}Y_k.
 $$
-注意每个 $Y_k$ 按自己的指标 $k$ 截断，与[[弱大数定律（WLLN）#^wlln-truncation|弱律中一整行使用同一个阈值]]不同。
+注意每个 $Y_k$ 按自己的指标 $k$ 截断，与[[弱大数定律（WLLN）#^wlln-truncation|弱大数律中一整行使用同一个阈值]]不同。我们断言
 
 >[!lemma] 截断不改变样本平均的极限
 >在 $\mathbb{E}|X_1|<\infty$ 下，
@@ -368,9 +359,7 @@ $$
 $$
 即在一个概率为 $1$ 的集合上，对每个 $\omega$ 存在 $N=N(\omega)$，使得 $k\ge N$ 时 $X_k(\omega)=Y_k(\omega)$。于是对所有 $n$，
 $$
-|S_n(\omega)-T_n(\omega)|
-\le\sum_{k=1}^{N(\omega)-1}|X_k(\omega)-Y_k(\omega)|
-=:R(\omega)<\infty.
+|S_n(\omega)-T_n(\omega)|\le\sum_{k=1}^{N(\omega)-1}|X_k(\omega)-Y_k(\omega)|<\infty.
 $$
 除以 $n$ 即得结论。这里最终相等的是 $X_k$ 与 $Y_k$；$S_n-T_n$ 最终为一个有限的随机常数，不必为 $0$。
 
