@@ -44,7 +44,7 @@
 
 **Proof**
 
-由 Markov 不等式，对任意 $\varepsilon>0$，
+由 Chebyshev 不等式，对任意 $\varepsilon>0$，
 $$
 \mathbb{P}\left(\left|\frac{S_n}{n}\right|>\varepsilon\right)
 =\mathbb{P}(|S_n|^4>n^4\varepsilon^4)
