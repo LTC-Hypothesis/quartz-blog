@@ -2,11 +2,19 @@
 > Generalize the proof of Lemma 3.1.1 to conclude that if $\max_{1 \leq j \leq n} |c_{j,n}| \to 0$, $\sum_{j=1}^n c_{j,n} \to \lambda$, and $\sup_n \sum_{j=1}^n |c_{j,n}| < \infty$ then $\prod_{j=1}^n (1 + c_{j,n}) \to e^\lambda$.
 
 > [!done]
+> We W.T.S. $\sum_{j=1}^{n}\log{(1+c_{j,n})}\to\lambda$ as $n\to\infty$. Consider for any $\varepsilon>0$, there exists $N$ s.t. $n\ge N$, it holds 
+> $$
+> \left|\sum_{j=1}^{n}c_{j,n}-\lambda\right|\le\frac{\varepsilon}{2},\sum_{n\ge N}|c_{j,n}|\le\frac{\varepsilon}{2}
+> $$
+> Now we have 
+> $$
+> 
+> $$
 
 > [!question] 3.1.2.
 > The next three exercises illustrate the use of Stirling's formula. In them, $X_1, X_2, \dots$ are i.i.d. and $S_n = X_1 + \dots + X_n$.
 > 
-> If the $X_i$ have a Poisson distribution with mean 1, then \(S_n\) has a Poisson distribution with mean \(n\), i.e., $\mathbb{P}(S_n = k) = e^{-n}n^k/k!$ Use Stirling's formula to show that if $(k-n)/\sqrt{n} \to x$ then
+> If the $X_i$ have a Poisson distribution with mean 1, then $S_n$ has a Poisson distribution with mean \(n\), i.e., $\mathbb{P}(S_n = k) = e^{-n}n^k/k!$ Use Stirling's formula to show that if $(k-n)/\sqrt{n} \to x$ then
 > $$
 > \sqrt{2\pi n}\mathbb{P}(S_n = k) \to \exp(-x^2/2)
 > $$
