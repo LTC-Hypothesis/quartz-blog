@@ -58,18 +58,22 @@
 > $$
 > x_n-(1+x_n)\log{(1+x_n)}\sim-\frac{x_n^2}{2}\text{ a.s. }n\to\infty
 > $$
-> 
+> then we have 
+> $$
+> \sqrt{2\pi n}\mathbb{P}(S_n = k)\sim\exp\left(-\frac{(k-n)^2}{2n}\right)\to e^{-\frac{x^2}{2}}
+> $$
 
 > [!question] 3.1.3.
 > In the next two examples you should begin by considering $\mathbb{P}(S_n = k)$ when $k/n \to a$ and then relate $\mathbb{P}(S_n = j+1)$ to $\mathbb{P}(S_n = j)$ to show $\mathbb{P}(S_n \geq k) \leq C \mathbb{P}(S_n = k)$.
 > 
-> Suppose $\mathbb{P}(X_i = 1) = \mathbb{P}(X_i = -1) = 1/2$. Show that if $a \in (0, 1)$\
+> Suppose $\mathbb{P}(X_i = 1) = \mathbb{P}(X_i = -1) = 1/2$. Show that if $a \in (0, 1)$
 > $$
 > \frac{1}{2n} \log \mathbb{P}(S_{2n} \geq 2na) \to -\gamma(a)
 > $$
 > where $\gamma(a) = \frac{1}{2}\{(1+a)\log(1+a) + (1-a)\log(1-a)\}$.
 
-> [!done]
+> [!done] 
+> 
 
 > [!question] 3.1.4.
 > Suppose $\mathbb{P}(X_i = k) = e^{-1}/k!$ for $k = 0, 1, \dots$. Show that if $a > 1$
