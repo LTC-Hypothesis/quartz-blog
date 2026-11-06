@@ -77,7 +77,45 @@
 > $$
 > \left\{S_n\ge2na\right\}=\left\{B_{2n}\ge n(a+1)\right\}
 > $$
-> Set $k_n=\lceil n(a+1)\rceil$ and we have $\frac{k_n}{2n}\to\frac{a+1}{2}$
+> Set $k_n=\lceil n(a+1)\rceil$ and we have $\frac{k_n}{2n}\to\frac{a+1}{2}$ as $n\to\infty$. Note that $B_{2n}\sim B(2n,\frac{1}{2})$, 
+> $$
+> \begin{aligned}
+>\frac{1}{2n}\log\mathbb{P}(B_{2n}=k_n)&=\frac{1}{2n}\log\left(\begin{pmatrix}
+>2n\\
+>k_n
+>\end{pmatrix}\frac{1}{2^{2n}}\right)\\
+>&=\frac{1}{2n}\left(\log((2n)!)-\log(k_n)!-\log(2n-k_n)!)\right)-\log2
+>\end{aligned}
+> $$
+> Now we use the log form of stirling formula $\log (n!)\sim n\log{n}-n$ as $n\to\infty$, 
+> $$
+> \begin{aligned}
+>\frac{1}{2n}\log\mathbb{P}(B_{2n}=k_n)\sim&\frac{1}{2n}\left(2n\log(2n)-k_n\log(k_n)-(2n-k_n)\log(2n-k_n)\right)-\log2\\
+>=&-x_n\log x_n-(1-x_n)\log(1-x_n)-\log2\qquad (x_n:=\frac{k_n}{2n})\\
+>\to&-(1+a)\log(1+a)-(1-a)\log(1-a):=-\gamma(a)
+>\end{aligned}
+> $$ 
+> Next we derivate the relation between $\mathbb{P}(B_{2n}=j+1)$ and $\mathbb{P}(B_{2n}=j)$. For convenience, we denote $\mathbb{P}(B_{2n}=j)$ by $p_{n,j}$. Consider 
+> $$
+> \frac{p_{n,j+1}}{p_{n,j}}=\frac{2n-j}{j+1}\to\frac{1-a}{1+a}\text{ as }j\ge k_n,n\to\infty
+> $$
+> Note that $\frac{1-a}{1+a}<1$, there exists constant $\rho<1$ s.t. 
+> $$
+> p_{n,j+1}\le\rho p_{n,j}
+> $$
+> Then 
+> $$
+> \begin{aligned}
+>\frac{1}{2n}\log\mathbb{P}(S_n\ge 2na)=&\frac{1}{2n}\log\sum_{\ell=0}^{2n-k_n}p_{2n,k_n+\ell}\\
+>\le&\frac{1}{2n}\log\sum_{n=1}^{\infty}\rho^n\cdot p_{2n,k_n}\\
+>\le&\frac{1}{2n}\log\frac{1}{1-\rho}+\frac{1}{2n}\log p_{2n,k_n}
+>\end{aligned}
+> $$
+> Now we obtain
+> $$
+> \frac{1}{2n}\log p_{2n,k_n}\le\frac{1}{2n}\log \mathbb{P}(S_n\ge 2na)\le\frac{1}{2n}\log\frac{1}{1-\rho}+\frac{1}{2n}\log p_{2n,k_n}
+> $$
+> Let $n\to\infty$, we obtain $\frac{1}{2n}\log\mathbb{P}(S_n\ge 2na)\to-\gamma(a)$. 
 
 > [!question] 3.1.4.
 > Suppose $\mathbb{P}(X_i = k) = e^{-1}/k!$ for $k = 0, 1, \dots$. Show that if $a > 1$
@@ -86,3 +124,4 @@
 > $$
 
 > [!done]
+> 
