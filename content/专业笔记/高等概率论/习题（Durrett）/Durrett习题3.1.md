@@ -124,4 +124,30 @@
 > $$
 
 > [!done]
-> 
+> Note that $S_n\sim P(n)$. Consider 
+> $$
+> \frac{\mathbb{P}(S_n=j+1)}{\mathbb{P}(S_n=j)}=\frac{n}{j+1}\to\frac{1}{a+1}<1
+> $$
+> There exists constant $\rho<1$ s.t. $\mathbb{P}(S_n=j+1)\le\rho\mathbb{P}(S_n=j)$. Set $k_n:=\lceil na\rceil$ and thus $\frac{k_n}{n}\to a$ as $n\to\infty$. We compute firstly 
+> $$
+> \begin{aligned}
+>\frac{1}{n}\log\mathbb{P}(S_n=k_n)=&\frac{1}{n}\log\frac{n^{k_n}}{k_n}e^{-n}\\
+>\sim&-1-\frac{k_n}{n}\log\frac{k_n}{n}+\frac{k_n}{n}\\
+>\to&a-1-a\log a
+>\end{aligned}
+> $$
+> and next 
+> $$
+> \begin{aligned}
+>\frac{1}{n}\log\mathbb{P}(S_n\ge na)=&\frac{1}{n}\log\sum_{j=k_n}^{\infty}\mathbb{P}(S_n=j)\\
+>\le&\frac{1}{n}\log{\frac{1}{1-\rho}}+\frac{1}{n}\log\mathbb{P}(S_n=k_n)
+>\end{aligned}
+> $$
+> Now we have 
+> $$
+> \frac{1}{n}\log\mathbb{P}(S_n=k_n)\le\frac{1}{n}\log\mathbb{P}(S_n\ge na)\le\frac{1}{n}\log{\frac{1}{1-\rho}}+\frac{1}{n}\log\mathbb{P}(S_n=k_n)
+> $$
+> Let $n\to\infty$, we obtain 
+> $$
+> \frac{1}{n}\log\mathbb{P}(S_n\ge na)\to a-1-a\log{a},n\to\infty
+> $$
