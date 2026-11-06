@@ -41,17 +41,29 @@
 > $$
 > n!\sim\sqrt{2\pi n}\left(\frac{n}{e}\right)^n,\text{ a.s. }n\to\infty
 > $$
-> We calculate 
+> Note that in fact $k:=k_n$. We calculate 
 > $$
 > \begin{aligned}
->\sqrt{2\pi n}\mathbb{P}(S_n = k)=\sqrt{2\pi n}\frac{n^k}{k!}e^{-n}
+>\sqrt{2\pi n}\mathbb{P}(S_n = k)&=\sqrt{2\pi n}\frac{n^k}{k!}e^{-n}\\
+>&=\sqrt{\frac{n}{k}}\frac{n^k}{k^k}e^{k-n}\\
+>&=\sqrt{\frac{n}{k}}\exp\left(k-n-k\log{\frac{k}{n}}\right)\\
+>&=\sqrt{\frac{n}{k}}\exp n\left(\frac{k-n}{n}-\left(1+\frac{k-n}{n}\right)\log{\left(1+\frac{k-n}{n}\right)}\right)
 >\end{aligned}
 > $$
+> We denote $\frac{k-n}{n}$ by $x_n$, since $\frac{k-n}{\sqrt{n}}\to x$
+> $$
+> x_n=\frac{k-n}{\sqrt{n}}\frac{1}{\sqrt{n}}\to0\text{ a.s. }n\to\infty
+> $$
+> By Taylor's expression, 
+> $$
+> x_n-(1+x_n)\log{(1+x_n)}\sim-\frac{x_n^2}{2}\text{ a.s. }n\to\infty
+> $$
+> 
 
 > [!question] 3.1.3.
 > In the next two examples you should begin by considering $\mathbb{P}(S_n = k)$ when $k/n \to a$ and then relate $\mathbb{P}(S_n = j+1)$ to $\mathbb{P}(S_n = j)$ to show $\mathbb{P}(S_n \geq k) \leq C \mathbb{P}(S_n = k)$.
 > 
-> Suppose $\mathbb{P}(X_i = 1) = \mathbb{P}(X_i = -1) = 1/2$. Show that if \(a \in (0, 1)\)
+> Suppose $\mathbb{P}(X_i = 1) = \mathbb{P}(X_i = -1) = 1/2$. Show that if $a \in (0, 1)$\
 > $$
 > \frac{1}{2n} \log \mathbb{P}(S_{2n} \geq 2na) \to -\gamma(a)
 > $$
