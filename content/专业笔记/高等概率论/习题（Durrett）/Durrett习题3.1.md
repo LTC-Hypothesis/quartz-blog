@@ -73,7 +73,11 @@
 > where $\gamma(a) = \frac{1}{2}\{(1+a)\log(1+a) + (1-a)\log(1-a)\}$.
 
 > [!done] 
-> 
+> Let $B_{2n}\triangleq\#\left\{1\le i\le 2n:X_i=1\right\}$. Then if $B_{2n}=m$, $S_n=m\cdot1+(2n-m)\cdot(-1)=2m-2n=2B_{2n}-2n$ and thus 
+> $$
+> \left\{S_n\ge2na\right\}=\left\{B_{2n}\ge n(a+1)\right\}
+> $$
+> Set $k_n=\lceil n(a+1)\rceil$ and we have $\frac{k_n}{2n}\to\frac{a+1}{2}$
 
 > [!question] 3.1.4.
 > Suppose $\mathbb{P}(X_i = k) = e^{-1}/k!$ for $k = 0, 1, \dots$. Show that if $a > 1$
