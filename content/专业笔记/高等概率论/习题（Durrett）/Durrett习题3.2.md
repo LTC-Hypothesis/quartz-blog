@@ -2,11 +2,10 @@
 > Give an example of random variables $X_n$ with densities $f_n$ so that $X_n \Rightarrow$ a uniform distribution on $(0,1)$ but $f_n(x)$ does not converge to 1 for any $x \in [0,1]$.
 
 > [!done]
+> 
 
-> [!question] 3.2.2.
-> **Convergence of maxima.** Let $X_1, X_2, \dots$ be independent with distribution $F$, and let $M_n = \max_{m \leq n} X_m$. Then $\mathbb{P}(M_n \leq x) = F(x)^n$. Prove the following limit laws for $M_n$:
-
-> [!done]
+> [!question] 3.2.2.**Convergence of maxima.**
+>  Let $X_1, X_2, \dots$ be independent with distribution $F$, and let $M_n = \max_{m \leq n} X_m$. Then $\mathbb{P}(M_n \leq x) = F(x)^n$. Prove the following limit laws for $M_n$:
 
 > [!question] 3.2.2. (i)
 > (i) If $F(x) = 1 - x^{-\alpha}$ for $x \geq 1$ where $\alpha > 0$ then for $y > 0$
@@ -15,6 +14,13 @@
 > $$
 
 > [!done]
+> We compute 
+> $$
+> \begin{aligned}
+>\mathbb{P}(M_n\le n^\frac{1}{\alpha}y)=&\left(F(n^\frac{1}{\alpha}y)\right)^n\\
+>=&\left(1-\frac{y^{-\alpha}}{n}\right)^n\to e^{-y^{-\alpha}}\text{ as }n\to\infty
+>\end{aligned}
+> $$
 
 > [!question] 3.2.2. (ii)
 > (ii) If $F(x) = 1 - |x|^\beta$ for $-1 \leq x \leq 0$ where $\beta > 0$ then for $y < 0$
@@ -23,6 +29,10 @@
 > $$
 
 > [!done]
+> We compute 
+> $$
+> \mathbb{P}\left(M_n\le\frac{y}{n^\frac{1}{\beta}}\right)=\left(1-\frac{|y|^\beta}{n}\right)^n\to e^{-|y|^\beta}
+> $$
 
 > [!question] 3.2.2. (iii)
 > (iii) If $F(x) = 1 - e^{-x}$ for $x \geq 0$ then for all $y \in (-\infty, \infty)$
@@ -32,6 +42,10 @@
 > The limits that appear above are called the **extreme value distributions**. The last one is called the **double exponential** or **Gumbel distribution**. Necessary and sufficient conditions for $(M_n - b_n)/a_n$ to converge to these limits were obtained by Gnedenko (1943). For a recent treatment, see Resnick (1987).
 
 > [!done]
+> We compute 
+> $$
+> \mathbb{P}(M_n\le y+\log{n})=\left(1-\frac{e^{-y}}{n}\right)^n\to\exp(-e^{-y})
+> $$
 
 > [!question] 3.2.3. (i)
 > Let $X_1, X_2, \dots$ be i.i.d. and have the standard normal distribution. (i) From Theorem 1.2.6, we know
@@ -44,6 +58,10 @@
 > $$
 
 > [!done]
+> We compute 
+> $$
+> \frac{\mathbb{P}(X_i>x+\frac{\theta}{x})}{\mathbb{P}(X_i>x)}\sim\frac{x^2}{x^2+\theta}e^{-\left(\frac{\theta(2x^2+1)}{2x^2}\right)}\to e^{-\theta}\text{ as }x\to\infty
+> $$
 
 > [!question] 3.2.3. (ii)
 > (ii) Show that if we define $b_n$ by $\mathbb{P}(X_i > b_n) = 1/n$
@@ -52,30 +70,31 @@
 > $$
 
 > [!done]
+> 
 
 > [!question] 3.2.3. (iii)
 > (iii) Show that $b_n \sim (2\log n)^{1/2}$ and conclude $M_n/(2\log n)^{1/2} \to 1$ in probability.
 
 > [!done]
 
-> [!question] 3.2.4.
-> **Fatou's lemma.** Let $g \geq 0$ be continuous. If $X_n \Rightarrow X_\infty$ then
+> [!question] 3.2.4.**Fatou's lemma.**
+> Let $g \geq 0$ be continuous. If $X_n \Rightarrow X_\infty$ then
 > $$
 > \liminf_{n \to \infty} \mathbb{E}g(X_n) \geq \mathbb{E}g(X_\infty)
 > $$
 
 > [!done]
 
-> [!question] 3.2.5.
-> **Integration to the limit.** Suppose $g, h$ are continuous with $g(x) > 0$, and $|h(x)|/g(x) \to 0$ as $|x| \to \infty$. If $F_n \Rightarrow F$ and $\int g(x) dF_n(x) \leq C < \infty$ then
+> [!question] 3.2.5.**Integration to the limit.**
+>  Suppose $g, h$ are continuous with $g(x) > 0$, and $|h(x)|/g(x) \to 0$ as $|x| \to \infty$. If $F_n \Rightarrow F$ and $\int g(x) dF_n(x) \leq C < \infty$ then
 > $$
 > \int h(x) dF_n(x) \to \int h(x) dF(x)
 > $$
 
 > [!done]
 
-> [!question] 3.2.6.
-> **The Lévy Metric.** Show that
+> [!question] 3.2.6.**The Lévy Metric.**
+>  Show that
 > $$
 > \rho(F, G) = \inf\{\epsilon : F(x-\epsilon) - \epsilon \leq G(x) \leq F(x+\epsilon) + \epsilon \text{ for all } x\}
 > $$
@@ -83,8 +102,8 @@
 
 > [!done]
 
-> [!question] 3.2.7.
-> **The Ky Fan metric** on random variables is defined by
+> [!question] 3.2.7.**The Ky Fan metric**
+>  on random variables is defined by
 > $$
 > \alpha(X, Y) = \inf\{\epsilon \geq 0 : \mathbb{P}(|X - Y| > \epsilon) \leq \epsilon\}
 > $$
@@ -120,8 +139,8 @@
 
 > [!done]
 
-> [!question] 3.2.13.
-> **Converging together lemma.** If $X_n \Rightarrow X$ and $Y_n \Rightarrow c$, where $c$ is a constant then $X_n + Y_n \Rightarrow X + c$. A useful consequence of this result is that if $X_n \Rightarrow X$ and $Z_n - X_n \Rightarrow 0$ then $Z_n \Rightarrow X$.
+> [!question] 3.2.13.**Converging together lemma.**
+>  If $X_n \Rightarrow X$ and $Y_n \Rightarrow c$, where $c$ is a constant then $X_n + Y_n \Rightarrow X + c$. A useful consequence of this result is that if $X_n \Rightarrow X$ and $Z_n - X_n \Rightarrow 0$ then $Z_n \Rightarrow X$.
 
 > [!done]
 
