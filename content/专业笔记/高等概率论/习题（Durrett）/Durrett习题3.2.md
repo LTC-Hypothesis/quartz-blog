@@ -80,14 +80,17 @@
 > $$
 > and thus the maxima distribution is 
 > $$
-> \mathbb{P}\left(M_n\le b_n+\frac{x}{b_n}\right)=\left(1-\frac{e^{-x}}{n}+o\left(\frac{1}{n}\right)\right)^n\to\exp\left(e^{-x}\right)
+> \mathbb{P}\left(M_n\le b_n+\frac{x}{b_n}\right)=\left(1-\frac{e^{-x}}{n}+o\left(\frac{1}{n}\right)\right)^n\to\exp\left(-e^{-x}\right)
 > $$
 
 > [!question] 3.2.3. (iii)
 > (iii) Show that $b_n \sim (2\log n)^{1/2}$ and conclude $M_n/(2\log n)^{1/2} \to 1$ in probability.
 
 > [!done]
-> 
+> By tail estimation, 
+> $$
+> \frac{1}{n}\sim\frac{1}{\sqrt{2\pi}}
+> $$
 
 > [!question] 3.2.4.**Fatou's lemma.**
 > Let $g \geq 0$ be continuous. If $X_n \Rightarrow X_\infty$ then
