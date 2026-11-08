@@ -89,8 +89,33 @@
 > [!done]
 > By tail estimation, 
 > $$
-> \frac{1}{n}\sim\frac{1}{\sqrt{2\pi}}
+> \frac{1}{n}\sim\frac{1}{\sqrt{2\pi}b_n}e^{-\frac{b_n^2}{2}}\Longrightarrow n\sim \sqrt{2\pi}b_ne^{\frac{b_n^2}{2}}
 > $$
+> Then $b_n\to\infty$ and take log, we obtain the lof form estimation,
+> $$
+> \log{n}=\frac{b_n^2}{2}+\log{b_n}+o(1)\Longrightarrow b_n^2\sim2\log{n}
+> $$
+> Now it suffices to show that $\frac{M_n}{b_n^2}\xrightarrow{\mathbb{P}}1$. Let $Y_n=b_n(M_n-b_n)$, then it suffices to show that $\frac{Y_n}{b_n^2}\xrightarrow{\mathbb{P}}0$. For any $\varepsilon>0$, 
+> $$
+> \mathbb{P}(|Y_n|>\varepsilon b_n^2)=\mathbb{P}(Y_n>\varepsilon\cdot b_n^2)+\mathbb{P}(Y_n<-\varepsilon b_n^2)
+> $$
+> Denote $\mathbb{P}(Y_n\le x)$ by $F_n(x)$. By $F_n(x)\to\exp(-e^{-x})$, there exists $N_1$ and $K_1$, by the way, without loss of generality, we assume for $n\ge N_1$, $b_n^2>K_1$, which s.t. for $n\ge N_1,x<-K_1$, 
+> $$
+> \left|F_n(-\varepsilon b_n^2)-\exp(-e^{\varepsilon b_n^2})\right|<\frac{\varepsilon}{4}, \ \left|\exp{(-e^{-x})}\right|<\frac{\varepsilon}{4}
+> $$
+> then 
+> $$
+> |F_n(-\varepsilon b_n^2)|\le\left|F_n(-\varepsilon b_n^2)-\exp(-e^{\varepsilon b_n^2})\right|+\left|\exp{(-e^{\varepsilon b_n^2})}\right|<\frac{\varepsilon}{2}
+> $$
+> Similarly, there exists such $N_2,K_2$, for $n\ge N_2,b_n^2>K_2$, we also obtain
+> $$
+> \left|1-F_n(\varepsilon b_n^2)\right|\le|1-\exp(-e^{-\varepsilon b_n^2})|+|\exp(-e^{-\varepsilon b_n^2})-F_n(\varepsilon b_n^2)|<\frac{\varepsilon}{2}
+> $$
+> Now take $N=\max\{N_1,N_2\},K=\{K_1,K_2\}$, for $n\ge N,b_n^2>K$, 
+> $$
+> \mathbb{P}(|Y_n|\ge \varepsilon b_n^2)<\varepsilon
+> $$
+> Hence, $\frac{Y_n}{b_n^2}\xrightarrow{\mathbb{P}}0$ and thus $\frac{M_n}{\sqrt{2\log{n}}}\xrightarrow{\mathbb{P}}1$. 
 
 > [!question] 3.2.4.**Fatou's lemma.**
 > Let $g \geq 0$ be continuous. If $X_n \Rightarrow X_\infty$ then
@@ -99,6 +124,7 @@
 > $$
 
 > [!done]
+> 
 
 > [!question] 3.2.5.**Integration to the limit.**
 >  Suppose $g, h$ are continuous with $g(x) > 0$, and $|h(x)|/g(x) \to 0$ as $|x| \to \infty$. If $F_n \Rightarrow F$ and $\int g(x) dF_n(x) \leq C < \infty$ then
@@ -153,6 +179,7 @@
 > Show that if $X_n \to X$ in probability then $X_n \Rightarrow X$ and that, conversely, if $X_n \Rightarrow c$, where $c$ is a constant then $X_n \to c$ in probability.
 
 > [!done]
+> 
 
 > [!question] 3.2.13.**Converging together lemma.**
 >  If $X_n \Rightarrow X$ and $Y_n \Rightarrow c$, where $c$ is a constant then $X_n + Y_n \Rightarrow X + c$. A useful consequence of this result is that if $X_n \Rightarrow X$ and $Z_n - X_n \Rightarrow 0$ then $Z_n \Rightarrow X$.
