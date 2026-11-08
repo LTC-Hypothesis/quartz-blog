@@ -124,7 +124,11 @@
 > $$
 
 > [!done]
-> 
+> For fixed $M>0$, let $g_M(x)\triangleq g(x)\wedge M$ and thus $g_M(x)$ is a bounded continuous function and $g_M(x)\le g(x)$. Then we have $\mathbb{E}[g_M(X_n)]\to\mathbb{E}[g_M(X_\infty)]$ as $n\to\infty$. By $\mathbb{E}[g_M(X_n)]\le\mathbb{E}[g(X_n)]$, take $\liminf_{n\to\infty}$, 
+> $$
+> \mathbb{E}[g_M(X_\infty)]\le \liminf_{n\to\infty}\mathbb{E}[g(X_n)]
+> $$
+> Let $M\to+\infty$, we obtain $\mathbb{E}[g(X_\infty)]\le\liminf_{n\to\infty}\mathbb{E}[g(X_n)]$. 
 
 > [!question] 3.2.5.**Integration to the limit.**
 >  Suppose $g, h$ are continuous with $g(x) > 0$, and $|h(x)|/g(x) \to 0$ as $|x| \to \infty$. If $F_n \Rightarrow F$ and $\int g(x) dF_n(x) \leq C < \infty$ then
@@ -133,6 +137,7 @@
 > $$
 
 > [!done]
+> 
 
 > [!question] 3.2.6.**The Lévy Metric.**
 >  Show that
