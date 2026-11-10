@@ -174,3 +174,226 @@ $$
 >2. 若$g:X\to\mathbb R$为实线性泛函，则存在唯一满足$\text{Re}\,F=g$的复线性泛函。
 
 
+
+
+**Proof**
+
+对第1条，写成$F(x)=f_1(x)+if_2(x)$，其中$f_1=\text{Re}\,F,f_2=\text{Im}\,F$。由$F$的可加性及对实数的齐次性，$f_1,f_2$都是实线性泛函。
+
+再由$F(ix)=iF(x)$，
+$$
+f_1(ix)+if_2(ix)=-f_2(x)+if_1(x)
+$$
+比较实部和虚部，得到
+$$
+f_1(ix)=-f_2(x),\quad f_2(ix)=f_1(x)
+$$
+所以
+$$
+F(x)=f_1(x)-if_1(ix)
+$$
+因此复线性泛函完全由实部确定，特别地，$\text{Re}\,F_1=\text{Re}\,F_2\Longrightarrow F_1=F_2$。
+
+对第2条，给定实线性泛函$g:X\to\mathbb R$，定义
+$$
+F(x)=g(x)-ig(ix)
+$$
+则$F$可加且实齐次，$\text{Re}\,F=g$。只需要再证明$F(ix)=iF(x)$：
+$$
+F(ix)=g(ix)-ig(-x)=g(ix)+ig(x)=iF(x)
+$$
+于是对$a,b\in\mathbb R$，
+$$
+F((a+ib)x)=aF(x)+bF(ix)=(a+ib)F(x)
+$$
+所以$F$复线性。唯一性由第1条的实部恢复公式得到。
+
+**QED**
+
+# 复赋范空间上的保范延拓
+
+下面证明[[#^h70301|Hahn-Banach定理]]的复数域情形。
+
+**Proof**
+
+设$f:M\to\mathbb C$为有界复线性泛函，取
+$$
+p(x)=\|f\|\|x\|,\quad f_1=\text{Re}\,f
+$$
+把$X,M$看作实线性空间，则$f_1$实线性，且对$m\in M$，
+$$
+f_1(m)\le|f(m)|\le p(m)
+$$
+由[[#^h70303|实Hahn-Banach定理]]，存在实线性泛函$F_1:X\to\mathbb R$，满足
+$$
+F_1|_M=f_1,\quad F_1(x)\le p(x)
+$$
+因为$F_1(-x)=-F_1(x)$且$p(-x)=p(x)$，也有$|F_1(x)|\le p(x)$。
+
+定义
+$$
+F(x)=F_1(x)-iF_1(ix)
+$$
+由[[#复线性泛函与实部|实部恢复公式]]，$F$为复线性泛函，且$\text{Re}\,F=F_1$。因此
+$$
+\text{Re}(F|_M)=F_1|_M=f_1=\text{Re}\,f
+$$
+由于$F|_M,f$都是$M$上的复线性泛函，得到$F|_M=f$。
+
+再证明$|F(x)|\le p(x)$。当$F(x)\ne0$时，写成$F(x)=e^{i\theta}|F(x)|$，则
+$$
+\begin{aligned}
+|F(x)|&=e^{-i\theta}F(x)=F(e^{-i\theta}x)\\
+&=\text{Re}\,F(e^{-i\theta}x)=F_1(e^{-i\theta}x)\\
+&\le\|f\|\|e^{-i\theta}x\|=\|f\|\|x\|
+\end{aligned}
+$$
+$F(x)=0$时也成立。因此$F$有界且$\|F\|\le\|f\|$。结合$F|_M=f$得到$\|f\|\le\|F\|$，从而$\|F\|=\|f\|$。
+
+**QED**
+
+# Hahn-Banach定理的推论
+
+以下$X$为实或复赋范空间，记$X^*=\mathcal B(X,\mathbb F)$为对偶空间，见[[商空间#^f70301|有界线性泛函]]。
+
+>[!proposition] 在给定非零向量上取到其范数
+>若$x_0\in X,x_0\ne0$，则存在$f\in X^*$，使得
+>$$
+>\|f\|=1,\quad f(x_0)=\|x_0\|
+>$$
+^h71001
+
+**Proof**
+
+取$M=\text{span}\{x_0\}$，定义
+$$
+f_0:M\to\mathbb F,\quad f_0(\lambda x_0)=\lambda\|x_0\|
+$$
+则$f_0$线性，并且
+$$
+|f_0(\lambda x_0)|=|\lambda|\|x_0\|=\|\lambda x_0\|
+$$
+所以$\|f_0\|=1$。由Hahn-Banach定理，存在保范延拓$f\in X^*$，满足$f|_M=f_0$。于是$\|f\|=1$，且$f(x_0)=\|x_0\|$。
+
+**QED**
+
+>[!proposition] 用对偶空间刻画范数
+>对任意$x\in X$，
+>$$
+>\|x\|=\sup_{f\in X^*,\ \|f\|\le1}|f(x)|
+>$$
+>并且上确界可以取到。
+^h71002
+
+**Proof**
+
+对$\|f\|\le1$，有$|f(x)|\le\|f\|\|x\|\le\|x\|$，所以上确界不超过$\|x\|$。若$x\ne0$，由上一命题可以选取$f$使得$\|f\|=1,f(x)=\|x\|$。$x=0$时取零泛函即可。
+
+**QED**
+
+## 双对偶空间与自然嵌入
+
+>[!def] 双对偶空间
+>对偶空间$X^*$的对偶称为$X$的双对偶空间，记为
+>$$
+>X^{**}=(X^*)^*=\mathcal B(X^*,\mathbb F)
+>$$
+>对每个$x\in X$，定义
+>$$
+>\widehat x:X^*\to\mathbb F,\quad\widehat x(f)=f(x)
+>$$
+
+>[!proposition] 自然嵌入是线性等距映射
+>对每个$x\in X$，$\widehat x\in X^{**}$，且$\|\widehat x\|=\|x\|$。因此
+>$$
+>\rho:X\to X^{**},\quad x\mapsto\widehat x
+>$$
+>是线性等距嵌入。
+^h71003
+
+**Proof**
+
+$\widehat x$关于$f$线性，并且
+$$
+|\widehat x(f)|=|f(x)|\le\|f\|\|x\|
+$$
+所以$\widehat x$有界。由[[#^h71002|对偶空间对范数的刻画]]，
+$$
+\|\widehat x\|=\sup_{\|f\|\le1}|\widehat x(f)|
+=\sup_{\|f\|\le1}|f(x)|=\|x\|
+$$
+又由$f$的线性，$\widehat{ax+by}=a\widehat x+b\widehat y$，因此$\rho$线性且保范，特别地是单射。
+
+**QED**
+
+>[!def] 自反空间
+>若自然嵌入$\rho:X\to X^{**}$是满射，即
+>$$
+>X^{**}=\{\widehat x:x\in X\}=\rho(X)
+>$$
+>则称$X$为自反空间。
+>
+>这里把$X$写成$X^{**}$的子空间，或在自反时写$X=X^{**}$，都是通过自然嵌入$\rho$进行识别。
+^h71004
+
+## 点与闭子空间的分离
+
+>[!thm] 分离定理
+>设$M$为赋范空间$X$的闭线性子空间，$x_0\notin M$，则存在$f\in X^*$，使得
+>$$
+>f(x_0)=1,\quad f|_M=0,\quad\|f\|=\frac1{\text{dist}(x_0,M)}
+>$$
+^h71005
+
+**Proof**
+
+记$Q:X\to X/M$为商映射，
+$$
+d=\text{dist}(x_0,M)=\|[x_0]\|_{X/M}
+$$
+因为$M$闭且$x_0\notin M$，$d>0$。在赋范空间$X/M$上应用[[#^h71001|给定非零向量处取到范数的泛函]]，存在$\widetilde f\in(X/M)^*$，使得
+$$
+\|\widetilde f\|=1,\quad\widetilde f([x_0])=\|[x_0]\|_{X/M}=d
+$$
+定义
+$$
+f=\frac1d\widetilde f\circ Q,\quad f(x)=\frac1d\widetilde f([x])
+$$
+则$f$线性，$f(x_0)=1$，并且对$m\in M$，$f(m)=d^{-1}\widetilde f([0])=0$。由[[商空间#^q62708|商映射的有界性]]，
+$$
+|f(x)|\le\frac1d\|\widetilde f\|\|Qx\|_{X/M}\le\frac1d\|x\|
+$$
+所以$f\in X^*$且$\|f\|\le d^{-1}$。
+
+反过来，由商范数的定义，存在$m_n\in M$使得$\|x_0+m_n\|\to d$。由于$f(x_0+m_n)=1$，
+$$
+\|f\|\ge\left|f\left(\frac{x_0+m_n}{\|x_0+m_n\|}\right)\right|
+=\frac1{\|x_0+m_n\|}\to\frac1d
+$$
+因此$\|f\|=d^{-1}$。
+
+**QED**
+
+>[!proposition] 用有界线性泛函的核刻画子空间的闭包
+>设$M$为赋范空间$X$的线性子空间，不要求$M$闭，则
+>$$
+>\overline M=\bigcap_{\substack{f\in X^*\\f|_M=0}}\text{Ker}(f)
+>$$
+^h71006
+
+**Proof**
+
+若$f\in X^*$且$f|_M=0$，则$M\subseteq\text{Ker}(f)$。由$f$连续，$\text{Ker}(f)$闭，见[[简明拓扑学#^0f5727|连续映射的闭集原像闭]]，因此$\overline M\subseteq\text{Ker}(f)$。对所有这样的$f$取交，得到
+$$
+\overline M\subseteq\bigcap_{\substack{f\in X^*\\f|_M=0}}\text{Ker}(f)
+$$
+若$x_0\notin\overline M$，对闭子空间$\overline M$应用分离定理，存在$f\in X^*$满足
+$$
+f(x_0)=1,\quad f|_{\overline M}=0
+$$
+于是$f|_M=0$而$x_0\notin\text{Ker}(f)$，所以$x_0$不属于右侧交集，得到反向包含。
+
+**QED**
+
+>[!note] 本次内容参考
+>手稿：2026.11.10，第1—4页的Hahn-Banach定理及推论部分；《高等泛函》§4.4—4.5；Conway第III章§6、§11。子空间与商空间的对偶见[[子空间与商空间的对偶空间]]。
