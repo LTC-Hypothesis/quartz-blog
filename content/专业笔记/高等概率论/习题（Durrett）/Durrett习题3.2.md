@@ -137,7 +137,15 @@
 > $$
 
 > [!done]
-> 
+> Since $\frac{|h(x)|}{g(x)}\to0$, for any $\varepsilon>0$, there exists $M>0$ s.t. $|x|>M$, $|h(x)|\le \varepsilon g(x)$. Then we have 
+> $$
+> \int_{\{|x|\ge M\}}h(x){d}F_n(x)\le\varepsilon\int g(x){d}F_n(x)\le C\varepsilon
+> $$
+> and by Fatou's lemma, 
+> $$
+> \int_{\{|x|\ge M\}}h(x){d}F(x)\le\varepsilon\int g(x){d}F_n(x)\le C\varepsilon
+> $$
+> Take truncation function $\varphi(x)$ where $0\le\varphi(x)\le1$ for $x\in[-M,M]$
 
 > [!question] 3.2.6.**The Lévy Metric.**
 >  Show that
