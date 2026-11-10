@@ -143,9 +143,28 @@
 > $$
 > and by Fatou's lemma, 
 > $$
-> \int_{\{|x|\ge M\}}h(x){d}F(x)\le\varepsilon\int g(x){d}F_n(x)\le C\varepsilon
+> \int_{\{|x|\ge M\}}h(x){d}F(x)\le\varepsilon\int g(x){d}F(x)\le \liminf_{n\to\infty}\varepsilon\int g(x){d}F_n(x)\le C\varepsilon
 > $$
-> Take truncation function $\varphi(x)$ where $0\le\varphi(x)\le1$ for $x\in[-M,M]$
+> Take truncation function $\varphi(x)$ where $0\le\varphi(x)\le1$ for $x\in[-M,M]$ and equal to zero on $[-M-1,M+1]$, which is connected by line in the middle. Therefore, we define 
+> $$
+> h_M(x)=h(x)\varphi(x), \ |h_M(x)-h(x)|\le|h(x)|\mathbb{1}_{\{|x|\ge M\}}\le C\varepsilon
+> $$
+> Then 
+> $$
+> \begin{aligned}
+>&\left|\int h(x){d}F_n-\int h(x){d}F(x)\right|\\
+>\le&\int|h(x)-h_M(x)|{d}F_n+\left|\int h_M(x){d}F_n-\int h_M(x){d}F\right|+\int |h_M(x)-h(x)|{d}F\\
+>\le&2C\varepsilon+\left|\int h_M(x){d}F_n-\int h_M(x){d}F\right|
+>\end{aligned}
+> $$
+> By continuous mapping theorem and $h_M(x)$ is bounded, 
+> $$
+> \left|\int h_M(x){d}F_n-\int h_M(x){d}F\right|\to0
+> $$
+> Hence, 
+> $$
+> \limsup_{n\to\infty}\left|\int h(x){d}F_n-\int h(x){d}F\right|\le2C\varepsilon\text{ and let }\varepsilon\to0^+
+> $$
 
 > [!question] 3.2.6.**The Lévy Metric.**
 >  Show that
@@ -155,6 +174,7 @@
 > defines a metric on the space of distributions and $\rho(F_n, F) \to 0$ if and only if $F_n \Rightarrow F$.
 
 > [!done]
+> 
 
 > [!question] 3.2.7.**The Ky Fan metric**
 >  on random variables is defined by
