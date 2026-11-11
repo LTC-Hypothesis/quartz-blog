@@ -168,48 +168,20 @@ $$
 >$$
 >\mathbb{E}[(g*\phi_\varepsilon)(\xi)]
 >=\frac1{2\pi}\int_{\mathbb{R}}
->e^{-\varepsilon^2t^2/2}\widehat g(t)f_\xi(-t)\,dt.
+>e^{-\varepsilon^2t^2/2}\widehat g(t)\overline{f_\xi(t)}\,dt.
 >$$
->由于变换使用 $e^{itx}$，配对中出现的是 $f_\xi(-t)$，前面的常数为 $1/(2\pi)$。
-
 ^gaussian-fourier-pairing
 
 **Proof**
 
-先计算高斯的特征函数。令
-$$
-H(t)=\int_{\mathbb{R}}e^{itx}\varphi(x)\,dx.
-$$
-由 $\int|x|\varphi(x)\,dx<\infty$，可以在积分号下求导。再用 $\varphi'(x)=-x\varphi(x)$ 分部积分，
-$$
-H'(t)=i\int x e^{itx}\varphi(x)\,dx
-=-i\int e^{itx}\varphi'(x)\,dx
-=-tH(t).
-$$
-边界项为 $0$，且 $H(0)=1$，所以 $H(t)=e^{-t^2/2}$。换元得到
-$$
-\frac1{2\pi}\int_{\mathbb{R}}
-e^{-\varepsilon^2t^2/2}e^{itu}\,dt
-=\phi_\varepsilon(u).
-$$
-
-记 $\mu=\mathcal{L}(\xi)$。展开右侧的 $\widehat g$ 和 $f_\xi(-t)$：
+我们直接从RHS开始计算，
 $$
 \begin{aligned}
-&\frac1{2\pi}\int e^{-\varepsilon^2t^2/2}
-\left(\int e^{ity}g(y)\,dy\right)
-\left(\int e^{-itx}\,\mu(dx)\right)dt\\
-&\qquad=\int\int g(y)
-\left[\frac1{2\pi}\int
-e^{-\varepsilon^2t^2/2}e^{it(y-x)}\,dt\right]dy\,\mu(dx)\\
-&\qquad=\int\int g(y)\phi_\varepsilon(y-x)\,dy\,\mu(dx)\\
-&\qquad=\mathbb{E}[(g*\phi_\varepsilon)(\xi)].
+\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{-\frac{\varepsilon^2t^2}{2}}\hat{g}(\xi)\overline{f_\xi(t)}{d}t=&\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{-\frac{\varepsilon^2t^2}{2}}\left(\int_{-\infty}^{\infty}e^{itx}g(x){d}x\right)\left(\int_{-\infty}^{\infty}e^{-ity}F_\xi(dy)\right)dt\\
+=&\frac{1}{2\pi}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-\frac{\varepsilon^2t^2}{2}}e^{it(x-y)}{d}t\cdot g(x){d}xF_\xi(dy)\\
+=&\frac{1}{2\pi}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}2\pi\phi_\varepsilon(x-y)\cdot g(x){d}xF_\xi(dy)\\
+=&\int_{-\infty}^{\infty}g*\phi_\varepsilon(y)F_\xi(dy)=\mathbb{E}[g*\phi_\varepsilon(\xi)]
 \end{aligned}
-$$
-其中交换积分次序由[[Fubini定理及其应用|Fubini 定理]]保证，因为三重积分的绝对值积分不超过
-$$
-\frac{\|g\|_1}{2\pi}
-\int_{\mathbb{R}}e^{-\varepsilon^2t^2/2}\,dt<\infty.
 $$
 
 **QED**
@@ -227,7 +199,9 @@ $$
 
 **Proof**
 
-正向显然。反向，若两特征函数处处相等，由上面的 Fourier 配对公式，对任意 $g\in C_c(\mathbb{R})$，
+$\Longrightarrow$: 显然。
+
+$\Longleftarrow$: 若两特征函数处处相等，由上面的 Fourier 配对公式，对任意 $g\in C_c(\mathbb{R})$，
 $$
 \mathbb{E}[(g*\phi_\varepsilon)(\xi)]
 =\mathbb{E}[(g*\phi_\varepsilon)(\eta)].
