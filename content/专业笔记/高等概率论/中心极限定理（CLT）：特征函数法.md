@@ -208,10 +208,12 @@ $$
 $$
 于是
 $$
-|\mathbb{E}g(\xi)-\mathbb{E}g(\eta)|
-\le2\|g*\phi_\varepsilon-g\|_\infty\longrightarrow0.
+\begin{aligned}
+|\mathbb{E}g(\xi)-\mathbb{E}g(\eta)|&\le|\mathbb{E}g(\xi)-\mathbb{E}g*\phi_\varepsilon(\xi)|+|\mathbb{E}g*\phi(\eta)-\mathbb{E}g(\eta)|\\
+&\le2\|g*\phi_\varepsilon-g\|_\infty\longrightarrow0,\text{ as }\varepsilon\to0^+.
+\end{aligned}
 $$
-所以二者对所有 $C_c$ 测试函数的期望相等。将[[#^compact-tests|紧支撑测试函数引理]]用于常值序列 $\mu_n=\mathcal{L}(\xi)$ 和 $\mu=\mathcal{L}(\eta)$，推广到所有 $C_b$ 测试函数，再由[[#^bounded-continuous-determine-law|有界连续函数确定分布]]得到 $\xi\stackrel d=\eta$。
+所以二者对所有 $C_c$ 测试函数的期望相等。将[[#^compact-tests|紧支撑测试函数引理]]用于推广到所有 $C_b$ 测试函数，再由[[#^bounded-continuous-determine-law|有界连续函数确定分布]]得到 $\xi\stackrel d=\eta$。
 
 **QED**
 
@@ -220,16 +222,15 @@ $$
 >$$
 >F_n(x)\longrightarrow F(x),
 >$$
->则称 $\xi_n$ 依分布收敛到 $\xi$（convergence in distribution），记为
+>则称 $\xi_n$ 依分布收敛到 $\xi$，记为
 >$$
 >\xi_n\xrightarrow{d}\xi
->\qquad\text{或}\qquad \xi_n\Rightarrow\xi.
 >$$
 >此定义只涉及各自的分布，不要求这些随机变量原本定义在同一个概率空间上。
 
 ^convergence-in-distribution
 
->[!note] 为什么只要求在 $F$ 的连续点收敛
+>[!warning] 为什么只要求在 $F$ 的连续点收敛
 >例如 $\xi_n=1/n$，$\xi=0$。虽然 $\xi_n\to\xi$，但
 >$$
 >F_n(0)=0,\qquad F(0)=1.
@@ -254,16 +255,9 @@ $$
 >\qquad\forall g\in C_b(\mathbb{R}).
 >$$
 >
->若只用 $C_c(\mathbb{R})$ 中的函数检验，称为淡收敛，记为 $\mu_n\xrightarrow{v}\mu$。这个定义也适用于局部有限的 Borel 测度。
+>若只用 $C_c(\mathbb{R})$ 中的函数检验，称为淡收敛，记为 $\mu_n\xrightarrow{v}\mu$。
 
 ^weak-and-vague-convergence
-
->[!note]
->在 $\mathbb{R}$ 上，概率测度弱收敛与相应随机变量依分布收敛等价，下面证明。因此二者通常都记为 $\Rightarrow$。
->
->由[[#^compact-tests|紧支撑测试函数引理]]，如果模糊极限 $\mu$ 仍是概率测度，则模糊收敛也推出弱收敛。区别在于模糊收敛允许质量跑到无穷远：例如 $\delta_n\xrightarrow{v}0$，因为对每个 $g\in C_c$，$g(n)$ 最终为 $0$；但 $\delta_n$ 不可能弱收敛到零测度，取 $g\equiv1$ 即知。
->
->弱收敛定义中的“连续”不能省略。比如上面的 $\delta_{1/n}\Rightarrow\delta_0$，用有界但不连续的 $g=\mathbb{1}_{\{0\}}$ 检验就不收敛。
 
 >[!thm] Baby Skorokhod 嵌入定理
 >若 $\xi_n\xrightarrow{d}\xi$，则可以在一个新的概率空间上构造 $\eta_n,\eta$，使得
@@ -272,7 +266,7 @@ $$
 >\eta\stackrel d=\xi,\qquad
 >\eta_n\xrightarrow{a.s.}\eta.
 >$$
->这是通过[[概率耦合方法|耦合]]实现的 Skorokhod 表示定理，不涉及用 Brownian motion 的停时表示随机变量。
+>这是通过[[概率耦合方法|耦合]]实现的 Skorokhod 表示定理。
 
 ^skorokhod-representation
 
@@ -281,9 +275,9 @@ $$
 取概率空间
 $$
 (\Omega,\mathcal{F},\mathbb{P})
-=((0,1),\mathcal{B}((0,1)),du).
+=((0,1),\mathcal{B}((0,1)),\text{Leb}).
 $$
-对分布函数 $F$，定义广义逆
+对分布函数 $F$，定义广义逆，这个想法类似于[[随机变量与分布函数#^cef490|给定分布函数，构造相应的随机变量]]，
 $$
 Q(u)=F^{-1}(u)
 :=\inf\{y:F(y)\ge u\}
@@ -407,7 +401,33 @@ $$
 
 **QED**
 
->[!thm] Portmanteau 定理
+>[!warning] 
+>在 $\mathbb{R}$ 上，概率测度弱收敛与相应随机变量依分布收敛等价，因此二者通常都可以记为 $\Rightarrow$，但我们依然把 $\Longrightarrow$ 符号只留给弱收敛。
+
+>[!example] 依分布收敛和弱收敛等价，为何还需要重视弱收敛的概念？
+>设 $X_i$ 为 i.i.d.，$\mathbb{E}X_i=0$、$\mathbb{E}X_i^2=1$，令 $S_0=0$。对 $0\le t\le1$，作线性插值
+>$$
+>W_n(t)=\frac1{\sqrt n}
+>\left[S_{\lfloor nt\rfloor}
+>+(nt-\lfloor nt\rfloor)X_{\lfloor nt\rfloor+1}\right].
+>$$
+>固定 $t$ 时，$W_n(t)$ 是实值随机变量；把整条路径作为一个对象时，
+>$$
+>W_n:\Omega\longrightarrow C[0,1]
+>$$
+>是取值于连续函数空间的随机元素。Donsker 不变原理断言
+>$$
+>W_n\Rightarrow B\quad\text{in }(C[0,1],\|\cdot\|_\infty),
+>$$
+>其中 $B$ 为标准 Brownian motion。
+>
+>此处弱收敛的意思是：对每个有界连续泛函 $H:C[0,1]\to\mathbb{R}$，$\mathbb{E}H(W_n)\to\mathbb{E}H(B)$。它包含各固定时刻的 CLT，但不能仅由逐个时刻的 CLT 推出；还要处理有限维分布与路径分布的紧性。
+>
+>但是注意到 $C[0,1]$ 是一个无穷维空间，无法在其上定义分布，因此也不能定义依分布收敛，因此只能使用弱收敛来刻画。
+>
+>进一步的整理见[[The continuous space, weak convergence, and Wiener measure#The Invariance Principle and the Wiener Measure|Donsker 不变原理与 Wiener 测度]]。
+
+>[!thm] Portmanteau 定理（框架定理）
 >设 $\xi_n,\xi$ 为实值随机变量。下列条件等价：
 >
 >1. $\xi_n\xrightarrow{d}\xi$。
@@ -544,35 +564,6 @@ $$
 
 **QED**
 
->[!note] 一般形式与 $0$ 点连续性
->更一般地，若特征函数 $f_{\xi_n}(t)$ 逐点趋于某个函数 $f(t)$，且 $f$ 在 $0$ 处连续，则 $f$ 必为某个概率分布的特征函数，并且相应分布弱收敛到该分布。
->
->上面的证明预先知道极限是 $f_\xi$。一般形式还需要证明极限分布存在，可以先证明分布族[[The continuous space, weak convergence, and Wiener measure#Tightness|紧]]，再提取弱收敛子列并用特征函数唯一性识别极限，见 Durrett Theorem 3.3.17、李立颖讲义 Theorem 5.13。
->
->$0$ 点连续性不能去掉。例如 $\xi_n\sim N(0,n)$ 时，
->$$
->f_{\xi_n}(t)=e^{-nt^2/2}\longrightarrow\mathbb{1}_{\{0\}}(t).
->$$
->这个极限在 $0$ 不连续，不是概率分布的特征函数；这列分布的质量不断向远处扩散。
 
 
->[!note] 从一个随机变量的 CLT 到路径的弱收敛
->设 $X_i$ 为 i.i.d.，$\mathbb{E}X_i=0$、$\mathbb{E}X_i^2=1$，令 $S_0=0$。对 $0\le t\le1$，作线性插值
->$$
->W_n(t)=\frac1{\sqrt n}
->\left[S_{\lfloor nt\rfloor}
->+(nt-\lfloor nt\rfloor)X_{\lfloor nt\rfloor+1}\right].
->$$
->固定 $t$ 时，$W_n(t)$ 是实值随机变量；把整条路径作为一个对象时，
->$$
->W_n:\Omega\longrightarrow C[0,1]
->$$
->是取值于连续函数空间的随机元素。Donsker 不变原理断言
->$$
->W_n\Rightarrow B\quad\text{in }(C[0,1],\|\cdot\|_\infty),
->$$
->其中 $B$ 为标准 Brownian motion。
->
->此处弱收敛的意思是：对每个有界连续泛函 $H:C[0,1]\to\mathbb{R}$，$\mathbb{E}H(W_n)\to\mathbb{E}H(B)$。它包含各固定时刻的 CLT，但不能仅由逐个时刻的 CLT 推出；还要处理有限维分布与路径分布的紧性。
->
->进一步的整理见[[The continuous space, weak convergence, and Wiener measure#The Invariance Principle and the Wiener Measure|Donsker 不变原理与 Wiener 测度]]。
+
