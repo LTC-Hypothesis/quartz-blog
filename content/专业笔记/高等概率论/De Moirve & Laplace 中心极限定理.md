@@ -37,7 +37,6 @@
 $$
 \mathbb{P}(S_{2n}=2k)
 =\binom{2n}{n+k}2^{-2n},
-\qquad k=-n,-n+1,\cdots,n.
 $$
 由 Stirling 公式
 $$
@@ -81,74 +80,5 @@ $$
 $$
 \mathbb{P}(S_{2n}=2k)
 \sim\frac1{\sqrt{\pi n}}e^{-x^2/2}
-=\frac2{\sqrt{2n}}\varphi(x).
 $$
 
->[!note] 局部中心极限定理中的格点间距
->准确的非零极限是
->$$
->\frac{\sqrt{2n}}2\,\mathbb{P}(S_{2n}=2k_n)
->\longrightarrow\varphi(x),
->\qquad \frac{2k_n}{\sqrt{2n}}\to x.
->$$
->单个点的概率本身趋于 $0$。因子 $2/\sqrt{2n}$ 是 $S_{2n}/\sqrt{2n}$ 相邻可取值的距离，也就是把概率求和变成 Riemann 和时的 $\Delta x$。
-
-接下来从局部估计推出区间上的结论。需要说明，在有界区间内上面的近似可以一致成立。
-
-令
-$$
-h(v)=(1+v)\log(1+v)+(1-v)\log(1-v).
-$$
-当 $v\to0$ 时，$h(v)=v^2+O(v^4)$。对固定 $M<\infty$，当 $|k|\le M\sqrt n$ 时，Stirling 公式的相对误差一致趋于 $0$，且
-$$
-nh(k/n)=\frac{k^2}{n}+O\left(\frac{k^4}{n^3}\right)
-=\frac{k^2}{n}+O(n^{-1})
-$$
-也一致成立。因此
-$$
-\mathbb{P}(S_{2n}=2k)
-=\frac2{\sqrt{2n}}\,
-\varphi\left(\frac{2k}{\sqrt{2n}}\right)(1+o(1)),
-$$
-其中 $o(1)$ 在 $|k|\le M\sqrt n$ 上一致。于是
-$$
-\begin{aligned}
-\mathbb{P}\left(a\le\frac{S_{2n}}{\sqrt{2n}}\le b\right)
-&=\sum_{a\le2k/\sqrt{2n}\le b}\mathbb{P}(S_{2n}=2k)\\
-&=(1+o(1))
-\sum_{a\le2k/\sqrt{2n}\le b}
-\varphi\left(\frac{2k}{\sqrt{2n}}\right)\frac2{\sqrt{2n}}\\
-&\longrightarrow\int_a^b\varphi(x)\,dx.
-\end{aligned}
-$$
-
-再考虑奇数步。记
-$$
-U_n=\frac{S_{2n}}{\sqrt{2n}},\qquad
-c_n=\sqrt{\frac{2n}{2n+1}},\qquad
-\delta_n=\frac1{\sqrt{2n+1}}.
-$$
-因为 $|X_{2n+1}|=1$，
-$$
-\frac{S_{2n+1}}{\sqrt{2n+1}}
-=c_nU_n+\frac{X_{2n+1}}{\sqrt{2n+1}},
-$$
-从而对充分大的 $n$，
-$$
-\begin{aligned}
-\mathbb{P}\left(\frac{a+\delta_n}{c_n}\le U_n
-\le\frac{b-\delta_n}{c_n}\right)
-&\le\mathbb{P}\left(a\le\frac{S_{2n+1}}{\sqrt{2n+1}}\le b\right)\\
-&\le\mathbb{P}\left(\frac{a-\delta_n}{c_n}\le U_n
-\le\frac{b+\delta_n}{c_n}\right).
-\end{aligned}
-$$
-两侧端点分别趋于 $a,b$；再用固定的 $a\pm\varepsilon,b\pm\varepsilon$ 夹逼，并利用正态分布函数连续，即得奇数步的结论。
-
-最后，$\mathbb{E}(S_n/\sqrt n)^2=1$，Chebyshev 不等式给出
-$$
-\mathbb{P}\left(\left|S_n/\sqrt n\right|>M\right)\le M^{-2}.
-$$
-所以在区间结论中令左端点趋于 $-\infty$，就得到分布函数收敛。
-
-**QED**
