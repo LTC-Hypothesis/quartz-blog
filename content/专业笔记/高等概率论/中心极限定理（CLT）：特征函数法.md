@@ -279,13 +279,13 @@ $$
 $$
 对分布函数 $F$，定义广义逆，这个想法类似于[[随机变量与分布函数#^cef490|给定分布函数，构造相应的随机变量]]，
 $$
-Q(u)=F^{-1}(u)
+F^{-1}(u)
 :=\inf\{y:F(y)\ge u\}
 =\sup\{y:F(y)<u\},\qquad0<u<1.
 $$
-同理定义 $Q_n=F_n^{-1}$，并令
+同理定义 $F_n^{-1}$，并令
 $$
-\eta_n(u)=Q_n(u),\qquad\eta(u)=Q(u).
+\eta_n(u)=F_n^{-1}(u),\qquad\eta(u)=Q(u).
 $$
 由分布函数的单调性、右连续性及两端极限，广义逆为有限实数，且
 $$
@@ -488,7 +488,7 @@ $$
 \partial A=\{x\},\qquad
 \mathbb{P}(\xi\in\partial A)=F(x)-F(x-)=0.
 $$
-于是 $F_n(x)\to F(x)$。
+于是 $\mathbb{P}(\xi_n\le x)=F_n(x)\to F(x)=\mathbb{P}(\xi\le x)$。
 
 **QED**
 
