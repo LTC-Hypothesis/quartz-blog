@@ -173,12 +173,9 @@ $$
 >1. 若$F:X\to\mathbb C$为复线性泛函，令$g=\text{Re}\,F$，则$g:X\to\mathbb R$为实线性泛函
 >2. 若$g:X\to\mathbb R$为实线性泛函，则存在唯一满足$\text{Re}\,F=g$的复线性泛函。
 
-
-
-
 **Proof**
 
-对第1条，写成$F(x)=f_1(x)+if_2(x)$，其中$f_1=\text{Re}\,F,f_2=\text{Im}\,F$。由$F$的可加性及对实数的齐次性，$f_1,f_2$都是实线性泛函。
+(1) 写成$F(x)=f_1(x)+if_2(x)$，其中$f_1=\text{Re}\,F,f_2=\text{Im}\,F$。由$F$的可加性及对实数的齐次性，$f_1,f_2$都是实线性泛函。
 
 再由$F(ix)=iF(x)$，
 $$
@@ -194,7 +191,7 @@ F(x)=f_1(x)-if_1(ix)
 $$
 因此复线性泛函完全由实部确定，特别地，$\text{Re}\,F_1=\text{Re}\,F_2\Longrightarrow F_1=F_2$。
 
-对第2条，给定实线性泛函$g:X\to\mathbb R$，定义
+(2) 给定实线性泛函$g:X\to\mathbb R$，定义
 $$
 F(x)=g(x)-ig(ix)
 $$

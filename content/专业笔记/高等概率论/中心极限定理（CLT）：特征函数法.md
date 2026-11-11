@@ -285,11 +285,11 @@ F^{-1}(u)
 $$
 同理定义 $F_n^{-1}$，并令
 $$
-\eta_n(u)=F_n^{-1}(u),\qquad\eta(u)=Q(u).
+\eta_n(u)=F_n^{-1}(u),\qquad\eta(u)=F^{-1}(u).
 $$
 由分布函数的单调性、右连续性及两端极限，广义逆为有限实数，且
 $$
-Q(u)\le y\quad\Longleftrightarrow\quad u\le F(y).
+F^{-1}(u)\le y\quad\Longleftrightarrow\quad u\le F(y).
 $$
 因此 $Q$ 可测，并且
 $$
@@ -297,19 +297,19 @@ $$
 =\int_0^1\mathbb{1}_{\{u\le F(y)\}}\,du
 =F(y).
 $$
-所以 $\eta\stackrel d=\xi$。同理，$\eta_n\stackrel d=\xi_n$。这里均匀分布的是坐标 $u$，经过 $Q$ 变换后的 $\eta$ 具有分布函数 $F$；这也是[[随机变量与分布函数|利用分布函数广义逆构造随机变量]]的方法。
+所以 $\eta\stackrel d=\xi$。同理，$\eta_n\stackrel d=\xi_n$。这里均匀分布的是坐标 $u$，经过变换后的 $\eta$ 具有分布函数 $F$；这也是[[随机变量与分布函数|利用分布函数广义逆构造随机变量]]的方法。
 
-下面证明几乎处处收敛。$Q$ 单调，所以在 $(0,1)$ 中至多有可数个不连续点。令
+下面证明几乎处处收敛。$F^{-1}$ 单调，所以在 $(0,1)$ 中至多有可数个不连续点。令
 $$
-\Omega_0=\{u\in(0,1):Q\text{ 在 }u\text{ 连续}\}.
+\Omega_0=\{u\in(0,1):F^{-1}\text{ 在 }u\text{ 连续}\}.
 $$
 则 $\mathbb{P}(\Omega_0)=1$。
 
-固定 $u\in\Omega_0$，记 $q=Q(u)$。给定 $\varepsilon>0$，由于 $F$ 的不连续点至多可数，可以选取 $F$ 的两个连续点 $y,z$，使
+固定 $u\in\Omega_0$，给定 $\varepsilon>0$，由于 $F$ 的不连续点至多可数，可以选取 $F$ 的两个连续点 $y,z$，使
 $$
-q-\varepsilon<y<q<z<q+\varepsilon.
+F^{-1}(u)-\varepsilon<y<F^{-1}(u)<z<F^{-1}(u)+\varepsilon.
 $$
-由 $y<Q(u)$，有 $F(y)<u$。另一方面，因为 $Q$ 在 $u$ 连续，可以选取 $v>u$ 足够接近 $u$，使 $Q(v)<z$，于是
+由 $y<F^{-1}(u)$，有 $F(y)<u$。另一方面，因为 $F^{-1}$ 在 $u$ 连续，可以选取 $v>u$ 足够接近 $u$，使 $F^{-1}(v)<z$，于是
 $$
 F(z)\ge v>u.
 $$
@@ -323,16 +323,11 @@ F_n(y)<u<F_n(z).
 $$
 再由广义逆的性质，
 $$
-y<Q_n(u)\le z.
+y<F^{-1}_n(u)\le z.
 $$
-所以 $|Q_n(u)-Q(u)|<\varepsilon$，从而 $\eta_n(u)\to\eta(u)$。这对所有 $u\in\Omega_0$ 成立，即得到几乎处处收敛。
+所以 $|F^{-1}_n(u)-F^{-1}(u)|<\varepsilon$，从而 $\eta_n(u)\to\eta(u)$。这对所有 $u\in\Omega_0$ 成立，即得到几乎处处收敛。
 
 **QED**
-
->[!note]
->这里需要排除的是分位数函数 $Q=F^{-1}$ 在 $u\in(0,1)$ 上的不连续点。证明中另外选取的是分布函数 $F$ 在实轴上的连续点 $y,z$，这两种连续点作用不同。
->
->新构造只保留 $\eta_n$ 与 $\xi_n$ 各自的边缘分布，并不保留原来整列随机变量的联合分布。因此不能反过来说原来的 $\xi_n$ 已经几乎处处收敛。
 
 >[!thm] 依分布收敛 $\Longleftrightarrow$ 弱收敛
 >对实值随机变量 $\xi_n,\xi$，
@@ -356,7 +351,7 @@ $$
 $$
 这里应用 DCT 的是构造后的 $\eta_n$，不能直接从依分布收敛对原来的 $\xi_n$ 使用 DCT。
 
-“$\Leftarrow$”：固定 $F$ 的连续点 $x$，按照手稿用两条斜线夹住示性函数。对 $\beta\ge1$，令
+“$\Leftarrow$”：固定 $F$ 的连续点 $x$，对 $\beta\ge1$，令
 $$
 f_\beta(y)=
 \begin{cases}
@@ -425,7 +420,7 @@ $$
 >
 >但是注意到 $C[0,1]$ 是一个无穷维空间，无法在其上定义分布，因此也不能定义依分布收敛，因此只能使用弱收敛来刻画。
 >
->进一步的整理见[[The continuous space, weak convergence, and Wiener measure#The Invariance Principle and the Wiener Measure|Donsker 不变原理与 Wiener 测度]]。
+>关于不变原理见[[The continuous space, weak convergence, and Wiener measure#The Invariance Principle and the Wiener Measure|Donsker 不变原理与 Wiener 测度]]。
 
 >[!thm] Portmanteau 定理（框架定理）
 >设 $\xi_n,\xi$ 为实值随机变量。下列条件等价：
@@ -445,8 +440,6 @@ $$
 >$$
 >\mathbb{P}(\xi_n\in A)\longrightarrow\mathbb{P}(\xi\in A).
 >$$
->
->第 4 条中的集合称为极限分布的连续集；第 3 条中的闭集不要求有界。
 
 ^portmanteau
 
@@ -492,77 +485,7 @@ $$
 
 **QED**
 
->[!note] 与依概率收敛的关系
->在同一个概率空间上，
->$$
->\xi_n\xrightarrow{a.s.}\xi
->\ \Longrightarrow\
->\xi_n\xrightarrow{\mathbb{P}}\xi
->\ \Longrightarrow\
->\xi_n\xrightarrow{d}\xi.
->$$
->最后一步也可以直接由
->$$
->F(x-\varepsilon)-\mathbb{P}(|\xi_n-\xi|>\varepsilon)
->\le F_n(x)
->\le F(x+\varepsilon)+\mathbb{P}(|\xi_n-\xi|>\varepsilon)
->$$
->证明：先令 $n\to\infty$，再在 $F$ 的连续点令 $\varepsilon\downarrow0$。
->
->反向一般不成立。例如 $\xi$ 等概率取 $\pm1$，令 $\xi_n=-\xi$，则 $\xi_n\stackrel d=\xi$，但 $\mathbb{P}(|\xi_n-\xi|>1)=1$。
->
->若极限为常数 $c$，则有
->$$
->\xi_n\xrightarrow{d}c
->\quad\Longleftrightarrow\quad
->\xi_n\xrightarrow{\mathbb{P}}c.
->$$
->由依分布收敛推出依概率收敛时，在 Portmanteau 定理中取闭集 $K=\{x:|x-c|\ge\varepsilon\}$ 即可。这也说明[[弱大数定律（WLLN）]]中的常数极限可以用依分布收敛刻画。
 
->[!thm] Lévy 连续性定理：已知候选极限的形式
->设 $\xi_n,\xi$ 为实值随机变量，则
->$$
->\xi_n\xrightarrow{d}\xi
->\quad\Longleftrightarrow\quad
->f_{\xi_n}(t)\longrightarrow f_\xi(t),
->\qquad\forall t\in\mathbb{R}.
->$$
-
-^levy-continuity
-
-**Proof**
-
-“$\Rightarrow$”：对每个固定的 $t$，$\cos(tx)$、$\sin(tx)$ 都属于 $C_b(\mathbb{R})$，由弱收敛的测试函数刻画即得结论。
-
-“$\Leftarrow$”：固定 $g\in C_c(\mathbb{R})$、$\varepsilon>0$。由[[#^gaussian-fourier-pairing|Fourier 配对公式]]，
-$$
-\mathbb{E}[(g*\phi_\varepsilon)(\xi_n)]
-=\frac1{2\pi}\int
-e^{-\varepsilon^2t^2/2}\widehat g(t)f_{\xi_n}(-t)\,dt.
-$$
-被积函数逐点收敛，且
-$$
-\left|e^{-\varepsilon^2t^2/2}\widehat g(t)f_{\xi_n}(-t)\right|
-\le e^{-\varepsilon^2t^2/2}\|g\|_1,
-$$
-右侧可积，所以由 DCT，
-$$
-\mathbb{E}[(g*\phi_\varepsilon)(\xi_n)]
-\longrightarrow\mathbb{E}[(g*\phi_\varepsilon)(\xi)].
-$$
-再用
-$$
-\begin{aligned}
-|\mathbb{E}g(\xi_n)-\mathbb{E}g(\xi)|
-&\le2\|g*\phi_\varepsilon-g\|_\infty\\
-&\quad+
-\left|\mathbb{E}[(g*\phi_\varepsilon)(\xi_n)]
--\mathbb{E}[(g*\phi_\varepsilon)(\xi)]\right|.
-\end{aligned}
-$$
-先令 $n\to\infty$，再令 $\varepsilon\downarrow0$，得到所有 $C_c$ 测试函数的期望收敛。由[[#^compact-tests|截断推广]]得到所有 $C_b$ 测试函数的期望收敛，即弱收敛，也就是依分布收敛。
-
-**QED**
 
 
 
