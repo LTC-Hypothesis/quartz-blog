@@ -1,9 +1,5 @@
 # Approximation of bad functions by good functions
 
-2025.11.19, 2025.11.26 · [[PDE Note Week11LectureWed.pdf|Source, pp. 1–3]]; [[PDE Week12 Wed.pdf|continuation, pp. 1–3]]
-
-[[Distributions (Schwartz)]] · [[Weak Derivatives]] · [[Chain Rule & Sobolev Space]]
-
 ## Regularization
 
 Let $j$ be the [[Distributions (Schwartz)#Standard mollifier|standard mollifier]]. Write

@@ -122,42 +122,44 @@ $$
 ^gaussian-approximation
 
 **Proof**
-
-先看光滑性。因为高斯核的每阶导数都有界，
+对于 $h>0$ ，考虑
 $$
-\left|g(y)\phi_\varepsilon^{(m)}(x-y)\right|
-\le |g(y)|\,\|\phi_\varepsilon^{(m)}\|_\infty,
+\begin{aligned}
+\frac{g*\phi_\varepsilon(x+h)-g*\phi_\varepsilon(x)}{h}=\int_{-\infty}^{\infty}g(y)\frac{\phi_\varepsilon(x+h-y)-\phi_\varepsilon(x-y)}{h}{d}y
+\end{aligned}
 $$
-而 $g\in L^1(\mathbb{R})$。用均值定理控制差商，再用 DCT 交换微分与积分，得到
+注意到上述积分实际上可以限制在 $g$ 的支撑上积分。由DCT，令 $h\to0$，得到
 $$
-\frac{d^m}{dx^m}(g*\phi_\varepsilon)(x)
-=\int_{\mathbb{R}}g(y)\phi_\varepsilon^{(m)}(x-y)\,dy.
+\frac{d}{dx}g*\phi_\varepsilon(x)=\int_{-\infty}^{\infty}g(y)\phi_\varepsilon'(x-y){d}y
 $$
-导数连续性同样由 DCT 得到。
-
-再看一致逼近。取 $Z\sim N(0,1)$，则
+类似地，通过数学归纳法，可以证明
 $$
-(g*\phi_\varepsilon)(x)=\mathbb{E}g(x-\varepsilon Z).
+\frac{d^m}{dx^m}g*\phi_\varepsilon(x)=\int_{-\infty}^{\infty}g(y)\phi_\varepsilon^{(m)}(x-y){d}y,\forall m\ge1
 $$
-因为 $g$ 连续且紧支撑，所以在整个 $\mathbb{R}$ 上一致连续。令
+再看一致逼近。取 $Z\sim N(0,1)$，注意到
 $$
-\omega_g(\delta)=\sup_{|x-y|\le\delta}|g(x)-g(y)|,
+\begin{aligned}
+(g*\phi_\varepsilon)(x)&=\frac{1}{\sqrt{2\pi}\varepsilon}\int_{-\infty}^{\infty}\exp\left(-\frac{y^2}{2\varepsilon^2}\right)g(x-y){d}y\\
+&\overset{y=\varepsilon z}{=}\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\exp\left(-\frac{y^2}{2}\right)g(x-\varepsilon z){d}\\
+&=\mathbb{E}g(x-\varepsilon Z).
+\end{aligned}
 $$
-则 $\omega_g(\delta)\to0$。对任意 $\delta>0$，
+于是
 $$
-\|g*\phi_\varepsilon-g\|_\infty
-\le\omega_g(\delta)
-+2\|g\|_\infty\mathbb{P}(|\varepsilon Z|>\delta).
+\begin{aligned}
+\sup_{x\in\mathbb{R}}\left|g*\phi_\varepsilon(x)-g(x)\right|=&\sup_{x\in\mathbb{R}}\left|\mathbb{E}[g(x-\varepsilon\cdot Z)-g(x)]\right|\\
+\le&\mathbb{E}\sup_{x\in\mathbb{R}}|g(x-\varepsilon\cdot Z)-g(x)|\to0,\text{ as }\varepsilon\to0^+
+\end{aligned}
 $$
-先令 $\varepsilon\downarrow0$，再令 $\delta\downarrow0$ 即可。
 
 **QED**
 
->[!note]
->这与[[Approximation of bad functions by good functions#Regularization|磨光与近似恒等核]]的思想相同。这里使用的是高斯核；它不具有紧支撑，因此 $g*\phi_\varepsilon$ 一般也没有紧支撑。
+>[!warning] 
+>- 这与[[Approximation of bad functions by good functions#Regularization|磨光与近似恒等核]]的思想相同。这里使用的是高斯核；它不具有紧支撑，因此 $g*\phi_\varepsilon$ 一般也没有紧支撑。
+>- 磨光后的函数无穷次可微的原因，主要是能将导数转移到具有无穷次可微的磨光化子上。
 
->[!lemma] 高斯平滑后的 Fourier 配对公式
->统一采用下面的 Fourier 变换约定：
+>[!lemma] 磨光后的 Fourier 配对公式
+>记函数 $g$ 的 Fourier 变换为：
 >$$
 >\widehat g(t)=\int_{\mathbb{R}}e^{itx}g(x)\,dx,
 >\qquad f_\xi(t)=\mathbb{E}e^{it\xi}.
@@ -579,78 +581,6 @@ $$
 >$$
 >这个极限在 $0$ 不连续，不是概率分布的特征函数；这列分布的质量不断向远处扩散。
 
->[!thm] i.i.d. 中心极限定理（补充）
->设 $X_1,X_2,\cdots$ 为 i.i.d.，$\mathbb{E}X_1=\mu$，$0<\operatorname{Var}(X_1)=\sigma^2<\infty$。则
->$$
->\frac{S_n-n\mu}{\sigma\sqrt n}\xrightarrow{d}N(0,1),
->\qquad S_n=\sum_{i=1}^nX_i.
->$$
-
-^iid-clt
-
-**Proof**
-
-令
-$$
-Y_i=\frac{X_i-\mu}{\sigma},
-\qquad\mathbb{E}Y_i=0,\quad\mathbb{E}Y_i^2=1,
-$$
-并记 $f=f_{Y_1}$。由二阶矩有限，在积分号下求导得到
-$$
-f'(t)=\mathbb{E}(iY_1)e^{itY_1},
-\qquad
-f''(t)=-\mathbb{E}Y_1^2e^{itY_1}.
-$$
-具体地，用 $|e^{ihy}-1|\le|hy|$ 控制第一次差商，第二次差商由 $Y_1^2$ 控制，再用 DCT。$f''$ 的连续性也由 DCT 得到，因此
-$$
-f(0)=1,\qquad f'(0)=0,\qquad f''(0)=-1,
-$$
-并有 Taylor 展开
-$$
-f(u)=1-\frac{u^2}{2}+o(u^2),\qquad u\to0.
-$$
-注意零均值对应的是 $f'(0)=i\mathbb{E}Y_1=0$。
-
-由[[独立性]]，
-$$
-f_{(Y_1+\cdots+Y_n)/\sqrt n}(t)
-=\left[f\left(\frac t{\sqrt n}\right)\right]^n.
-$$
-对每个固定的 $t$，令
-$$
-z_n=f(t/\sqrt n)-1
-=-\frac{t^2}{2n}+o(n^{-1}).
-$$
-因为 $z_n\to0$，可以使用 $1$ 附近满足 $\log1=0$ 的复对数分支。由
-$$
-\log(1+z)=z+O(|z|^2),
-$$
-得到
-$$
-n\log f(t/\sqrt n)
-=nz_n+O(n|z_n|^2)
-\longrightarrow-\frac{t^2}{2}.
-$$
-所以
-$$
-\left[f\left(\frac t{\sqrt n}\right)\right]^n
-\longrightarrow e^{-t^2/2}.
-$$
-右侧是标准正态的特征函数，应用 Lévy 连续性定理即得结论。这里只要求二阶矩有限，不需要三阶矩或密度。
-
-**QED**
-
->[!note] 二项分布形式
->若 $B_n\sim\operatorname{Bin}(n,p)$，其中 $0<p<1$，令 $q=1-p$，将 $B_n$ 写成 $n$ 个独立 Bernoulli 变量之和，得到
->$$
->\frac{B_n-np}{\sqrt{npq}}\xrightarrow{d}N(0,1).
->$$
->即对固定 $a<b$，
->$$
->\mathbb{P}\left(a\le\frac{B_n-np}{\sqrt{npq}}\le b\right)
->\longrightarrow\Phi(b)-\Phi(a).
->$$
->这就是一般的 De Moivre–Laplace 形式；对称随机游走对应 $p=1/2$ 及 $S_n=2B_n-n$。
 
 >[!note] 从一个随机变量的 CLT 到路径的弱收敛
 >设 $X_i$ 为 i.i.d.，$\mathbb{E}X_i=0$、$\mathbb{E}X_i^2=1$，令 $S_0=0$。对 $0\le t\le1$，作线性插值
@@ -672,17 +602,3 @@ $$
 >此处弱收敛的意思是：对每个有界连续泛函 $H:C[0,1]\to\mathbb{R}$，$\mathbb{E}H(W_n)\to\mathbb{E}H(B)$。它包含各固定时刻的 CLT，但不能仅由逐个时刻的 CLT 推出；还要处理有限维分布与路径分布的紧性。
 >
 >进一步的整理见[[The continuous space, weak convergence, and Wiener measure#The Invariance Principle and the Wiener Measure|Donsker 不变原理与 Wiener 测度]]。
-
->[!note] 几种证明方法
->本节的两条路线是：
->
->1. 精确概率公式 $\to$ Stirling 公式 $\to$ 局部估计 $\to$ Riemann 和，适合简单随机游走等可显式计算的模型。
->2. 独立性 $\to$ 特征函数的乘积 $\to$ 原点附近的 Taylor 展开 $\to$ Lévy 连续性定理，得到一般 i.i.d. CLT。
->
->后续还可以考虑 Lindeberg 替换法、Stein 方法，以及在矩足以确定分布时使用矩方法；Stein 方法也可处理某些存在依赖的模型。Stieltjes 变换是研究随机矩阵谱分布的另一种变换工具。若要给出正态近似的误差界，则进入 Berry–Esseen 型结果，这比仅证明收敛需要更多条件。
-
->[!note] 参考
->主体按 2026.11.10 手稿（6 页）整理，补全局部估计到区间极限、截断推广、分位数耦合及特征函数方法中的细节。
->
->- Durrett, *Probability: Theory and Examples*, 5th ed.：§3.1（印刷页 113–115），Theorems 3.2.8–3.2.11（印刷页 118–121），§3.3，尤其 Theorem 3.3.17。
->- 李立颖，*Advanced Probability* 讲义：Theorem 5.7（pp. 55–57），Theorem 5.13，Propositions 5.19、5.21 与 Theorem 5.22（pp. 62–64）。一般 i.i.d. CLT 的证明作为本节特征函数方法的补充。

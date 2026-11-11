@@ -350,9 +350,7 @@ $$
 > \lim_{\delta\downarrow0}\varlimsup_{n\to\infty}\mathbb{P}\left[\max_{1\le j\le[n\delta]+1,1\le k\le[nT]+1}|S_{j+k}-S_k|>\varepsilon\sigma\sqrt{n}\right]=0
 > $$
 
-
 ^e19cfb
-
 **Proof**
 For $0<\delta<T$, there exists $m\ge2$ s.t. $\frac{T}{m}<\delta<\frac{T}{m-1}$. Note that 
 $$
