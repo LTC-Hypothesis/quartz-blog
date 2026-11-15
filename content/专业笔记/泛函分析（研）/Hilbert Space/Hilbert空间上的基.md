@@ -83,7 +83,9 @@ $$
 
 **Proof**
 
-$(1)\Longrightarrow(2)$: 显然
+$(1)\Longrightarrow(2)$: 显然。
+
+$(2)\Longrightarrow(1)$: 由$\{0\}^\bot=\left(\{e_n\}_{n=1}^{\infty \ \bot}\right)^\bot=\overline{\text{span}\{e_n\}}^\bot=H$。
 
 $(2)\Longrightarrow(3)$: 注意到
 $$
@@ -97,7 +99,7 @@ $$
 
 $(4)\Longrightarrow(5)$: 显然。
 
-$(5)\Longrightarrow(4)$: 若不然，存在$h$使得$\langle h,e_i\rangle=0,\forall i$，则$h=0$。
+$(5)\Longrightarrow(2)$: 若不然，存在$h$使得$\langle h,e_i\rangle=0,\forall i$，则$h=0$。
 
 **QED**
 
