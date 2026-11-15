@@ -42,7 +42,7 @@ $$
 **QED**
 
 >[!warning] 
->若记$M\triangleq\text{span}\{e_i\}_{i=1}^{n}$，则$\sum_{i=1}^{n}\langle h,e_i\rangle e_i\in M$，则$\mathcal{P}_M(h)=\sum_{i=1}^{n}\langle h,e_i\rangle e_i$。
+>若记$M\triangleq\text{span}\{e_i\}_{i=1}^{n}$，则$\sum_{i=1}^{n}\langle h,e_i\rangle e_i\in M$，则$P_M(h)=\sum_{i=1}^{n}\langle h,e_i\rangle e_i$。
 
 >[!thm] Bessel不等式
 >若$\{e_n\}_{n=1}^{\infty}$为规范正交集，则对$h\in H$成立
