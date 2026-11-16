@@ -47,3 +47,4 @@ TD算法的设计本质上是，对Bellman方程使用随机近似算法求解�
 >\bar{v}_t\triangleq r_{t+1}+\gamma v_t(s_{t+1})
 >$$
 >称为TD目标。
+
