@@ -174,7 +174,10 @@
 > defines a metric on the space of distributions and $\rho(F_n, F) \to 0$ if and only if $F_n \Rightarrow F$.
 
 > [!done]
+> Since $F(x-0)-0\le F(x)\le F(x+0)+0$, then $\rho(F,F)=0$. For symmetry, we have 
+> $$
 > 
+> $$
 
 > [!question] 3.2.7.**The Ky Fan metric**
 >  on random variables is defined by
