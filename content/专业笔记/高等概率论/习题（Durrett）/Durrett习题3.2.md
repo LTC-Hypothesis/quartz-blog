@@ -215,6 +215,23 @@
 > Show that if $\alpha(X, Y) = \alpha$ then the corresponding distributions have Lévy distance $\rho(F, G) \leq \alpha$.
 
 > [!done]
+> Note that for all $x$, we have 
+> $$
+> \left\{Y\le x\right\}\subseteq\left\{X\le x+\alpha\right\}\cup\{|X-Y|>\alpha\}
+> $$
+> take probability and thus we have 
+> $$
+> G(x)\le F(x+\alpha)+\alpha
+> $$
+> Similarly, we can obtain 
+> $$
+> \left\{X\le x-\alpha\right\}\subseteq\left\{Y\le x\right\}\cup\left\{|X-Y|>\alpha\right\}
+> $$
+> and 
+> $$
+> F(x-\alpha)\le G(x)+\alpha
+> $$
+> Hence, $F(x-\alpha)-\alpha\le G(x)\le F(x+\alpha)+\alpha$. Then $\rho(F,G)\le \alpha$. 
 
 > [!question] 3.2.8.
 > Let $\alpha(X, Y)$ be the metric in the previous exercise and let $\beta(X, Y) = \mathbb{E}(|X - Y|/(1 + |X - Y|))$ be the metric of Exercise 2.3.6. If $\alpha(X, Y) = a$ then
@@ -223,6 +240,7 @@
 > $$
 
 > [!done]
+> 
 
 > [!question] 3.2.9.
 > If $F_n \Rightarrow F$ and $F$ is continuous then $\sup_x |F_n(x) - F(x)| \to 0$.
