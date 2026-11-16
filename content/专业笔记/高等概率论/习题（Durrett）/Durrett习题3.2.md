@@ -176,8 +176,36 @@
 > [!done]
 > Since $F(x-0)-0\le F(x)\le F(x+0)+0$, then $\rho(F,F)=0$. For symmetry, we have 
 > $$
-> 
+> \begin{aligned}
+>\rho(F,G)&=\inf\left\{\varepsilon:F(x-\varepsilon)-\varepsilon\le G(x)\le F(x+\varepsilon)+\varepsilon\right\}\\
+>&=\inf\left\{\varepsilon:F(x)-\varepsilon\le G(x+\varepsilon),G(x-\varepsilon)\le F(x)+\varepsilon\right\}\\
+>&=\inf\left\{\varepsilon:G(x-\varepsilon)-\varepsilon\le F(x)\le G(x+\varepsilon)+\varepsilon\right\}=\rho(G,F)
+>\end{aligned}
 > $$
+> For triangle inequality, we denote by 
+> $$
+> a\triangleq\rho(F,H),b\triangleq\rho(H,G)
+> $$
+> we have 
+> $$
+> \begin{cases}
+>F(x-a)-a\le H(x)\le F(x+a)+a\\
+>H(x-b)-b\le G(x)\le H(x+b)+b
+>\end{cases}
+> $$
+> By change of variable $x\to x-b$ in the first inequalities, we obtain
+> $$
+> F(x-(a+b))-(a+b)\le G(x)\le F(x+a+b)+(a+b)
+> $$
+> then $\rho(F,G)\le a+b$ i.e. $\rho(F,G)\le \rho(F,H)+\rho(H,G)$. 
+> 
+> Now we turn to check the equivalence with weak convergence. 
+> $\Longrightarrow:$ there exists a sequence of $\varepsilon_n>0$ s.t. $\varepsilon_n\le \rho(F_n,F)+\frac{1}{n}$ and thus $\varepsilon_n\to0$. By symmetry of the metric, we have 
+> $$
+> F(x-\varepsilon_n)-\varepsilon_n\le F_n(x)\le F(x+\varepsilon_n)+\varepsilon_n
+> $$
+> Let $n\to\infty$, we obtain $F_n(x)\to F(x)$ for all $x$. 
+> $\Longleftarrow:$ 
 
 > [!question] 3.2.7.**The Ky Fan metric**
 >  on random variables is defined by
