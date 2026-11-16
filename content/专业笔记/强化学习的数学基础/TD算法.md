@@ -5,7 +5,7 @@
 >\begin{cases}
 >v_{t+1}(s_t)=v_t(s_t)-\alpha_t(s_t)(v_t(s_t)-(r_{t+1}+\gamma v_t(s_{t+1})))\\
 >v_{t+1}(s)=v_t(s),s\ne s_t
->\end{cases}\tag{TD}
+>\end{cases}\tag{TD1}
 >$$
 >其中$v_t(s_t)$为$t$时刻对状态值$v_{\pi}(s_t)$的估计，$\alpha_t(s_t)$为$t$时刻$s_t$的学习率。
 
@@ -52,7 +52,32 @@ TD算法的设计本质上是，对Bellman方程使用随机近似算法求解�
 >TD算法设计的目的，是让$v(s_t)$每次都更接近$\bar{v}_t$，从数学上可以这样看，
 >$$
 >\begin{aligned}
->v_{t+1}(s_t)-\bar{v}_t=v_t(s_t)-\bar{v}_t+\alpha_t(s_t)(v_t(s_t)-\bar{v}_t)
+>v_{t+1}(s_t)-\bar{v}_t&=v_t(s_t)-\bar{v}_t-\alpha_t(s_t)(v_t(s_t)-\bar{v}_t)\\
+>&=(1-\alpha_t(s_t))(v_{t}(s_t)-\bar{v}_t)
+>\end{aligned}
+>$$
+>取绝对值之后，由于$0<\alpha_t(s_t)<1$，
+>$$
+>|v_{t+1}(s_t)-\bar{v}_t|\le|v_{t}(s_t)-\bar{v}_t|
+>$$
+
+>[!warning] TD误差的解读
+>TD误差反映的是两个时刻，即$t$和$t+1$时刻两个状态值的差异，更重要的是反映了状态估计值$v_t(s_t)$和真实状态值$v_\pi(s_t)$之间的差异，如果估计值准确，在期望意义下应该为0，当$v_t=v_\pi$，则
+>$$
+>\begin{aligned}
+>\mathbb{E}[\delta_t|S_t=s_t]=&\mathbb{E}\left[v_\pi(S_t)-(R_{t+1}+\gamma v_\pi(S_{t+1}))|S_t=s_t\right]\\
+>=&v_\pi(s_t)-\mathbb{E}\left[(R_{t+1}+\gamma v_\pi(S_{t+1}))|S_t=s_t\right]=0
 >\end{aligned}
 >$$
 
+>[!thm] (TD1)算法的收敛性
+>对给定策略$\pi$，算法（TD1），若对所有状态$s\in\mathcal{S}$都满足$\sum_{t}\alpha_t(s)=\infty,\sum_t\alpha^2_t(s)<\infty$，则$v_t(s)\xrightarrow{a.s.} v_\pi(s)\text{ as }t\to\infty$。
+
+>[!warning] 
+>- 需要注意在$t$时刻，如果访问到状态$s$，则$\alpha_t(s)>0$，否则$\alpha_t(s)=0$，对于条件$\sum_t\alpha_t(s)=\infty$，理论上要求
+
+**Proof**
+
+
+
+**QED**
