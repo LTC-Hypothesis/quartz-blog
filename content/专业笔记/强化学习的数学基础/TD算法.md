@@ -40,11 +40,19 @@ TD算法的设计本质上是，对Bellman方程使用随机近似算法求解�
 >[!warning] 性质分析
 >关于算法（TD），
 >$$
->\textcolor{red}{v_{t+1}(s_{t})}=\textcolor{blue}{v_t(s_t)}-\alpha_t(s_t)(\textcolor{green}{v_t(s_{t})-(r_{t+1}+\gamma v_t(s_{t+1}))})
+>\textcolor{red}{v_{t+1}(s_{t})}=\textcolor{blue}{v_t(s_t)}-\alpha_t(s_t)(\textcolor{green}{v_t(s_{t})-(r_{t+1}+\gamma v_t(s_{t+1})}))
 >$$
 >$\textcolor{red}{更新状态值}$，$\textcolor{blue}{当前状态值}$，$\textcolor{green}{TD误差}$。我们记
 >$$
 >\bar{v}_t\triangleq r_{t+1}+\gamma v_t(s_{t+1})
 >$$
->称为TD目标。
+>称为TD目标。TD误差记作$\delta_t\triangleq v_t(s_t)-\bar{v}_t$。
+
+>[!warning] TD目标的解读
+>TD算法设计的目的，是让$v(s_t)$每次都更接近$\bar{v}_t$，从数学上可以这样看，
+>$$
+>\begin{aligned}
+>v_{t+1}(s_t)-\bar{v}_t=v_t(s_t)-\bar{v}_t+\alpha_t(s_t)(v_t(s_t)-\bar{v}_t)
+>\end{aligned}
+>$$
 
