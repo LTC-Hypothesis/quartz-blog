@@ -96,6 +96,24 @@ $$
 $$
 其中$\alpha_t(s)=\eta_t(s)=0$。因此无论是否访问到状态$s_t$，我们都可以将过程表示为该种形式，只需要验证条件即可。
 
-第一个条件和TD算法的假设相同。对第二个条件，
+第一个条件和TD算法的假设相同。对第二个条件，注意到根据马氏性，$\eta_t(s)$不包含历史信息，即
+$$
+\mathbb{E}[\eta_t(s)|\mathcal{H}_t]=\mathbb{E}[\eta_t(s)]
+$$
+当未访问到状态$s_t$时，$\eta_t(s)=0$，$\mathbb{E}[\eta_t(s)]=0\le\gamma\|\Delta_t\|_\infty$。当访问到状态$s_t$时，
+$$
+\begin{aligned}
+\mathbb{E}[\eta_t(s)]&=\mathbb{E}[\eta_t(s_t)]\\
+&=\mathbb{E}[r_{t+1}+\gamma v_t(s_{t+1})-v_\pi(s_t)|s_t]\\
+&=\mathbb{E}[r_{t+1}+\gamma v_t(s_{t+1})|s_t]-v_\pi(s_t)
+\end{aligned}
+$$
+由$v_\pi(s_t)=\mathbb{E}[r_{t+1}+\gamma v_\pi(s_{t+1})|s_t]$，代入上式得到
+$$
+\begin{aligned}
+\mathbb{E}[\eta_t(s)]&=\gamma\mathbb{E}[v_t(s_{t+1})-v_\pi(s_{t+1})|s_t]\\
+&=\gamma\sum p()
+\end{aligned}
+$$
 
 **QED**
