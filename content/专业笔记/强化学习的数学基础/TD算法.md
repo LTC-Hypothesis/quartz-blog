@@ -112,8 +112,12 @@ $$
 $$
 \begin{aligned}
 \mathbb{E}[\eta_t(s)]&=\gamma\mathbb{E}[v_t(s_{t+1})-v_\pi(s_{t+1})|s_t]\\
-&=\gamma\sum p()
+&=\gamma\sum_{s'\in \mathcal{S}} p(s'|s_t)(v_t(s')-v_\pi(s'))
 \end{aligned}
+$$
+取绝对值之后，
+$$
+|\mathbb{E}[\eta_t(s)]|\le\gamma\max_{s'\in\mathcal{S}}|v_t(s')-v_\pi(s')|\sum_{s'\in\mathcal{S}}p(s'|s_t)
 $$
 
 **QED**
