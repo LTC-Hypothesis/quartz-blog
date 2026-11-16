@@ -74,10 +74,28 @@ TD算法的设计本质上是，对Bellman方程使用随机近似算法求解�
 >对给定策略$\pi$，算法（TD1），若对所有状态$s\in\mathcal{S}$都满足$\sum_{t}\alpha_t(s)=\infty,\sum_t\alpha^2_t(s)<\infty$，则$v_t(s)\xrightarrow{a.s.} v_\pi(s)\text{ as }t\to\infty$。
 
 >[!warning] 
->- 需要注意在$t$时刻，如果访问到状态$s$，则$\alpha_t(s)>0$，否则$\alpha_t(s)=0$，对于条件$\sum_t\alpha_t(s)=\infty$，理论上要求
+>- 需要注意在$t$时刻，如果访问到状态$s$，则$\alpha_t(s)>0$，否则$\alpha_t(s)=0$，对于条件$\sum_t\alpha_t(s)=\infty$，理论上要求要访问状态$s$无穷次，但实际上只用访问足够多次即可，这个条件要求要有足够多的经验数据。
+>- $\alpha_t$一般会选取一个较小的正数，这时条件$\sum_t\alpha_t^2(s)<\infty$反而不成立，这样选择是为了更好地利用后面的数据，如果$\alpha_t$逐渐收敛到0，则当$t$较大时得到的数据对估计的影响比较小。
 
 **Proof**
 
+我们证明的想法是使用[[随机近似算法#^ff3bb1|推广的Dvoretzky定理]]。
 
+定义$\Delta_t(s)\triangleq v_t(s)-v_\pi(s)$，则当访问到$s_t$时
+$$
+\begin{aligned}
+\Delta_{t+1}(s)&=v_{t+1}(s)-v_\pi(s)\\
+&=v_t(s)-v_\pi(s)-\alpha_t(s)(v_t(s)-(r_{t+1}+\gamma v_{t}(s_{t+1})))\\
+&=(1-\alpha_t(s))\Delta_t(s)+\alpha_t(s)(r_{t+1}+\gamma v_{t}(s_{t+1})-v_\pi(s))\\
+&:=(1-\alpha_t(s))\Delta_t(s)+\alpha_t(s)\eta_t(s)
+\end{aligned}
+$$
+未访问到状态$s_t$时，
+$$
+\Delta_{t+1}(s)=\Delta_t(s)=(1-\alpha_t(s))\Delta_t(s)+\alpha_t(s)\eta_t(s)
+$$
+其中$\alpha_t(s)=\eta_t(s)=0$。因此无论是否访问到状态$s_t$，我们都可以将过程表示为该种形式，只需要验证条件即可。
+
+第一个条件和TD算法的假设相同。对第二个条件，
 
 **QED**
