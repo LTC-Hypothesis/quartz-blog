@@ -157,7 +157,33 @@ $$
 
 # n-step Sarsa算法
 >[!note] n-step Sarsa算法描述
->
+>先回顾动作值的定义，
+>$$
+>q_\pi(s,a)=\mathbb{E}[G_t|S_t=s,A_t=a]
+>$$
+>折扣回报为$G_t=R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+\cdots$，如果只把$G_t$写到$n$项，
+>$$
+>G_t^{(n)}=R_{t+1}+\gamma R_{t+2}+\cdots+\gamma^n q_\pi(S_{t+n},A_{t+n})
+>$$
+>此时代入回动作值定义，我们有
+>$$
+>\begin{aligned}
+>q_\pi(s,a)&=\mathbb{E}[G_t^{(n)}|S_t=s,A_t=a]\\
+>&=\mathbb{E}[R_{t+1}+\gamma R_{t+2}+\cdots+\gamma^n q_\pi(S_{t+n},A_{t+n})|s,a]
+>\end{aligned}
+>$$
+>计算这个期望值的随机近似算法为
+>$$
+>\begin{aligned}
+>q_{t+1}(s_t,a_t)=&q_t(s_t,a_t)\\
+>&-\alpha_t(s_t,a_t)(q_t(s_t,a_t)-(r_{t+1}+\gamma r_{t+2}+\cdots+\gamma^n q(s_{t+n},a_{t+n})))
+>\end{aligned}
+>$$
+>这就是n-step Sarsa算法。
+
+>[!warning] 特殊情况
+>- 当$n=1$时，n-step Sarsa算法变成Sarsa算法。
+>- 当$n=\infty$，n-step Sarsa算法变成[[蒙特卡洛方法（MCMC）|MCMC算法]]。
 
 # Q-Learning算法
 
