@@ -637,8 +637,6 @@ $$
 >+\frac{\lambda\delta}{2}.
 >$$
 >对 $\delta>0$ 取最优值得到 $\widetilde d\le\sqrt{2\lambda d}$。特别地，若 $\eta\sim N(0,1)$，则 $\lambda=1/\sqrt{2\pi}$，从而 $\widetilde d\le\sqrt d$。这里需要对参照分布的密度作控制。
->
->上面的替换法直接给出的是 $C_b^3$ 测试函数的误差界，不能直接把它当成所有 $1$-Lipschitz 测试函数上的一致误差界。
 
 >[!thm] Berry–Esseen 界
 >设 $X_1,X_2,\cdots$ 为 i.i.d.，满足
@@ -651,14 +649,15 @@ $$
 >F_n(x)=\mathbb{P}\left(\frac1{\sqrt n}\sum_{i=1}^nX_i\le x\right),
 >\qquad \Phi(x)=\mathbb{P}(Y\le x),\quad Y\sim N(0,1).
 >$$
->这里的 $\Phi$ 即手稿中的 $\overline{\Phi}$。则对每个 $n\ge1$，
+>则对每个 $n\ge1$，
 >$$
 >\sup_{x\in\mathbb{R}}|F_n(x)-\Phi(x)|
 >\le\frac{3\rho}{\sqrt n}.
 >$$
->这是对分布函数误差的一致估计。证明先准备反演公式和平滑不等式。
 
 ^berry-esseen
+
+在这之前我们需要逆转公式和一些不等式估计。
 
 >[!thm] 特征函数的反演公式
 >设 $\mu$ 为 $\mathbb{R}$ 上的概率测度，其特征函数为
@@ -706,7 +705,7 @@ R(\theta,T)=2\operatorname{sgn}(\theta)S(T|\theta|).
 $$
 由 Dirichlet 积分 $\int_0^\infty\sin u/u\,du=\pi/2$，有
 $$
-R(\theta,T)\longrightarrow\pi\operatorname{sgn}(\theta).
+R(\theta,T)\longrightarrow\pi\operatorname{sgn}(\theta)\text{ as }T\to\infty.
 $$
 所以
 $$
@@ -721,7 +720,7 @@ $$
 
 **QED**
 
->[!def] Pólya 平滑核
+>[!def] Pólya 分布
 >对 $L>0$，令
 >$$
 >h_L(x)=\frac{1-\cos(Lx)}{\pi Lx^2}\quad(x\ne0),
@@ -747,7 +746,7 @@ $$
 >=\frac1\pi\int_0^L\left(1-\frac tL\right)\cos(tx)\,dt
 >=h_L(x)
 >$$
->得到。手稿中 $h_L$ 的分母应包含 $x^2$。
+>得到。
 >
 >对分布函数 $F$，记
 >$$
@@ -776,7 +775,7 @@ $$
 
 **Proof**
 
-$\eta=0$ 时显然。设 $\eta>0$，先考虑正向偏差可以任意接近 $\eta$ 的情况。给定 $\epsilon>0$，取 $x_0$，使 $\Delta(x_0)\ge\eta-\epsilon$。由 $F$ 单调及 $G'\le\lambda$，对 $s\ge0$，
+$\eta=0$ 时显然。设 $\eta>0$，先考虑给定 $\epsilon>0$，取 $x_0$，使 $\Delta(x_0)\ge\eta-\epsilon$。由 $F$ 单调及 $G'\le\lambda$，对 $s\ge0$，
 $$
 \Delta(x_0+s)\ge\Delta(x_0)-\lambda s
 \ge\eta-\epsilon-\lambda s.
@@ -994,7 +993,7 @@ $$
 \varphi(t/\sqrt n)^n\longrightarrow e^{-t^2/2},
 \qquad\varphi(u)=\mathbb{E}e^{iuX_1}.
 $$
-没有三阶矩时，不能再用 $\mathbb{E}|X_1|^3$ 控制余项。使用手稿中的两种余项界：
+没有三阶矩时，不能再用 $\mathbb{E}|X_1|^3$ 控制余项。使用两种余项界：
 $$
 \left|e^{iu}-\sum_{k=0}^m\frac{(iu)^k}{k!}\right|
 \le\min\left\{\frac{|u|^{m+1}}{(m+1)!},
@@ -1041,8 +1040,3 @@ $$
 >[!note]
 >这给出[[De Moirve & Laplace 中心极限定理]]之外的一般 i.i.d. 证明。有限三阶绝对矩是上面 Berry–Esseen 误差界所用的充分条件；仅证明 CLT 时，有限二阶矩已经足够。
 
->[!note] 参考
->按 2026.11.17 手稿整理，仅补足证明中的条件、余项和常数。
->
->- Durrett, *Probability: Theory and Examples*, 5th ed.：Theorem 3.3.11（反演公式），§3.4.4、Theorem 3.4.17 及 Lemmas 3.4.18–3.4.19（印刷页 157–161）。
->- 李立颖，*Advanced Probability* 讲义：Theorem 5.13（连续性定理）及 Theorem 5.22（i.i.d. CLT）。
