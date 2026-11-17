@@ -117,7 +117,16 @@ $$
 $$
 取绝对值之后，
 $$
-|\mathbb{E}[\eta_t(s)]|\le\gamma\max_{s'\in\mathcal{S}}|v_t(s')-v_\pi(s')|\sum_{s'\in\mathcal{S}}p(s'|s_t)
+|\mathbb{E}[\eta_t(s)]|\le\gamma\max_{s'\in\mathcal{S}}|v_t(s')-v_\pi(s')|\sum_{s'\in\mathcal{S}}p(s'|s_t)=\gamma\|\Delta_t\|_\infty
+$$
+因此得到$\|\mathbb{E}[\eta_t(s)]\|_\infty\le\gamma\|\Delta_t\|_\infty$。
+
+对于第三个条件，未访问到状态$s_t$时，$\text{Var}[\eta_t(s)|\mathcal{H}_t]=0$。当访问到状态$s_t$时，
+$$
+\begin{aligned}
+\text{Var}[\eta_t(s)|\mathcal{H}_t]&=\text{Var}[r_{t+1}+\gamma v_t(s_{t+1})-v_\pi(s_t)|s_t]\\
+&=
+\end{aligned}
 $$
 
 **QED**
