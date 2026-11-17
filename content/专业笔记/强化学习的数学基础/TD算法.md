@@ -125,8 +125,33 @@ $$
 $$
 \begin{aligned}
 \text{Var}[\eta_t(s)|\mathcal{H}_t]&=\text{Var}[r_{t+1}+\gamma v_t(s_{t+1})-v_\pi(s_t)|s_t]\\
-&=
+&\le C(1+\|\Delta_t\|_\infty^2)
 \end{aligned}
 $$
+综上所述，可以得到$\Delta_t\xrightarrow{a.s.}0$ i.e. $v_t(s)\xrightarrow{a.s.}v_\pi(s)$。
 
 **QED**
+
+# 基于动作值的TD算法：Sarsa算法
+>[!note] Sarsa算法描述
+>给定策略$\pi$，由策略$\pi$生成的一列经验样本：$(s_0,a_0,r_1,s_1,a_1,\cdots,s_t,a_t,r_t,s_{t+1},a_{t+1},\cdots)$那么可以用如下算法估计状态的动作值，
+>$$
+>q_{t+1}(s_t,a_t)=q_t(s_t,a_t)-\alpha_t(s_t,a_t)(q_t(s_t,a_t)-(r_{t+1}+\gamma q_t(s_{t+1},a_{t+1})))
+>$$
+>$$
+>q_{t+1}(s_t,a_t)=q_t(s_t,a_t),(s,a)\ne (s_t,a_t)
+>$$
+
+>[!warning] 
+>Sarsa算法本质是在是在做动作值的随机近似算法，
+>$$
+>q_\pi(s,a)=\mathbb{E}[R_{t+1}+\gamma q_\pi(S',A')|s,a]
+>$$
+>实际上，上式是一个基于动作值的Bellman方程。
+
+>[!thm] Sarsa算法的收敛性
+>给定策略$\pi$，对上述Sarsa算法，若对所有的$(s,a)$满足$\sum_t\alpha_t(s,a)=\infty,\sum_t\alpha_t^2(s,a)<\infty$，则动作值估计值$q_t(s,a)\xrightarrow{a.s.}q_\pi(s,a)$。
+
+>[!note] 利用Sarsa算法学习最优策略
+>![[Pasted image 20261117083418.png]]
+
