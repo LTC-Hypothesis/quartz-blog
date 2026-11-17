@@ -485,8 +485,564 @@ $$
 
 **QED**
 
+>[!thm] 特征函数连续性定理
+>设 $\xi_n,\xi$ 为实值随机变量，则
+>$$
+>f_{\xi_n}(t)\longrightarrow f_\xi(t),\quad\forall t\in\mathbb{R}
+>\quad\Longleftrightarrow\quad
+>\xi_n\xrightarrow{d}\xi.
+>$$
 
+^levy-continuity
 
+**Proof**
 
+$\Longleftarrow$：由[[#^distribution-weak-equivalence|依分布收敛与弱收敛等价]]，分别用 $\cos(tx),\sin(tx)$ 作为有界连续测试函数即可。
 
+$\Longrightarrow$：由[[#^compact-tests|紧支撑测试函数引理]]，只需证明对任意 $h\in C_c(\mathbb{R})$，
+$$
+\mathbb{E}h(\xi_n)\longrightarrow\mathbb{E}h(\xi).
+$$
+固定 $\delta>0$。由[[#^gaussian-approximation|磨光逼近]]，可取 $\varepsilon>0$，使
+$$
+\|h*\phi_\varepsilon-h\|_\infty<\delta.
+$$
+注意先固定这个 $\varepsilon$，再令 $n\to\infty$。由[[#^gaussian-fourier-pairing|磨光后的 Fourier 配对公式]]，
+$$
+\begin{aligned}
+|\mathbb{E}h(\xi_n)-\mathbb{E}h(\xi)|
+&\le|\mathbb{E}h(\xi_n)-\mathbb{E}(h*\phi_\varepsilon)(\xi_n)|\\
+&\quad+|\mathbb{E}(h*\phi_\varepsilon)(\xi_n)
+-\mathbb{E}(h*\phi_\varepsilon)(\xi)|\\
+&\quad+|\mathbb{E}(h*\phi_\varepsilon)(\xi)-\mathbb{E}h(\xi)|\\
+&\le2\delta+\frac1{2\pi}\int_{\mathbb{R}}
+|\widehat h(t)|e^{-\varepsilon^2t^2/2}
+|f_{\xi_n}(t)-f_\xi(t)|\,dt.
+\end{aligned}
+$$
+由于 $h\in C_c(\mathbb{R})$，$\|\widehat h\|_\infty\le\|h\|_1<\infty$。最后的被积函数趋于 $0$，并且由可积函数
+$$
+2\|h\|_1e^{-\varepsilon^2t^2/2}
+$$
+控制。因此由[[积分与期望#^9122df|DCT]]，
+$$
+\limsup_{n\to\infty}
+|\mathbb{E}h(\xi_n)-\mathbb{E}h(\xi)|\le2\delta.
+$$
+再令 $\delta\downarrow0$，得到结论。
 
+**QED**
+
+>[!note] By-product
+>弱收敛也可以只用 $C_b^\infty(\mathbb{R})$ 中的测试函数检验，其中函数及各阶导数均有界。因为对任意 $h\in C_c$，$h*\phi_\varepsilon$ 属于这一类，且一致逼近 $h$；再用上面的三项分解及[[#^compact-tests|截断推广]]即可。
+
+>[!thm] Lindeberg 替换法：光滑测试函数的误差估计
+>设 $X_1,X_2,\cdots$ 为 i.i.d.，满足
+>$$
+>\mathbb{E}X_1=0,\qquad \mathbb{E}X_1^2=1,\qquad
+>\rho:=\mathbb{E}|X_1|^3<\infty.
+>$$
+>令 $Y\sim N(0,1)$。对任意 $f\in C_b^3(\mathbb{R})$，有
+>$$
+>\left|\mathbb{E}f\left(\frac1{\sqrt n}\sum_{i=1}^nX_i\right)
+>-\mathbb{E}f(Y)\right|
+>\le\frac{\|f'''\|_\infty}{6\sqrt n}
+>\left(\rho+\mathbb{E}|Y|^3\right).
+>$$
+>这里 $C_b^3$ 指 $f$ 及其一至三阶导数连续有界。常数$C\sim \rho,\|f'''\|_\infty$
+
+^lindeberg-replacement
+
+**Proof**
+
+构造 $Y_1,Y_2,\cdots$ 为 i.i.d. $N(0,1)$，并且与整列 $\{X_i\}$ 独立。因为
+$$
+\mathbb{E}\exp\left(\frac{it}{\sqrt n}\sum_{i=1}^nY_i\right)
+=\prod_{i=1}^n e^{-t^2/(2n)}=e^{-t^2/2},
+$$
+由[[#^characteristic-uniqueness|特征函数唯一性]]，
+$$
+\frac1{\sqrt n}\sum_{i=1}^nY_i\stackrel d=Y.
+$$
+因此可以把 $X_i$ 逐个替换为 $Y_i$。
+
+定义
+$$
+R_i=\frac1{\sqrt n}
+\left(\sum_{j=1}^{i-1}Y_j+\sum_{j=i+1}^nX_j\right),
+\qquad1\le i\le n,
+$$
+空和记作 $0$。特别地，
+$$
+R_1=\frac1{\sqrt n}\sum_{j=2}^nX_j,\qquad
+R_n=\frac1{\sqrt n}\sum_{j=1}^{n-1}Y_j.
+$$
+求和得到
+$$
+\begin{aligned}
+&\mathbb{E}f\left(\frac1{\sqrt n}\sum_{i=1}^nX_i\right)
+-\mathbb{E}f\left(\frac1{\sqrt n}\sum_{i=1}^nY_i\right)\\
+&\qquad=\sum_{i=1}^n\mathbb{E}
+\left[f\left(R_i+\frac{X_i}{\sqrt n}\right)
+-f\left(R_i+\frac{Y_i}{\sqrt n}\right)\right].
+\end{aligned}
+$$
+在 $R_i$ 处作 Taylor 展开：
+$$
+f(R_i+u)=f(R_i)+f'(R_i)u+\frac12f''(R_i)u^2+r_i(u),
+\qquad
+|r_i(u)|\le\frac{\|f'''\|_\infty}{6}|u|^3.
+$$
+由[[独立性]]，$R_i$ 分别与 $X_i,Y_i$ 独立。因此一阶项的期望都为 $0$，二阶项的期望相同：
+$$
+\mathbb{E}[f'(R_i)X_i]=\mathbb{E}[f'(R_i)Y_i]=0,
+$$
+$$
+\mathbb{E}[f''(R_i)X_i^2]
+=\mathbb{E}f''(R_i)
+=\mathbb{E}[f''(R_i)Y_i^2].
+$$
+只剩余项，故
+$$
+\begin{aligned}
+&\left|\mathbb{E}f\left(\frac1{\sqrt n}\sum_{i=1}^nX_i\right)
+-\mathbb{E}f(Y)\right|\\
+&\qquad\le\sum_{i=1}^n
+\frac{\|f'''\|_\infty}{6n^{3/2}}
+\left(\mathbb{E}|X_i|^3+\mathbb{E}|Y_i|^3\right)\\
+&\qquad=\frac{\|f'''\|_\infty}{6\sqrt n}
+\left(\rho+\mathbb{E}|Y|^3\right).
+\end{aligned}
+$$
+
+**QED**
+
+>[!warning] 两种分布距离
+>对具有有限一阶矩的 $\xi,\eta$，记
+>$$
+>d(\xi,\eta)
+>=\sup_{\operatorname{Lip}(h)\le1}
+>|\mathbb{E}h(\xi)-\mathbb{E}h(\eta)|.
+>$$
+>这是 [[Wasserstein空间|Wasserstein-1 距离]]的对偶形式。必须限制 Lipschitz 常数不超过 $1$，否则测试函数可以任意放大。
+>
+>另记 Kolmogorov 距离
+>$$
+>\widetilde d(\xi,\eta)
+>=\sup_{x\in\mathbb{R}}|F_\xi(x)-F_\eta(x)|.
+>$$
+>若 $\eta$ 的分布函数 $G$ 具有有界密度 $G'\le\lambda$，用宽度为 $\delta$ 的线性截断逼近示性函数，可得
+>$$
+>\widetilde d(\xi,\eta)\le\frac{d(\xi,\eta)}{\delta}
+>+\frac{\lambda\delta}{2}.
+>$$
+>对 $\delta>0$ 取最优值得到 $\widetilde d\le\sqrt{2\lambda d}$。特别地，若 $\eta\sim N(0,1)$，则 $\lambda=1/\sqrt{2\pi}$，从而 $\widetilde d\le\sqrt d$。这里需要对参照分布的密度作控制。
+>
+>上面的替换法直接给出的是 $C_b^3$ 测试函数的误差界，不能直接把它当成所有 $1$-Lipschitz 测试函数上的一致误差界。
+
+>[!thm] Berry–Esseen 界
+>设 $X_1,X_2,\cdots$ 为 i.i.d.，满足
+>$$
+>\mathbb{E}X_1=0,\qquad \mathbb{E}X_1^2=1,\qquad
+>\rho=\mathbb{E}|X_1|^3<\infty.
+>$$
+>记
+>$$
+>F_n(x)=\mathbb{P}\left(\frac1{\sqrt n}\sum_{i=1}^nX_i\le x\right),
+>\qquad \Phi(x)=\mathbb{P}(Y\le x),\quad Y\sim N(0,1).
+>$$
+>这里的 $\Phi$ 即手稿中的 $\overline{\Phi}$。则对每个 $n\ge1$，
+>$$
+>\sup_{x\in\mathbb{R}}|F_n(x)-\Phi(x)|
+>\le\frac{3\rho}{\sqrt n}.
+>$$
+>这是对分布函数误差的一致估计。证明先准备反演公式和平滑不等式。
+
+^berry-esseen
+
+>[!thm] 特征函数的反演公式
+>设 $\mu$ 为 $\mathbb{R}$ 上的概率测度，其特征函数为
+>$$
+>\varphi(t)=\int_{\mathbb{R}}e^{itx}\,\mu(dx).
+>$$
+>则对任意 $a<b$，
+>$$
+>\lim_{T\to\infty}\frac1{2\pi}\int_{-T}^T
+>\frac{e^{-ita}-e^{-itb}}{it}\varphi(t)\,dt
+>=\mu((a,b))+\frac12\mu(\{a,b\}).
+>$$
+>$t=0$ 处的比值按连续延拓取值 $b-a$。端点有原子时各计一半；两端点都是连续点时，右侧就是 $F(b)-F(a)$。
+
+^characteristic-inversion
+
+**Proof**
+
+记左侧有限 $T$ 的积分为 $I_T$。因为
+$$
+\frac{e^{-ita}-e^{-itb}}{it}=\int_a^b e^{-ity}\,dy,
+\qquad
+\left|\frac{e^{-ita}-e^{-itb}}{it}\right|\le b-a,
+$$
+在有限区间 $[-T,T]$ 上可以用[[Fubini定理及其应用|Fubini 定理]]交换积分。于是
+$$
+I_T=\frac1{2\pi}\int_{\mathbb{R}}
+\left[\int_{-T}^T
+\frac{e^{it(x-a)}-e^{it(x-b)}}{it}\,dt\right]\mu(dx).
+$$
+虚部关于 $t$ 为奇函数，积分为 $0$。令
+$$
+R(\theta,T)=\int_{-T}^T\frac{\sin(\theta t)}{t}\,dt,
+\qquad
+S(A)=\int_0^A\frac{\sin u}{u}\,du,
+$$
+则
+$$
+I_T=\frac1{2\pi}\int
+[R(x-a,T)-R(x-b,T)]\,\mu(dx),
+$$
+且
+$$
+R(\theta,T)=2\operatorname{sgn}(\theta)S(T|\theta|).
+$$
+由 Dirichlet 积分 $\int_0^\infty\sin u/u\,du=\pi/2$，有
+$$
+R(\theta,T)\longrightarrow\pi\operatorname{sgn}(\theta).
+$$
+所以
+$$
+R(x-a,T)-R(x-b,T)\longrightarrow
+\begin{cases}
+2\pi,&a<x<b,\\
+\pi,&x=a\text{ 或 }x=b,\\
+0,&x<a\text{ 或 }x>b.
+\end{cases}
+$$
+又因为 $S(A)$ 收敛且在有界区间上连续，所以 $\sup_{A\ge0}|S(A)|<\infty$。因此上面的被积函数关于 $x,T$ 一致有界，由[[积分与期望#^9122df|DCT]]得到结论。
+
+**QED**
+
+>[!def] Pólya 平滑核
+>对 $L>0$，令
+>$$
+>h_L(x)=\frac{1-\cos(Lx)}{\pi Lx^2}\quad(x\ne0),
+>\qquad h_L(0)=\frac{L}{2\pi}.
+>$$
+>由分部积分及 Dirichlet 积分，
+>$$
+>\int_{\mathbb{R}}h_L(x)\,dx
+>=\frac2\pi\int_0^\infty\frac{1-\cos u}{u^2}\,du
+>=\frac2\pi\int_0^\infty\frac{\sin u}{u}\,du=1.
+>$$
+>因此它是概率密度，其特征函数为
+>$$
+>W_L(t)=\left(1-\frac{|t|}{L}\right)^+
+>=\begin{cases}
+>1-|t|/L,&|t|\le L,\\
+>0,&|t|>L.
+>\end{cases}
+>$$
+>这对 Fourier 变换可由
+>$$
+>\frac1{2\pi}\int_{-L}^L e^{-itx}\left(1-\frac{|t|}{L}\right)dt
+>=\frac1\pi\int_0^L\left(1-\frac tL\right)\cos(tx)\,dt
+>=h_L(x)
+>$$
+>得到。手稿中 $h_L$ 的分母应包含 $x^2$。
+>
+>对分布函数 $F$，记
+>$$
+>F_L(x)=(F*h_L)(x)=\int_{\mathbb{R}}F(x-y)h_L(y)\,dy.
+>$$
+>若 $X\sim F$，$Z_L$ 与 $X$ 独立且密度为 $h_L$，则 $F_L$ 是 $X+Z_L$ 的分布函数，因此其特征函数为 $\varphi_F(t)W_L(t)$。
+
+^polya-smoothing-kernel
+
+>[!lemma] 磨光前后的分布函数误差
+>设 $F,G$ 为分布函数，$G$ 绝对连续，且 $0\le G'(x)\le\lambda$ a.e.，其中 $0<\lambda<\infty$。令
+>$$
+>\Delta(x)=F(x)-G(x),\qquad
+>\eta=\sup_x|\Delta(x)|,
+>$$
+>$$
+>\Delta_L=\Delta*h_L=F_L-G_L,\qquad
+>\eta_L=\sup_x|\Delta_L(x)|.
+>$$
+>则
+>$$
+>\eta\le2\eta_L+\frac{24\lambda}{\pi L}.
+>$$
+
+^smoothing-error
+
+**Proof**
+
+$\eta=0$ 时显然。设 $\eta>0$，先考虑正向偏差可以任意接近 $\eta$ 的情况。给定 $\epsilon>0$，取 $x_0$，使 $\Delta(x_0)\ge\eta-\epsilon$。由 $F$ 单调及 $G'\le\lambda$，对 $s\ge0$，
+$$
+\Delta(x_0+s)\ge\Delta(x_0)-\lambda s
+\ge\eta-\epsilon-\lambda s.
+$$
+取
+$$
+\delta=\frac{\eta}{2\lambda},\qquad t=x_0+\delta.
+$$
+则当 $|x|\le\delta$ 时，
+$$
+\Delta(t-x)\ge\eta-\epsilon-\lambda(\delta-x)
+=\frac\eta2-\epsilon+\lambda x;
+$$
+当 $|x|>\delta$ 时，总有 $\Delta(t-x)\ge-\eta$。
+
+由于 $h_L$ 为偶函数，
+$$
+\int_{-\delta}^{\delta}xh_L(x)\,dx=0,
+$$
+并且
+$$
+q:=\int_{|x|>\delta}h_L(x)\,dx
+\le2\int_\delta^\infty\frac{2}{\pi Lx^2}\,dx
+=\frac4{\pi L\delta}.
+$$
+因此
+$$
+\begin{aligned}
+\eta_L\ge\Delta_L(t)
+&\ge\left(\frac\eta2-\epsilon\right)(1-q)-\eta q\\
+&\ge\frac\eta2-\epsilon-\frac{3\eta}{2}q\\
+&\ge\frac\eta2-\epsilon-\frac{12\lambda}{\pi L}.
+\end{aligned}
+$$
+令 $\epsilon\downarrow0$，整理即得结论。
+
+若是负向偏差任意接近 $-\eta$，取 $\Delta(x_0)\le-\eta+\epsilon$ 及 $t=x_0-\delta$。当 $|x|\le\delta$ 时，同理有
+$$
+-\Delta(t-x)\ge\frac\eta2-\epsilon-\lambda x.
+$$
+对 $-\Delta_L(t)$ 重复上述估计即可。这样也不需要假设上确界一定在某点取到。
+
+**QED**
+
+>[!lemma] 用特征函数控制分布函数误差
+>在上一个引理的条件下，记 $\varphi_F,\varphi_G$ 为 $F,G$ 的特征函数。则对任意 $L>0$，
+>$$
+>\sup_x|F(x)-G(x)|
+>\le\frac1\pi\int_{-L}^L
+>\frac{|\varphi_F(t)-\varphi_G(t)|}{|t|}\,dt
+>+\frac{24\lambda}{\pi L}.
+>$$
+
+^fourier-smoothing-inequality
+
+**Proof**
+
+先估计磨光后的误差。若右侧积分为 $+\infty$，结论显然；否则
+$$
+q_L(t)=\frac{[\varphi_F(t)-\varphi_G(t)]W_L(t)}{it}
+$$
+可积，$t=0$ 的值不影响积分。磨光后的 $F_L,G_L$ 连续，其特征函数分别为 $\varphi_FW_L,\varphi_GW_L$，在 $[-L,L]$ 外为 $0$。对 $a<x$，由[[#^characteristic-inversion|反演公式]]，
+$$
+\Delta_L(x)-\Delta_L(a)
+=\frac1{2\pi}\int_{-L}^L
+(e^{-ita}-e^{-itx})q_L(t)\,dt.
+$$
+令 $a\to-\infty$。$\Delta_L(a)\to0$，而 $q_L\in L^1$，由[[Durrett习题1.4|Riemann–Lebesgue 引理]]，含 $e^{-ita}$ 的积分趋于 $0$。所以
+$$
+\Delta_L(x)
+=-\frac1{2\pi}\int_{-L}^L
+e^{-itx}\frac{[\varphi_F(t)-\varphi_G(t)]W_L(t)}{it}\,dt.
+$$
+由 $|W_L|\le1$，
+$$
+\eta_L\le\frac1{2\pi}\int_{-L}^L
+\frac{|\varphi_F(t)-\varphi_G(t)|}{|t|}\,dt.
+$$
+再代入 $\eta\le2\eta_L+24\lambda/(\pi L)$ 即得结论。
+
+**QED**
+
+>[!warning]
+>磨光后的 $\eta_L$ 前面是 $1/(2\pi)$；恢复为原来的 $\eta$ 时乘了 $2$，所以最后是 $1/\pi$。另外，$24\lambda/(\pi L)$ 是磨光误差，不能在最后一步省略。
+>
+>反演公式先在有限区间上使用，再处理极限；对一般可能含原子的分布，不能直接把未磨光的 $F-G$ 写成一个未经说明的全实轴绝对收敛积分。
+
+下面回到[[#^berry-esseen|Berry–Esseen 界]]的证明。
+
+**Proof**
+
+记 $\varphi(t)=\mathbb{E}e^{itX_1}$。由独立性，标准化和的特征函数为
+$$
+\mathbb{E}\exp\left(\frac{it}{\sqrt n}\sum_{i=1}^nX_i\right)
+=\left[\varphi\left(\frac t{\sqrt n}\right)\right]^n.
+$$
+标准正态的特征函数为 $e^{-t^2/2}$，密度上界为 $\lambda=1/\sqrt{2\pi}$。因此由平滑不等式，
+$$
+\sup_x|F_n(x)-\Phi(x)|
+\le\frac1\pi\int_{-L}^L
+\frac{\left|\varphi(t/\sqrt n)^n-e^{-t^2/2}\right|}{|t|}\,dt
++\frac{24}{\pi\sqrt{2\pi}\,L}.
+$$
+
+先准备两个估计。由 Taylor 余项界，
+$$
+\left|e^{iu}-1-iu+\frac{u^2}{2}\right|
+\le\frac{|u|^3}{6},
+$$
+结合 $\mathbb{E}X_1=0$、$\mathbb{E}X_1^2=1$，
+$$
+\left|\varphi(t)-1+\frac{t^2}{2}\right|
+\le\frac{\rho|t|^3}{6}.
+$$
+特别地，当 $t^2\le2$ 时，
+$$
+|\varphi(t)|\le1-\frac{t^2}{2}+\frac{\rho|t|^3}{6}.
+$$
+另一个是幂的差：若 $|\alpha|,|\beta|\le\gamma$，则
+$$
+|\alpha^n-\beta^n|
+=\left|(\alpha-\beta)\sum_{j=0}^{n-1}\alpha^{n-1-j}\beta^j\right|
+\le n|\alpha-\beta|\gamma^{n-1}.
+$$
+
+由于 $\rho=\mathbb{E}|X_1|^3\ge(\mathbb{E}X_1^2)^{3/2}=1$，当 $n\le9$ 时，$3\rho/\sqrt n\ge1$，结论由分布函数之差不超过 $1$ 直接得到。下面设 $n\ge10$，取
+$$
+L=\frac{4\sqrt n}{3\rho}\le\sqrt{2n}.
+$$
+对 $|t|\le L$，有 $\rho|t|/\sqrt n\le4/3$，因此
+$$
+\begin{aligned}
+\left|\varphi\left(\frac t{\sqrt n}\right)\right|
+&\le1-\frac{t^2}{2n}+\frac{\rho|t|^3}{6n^{3/2}}\\
+&\le1-\frac{5t^2}{18n}
+\le e^{-5t^2/(18n)}.
+\end{aligned}
+$$
+令
+$$
+\alpha=\varphi(t/\sqrt n),\qquad
+\beta=e^{-t^2/(2n)},\qquad
+\gamma=e^{-5t^2/(18n)}.
+$$
+则 $|\alpha|,|\beta|\le\gamma$。又因为 $n\ge10$，
+$$
+\gamma^{n-1}
+=e^{-5(n-1)t^2/(18n)}
+\le e^{-t^2/4}.
+$$
+
+另一方面，对 $v\ge0$，$|e^{-v}-(1-v)|\le v^2/2$。所以
+$$
+\begin{aligned}
+n|\alpha-\beta|
+&\le n\left|\varphi(t/\sqrt n)-1+\frac{t^2}{2n}\right|
++n\left|1-\frac{t^2}{2n}-e^{-t^2/(2n)}\right|\\
+&\le\frac{\rho|t|^3}{6\sqrt n}+\frac{t^4}{8n}.
+\end{aligned}
+$$
+结合幂的差估计，对 $0<|t|\le L$，
+$$
+\frac{\left|\varphi(t/\sqrt n)^n-e^{-t^2/2}\right|}{|t|}
+\le e^{-t^2/4}
+\left(\frac{\rho t^2}{6\sqrt n}+\frac{|t|^3}{8n}\right).
+$$
+代回平滑不等式，并把积分区间扩大为 $\mathbb{R}$，得到
+$$
+\begin{aligned}
+\sup_x|F_n(x)-\Phi(x)|
+&\le\frac1\pi\int_{\mathbb{R}}e^{-t^2/4}
+\left(\frac{\rho t^2}{6\sqrt n}+\frac{|t|^3}{8n}\right)dt
++\frac{18\rho}{\pi\sqrt{2\pi}\sqrt n}.
+\end{aligned}
+$$
+最后计算
+$$
+\int_{\mathbb{R}}t^2e^{-t^2/4}\,dt=4\sqrt\pi,
+\qquad
+\int_{\mathbb{R}}|t|^3e^{-t^2/4}\,dt=16.
+$$
+故
+$$
+\begin{aligned}
+\sup_x|F_n(x)-\Phi(x)|
+&\le
+\left(\frac{2}{3\sqrt\pi}+\frac{18}{\pi\sqrt{2\pi}}\right)
+\frac{\rho}{\sqrt n}+\frac{2}{\pi n}\\
+&\le
+\left(\frac{2}{3\sqrt\pi}+\frac{18}{\pi\sqrt{2\pi}}
++\frac{2}{\pi\sqrt{10}}\right)\frac{\rho}{\sqrt n}\\
+&<\frac{3\rho}{\sqrt n}.
+\end{aligned}
+$$
+第二步使用了 $\rho\ge1$、$n\ge10$。这也补全了手稿最后 $C/\sqrt n$ 中常数的计算。
+
+**QED**
+
+>[!thm] 中心极限定理：去掉三阶矩条件
+>设 $X_1,X_2,\cdots$ 为 i.i.d.，仅要求
+>$$
+>\mathbb{E}X_1=0,\qquad\mathbb{E}X_1^2=1.
+>$$
+>则
+>$$
+>\frac1{\sqrt n}\sum_{i=1}^nX_i\xrightarrow{d}N(0,1).
+>$$
+
+^iid-clt
+
+**Proof**
+
+由[[#^levy-continuity|特征函数连续性定理]]，只需证明对每个固定 $t\in\mathbb{R}$，
+$$
+\varphi(t/\sqrt n)^n\longrightarrow e^{-t^2/2},
+\qquad\varphi(u)=\mathbb{E}e^{iuX_1}.
+$$
+没有三阶矩时，不能再用 $\mathbb{E}|X_1|^3$ 控制余项。使用手稿中的两种余项界：
+$$
+\left|e^{iu}-\sum_{k=0}^m\frac{(iu)^k}{k!}\right|
+\le\min\left\{\frac{|u|^{m+1}}{(m+1)!},
+\frac{2|u|^m}{m!}\right\}.
+$$
+它们由积分型 Taylor 余项得到：分别使用 $|e^{iv}|\le1$ 和 $|e^{iv}-1|\le2$。取 $m=2$，得到
+$$
+\left|e^{iu}-1-iu+\frac{u^2}{2}\right|
+\le\min\left\{\frac{|u|^3}{6},|u|^2\right\}.
+$$
+令
+$$
+r_n(t)=\varphi(t/\sqrt n)-1+\frac{t^2}{2n},
+$$
+由 $\mathbb{E}X_1=0$、$\mathbb{E}X_1^2=1$，
+$$
+\begin{aligned}
+n|r_n(t)|
+&\le n\mathbb{E}\min\left\{
+\frac{|tX_1|^3}{6n^{3/2}},\frac{|tX_1|^2}{n}\right\}\\
+&=\mathbb{E}\min\left\{
+\frac{|tX_1|^3}{6\sqrt n},|tX_1|^2\right\}
+\longrightarrow0.
+\end{aligned}
+$$
+最后一步由[[积分与期望#^9122df|DCT]]：被积函数逐点趋于 $0$，且由可积函数 $t^2X_1^2$ 控制。于是
+$$
+\varphi(t/\sqrt n)=1-\frac{t^2}{2n}+o(n^{-1}).
+$$
+为严谨地处理复数的 $n$ 次幂，仍用前面的幂差估计。对充分大的 $n$，$0\le1-t^2/(2n)\le1$，而 $|\varphi(t/\sqrt n)|\le1$，所以
+$$
+\left|\varphi(t/\sqrt n)^n-
+\left(1-\frac{t^2}{2n}\right)^n\right|
+\le n|r_n(t)|\longrightarrow0.
+$$
+又
+$$
+\left(1-\frac{t^2}{2n}\right)^n\longrightarrow e^{-t^2/2},
+$$
+故得到所需的特征函数收敛，从而得到 CLT。
+
+**QED**
+
+>[!note]
+>这给出[[De Moirve & Laplace 中心极限定理]]之外的一般 i.i.d. 证明。有限三阶绝对矩是上面 Berry–Esseen 误差界所用的充分条件；仅证明 CLT 时，有限二阶矩已经足够。
+
+>[!note] 参考
+>按 2026.11.17 手稿整理，仅补足证明中的条件、余项和常数。
+>
+>- Durrett, *Probability: Theory and Examples*, 5th ed.：Theorem 3.3.11（反演公式），§3.4.4、Theorem 3.4.17 及 Lemmas 3.4.18–3.4.19（印刷页 157–161）。
+>- 李立颖，*Advanced Probability* 讲义：Theorem 5.13（连续性定理）及 Theorem 5.22（i.i.d. CLT）。

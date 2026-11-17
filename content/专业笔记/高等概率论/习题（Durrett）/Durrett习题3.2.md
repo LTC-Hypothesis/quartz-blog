@@ -240,7 +240,15 @@
 > $$
 
 > [!done]
-> 
+> We consider $\mathbb{P}(|X-Y|>a)\le a$, let $A_a\triangleq\{|X-Y|>a\}$, and 
+> $$
+> \begin{aligned}
+>\mathbb{E}\frac{|X-Y|}{1+|X-Y|}&=\mathbb{E}\frac{|X-Y|}{1+|X-Y|}\mathbb{1}_{A_a}+\mathbb{E}\frac{|X-Y|}{1+|X-Y|}\mathbb{1}_{A_a^c}\\
+>&\le \mathbb{P}(A_a)+\frac{a}{1+a}(1-\mathbb{P}(A_a))\\
+>&\le \frac{2a}{1+a}
+>\end{aligned}
+> $$ 
+> For another direction, $\mathbb{E}\frac{|X-Y|}{1+|X-Y|}\ge\frac{a}{1+a}\mathbb{P}()$
 
 > [!question] 3.2.9.
 > If $F_n \Rightarrow F$ and $F$ is continuous then $\sup_x |F_n(x) - F(x)| \to 0$.
