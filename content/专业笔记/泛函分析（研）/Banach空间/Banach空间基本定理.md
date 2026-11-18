@@ -346,7 +346,7 @@ $$
 \le\frac{2N}{r}
 \end{aligned}
 $$
-对$\|x\|<1$取上确界，得到$\|T_\alpha\|\le2N/r$，这个上界与$\alpha$无关。
+对$\|x\|<1$取上确界，得到$\|T_\alpha\|\le2N/r$。
 
 **QED**
 
@@ -367,7 +367,7 @@ $$
 $$
 \widehat x:X^*\to\mathbb F,\quad\widehat x(f)=f(x),\quad\|\widehat x\|=\|x\|
 $$
-虽然$X$未必完备，但$X^*=\mathcal B(X,\mathbb F)$是Banach空间，因为标量域$\mathbb F$完备。由假设，算子族$\{\widehat x:x\in E\}$在$X^*$上逐点有界：
+虽然$X$未必完备，但$X^*=\mathcal B(X,\mathbb F)$是Banach空间，因为数域$\mathbb F$完备。由假设，算子族$\{\widehat x:x\in E\}$在$X^*$上逐点有界：
 $$
 \forall f\in X^*,\quad\sup_{x\in E}|\widehat x(f)|=\sup_{x\in E}|f(x)|<+\infty
 $$
