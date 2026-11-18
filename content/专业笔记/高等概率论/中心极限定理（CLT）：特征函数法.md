@@ -812,12 +812,6 @@ $$
 $$
 令 $\epsilon\downarrow0$，整理即得结论。
 
-若是负向偏差任意接近 $-\eta$，取 $\Delta(x_0)\le-\eta+\epsilon$ 及 $t=x_0-\delta$。当 $|x|\le\delta$ 时，同理有
-$$
--\Delta(t-x)\ge\frac\eta2-\epsilon-\lambda x.
-$$
-对 $-\Delta_L(t)$ 重复上述估计即可。这样也不需要假设上确界一定在某点取到。
-
 **QED**
 
 >[!lemma] 用特征函数控制分布函数误差
