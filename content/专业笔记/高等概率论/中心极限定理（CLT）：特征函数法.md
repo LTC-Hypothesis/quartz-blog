@@ -872,7 +872,7 @@ $$
 +\frac{24}{\pi\sqrt{2\pi}\,L}.
 $$
 
-先准备两个估计。由 Taylor 余项界，
+先准备三个不等式估计。由 Taylor 余项界，
 $$
 \left|e^{iu}-1-iu+\frac{u^2}{2}\right|
 \le\frac{|u|^3}{6},
@@ -933,7 +933,7 @@ $$
 \le e^{-t^2/4}
 \left(\frac{\rho t^2}{6\sqrt n}+\frac{|t|^3}{8n}\right).
 $$
-代回平滑不等式，并把积分区间扩大为 $\mathbb{R}$，得到
+代回分布函数差的不等式，并把积分区间扩大为 $\mathbb{R}$，得到
 $$
 \begin{aligned}
 \sup_x|F_n(x)-\Phi(x)|
@@ -961,7 +961,6 @@ $$
 &<\frac{3\rho}{\sqrt n}.
 \end{aligned}
 $$
-第二步使用了 $\rho\ge1$、$n\ge10$。这也补全了手稿最后 $C/\sqrt n$ 中常数的计算。
 
 **QED**
 
@@ -1028,6 +1027,6 @@ $$
 
 **QED**
 
->[!note]
+>[!warning] 
 >这给出[[De Moirve & Laplace 中心极限定理]]之外的一般 i.i.d. 证明。有限三阶绝对矩是上面 Berry–Esseen 误差界所用的充分条件；仅证明 CLT 时，有限二阶矩已经足够。
 
