@@ -168,7 +168,7 @@ $$
 $$
 B_Y(y_0,r)\subseteq\overline{T(B_X(0,n_0))}
 $$
-取$x_0\in X$使得$Tx_0=y_0$，再取$N>\max\{n_0,\|x_0\|\}$，则
+取$x_0\in X$使得$Tx_0=y_0$，不妨假设$\|x_0\|\le N$，则
 $$
 B_Y(y_0,r)\subseteq\overline{T(B_X(0,N))}
 $$
@@ -208,12 +208,12 @@ $T^{-1}$线性。由开映射定理，存在$C>0$使得
 $$
 B_Y(0,1)\subseteq T(B_X(0,C))
 $$
-任取$y\in Y$和$r>\|y\|$，因为$y/r\in B_Y(0,1)$且原像唯一，
+任取$y\in Y$，因为$y/\|y\|\in B_Y(0,1)$且原像唯一，
 $$
-\left\|T^{-1}\left(\frac yr\right)\right\|<C
-\Longrightarrow\|T^{-1}y\|<Cr
+\left\|T^{-1}\left(\frac {y}{\|y\|}\right)\right\|<C
+\Longrightarrow\|T^{-1}y\|<C\|y\|
 $$
-令$r\downarrow\|y\|$，得到$\|T^{-1}y\|\le C\|y\|$，所以$T^{-1}$有界。
+所以$T^{-1}$有界。
 
 **QED**
 
@@ -238,7 +238,7 @@ $$
 x_n\to x,\quad Tx_n\to y\Longrightarrow y=Tx
 $$
 
->[!thm] 闭图定理
+>[!thm] 闭图像定理
 >设$X,Y$为Banach空间，$T:X\to Y$为定义在整个$X$上的线性映射，则
 >$$
 >T\in\mathcal B(X,Y)\Longleftrightarrow G(T)\text{为}X\times Y\text{的闭子空间}
