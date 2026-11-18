@@ -827,17 +827,20 @@ $$
 
 **Proof**
 
-先证明一个磨光后的估计，若右侧积分为 $+\infty$，结论显然；否则
+先证明一个磨光后的估计，若右侧积分为 $+\infty$，结论显然；否则函数
 $$
 q_L(t)=\frac{[\varphi_F(t)-\varphi_G(t)]W_L(t)}{it}
 $$
 可积，$t=0$ 的值不影响积分。磨光后的 $F_L,G_L$ 连续，其特征函数分别为 $\varphi_FW_L,\varphi_GW_L$，在 $[-L,L]$ 外为 $0$。对 $a<x$，由[[#^characteristic-inversion|反演公式]]，
 $$
-\Delta_L(x)-\Delta_L(a)
-=\frac1{2\pi}\int_{-L}^L
-(e^{-ita}-e^{-itx})q_L(t)\,dt.
+\begin{aligned}
+\Delta_L(x)-\Delta_L(a)&=[F_L(x)-F_L(a)]-[G_L(x)-G_L(a)]\\
+&=\lim_{T\to\infty}\frac{1}{2\pi}\int_{-T}^{T}(e^{-ita}-e^{-itx})\frac{\varphi_{F_L}(t)-\varphi_{G_L}(t)}{it}{d}t\\
+&=\lim_{T\to\infty}\frac{1}{2\pi}\int_{-T}^{T}(e^{-ita}-e^{-itx})\frac{(\varphi_{F}(t)-\varphi_{G}(t))W_L(t)}{it}{d}t\\
+&=\frac1{2\pi}\int_{-L}^L(e^{-ita}-e^{-itx})q_L(t)\,dt.
+\end{aligned}
 $$
-令 $a\to-\infty$。$\Delta_L(a)\to0$，而 $q_L\in L^1$，由[[Durrett习题1.4|Riemann–Lebesgue 引理]]，含 $e^{-ita}$ 的积分趋于 $0$。所以
+这需要注意，傅里叶变换（特征函数变换）可以把分布的卷积的特征函数变成分布的特征函数的乘积，另外由于Pólya 分布的特征函数具有紧支撑，因此积分可以限制在 $[-L,L]$ 上。令 $a\to-\infty$。$\Delta_L(a)\to0$，而 $q_L\in L^1$，由[[Durrett习题1.4|Riemann–Lebesgue 引理]]，含 $e^{-ita}$ 的积分趋于 $0$。所以
 $$
 \Delta_L(x)
 =-\frac1{2\pi}\int_{-L}^L
@@ -886,7 +889,6 @@ $$
 另一个是幂的差：若 $|\alpha|,|\beta|\le\gamma$，则
 $$
 |\alpha^n-\beta^n|
-=\left|(\alpha-\beta)\sum_{j=0}^{n-1}\alpha^{n-1-j}\beta^j\right|
 \le n|\alpha-\beta|\gamma^{n-1}.
 $$
 
