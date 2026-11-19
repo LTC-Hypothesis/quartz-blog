@@ -192,9 +192,29 @@ Q-Learning算法是强化学习最经典的算法之一，前面的Sarsa只能�
 >Q-Learning算法的数学描述如下
 >$$
 >\begin{cases}
->q_{t+1}(s_t,a_t)=q_t(s_t,a_t)-\alpha(s_t,a_t)\left[q_t(s_t,a_t)-(r_{t+1}+\gamma)\right]
+>q_{t+1}(s_t,a_t)=q_t(s_t,a_t)-\alpha(s_t,a_t)\left[q_t(s_t,a_t)-(r_{t+1}+\gamma\max_{a\in\mathcal{A}}q_t(s_{t+1},a))\right]\\
+>q_{t+1}(s,a)=q_t(s,a),(s,a)\ne (s_t,a_t)
 >\end{cases}
 >$$
+
+>[!warning] 
+>- Q-Learning 的TD目标为 $r_{t+1}+\gamma\max_{a\in\mathcal{A}}q_t(s_{t+1},a)$, 这是和Sarsa算法的区别。
+>- Q-Learning算法在数学上做了一个Bellman最优方程的随机近似算法，
+>  $$
+> q(s,a)=\mathbb{E}\left[R_{t+1}+\gamma\max_aq(S_{t+1},a)|S_{t+1}=s,A_t=a\right] 
+> $$
+
+>[!def] off-policy（异策略）和 on-policy（同策略）
+>任何强化学习算法都会涉及两个策略：行为策略和目标策略。行为策略用于生成经验样本，而目标策略用于策略更新。当行为策略和目标策略相同时，称为on-policy（同策略），不同时称为off-policy（异策略）。
+>
+>off-policy的优势在于可以使用其他策略来生成经验样本，比如$\varepsilon$-Greedy策略。
+
+>[!warning] 如何判断一个策略是on-policy还是off-policy
+>从定义来看，如果能使用其他策略来生成经验样本，那么这个策略就是off-policy的。
+>
+>但要真正回答这个问题，我们需要考察两个方面：一方面是算法解决的数学问题，另一方面是算法所需的经验样本。从这个观点看，我们说Sarsa算法是on-policy的，而Q-Learning算法是off-policy的。
+>
+>
 
 # TD算法的统一框架
 
