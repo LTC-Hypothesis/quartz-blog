@@ -212,9 +212,28 @@ Q-Learning算法是强化学习最经典的算法之一，前面的Sarsa只能�
 >[!warning] 如何判断一个策略是on-policy还是off-policy
 >从定义来看，如果能使用其他策略来生成经验样本，那么这个策略就是off-policy的。
 >
->但要真正回答这个问题，我们需要考察两个方面：一方面是算法解决的数学问题，另一方面是算法所需的经验样本。从这个观点看，我们说Sarsa算法是on-policy的，而Q-Learning算法是off-policy的。
+>但要真正回答这个问题，我们需要考察两个方面：一方面是算法解决的**数学问题**，另一方面是算法所需的**经验样本**。从这个观点看，我们说Sarsa算法是on-policy的，而Q-Learning算法是off-policy的。
+
+>[!note] Sarsa是on-policy的算法
+>Sarsa算法的迭代有两个步骤，一个是根据给定的策略$\pi$生成的经验样本，通过求解Bellman方程评价当前策略$\pi$，第二步是通过得到的估计值获得一个改进的策略。两步中行为策略和目标策略都是$\pi$，因此Sarsa算法是on-policy的。
 >
->
+>另一方面，观察Sarsa样本生成的过程，
+>$$
+>s_t\xrightarrow{\pi}a_t\xrightarrow{\text{model}}r_{t+1},s_{t+1}\xrightarrow{\pi}a_{t+1}
+>$$
+>这个过程中，$\pi$既是生成样本的策略，并且又是Sarsa评价进而改进的策略，从这个角度上来讲，Sarsa是on-policy的。
+
+>[!note] Q-Learning算法是off-policy的
+>Q-Learning算法所需要的样本生成过程如下，
+>$$
+>s_t\xrightarrow{\pi}a_{t}\xrightarrow{\text{model}}r_{t+1},s_{t+1}
+>$$
+>策略$\pi$用于$s_t$生成$a_t$，而样本$r_{t+1},s_{t+1}$是由与环境交互决定的，Q-Learning算法的目标是估计$(s_t,a_t)$的最优动作值，这就需要样本$r_{t+1},s_{t+1}$，因此估计最优动作值不依赖于行为策略$\pi$。
+
+>[!note] Q-Learning算法的设计
+>![[Pasted image 20261119153828.png]]
+>![[Pasted image 20261119153847.png]]
 
 # TD算法的统一框架
-
+>[!def] TD算法的统一形式
+>
