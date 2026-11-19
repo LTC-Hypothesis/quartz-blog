@@ -136,7 +136,7 @@ $$
 >[!note] Sarsa算法描述
 >给定策略$\pi$，由策略$\pi$生成的一列经验样本：$(s_0,a_0,r_1,s_1,a_1,\cdots,s_t,a_t,r_t,s_{t+1},a_{t+1},\cdots)$那么可以用如下算法估计状态的动作值，
 >$$
->q_{t+1}(s_t,a_t)=q_t(s_t,a_t)-\alpha_t(s_t,a_t)(q_t(s_t,a_t)-(r_{t+1}+\gamma q_t(s_{t+1},a_{t+1})))
+>q_{t+1}(s_t,a_t)=q_t(s_t,a_t)-\alpha_t(s_t,a_t)(q_t(s_t,a_t)-(r_{t+1}+\gamma q_t(s_{t+1},a_{t+1})))\quad(\text{TD}2)
 >$$
 >$$
 >q_{t+1}(s_t,a_t)=q_t(s_t,a_t),(s,a)\ne (s_t,a_t)
@@ -188,7 +188,13 @@ $$
 # Q-Learning算法
 Q-Learning算法是强化学习最经典的算法之一，前面的Sarsa只能估计给定策略的动作值，但Q-Learning可以直接估计最优动作值进而找到最优策略。
 
->[!n]
+>[!note] Q-Learning算法描述
+>Q-Learning算法的数学描述如下
+>$$
+>\begin{cases}
+>q_{t+1}(s_t,a_t)=q_t(s_t,a_t)-\alpha(s_t,a_t)\left[q_t(s_t,a_t)-(r_{t+1}+\gamma)\right]
+>\end{cases}
+>$$
 
 # TD算法的统一框架
 
