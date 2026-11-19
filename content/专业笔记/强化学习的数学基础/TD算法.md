@@ -186,7 +186,9 @@ $$
 >- 当$n=\infty$，n-step Sarsa算法变成[[蒙特卡洛方法（MCMC）|MCMC算法]]。
 
 # Q-Learning算法
+Q-Learning算法是强化学习最经典的算法之一，前面的Sarsa只能估计给定策略的动作值，但Q-Learning可以直接估计最优动作值进而找到最优策略。
 
+>[!n]
 
 # TD算法的统一框架
 
