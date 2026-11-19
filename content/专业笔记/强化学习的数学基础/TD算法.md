@@ -194,7 +194,7 @@ Q-Learning算法是强化学习最经典的算法之一，前面的Sarsa只能�
 >\begin{cases}
 >q_{t+1}(s_t,a_t)=q_t(s_t,a_t)-\alpha(s_t,a_t)\left[q_t(s_t,a_t)-(r_{t+1}+\gamma\max_{a\in\mathcal{A}}q_t(s_{t+1},a))\right]\\
 >q_{t+1}(s,a)=q_t(s,a),(s,a)\ne (s_t,a_t)
->\end{cases}
+>\end{cases}(\text{TD}3)
 >$$
 
 >[!warning] 
@@ -236,4 +236,8 @@ Q-Learning算法是强化学习最经典的算法之一，前面的Sarsa只能�
 
 # TD算法的统一框架
 >[!def] TD算法的统一形式
->
+>以上所介绍的TD算法可以写成一个统一数学表达式，
+>$$
+>q_{t+1}(s_t,a_t)=q_t(s_t,a_t)-\alpha_t(s_t,a_t)(q_t(s_t,a_t)-\bar{q}_t)\tag{TD4}
+>$$
+>这可以在数学上视为计算Bellman公式$q(s,a)=\mathbb{E}[\bar{q}_t|s,a]$的随机近似算法。
