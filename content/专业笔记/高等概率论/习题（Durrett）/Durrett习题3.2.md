@@ -295,6 +295,7 @@
 > Suppose $Y_n \geq 0$, $\mathbb{E}Y_n^\alpha \to 1$ and $\mathbb{E}Y_n^\beta \to 1$ for some $0 < \alpha < \beta$. Show that $Y_n \to 1$ in probability.
 
 > [!done]
+> 
 
 > [!question] 3.2.17.
 > For each $K < \infty$ and $y < 1$ there is a $c_{y,K} > 0$ so that $\mathbb{E}X^2 = 1$ and $\mathbb{E}X^4 \leq K$ implies $\mathbb{P}(|X| > y) \geq c_{y,K}$.
