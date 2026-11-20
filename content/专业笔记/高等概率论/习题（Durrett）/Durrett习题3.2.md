@@ -285,6 +285,7 @@
 > Show that if $X_n = (X_n^1, \dots, X_n^n)$ is uniformly distributed over the surface of the sphere of radius $\sqrt{n}$ in $\mathbf{R}^n$ then $X_n^1 \Rightarrow$ a standard normal. Hint: Let $Y_1, Y_2, \dots$ be i.i.d. standard normals and let $X_n^i = Y_i(n/\sum_{m=1}^n Y_m^2)^{1/2}$.
 
 > [!done]
+> 
 
 > [!question] 3.2.16.
 > Suppose $Y_n \geq 0$, $\mathbb{E}Y_n^\alpha \to 1$ and $\mathbb{E}Y_n^\beta \to 1$ for some $0 < \alpha < \beta$. Show that $Y_n \to 1$ in probability.
