@@ -131,6 +131,8 @@ $$
 >[!proposition] 推论
 >对有界算子$T$满足对$\forall x\in H$成立$\langle Tx,x\rangle=0$，则$T=0$。
 
+^48c47f
+
 **Proof**
 
 考虑把$T$写成$T_1+iT_2$的形式，只需要取
@@ -164,7 +166,14 @@ $$
 $$
 根据[[#^8aef3b|自伴算子的结论]]，直接得到$TT^*=T^*T$。
 
+$1\Longleftrightarrow3$: 实际上根据[[#^48c47f|推论]]可知$T_1,T_2$是自伴的，因此
 $$
+TT^*=(T_1+iT_2)(T_1-iT_2)=T_1^2+T_2^2+i(T_2T_1-T_1T_2)
+$$
+$$
+T^*T=(T_1-iT_2)(T_1+iT_2)=T_1^2+T_2^2+i(T_1T_2-T_2T_1)
+$$
+可知$TT^*=T^*T\Longleftrightarrow T_1T_2=T_2T_1$。
 
 **QED**
 
