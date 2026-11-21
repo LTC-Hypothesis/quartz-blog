@@ -126,6 +126,8 @@ $$
 >[!proposition] 推论
 >若$T$为自伴算子，且对$\forall x\in H$满足$\langle Tx,x\rangle=0$，则$T=0$。
 
+^8aef3b
+
 >[!proposition] 推论
 >对有界算子$T$满足对$\forall x\in H$成立$\langle Tx,x\rangle=0$，则$T=0$。
 
@@ -148,6 +150,23 @@ $$
 >3. 若$T=T_1+iT_2$，则$T_1T_2=T_2T_1$
 
 ^5ea474
+
+**Proof**
+
+$1\Longrightarrow2$: 注意到
+$$
+\left\langle Tx,Tx\right\rangle=\langle x,T^*Tx\rangle=\overline{\langle TT^*x,x\rangle}=\overline{\langle T^*x,T^*x\rangle}=\langle T^*x,T^*x\rangle
+$$
+
+$2\Longrightarrow1$: 考虑算子$TT^*-T^*T$，注意到这个算子是自伴的，考虑
+$$
+\langle(TT^*-T^*T)x,x\rangle=\langle TT^*x,x\rangle-\langle T^*Tx,x\rangle=\langle T^*x,T^*x\rangle-\langle Tx,Tx\rangle=0
+$$
+根据[[#^8aef3b|自伴算子的结论]]，直接得到$TT^*=T^*T$。
+
+$$
+
+**QED**
 
 >[!thm] 
 >若$T$有界，则$\text{Ker} \ T=(\text{range} \ T^*)^\bot$
