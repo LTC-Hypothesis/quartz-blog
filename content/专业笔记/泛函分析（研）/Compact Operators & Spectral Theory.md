@@ -290,7 +290,7 @@ $$
 |a(u,v)|\le a(u,u)^{\frac{1}{2}}a(v,v)^{\frac{1}{2}}\text{ i.e. }|(Mu-Tu,v)|\le C|(Mu-Tu,u)|^{\frac{1}{2}}
 $$
 By the definition of $M$, there exists $u_n$ with $|u_n|=1$ s.t. $(Tu_n,u_n)\to M$ and thus we have $(Mu_n-Tu_n,u_n)\to0$. Therefore, $|Mu_n-Tu_n|\to0$ and $M\in\sigma(T)$.
-Finally, we prove $\|T\|=\max\{|m|,|M|\}$. By [[Orthogonality#^758567|Parallelogram Law]], for $u,v\in H$, we have 
+Finally, we prove $\|T\|=\max\{|m|,|M|\}$. By [[正交性#^758567|Parallelogram Law]], for $u,v\in H$, we have 
 $$
 \begin{aligned}
 4(Tu,v)&=(T(u+v),u+v)-(T(u-v),u-v)\\

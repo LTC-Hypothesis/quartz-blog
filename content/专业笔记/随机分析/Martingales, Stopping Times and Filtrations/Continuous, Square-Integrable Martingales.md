@@ -55,7 +55,7 @@ Fix probability space $(\Omega,\mathcal{F},\mathbb{P})$ and a filtration $\{\mat
 We check each item. 
 1. We use the property of uniqueness. Since $(\alpha X+\beta Y)Z-\langle \alpha X+\beta YZ\rangle_t$ is a martingale, and $(\alpha X+\beta Y)Z=\alpha XZ+\beta YZ$. For $XZ$ and $YZ$, $\alpha XZ-\alpha\langle X,Z\rangle$ and $\beta YZ-\beta\langle Y,Z\rangle$ are martingales, then $(\alpha XZ+\beta YZ)-(\alpha\langle X,Z\rangle+\beta\langle Y,Z\rangle)$ is a martingale. By uniqueness, we obtain $\langle \alpha X+\beta Y,Z\rangle_t=\alpha\langle X,Z\rangle_t+\beta\langle Y,Z\rangle_t$.
 2. Since $XY-\langle X,Y\rangle_t$ is a martingale, $YX-\langle Y,X\rangle_t=XY-\langle Y,X\rangle_t$. By uniqueness, $\langle X,Y\rangle_t=\langle Y,X\rangle_t$.
-3. We can use the [[Introduction of Hilbert Space#^970a9c|CBS]]. In fact, cross variation satisfies item1 and item2, it becomes a semi-inner product and it holds CBS. Hence, we obtain $$|\langle X,Y\rangle_t|^2\le |\langle X,X\rangle_t||\langle Y,Y\rangle_t|^2=\langle X\rangle_t\langle Y\rangle_t$$
+3. We can use the [[Hilbert空间简介#^970a9c|CBS]]. In fact, cross variation satisfies item1 and item2, it becomes a semi-inner product and it holds CBS. Hence, we obtain $$|\langle X,Y\rangle_t|^2\le |\langle X,X\rangle_t||\langle Y,Y\rangle_t|^2=\langle X\rangle_t\langle Y\rangle_t$$
 4. Consider $0\le s<t$ and $\lambda\in\mathbb{R}$, we have $$\begin{align}
 0&\le \langle X+\lambda Y\rangle_t-\langle X+\lambda Y\rangle_s\\
 &=(\langle X\rangle_t-\langle X\rangle_s)+(\langle X,Y\rangle_t-\langle X,Y\rangle_s)\lambda+(\langle Y\rangle_t-\langle Y\rangle_s)\lambda^2

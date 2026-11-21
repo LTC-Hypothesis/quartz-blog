@@ -103,7 +103,7 @@ $$
 (u,v)_\nabla=\int_\Omega\nabla u\cdot\nabla v\,dx
 $$
 
-is an inner product inducing an equivalent Hilbert norm on $H_0^1$. The [[The Riesz Representation Theorem]] gives a unique $u\in H_0^1$ such that
+is an inner product inducing an equivalent Hilbert norm on $H_0^1$. The [[Riesz表示定理|The Riesz Representation Theorem]] gives a unique $u\in H_0^1$ such that
 
 $$
 \int_\Omega\nabla u\cdot\nabla v\,dx=\langle f,v\rangle\qquad\forall v\in H_0^1.

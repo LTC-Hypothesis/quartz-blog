@@ -23,7 +23,7 @@
 >$$
 
 >[!done] 
->我们的目标是把一个内积表示成另一个内积的形式，那么只有一个定理是在解决这个问题，就是[[The Riesz Representation Theorem|Riesz表示定理]]。若将$\langle Th_1,h_2\rangle$看作一个线性算子，对固定的$h_2$，定义
+>我们的目标是把一个内积表示成另一个内积的形式，那么只有一个定理是在解决这个问题，就是[[Riesz表示定理|Riesz表示定理]]。若将$\langle Th_1,h_2\rangle$看作一个线性算子，对固定的$h_2$，定义
 >$$
 >L:H_1\to\mathbb{C},h_1\mapsto\langle Th_1,h_2\rangle
 >$$
