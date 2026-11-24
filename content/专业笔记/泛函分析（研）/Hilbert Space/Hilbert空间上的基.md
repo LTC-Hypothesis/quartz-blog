@@ -50,6 +50,8 @@ $$
 >\sum_{n=1}^{\infty}|\langle h,e_n\rangle|^2\le \|h\|^2
 >$$
 
+^57b6c6
+
 **Proof**
 
 根据[[#^399850|引理]]直接计算
