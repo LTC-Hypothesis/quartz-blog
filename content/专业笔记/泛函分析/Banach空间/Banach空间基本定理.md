@@ -4,7 +4,7 @@
 以下$X,Y$为同一数域上的赋范线性空间，$T:X\to Y$为线性映射，$B_X(x,r),B_Y(y,r)$均表示开球。
 
 >[!note] 连续性的球刻画
->由[[有界线性算子|线性算子的连续性与有界性]]，
+>由线性算子的有界性和连续性，
 >$$
 >T\text{连续}\Longleftrightarrow T\text{有界}
 >\Longleftrightarrow\exists A>0,\ T(B_X(0,1))\subseteq B_Y(0,A)
