@@ -126,7 +126,7 @@ $$
 $$
 N=\bigcup_{\alpha\in A}N_\alpha
 $$
-因为链中任意两个元素可比较，任意$x,y\in N$都属于某个共同的$N_\gamma$，所以$N$为线性子空间。定义
+因为链中任意两个元素可比较，任意$x,y\in N$都属于某个共同的$N_\gamma$，所以$N$为线性子空间。对于$x\in N$，存在$N_\alpha$使得$x\in N_\alpha$，定义
 $$
 g(x)=g_\alpha(x),\quad x\in N_\alpha
 $$

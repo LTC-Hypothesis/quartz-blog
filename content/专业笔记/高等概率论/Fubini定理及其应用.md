@@ -6,7 +6,7 @@
 >$$
 >实际上容易验证$\mathbb{P}_1\otimes\mathbb{P}_2$为$\mathscr{A}$上的测度，其中$\mathscr{A}=\left\{A\times B:A\in\mathscr{F}_1,B\in\mathscr{F}_2\right\}$。根据[[测度论基础#^fa2ae7|Caretheodory延拓定理]]，可以延拓为$\mathscr{F}_1\otimes\mathscr{F}_2$上的测度。
 
->[!def] 核函数方法（马氏过程）
+>[!def] 核函数方法（马氏过程）$\heartsuit$
 >**概率核**：设 $(\Omega_1,\mathscr F_1)$、$(\Omega_2,\mathscr F_2)$ 为可测空间。若 $K:\Omega_1\times\mathscr F_2\to[0,1]$ 满足：固定 $x$ 时，$K(x,\cdot)$ 是概率测度；固定 $B\in\mathscr F_2$ 时，$x\mapsto K(x,B)$ 可测，则称 $K$ 为概率核。
 >
 >**构造联合测度**：给定 $\Omega_1$ 上的概率测度 $\mu$，在 $\mathscr F_1\otimes\mathscr F_2$ 上定义
@@ -129,7 +129,7 @@ $$
 
 **QED**
 
->[!warning] 依概率收敛下的控制收敛定理
+>[!warning] 依概率收敛下的控制收敛定理$\heartsuit$
 >若$X_n\xrightarrow{\mathbb{P}}X$且$|X_n|\le Y$，其中$Y$满足$\mathbb{E}|Y|<\infty$，则满足
 >$$
 >\lim_{n\to\infty}\mathbb{E}X_n=\mathbb{E}X
