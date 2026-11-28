@@ -162,9 +162,4 @@ $$
 
 **QED**
 
->[!example] 
->$X_1,\cdots,X_n,i.i.d.$，$\mathbb{E}X_n=0,\mathbb{E}X_n^2=1$，令$S_n=\sum_{i=1}^{n}X_i$，证明：
->$$
->\lim_{n\to\infty}\mathbb{E}\left[\frac{|S_n|}{\sqrt{n}}\right]=\sqrt{\frac{2}{\pi}}=\mathbb{E}[|N|],N\sim \text{N}(0,1)
->$$
 
