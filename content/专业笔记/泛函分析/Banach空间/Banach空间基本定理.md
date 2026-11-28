@@ -371,7 +371,7 @@ $$
 $$
 \forall f\in X^*,\quad\sup_{x\in E}|\widehat x(f)|=\sup_{x\in E}|f(x)|<+\infty
 $$
-应用一致有界原理，得到
+应用[[#^o71706|一致有界原理]]，得到
 $$
 \sup_{x\in E}\|x\|=\sup_{x\in E}\|\widehat x\|<+\infty
 $$
@@ -388,7 +388,7 @@ $$
 
 **Proof**
 
-由极限的线性，$A$线性。对每个$x\in X$，$\{A_nx\}$收敛，所以$\sup_n\|A_nx\|<+\infty$。由一致有界原理，存在$C>0$使得
+由极限的线性，$A$线性。对每个$x\in X$，$\{A_nx\}$收敛，所以$\sup_n\|A_nx\|<+\infty$。由[[#^o71706|一致有界原理]]，存在$C>0$使得
 $$
 \|A_n\|\le C,\quad\forall n\in\mathbb N
 $$
@@ -401,7 +401,7 @@ $$
 
 **QED**
 
->[!note] 一致收敛与强收敛
+>[!def] 一致收敛与强收敛
 >对$A_n,A\in\mathcal B(X,Y)$，称$\|A_n-A\|\to0$为一致收敛，即算子范数收敛；称
 >$$
 >\forall x\in X,\quad\|A_nx-Ax\|\to0
