@@ -98,6 +98,8 @@
 > $$
 > Hint: If $g$ is a step function, this is easy. Now use the previous exercise.
 
+^11afdb
+
 > [!done]
 > Suppose $g(x)$ is the step function i.e. $g(x)=\sum_{k=1}^{m}c_k\mathbb{1}_{(a_{k-1},a_k]}$, then 
 > $$

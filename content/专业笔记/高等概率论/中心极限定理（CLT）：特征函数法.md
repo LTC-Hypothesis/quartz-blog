@@ -840,7 +840,7 @@ $$
 &=\frac1{2\pi}\int_{-L}^L(e^{-ita}-e^{-itx})q_L(t)\,dt.
 \end{aligned}
 $$
-这需要注意，傅里叶变换（特征函数变换）可以把分布的卷积的特征函数变成分布的特征函数的乘积，另外由于Pólya 分布的特征函数具有紧支撑，因此积分可以限制在 $[-L,L]$ 上。令 $a\to-\infty$。$\Delta_L(a)\to0$，而 $q_L\in L^1$，由[[Durrett习题1.4|Riemann–Lebesgue 引理]]，含 $e^{-ita}$ 的积分趋于 $0$。所以
+这需要注意，傅里叶变换（特征函数变换）可以把分布的卷积的特征函数变成分布的特征函数的乘积，另外由于Pólya 分布的特征函数具有紧支撑，因此积分可以限制在 $[-L,L]$ 上。令 $a\to-\infty$。$\Delta_L(a)\to0$，而 $q_L\in L^1$，由[[Durrett习题1.4#^11afdb|Riemann–Lebesgue 引理]]，含 $e^{-ita}$ 的积分趋于 $0$。所以
 $$
 \Delta_L(x)
 =-\frac1{2\pi}\int_{-L}^L
